@@ -1,0 +1,12 @@
+D:\mtsds-grupo1\e-commerce\Authentication\src\main\java\ecommerce\Enums\Role.java
+D:\mtsds-grupo1\e-commerce\Authentication\src\main\java\ecommerce\Authentication.java
+D:\mtsds-grupo1\e-commerce\Authentication\src\main\java\ecommerce\Repository\UserRepository.java
+D:\mtsds-grupo1\e-commerce\Authentication\src\main\java\ecommerce\DTO\AuthenticationDTO.java
+D:\mtsds-grupo1\e-commerce\Authentication\src\main\java\ecommerce\Controllers\AuthenticationController.java
+D:\mtsds-grupo1\e-commerce\Authentication\src\main\java\ecommerce\Infra\Security\SecurityConfigurations.java
+D:\mtsds-grupo1\e-commerce\Authentication\src\main\java\ecommerce\Infra\Security\TokenService.java
+D:\mtsds-grupo1\e-commerce\Authentication\src\main\java\ecommerce\Service\AuthenticationService.java
+D:\mtsds-grupo1\e-commerce\Authentication\src\main\java\ecommerce\DTO\LoginResponseDTO.java
+D:\mtsds-grupo1\e-commerce\Authentication\src\main\java\ecommerce\DTO\RegisterDTO.java
+D:\mtsds-grupo1\e-commerce\Authentication\src\main\java\ecommerce\Infra\Security\SecurityFilter.java
+D:\mtsds-grupo1\e-commerce\Authentication\src\main\java\ecommerce\Models\User.java
