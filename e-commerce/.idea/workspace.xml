@@ -5,11 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c740b900-3ece-4bfe-81b1-fae3f42c5f2b" name="Changes" comment="feat: Add pom configuration to multimodule project.">
-      <change afterPath="$PROJECT_DIR$/users/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Orders/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Products/src/main/java/ecommerce/Services/ProductsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Products/src/main/java/ecommerce/Services/ProductsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Products/target/classes/ecommerce/Services/ProductsService.class" beforeDir="false" afterPath="$PROJECT_DIR$/Products/target/classes/ecommerce/Services/ProductsService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Products/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Products/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -22,6 +24,7 @@
       <list>
         <option value="Interface" />
         <option value="Enum" />
+        <option value="package-info" />
         <option value="Class" />
       </list>
     </option>
@@ -29,7 +32,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$/.." value="master" />
+        <entry key="$PROJECT_DIR$/.." value="pom-configuration" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -70,10 +73,23 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Users">
+  <component name="RunManager" selected="Application.Orders">
     <configuration name="Authentication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ecommerce.Authentication" />
       <module name="Authentication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ecommerce.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Orders" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ecommerce.Orders" />
+      <module name="Orders" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="ecommerce.*" />
@@ -124,6 +140,7 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Application.Orders" />
       <item itemvalue="Application.Products" />
       <item itemvalue="Application.Authentication" />
       <item itemvalue="Application.Users" />
@@ -131,6 +148,7 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Orders" />
         <item itemvalue="Application.Products" />
         <item itemvalue="Application.Users" />
         <item itemvalue="Application.Authentication" />
