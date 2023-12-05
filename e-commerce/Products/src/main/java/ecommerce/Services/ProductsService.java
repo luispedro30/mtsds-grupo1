@@ -35,7 +35,9 @@ public class ProductsService   {
 
 
     public Product getProductById(Integer id) {
-        return productRepository.getById(id);
+        return productRepository
+                .findById(id)
+                .orElseThrow(null);
     }
 
     public List<Product> getAllByName(String name) {

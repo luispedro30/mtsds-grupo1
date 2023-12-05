@@ -12,6 +12,7 @@
         <module>authentication</module>
         <module>products</module>
         <module>users</module>
+        <module>Orders</module>
     </modules>
 
     <properties>

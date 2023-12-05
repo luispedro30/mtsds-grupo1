@@ -5,4 +5,5 @@ D:\mtsds-grupo1\e-commerce\Products\src\main\java\ecommerce\Enums\Category.java
 D:\mtsds-grupo1\e-commerce\Products\src\main\java\ecommerce\Exceptions\AlreadyExistingException.java
 D:\mtsds-grupo1\e-commerce\Products\src\main\java\ecommerce\Products.java
 D:\mtsds-grupo1\e-commerce\Products\src\main\java\ecommerce\Repository\ProductsRepository.java
+D:\mtsds-grupo1\e-commerce\Products\src\main\java\ecommerce\Dto\UserDto.java
 D:\mtsds-grupo1\e-commerce\Products\src\main\java\ecommerce\Controllers\ProductsController.java
