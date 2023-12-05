@@ -1,0 +1,4 @@
+ecommerce\Products.class
+ecommerce\Models\Product.class
+ecommerce\Enums\Category.class
+ecommerce\Exceptions\AlreadyExistingException.class
