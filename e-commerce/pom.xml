@@ -14,6 +14,7 @@
         <module>users</module>
         <module>Orders</module>
         <module>Reviews</module>
+        <module>Wallet</module>
     </modules>
 
     <properties>
