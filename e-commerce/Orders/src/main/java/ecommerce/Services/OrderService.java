@@ -35,19 +35,35 @@ public class OrderService {
         return orderRepository.findAll();
     }
 
+    public Order getOrderById(Integer id){
+        return orderRepository.findById(id).orElseThrow(null);
+    }
+
     @Transactional
     public Order addOrder(Order order) throws Exception {
         //user must exist
         UserDto userDto;
         userDto = getUser(order.getUserId());
 
+        double totalPrice = 0;
+
         //fill the car foreign key
         if (order.getProducts() != null){
+            RestTemplate restTemplate = new RestTemplate();
             for (Products product: order.getProducts()){
+                //RestTemplate restTemplate = new RestTemplate();
                 ProductDto productDto = getProduct(product.getProductId());
                 product.setOrder(order);
+                product.setPrice(productDto.getPrice());
+                totalPrice += productDto.getPrice();
+                restTemplate.postForEntity(productsUrl + "/decreaseStock/" + product.getProductId(),"",ProductDto.class);
             }
         }
+        order.setPriceTotal(totalPrice);
+
+
+
+
         return orderRepository.save(order);
     }
 
@@ -95,6 +111,10 @@ public class OrderService {
                     ProductDto.class,
                     productId
             );
+
+            if(response.getBody().getStockQuantity() <= 0){
+                throw new Exception("The product does not have stock enough!");
+            }
 
             return response.getBody();
         } catch (HttpClientErrorException | HttpServerErrorException e) {

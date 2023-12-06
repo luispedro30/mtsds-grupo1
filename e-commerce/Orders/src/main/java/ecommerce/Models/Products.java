@@ -21,6 +21,9 @@ public class Products {
     @Column(nullable = false)
     private Integer productId;
 
+    @Column(nullable = false)
+    private double price;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "orderId", nullable = false)
     @JsonIgnore

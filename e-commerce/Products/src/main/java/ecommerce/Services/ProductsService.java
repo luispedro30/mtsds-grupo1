@@ -51,6 +51,14 @@ public class ProductsService   {
         return productRepository.save(product);
     }
 
+    public Product decreaseStockProduct(Integer productId) throws Exception {
+        Product product = productRepository.findById(productId).orElseThrow(null);
+        if (product.getStockQuantity() >= 0){
+            product.setStockQuantity(product.getStockQuantity()-1);
+        }
+        return product;
+    }
+
     public void deleteProduct(Integer productId, Integer userId) throws Exception {
         UserDto userDto;
         userDto = getUser(userId);
