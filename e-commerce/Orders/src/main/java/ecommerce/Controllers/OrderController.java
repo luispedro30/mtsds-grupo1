@@ -23,6 +23,12 @@ public class OrderController {
         return ResponseEntity.status(HttpStatus.OK).body(cars);
     }
 
+    @GetMapping("/{id}")
+    ResponseEntity<Order> getById(@PathVariable Integer id){
+        Order order = orderService.getOrderById(id);
+        return ResponseEntity.status(HttpStatus.OK).body(order);
+    }
+
     @PostMapping
     ResponseEntity<?> add(@RequestBody Order order){
 

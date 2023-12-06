@@ -36,6 +36,16 @@ public class ProductsController {
                 HttpStatus.BAD_REQUEST);
     }
 
+    @PostMapping(value = "/products/decreaseStock/{id}")
+    private ResponseEntity<Product> decreaseStockProduct(@PathVariable ("id") Integer idProduct, HttpServletRequest request) throws Exception {
+        Product product = productService.decreaseStockProduct(idProduct);
+
+        return new ResponseEntity<Product>(
+                product,
+                HttpStatus.OK);
+
+    }
+
     @DeleteMapping(value = "/products/{id}")
     private ResponseEntity<Void> deleteProduct(@PathVariable("id") Integer id,@RequestParam ("id") Integer idUser){
         Product product = productService.getProductById(id);

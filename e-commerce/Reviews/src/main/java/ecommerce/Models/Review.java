@@ -9,29 +9,32 @@ import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import java.util.Date;
-import java.util.List;
 
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
 @Entity
-@Table(name = "orders")
+@Table(name = "reviews")
 @EntityListeners(AuditingEntityListener.class)
-public class Order {
-
+public class Review {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer orderId;
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    private Integer id;
 
-    //1 order can only have 1 user
+    @Column(nullable = false)
     private Integer userId;
 
-    //1 order can have various products
-    @OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
-    private List<Products> products;
+    @Column(nullable = false)
+    private Integer productId;
 
-    @Column(nullable = true)
-    private double priceTotal;
+    @Column(nullable = false)
+    private Integer orderId;
+
+    @Column(nullable = false)
+    private int rating;
+
+    @Column(nullable = false)
+    private String reviewText;
 
     @CreatedDate
     @Column(nullable = false, updatable = false)
@@ -40,4 +43,5 @@ public class Order {
     @LastModifiedDate
     @Column(nullable = false)
     private Date updatedAt;
+
 }
