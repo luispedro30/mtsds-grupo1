@@ -11,6 +11,7 @@
         <module name="Reviews" />
         <module name="Authentication" />
         <module name="users" />
+        <module name="Wallet" />
         <module name="products" />
       </profile>
     </annotationProcessing>

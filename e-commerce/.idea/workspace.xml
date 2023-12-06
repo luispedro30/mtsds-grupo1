@@ -5,22 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c740b900-3ece-4bfe-81b1-fae3f42c5f2b" name="Changes" comment="feat: Add pom configuration to multimodule project.">
-      <change afterPath="$PROJECT_DIR$/Reviews/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Wallet/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Orders/src/main/java/ecommerce/Controllers/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Orders/src/main/java/ecommerce/Controllers/OrderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Orders/src/main/java/ecommerce/Models/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/Orders/src/main/java/ecommerce/Models/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Orders/src/main/java/ecommerce/Models/Products.java" beforeDir="false" afterPath="$PROJECT_DIR$/Orders/src/main/java/ecommerce/Models/Products.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Orders/src/main/java/ecommerce/Services/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Orders/src/main/java/ecommerce/Services/OrderService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Orders/target/classes/ecommerce/Controllers/OrderController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Orders/target/classes/ecommerce/Controllers/OrderController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Orders/target/classes/ecommerce/Models/Order.class" beforeDir="false" afterPath="$PROJECT_DIR$/Orders/target/classes/ecommerce/Models/Order.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Orders/target/classes/ecommerce/Models/Products.class" beforeDir="false" afterPath="$PROJECT_DIR$/Orders/target/classes/ecommerce/Models/Products.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Orders/target/classes/ecommerce/Services/OrderService.class" beforeDir="false" afterPath="$PROJECT_DIR$/Orders/target/classes/ecommerce/Services/OrderService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Products/src/main/java/ecommerce/Controllers/ProductsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Products/src/main/java/ecommerce/Controllers/ProductsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Products/src/main/java/ecommerce/Services/ProductsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Products/src/main/java/ecommerce/Services/ProductsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Products/target/classes/ecommerce/Controllers/ProductsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Products/target/classes/ecommerce/Controllers/ProductsController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Products/target/classes/ecommerce/Services/ProductsService.class" beforeDir="false" afterPath="$PROJECT_DIR$/Products/target/classes/ecommerce/Services/ProductsService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -41,7 +29,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$/.." value="h2-microservices" />
+        <entry key="$PROJECT_DIR$/.." value="orders-microservice" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -85,20 +73,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Reviews">
-    <configuration name="Authentication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ecommerce.Authentication" />
-      <module name="Authentication" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ecommerce.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Application.wallet">
     <configuration name="Orders" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ecommerce.Orders" />
       <module name="Orders" />
@@ -151,20 +126,33 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="wallet" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ecommerce.wallet" />
+      <module name="Wallet" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ecommerce.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="Application.Orders" />
       <item itemvalue="Application.Reviews" />
+      <item itemvalue="Application.wallet" />
       <item itemvalue="Application.Products" />
-      <item itemvalue="Application.Authentication" />
       <item itemvalue="Application.Users" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Users" />
+        <item itemvalue="Application.wallet" />
         <item itemvalue="Application.Reviews" />
         <item itemvalue="Application.Orders" />
         <item itemvalue="Application.Products" />
-        <item itemvalue="Application.Users" />
-        <item itemvalue="Application.Authentication" />
       </list>
     </recent_temporary>
   </component>
