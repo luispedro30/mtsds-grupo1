@@ -15,6 +15,7 @@
         <module>Orders</module>
         <module>Reviews</module>
         <module>Wallet</module>
+        <module>Payment</module>
         <module>api-gateway</module>
         <module>eureka-server</module>
     </modules>
