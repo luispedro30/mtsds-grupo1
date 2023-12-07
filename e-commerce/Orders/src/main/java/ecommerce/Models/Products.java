@@ -28,5 +28,4 @@ public class Products {
     @JoinColumn(name = "orderId", nullable = false)
     @JsonIgnore
     private Order order;
-
 }

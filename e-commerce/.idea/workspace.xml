@@ -6,18 +6,16 @@
   <component name="ChangeListManager">
     <list default="true" id="c740b900-3ece-4bfe-81b1-fae3f42c5f2b" name="Changes" comment="feat: Add pom configuration to multimodule project.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Products/src/test/java/ecommerce/Controllers/ProductsControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Products/src/test/java/ecommerce/Controllers/ProductsControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Wallet/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Wallet/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Wallet/src/main/java/ecommerce/Controllers/WalletController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Wallet/src/main/java/ecommerce/Controllers/WalletController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Wallet/src/main/java/ecommerce/Dto/UserDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/Wallet/src/main/java/ecommerce/Dto/UserDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Wallet/src/main/java/ecommerce/Models/Wallet.java" beforeDir="false" afterPath="$PROJECT_DIR$/Wallet/src/main/java/ecommerce/Models/Wallet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Wallet/src/main/java/ecommerce/Repository/WalletRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Wallet/src/main/java/ecommerce/Repository/WalletRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Wallet/src/main/java/ecommerce/Services/WalletService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Wallet/src/main/java/ecommerce/Services/WalletService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Wallet/target/classes/ecommerce/Controllers/WalletController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Wallet/target/classes/ecommerce/Controllers/WalletController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Wallet/target/classes/ecommerce/Dto/UserDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/Wallet/target/classes/ecommerce/Dto/UserDto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Wallet/target/classes/ecommerce/Models/Wallet.class" beforeDir="false" afterPath="$PROJECT_DIR$/Wallet/target/classes/ecommerce/Models/Wallet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Wallet/target/classes/ecommerce/Repository/WalletRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/Wallet/target/classes/ecommerce/Repository/WalletRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Wallet/target/classes/ecommerce/Services/WalletService.class" beforeDir="false" afterPath="$PROJECT_DIR$/Wallet/target/classes/ecommerce/Services/WalletService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Orders/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Orders/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Orders/src/main/java/ecommerce/Controllers/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Orders/src/main/java/ecommerce/Controllers/OrderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Orders/src/main/java/ecommerce/Dto/ProductDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/Orders/src/main/java/ecommerce/Dto/ProductDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Orders/src/main/java/ecommerce/Dto/UserDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/Orders/src/main/java/ecommerce/Dto/UserDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Orders/src/main/java/ecommerce/Models/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/Orders/src/main/java/ecommerce/Models/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Orders/src/main/java/ecommerce/Models/Products.java" beforeDir="false" afterPath="$PROJECT_DIR$/Orders/src/main/java/ecommerce/Models/Products.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Orders/target/classes/ecommerce/Controllers/OrderController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Orders/target/classes/ecommerce/Controllers/OrderController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Orders/target/classes/ecommerce/Dto/ProductDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/Orders/target/classes/ecommerce/Dto/ProductDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Orders/target/classes/ecommerce/Dto/UserDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/Orders/target/classes/ecommerce/Dto/UserDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Reviews/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Reviews/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,7 +35,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$/.." value="product-microservice-test" />
+        <entry key="$PROJECT_DIR$/.." value="users-microservice-test" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -82,7 +80,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.WalletControllerTest">
+  <component name="RunManager" selected="JUnit.OrderControllerTest">
     <configuration name="wallet" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ecommerce.wallet" />
       <module name="Wallet" />
@@ -96,16 +94,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UsersControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="users" />
+    <configuration name="OrderControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Orders" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Controllers.*" />
+          <option name="PATTERN" value="ecommerce.Controllers.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="Controllers" />
-      <option name="MAIN_CLASS_NAME" value="Controllers.UsersControllerTest" />
+      <option name="PACKAGE_NAME" value="ecommerce.Controllers" />
+      <option name="MAIN_CLASS_NAME" value="ecommerce.Controllers.OrderControllerTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -159,18 +157,18 @@
     </configuration>
     <list>
       <item itemvalue="Application.wallet" />
-      <item itemvalue="JUnit.UsersControllerTest" />
+      <item itemvalue="JUnit.OrderControllerTest" />
       <item itemvalue="JUnit.UsersControllerTest (1)" />
       <item itemvalue="JUnit.WalletControllerTest" />
       <item itemvalue="JUnit.WalletControllerTest.createWalletWithAlreadyExistingUser" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.OrderControllerTest" />
         <item itemvalue="JUnit.WalletControllerTest" />
         <item itemvalue="JUnit.WalletControllerTest.createWalletWithAlreadyExistingUser" />
         <item itemvalue="Application.wallet" />
         <item itemvalue="JUnit.UsersControllerTest (1)" />
-        <item itemvalue="JUnit.UsersControllerTest" />
       </list>
     </recent_temporary>
   </component>
