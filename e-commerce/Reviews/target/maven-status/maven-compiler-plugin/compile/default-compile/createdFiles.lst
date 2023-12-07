@@ -1,1 +1,9 @@
-ecommerce\Reviews.class
+ecommerce/Dto/OrderDto.class
+ecommerce/Repository/ReviewRepository.class
+ecommerce/Models/Review.class
+ecommerce/Exceptions/ItemDoesNotExistException.class
+ecommerce/Auditing/JpaAuditingConfiguration.class
+ecommerce/Services/ReviewService.class
+ecommerce/Dto/UserDto.class
+ecommerce/Reviews.class
+ecommerce/Controllers/ReviewController.class

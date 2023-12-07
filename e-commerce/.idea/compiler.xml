@@ -10,12 +10,16 @@
         <module name="Orders" />
         <module name="Reviews" />
         <module name="Authentication" />
-        <module name="users" />
         <module name="Wallet" />
+        <module name="api-gateway" />
+        <module name="eureka-server" />
+        <module name="users" />
         <module name="products" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="apiGateway" target="20" />
+      <module name="APIGateway" target="20" />
       <module name="Users" target="20" />
     </bytecodeTargetLevel>
   </component>
