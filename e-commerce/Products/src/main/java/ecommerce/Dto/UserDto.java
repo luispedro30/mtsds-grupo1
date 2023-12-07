@@ -1,13 +1,13 @@
 package ecommerce.Dto;
 
-import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
+@AllArgsConstructor
+@NoArgsConstructor
 @Getter
 @Setter
 public class UserDto {
-    private Long id;
+    private Integer id;
     private String name;
     private String password;
     private int active;
