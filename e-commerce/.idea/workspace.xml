@@ -6,11 +6,16 @@
   <component name="ChangeListManager">
     <list default="true" id="c740b900-3ece-4bfe-81b1-fae3f42c5f2b" name="Changes" comment="feat: Add pom configuration to multimodule project.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Products/src/test/java/ecommerce/Controllers/ProductsControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Products/src/test/java/ecommerce/Controllers/ProductsControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Products/target/test-classes/ecommerce/Controllers/LandingControllerTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/users/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/src/main/java/ecommerce/Controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/users/src/main/java/ecommerce/Controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/target/classes/ecommerce/Controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/users/target/classes/ecommerce/Controller/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Orders/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Orders/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Orders/src/main/java/ecommerce/Controllers/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Orders/src/main/java/ecommerce/Controllers/OrderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Orders/src/main/java/ecommerce/Dto/ProductDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/Orders/src/main/java/ecommerce/Dto/ProductDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Orders/src/main/java/ecommerce/Dto/UserDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/Orders/src/main/java/ecommerce/Dto/UserDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Orders/src/main/java/ecommerce/Models/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/Orders/src/main/java/ecommerce/Models/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Orders/src/main/java/ecommerce/Models/Products.java" beforeDir="false" afterPath="$PROJECT_DIR$/Orders/src/main/java/ecommerce/Models/Products.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Orders/target/classes/ecommerce/Controllers/OrderController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Orders/target/classes/ecommerce/Controllers/OrderController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Orders/target/classes/ecommerce/Dto/ProductDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/Orders/target/classes/ecommerce/Dto/ProductDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Orders/target/classes/ecommerce/Dto/UserDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/Orders/target/classes/ecommerce/Dto/UserDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Reviews/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Reviews/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,7 +35,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$/.." value="wallet-microservice" />
+        <entry key="$PROJECT_DIR$/.." value="users-microservice-test" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -53,19 +58,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;20&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "jdk.selected.JAVA_MODULE": "20",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "run.code.analysis.last.selected.profile": "pProject Default"
   }
-}</component>
+}]]></component>
   <component name="RunDashboard">
     <option name="configurationTypes">
       <set>
@@ -74,10 +80,10 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.UsersControllerTest (1)">
-    <configuration name="Users" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ecommerce.Users" />
-      <module name="users" />
+  <component name="RunManager" selected="JUnit.OrderControllerTest">
+    <configuration name="wallet" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ecommerce.wallet" />
+      <module name="Wallet" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="ecommerce.*" />
@@ -88,22 +94,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ProductsControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="products" />
+    <configuration name="OrderControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Orders" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ecommerce.Controllers.ProductsControllerTest" />
+          <option name="PATTERN" value="ecommerce.Controllers.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="ecommerce.Controllers" />
-      <option name="MAIN_CLASS_NAME" value="ecommerce.Controllers.ProductsControllerTest" />
+      <option name="MAIN_CLASS_NAME" value="ecommerce.Controllers.OrderControllerTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UsersControllerTest (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="UsersControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="users" />
       <extension name="coverage">
         <pattern>
@@ -118,51 +124,51 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UsersControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="users" />
+    <configuration name="WalletControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Wallet" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Controllers.*" />
+          <option name="PATTERN" value="ecommerce.Controllers.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="Controllers" />
-      <option name="MAIN_CLASS_NAME" value="Controllers.UsersControllerTest" />
+      <option name="PACKAGE_NAME" value="ecommerce.Controllers" />
+      <option name="MAIN_CLASS_NAME" value="ecommerce.Controllers.WalletControllerTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UsersControllerTest.getLanding" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="users" />
+    <configuration name="WalletControllerTest.createWalletWithAlreadyExistingUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Wallet" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Controllers.*" />
+          <option name="PATTERN" value="ecommerce.Controllers.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="Controllers" />
-      <option name="MAIN_CLASS_NAME" value="Controllers.UsersControllerTest" />
-      <option name="METHOD_NAME" value="getLanding" />
+      <option name="PACKAGE_NAME" value="ecommerce.Controllers" />
+      <option name="MAIN_CLASS_NAME" value="ecommerce.Controllers.WalletControllerTest" />
+      <option name="METHOD_NAME" value="createWalletWithAlreadyExistingUser" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.Users" />
-      <item itemvalue="JUnit.ProductsControllerTest" />
-      <item itemvalue="JUnit.UsersControllerTest" />
+      <item itemvalue="Application.wallet" />
+      <item itemvalue="JUnit.OrderControllerTest" />
       <item itemvalue="JUnit.UsersControllerTest (1)" />
-      <item itemvalue="JUnit.UsersControllerTest.getLanding" />
+      <item itemvalue="JUnit.WalletControllerTest" />
+      <item itemvalue="JUnit.WalletControllerTest.createWalletWithAlreadyExistingUser" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.OrderControllerTest" />
+        <item itemvalue="JUnit.WalletControllerTest" />
+        <item itemvalue="JUnit.WalletControllerTest.createWalletWithAlreadyExistingUser" />
+        <item itemvalue="Application.wallet" />
         <item itemvalue="JUnit.UsersControllerTest (1)" />
-        <item itemvalue="JUnit.UsersControllerTest" />
-        <item itemvalue="JUnit.UsersControllerTest.getLanding" />
-        <item itemvalue="Application.Users" />
-        <item itemvalue="JUnit.ProductsControllerTest" />
       </list>
     </recent_temporary>
   </component>

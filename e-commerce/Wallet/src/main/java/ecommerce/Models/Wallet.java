@@ -16,6 +16,7 @@ public class Wallet {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
+    @Column(unique = true)
     private Integer userId;
 
     @Column(name = "wallet_value") // Changed from "value" to "wallet_value"

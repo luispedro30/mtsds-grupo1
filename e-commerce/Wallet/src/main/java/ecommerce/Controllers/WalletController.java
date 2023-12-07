@@ -17,6 +17,13 @@ public class WalletController {
     @Autowired
     private WalletService walletService;
 
+    @GetMapping("/Landing")
+    public ResponseEntity<String> landing(){
+        return ResponseEntity
+                .status(HttpStatus.OK)
+                .body("Application is working fine.");
+    }
+
     @GetMapping
     public ResponseEntity<List<Wallet>> getAllWallets(){
         List<Wallet> wallets =  walletService.getAllWallets();
@@ -26,6 +33,18 @@ public class WalletController {
                     HttpStatus.OK);
         }
         return new ResponseEntity<List<Wallet>>(
+                HttpStatus.NOT_FOUND);
+    }
+
+    @GetMapping (value = "/{id}")
+    public ResponseEntity<Wallet> getWalletById(@PathVariable("id") Integer id){
+        Wallet wallet =  walletService.getWalletById(id);
+        if(wallet != null) {
+            return new ResponseEntity<Wallet>(
+                    wallet,
+                    HttpStatus.OK);
+        }
+        return new ResponseEntity<Wallet>(
                 HttpStatus.NOT_FOUND);
     }
 
@@ -42,7 +61,7 @@ public class WalletController {
             }catch (Exception e) {
                 e.printStackTrace();
                 return new ResponseEntity<Wallet>(
-                        HttpStatus.INTERNAL_SERVER_ERROR);
+                        HttpStatus.BAD_REQUEST);
             }
         }
         return new ResponseEntity<Wallet>(

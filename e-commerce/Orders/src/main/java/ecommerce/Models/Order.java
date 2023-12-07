@@ -40,4 +40,5 @@ public class Order {
     @LastModifiedDate
     @Column(nullable = false)
     private Date updatedAt;
+
 }
