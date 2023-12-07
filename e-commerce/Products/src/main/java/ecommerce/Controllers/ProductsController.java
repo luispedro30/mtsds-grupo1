@@ -4,7 +4,6 @@ import ecommerce.Models.Product;
 import ecommerce.Services.ProductsService;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -17,8 +16,17 @@ public class ProductsController {
     @Autowired
     private ProductsService productService;
 
+    @GetMapping("/Landing")
+    public ResponseEntity<String> landing(){
+        return ResponseEntity
+                .status(HttpStatus.OK)
+                .body("Application is working fine.");
+    }
+
     @PostMapping(value = "/products")
-    private ResponseEntity<Product> addProduct(@RequestBody Product product, @RequestParam ("id") Integer idUser, HttpServletRequest request){
+    private ResponseEntity<Product> addProduct(@RequestBody Product product,
+                                               @RequestParam ("id") Integer idUser,
+                                               HttpServletRequest request){
 
         if(product != null) {
             try {
