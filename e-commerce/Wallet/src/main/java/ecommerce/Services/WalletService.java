@@ -36,10 +36,18 @@ public class WalletService {
                 .orElseThrow(null);
     }
 
+    public Wallet getWalletByUserId(Integer id) {
+        return walletRepository.findByUserId(id);
+    }
+
     public Wallet addWallet(Wallet wallet) throws Exception {
 
         UserDto userDto;
         userDto = getUser(wallet.getUserId());
+
+        if(getWalletByUserId(wallet.getUserId()) != null){
+            throw new Exception("There is already a wallet for this User");
+        }
         return walletRepository.save(wallet);
     }
 

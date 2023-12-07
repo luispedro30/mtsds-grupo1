@@ -78,7 +78,7 @@ public class ProductsControllerTest {
     }
 
     @Test
-    public void  get_all_products_controller_should_return404_when_productList_isEmpty() throws Exception {
+    public void  getAllProductsButEmpty() throws Exception {
         //given
         List<Product> products = new ArrayList<Product>();
 
