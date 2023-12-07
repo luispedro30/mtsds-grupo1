@@ -16,6 +16,13 @@ public class UserController {
     @Autowired
     private UserService userService;
 
+    @GetMapping("/Landing")
+    public ResponseEntity<String> landing(){
+        return ResponseEntity
+                .status(HttpStatus.OK)
+                .body("Application is working fine.");
+    }
+
 
     @GetMapping(value = "/users")
     public ResponseEntity<List<User>> getAllUsers(){

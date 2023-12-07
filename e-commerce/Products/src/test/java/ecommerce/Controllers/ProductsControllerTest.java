@@ -97,7 +97,7 @@ public class ProductsControllerTest {
     }
 
     @Test
-    public void  get_all_products_controller_should_return200_when_validRequest() throws Exception {
+    public void  getAllProducts() throws Exception {
 
         //given
         List<Product> products = new ArrayList<Product>();

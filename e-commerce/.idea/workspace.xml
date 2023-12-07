@@ -6,12 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="c740b900-3ece-4bfe-81b1-fae3f42c5f2b" name="Changes" comment="feat: Add pom configuration to multimodule project.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Products/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Products/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Products/src/main/java/ecommerce/Controllers/ProductsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Products/src/main/java/ecommerce/Controllers/ProductsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Products/src/main/java/ecommerce/Dto/UserDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/Products/src/main/java/ecommerce/Dto/UserDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Products/src/test/java/ecommerce/Controllers/LandingControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Products/src/test/java/ecommerce/Controllers/LandingControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Products/target/classes/ecommerce/Controllers/ProductsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Products/target/classes/ecommerce/Controllers/ProductsController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Products/target/classes/ecommerce/Dto/UserDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/Products/target/classes/ecommerce/Dto/UserDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Products/src/test/java/ecommerce/Controllers/ProductsControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Products/src/test/java/ecommerce/Controllers/ProductsControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Products/target/test-classes/ecommerce/Controllers/LandingControllerTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/users/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/src/main/java/ecommerce/Controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/users/src/main/java/ecommerce/Controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/target/classes/ecommerce/Controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/users/target/classes/ecommerce/Controller/UserController.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,7 +30,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$/.." value="reviews-microservice" />
+        <entry key="$PROJECT_DIR$/.." value="wallet-microservice" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -75,49 +74,10 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.ProductsControllerTest">
-    <configuration name="Products" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ecommerce.Products" />
-      <module name="products" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ecommerce.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Reviews" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ecommerce.Reviews" />
-      <module name="Reviews" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ecommerce.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.UsersControllerTest (1)">
     <configuration name="Users" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ecommerce.Users" />
       <module name="users" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ecommerce.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="wallet" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ecommerce.wallet" />
-      <module name="Wallet" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="ecommerce.*" />
@@ -143,20 +103,66 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="UsersControllerTest (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="users" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ecommerce.Controllers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ecommerce.Controllers" />
+      <option name="MAIN_CLASS_NAME" value="ecommerce.Controllers.UsersControllerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UsersControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="users" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Controllers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Controllers" />
+      <option name="MAIN_CLASS_NAME" value="Controllers.UsersControllerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UsersControllerTest.getLanding" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="users" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Controllers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Controllers" />
+      <option name="MAIN_CLASS_NAME" value="Controllers.UsersControllerTest" />
+      <option name="METHOD_NAME" value="getLanding" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
-      <item itemvalue="Application.Reviews" />
-      <item itemvalue="Application.wallet" />
-      <item itemvalue="Application.Products" />
       <item itemvalue="Application.Users" />
       <item itemvalue="JUnit.ProductsControllerTest" />
+      <item itemvalue="JUnit.UsersControllerTest" />
+      <item itemvalue="JUnit.UsersControllerTest (1)" />
+      <item itemvalue="JUnit.UsersControllerTest.getLanding" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ProductsControllerTest" />
-        <item itemvalue="Application.Products" />
+        <item itemvalue="JUnit.UsersControllerTest (1)" />
+        <item itemvalue="JUnit.UsersControllerTest" />
+        <item itemvalue="JUnit.UsersControllerTest.getLanding" />
         <item itemvalue="Application.Users" />
-        <item itemvalue="Application.wallet" />
-        <item itemvalue="Application.Reviews" />
+        <item itemvalue="JUnit.ProductsControllerTest" />
       </list>
     </recent_temporary>
   </component>
