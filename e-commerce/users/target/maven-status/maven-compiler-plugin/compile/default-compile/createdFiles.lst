@@ -1,7 +1,7 @@
-ecommerce\Enums\Role.class
-ecommerce\Controller\RegisterController.class
-ecommerce\Controller\UserController.class
-ecommerce\Models\User.class
-ecommerce\Users.class
-ecommerce\Repository\UserRepository.class
-ecommerce\Service\UserService.class
+ecommerce/Repository/UserRepository.class
+ecommerce/Controller/UserController.class
+ecommerce/Enums/Role.class
+ecommerce/Service/UserService.class
+ecommerce/Controller/RegisterController.class
+ecommerce/Users.class
+ecommerce/Models/User.class
