@@ -17,6 +17,7 @@ import org.springframework.web.client.HttpServerErrorException;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @Transactional
@@ -74,6 +75,13 @@ public class ShippingService {
         userDto = getAdminFornecedor(userId);
 
         shippingRepository.deleteById(paymentId);
+    }
+
+    public void updatePayment(Integer paymentId, Integer userId, Shipping newShipping) throws Exception {
+        UserDto userDto;
+        userDto = getAdminFornecedor(userId);
+
+        shippingRepository.save(newShipping);
     }
 
     public UserDto getAdminFornecedor(Integer userId) throws Exception {
@@ -228,5 +236,18 @@ public class ShippingService {
 
     public boolean doesNotExistAlready(Integer userId, Integer orderId, Integer paymentId) {
         return !shippingRepository.existsByUserIdAndOrderIdAndPaymentId(userId,orderId, paymentId);
+    }
+
+
+    public Shipping updateShipping(Integer id, Shipping updatedShipping) {
+        Optional<Shipping> optionalShipping = shippingRepository.findById(id);
+        if (optionalShipping.isPresent()) {
+            Shipping existingShipping = optionalShipping.get();
+            existingShipping.setStatus(updatedShipping.getStatus()); // Update other fields similarly
+
+            return shippingRepository.save(existingShipping);
+        } else {
+            return null;
+        }
     }
 }

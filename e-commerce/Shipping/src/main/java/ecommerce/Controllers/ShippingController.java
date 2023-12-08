@@ -4,12 +4,14 @@ import ecommerce.Exceptions.ItemDoesNotExistException;
 
 import ecommerce.Models.Shipping;
 import ecommerce.Services.ShippingService;
+import jakarta.persistence.criteria.CriteriaBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/shipping")
@@ -47,4 +49,16 @@ public class ShippingController {
         return new ResponseEntity<>(newShipping, HttpStatus.CREATED);
 
     }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<Shipping> updateOrder(@PathVariable Integer id,
+                                                @RequestBody Shipping updatedShipping) {
+        Shipping savedShipping = shippingService.updateShipping(id, updatedShipping);
+        if (savedShipping != null) {
+            return ResponseEntity.ok(savedShipping);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
+
 }
