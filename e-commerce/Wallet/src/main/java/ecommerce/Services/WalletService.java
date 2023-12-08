@@ -61,6 +61,17 @@ public class WalletService {
 
         return wallet;
     }
+
+    public Wallet takeMoneyWallet(Integer walletId, float money) throws Exception {
+        Wallet wallet = walletRepository.findById(walletId).orElseThrow(null);
+
+        UserDto userDto;
+        userDto = getUser(wallet.getUserId());
+
+        wallet.setValue(wallet.getValue()-money);
+
+        return wallet;
+    }
     public UserDto getUser(Integer userId) throws Exception {
 
         UserDto userDto;

@@ -18,6 +18,7 @@
         <module>Payment</module>
         <module>api-gateway</module>
         <module>eureka-server</module>
+        <module>Shipping</module>
     </modules>
 
     <properties>
