@@ -16,6 +16,8 @@ public class GatewayConfig {
                 .route("products-route", r -> r.path("/products/**").uri("lb://products"))
                 .route("reviews-route", r -> r.path("/reviews/**").uri("lb://reviews"))
                 .route("wallet-route", r -> r.path("/wallet/**").uri("lb://wallet"))
+                .route("payment-route", r -> r.path("/payment/**").uri("lb://payment"))
+                .route("shipping-route", r -> r.path("/shipping/**").uri("lb://shipping"))
                 .build();
     }
 }

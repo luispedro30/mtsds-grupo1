@@ -1,15 +1,16 @@
 package ecommerce.Services;
 
 import ecommerce.Dto.OrderDto;
-import ecommerce.Dto.ShippingDto;
+import ecommerce.Dto.PaymentDto;
 import ecommerce.Dto.UserDto;
 import ecommerce.Dto.WalletDto;
-import ecommerce.Models.Payment;
-import ecommerce.Repository.PaymentRepository;
+import ecommerce.Models.Shipping;
+import ecommerce.Repository.ShippingRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.http.*;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.HttpServerErrorException;
@@ -19,7 +20,7 @@ import java.util.List;
 
 @Service
 @Transactional
-public class PaymentService {
+public class ShippingService {
 
     @Value("${endpoints.orders-microservice.baseUrl}")
     private String ordersUrl;
@@ -30,81 +31,49 @@ public class PaymentService {
     @Value("${endpoints.wallet-microservice.baseUrl}")
     private String walletUrl;
 
-    @Value("${endpoints.shipping-microservice.baseUrl}")
-    private String shippingUrl;
+    @Value("${endpoints.payment-microservice.baseUrl}")
+    private String paymentUrl;
 
     @Autowired
-    private PaymentRepository paymentRepository;
+    private ShippingRepository shippingRepository;
 
-    public List<Payment> getAllPayments() {
-        return paymentRepository.findAll();
+    public List<Shipping> getAllShipping() {
+        return shippingRepository.findAll();
     }
 
-    public Payment getPaymentById(Integer id) {
-        return paymentRepository
+    public Shipping getShippingById(Integer id) {
+        return shippingRepository
                 .findById(id)
                 .orElseThrow(null);
     }
 
-    public Payment addPayment(Payment payment) throws Exception {
+    public Shipping addPayment(Shipping shipping) throws Exception {
 
         UserDto userDto;
-        userDto = getUser(payment.getUserId());
+        userDto = getUser(shipping.getUserId());
 
         OrderDto orderDto;
-        orderDto = getOrder(payment.getOrderId());
+        orderDto = getOrder(shipping.getOrderId());
 
         WalletDto walletDto;
-        walletDto = getWallet(payment.getUserId());
+        walletDto = getWallet(shipping.getUserId());
 
-        payment.setPriceTotal(orderDto.getPriceTotal());
+        //PaymentDto paymentDto;
+        //paymentDto = getPayment(shipping.getPaymentId());
 
-        if(!doesNotExistAlready(payment.getUserId(), payment.getOrderId())){
-            throw new Exception("This payment already exists");
+        if(!doesNotExistAlready(shipping.getUserId(), shipping.getOrderId(), shipping.getPaymentId())){
+            throw new Exception("This shipping already exists");
         }
 
-        RestTemplate restTemplate = new RestTemplate();
-        restTemplate.postForEntity(walletUrl
-                + "/takeMoney/"
-                + walletDto.getId() + "?money=" + payment.getPriceTotal(),"",WalletDto.class);
 
-        paymentRepository.save(payment);
-
-        RestTemplate restTemplate2 = new RestTemplate();
-
-        HttpHeaders headers = new HttpHeaders();
-        headers.setContentType(MediaType.APPLICATION_JSON);
-
-
-        String requestJson = "{\"paymentId\":"+payment.getPaymentId()
-                +",\"orderId\":"+payment.getOrderId()
-                +",\"userId\":"+payment.getUserId()
-                +",\"status\":\"REGISTED\"}";
-
-
-        HttpEntity<String> request = new HttpEntity<>(requestJson, headers);
-
-        System.out.println("aqui");
-
-        try {
-            ResponseEntity<ShippingDto> response = restTemplate2.postForEntity(
-                    shippingUrl,
-                    request,
-                    ShippingDto.class
-            );
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-            throw new Exception(e.getMessage());
-        }
-
-        return payment;
+        return shippingRepository.save(shipping);
     }
 
     public void deletePayment(Integer paymentId, Integer userId) throws Exception {
         UserDto userDto;
         userDto = getAdminFornecedor(userId);
 
-        paymentRepository.deleteById(paymentId);
+        shippingRepository.deleteById(paymentId);
     }
 
     public UserDto getAdminFornecedor(Integer userId) throws Exception {
@@ -229,7 +198,35 @@ public class PaymentService {
 
     }
 
-    public boolean doesNotExistAlready(Integer userId, Integer orderId ) {
-        return !paymentRepository.existsByUserIdAndOrderId(userId,orderId);
+    /*public PaymentDto getPayment(Integer paymentId) throws Exception {
+
+        PaymentDto paymentDto;
+        RestTemplate restTemplate = new RestTemplate();
+
+        try {
+            ResponseEntity<PaymentDto> response = restTemplate.getForEntity(
+                    paymentUrl + "/{paymentId}",
+                    PaymentDto.class,
+                    paymentId
+            );
+            return response.getBody();
+        }
+        catch (HttpClientErrorException | HttpServerErrorException e){
+            if(e.getStatusCode() == HttpStatus.BAD_REQUEST){
+                throw new Exception(e.getResponseBodyAsString());
+            }
+            if(e.getStatusCode() == HttpStatus.NOT_FOUND){
+                throw new Exception(e.getResponseBodyAsString());
+            }
+            else{
+                throw new Exception(e.getResponseBodyAsString());
+            }
+        }
+
+
+    }*/
+
+    public boolean doesNotExistAlready(Integer userId, Integer orderId, Integer paymentId) {
+        return !shippingRepository.existsByUserIdAndOrderIdAndPaymentId(userId,orderId, paymentId);
     }
 }

@@ -11,11 +11,19 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/payments")
+@RequestMapping("/payment")
 public class PaymentController {
 
     @Autowired
     private PaymentService paymentService;
+
+    @GetMapping("/Landing")
+    public ResponseEntity<String> landing(){
+        return ResponseEntity
+                .status(HttpStatus.OK)
+                .body("Application is working fine.");
+
+    }
 
     @GetMapping
     ResponseEntity<List<Payment>> getAll(){

@@ -13,6 +13,7 @@
         <module name="Authentication" />
         <module name="Wallet" />
         <module name="api-gateway" />
+        <module name="Shipping" />
         <module name="eureka-server" />
         <module name="users" />
         <module name="products" />

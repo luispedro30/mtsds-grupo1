@@ -48,6 +48,18 @@ public class WalletController {
                 HttpStatus.NOT_FOUND);
     }
 
+    @GetMapping (value = "/userId/{id}")
+    public ResponseEntity<Wallet> getWalletByUserId(@PathVariable("id") Integer id){
+        Wallet wallet =  walletService.getWalletByUserId(id);
+        if(wallet != null) {
+            return new ResponseEntity<Wallet>(
+                    wallet,
+                    HttpStatus.OK);
+        }
+        return new ResponseEntity<Wallet>(
+                HttpStatus.NOT_FOUND);
+    }
+
     @PostMapping
     private ResponseEntity<Wallet> addWallet(@RequestBody Wallet wallet,
                                              HttpServletRequest request){
@@ -73,6 +85,18 @@ public class WalletController {
                                             @RequestParam float money,
                                             HttpServletRequest request) throws Exception {
         Wallet wallet = walletService.addMoneyWallet(idWallet, money);
+
+        return new ResponseEntity<Wallet>(
+                wallet,
+                HttpStatus.OK);
+
+    }
+
+    @PostMapping(value = "/takeMoney/{id}")
+    private ResponseEntity<Wallet> takeMoney(@PathVariable ("id") Integer idWallet,
+                                            @RequestParam float money,
+                                            HttpServletRequest request) throws Exception {
+        Wallet wallet = walletService.takeMoneyWallet(idWallet, money);
 
         return new ResponseEntity<Wallet>(
                 wallet,
