@@ -7,4 +7,5 @@ ecommerce\Auditing\JpaAuditingConfiguration.class
 ecommerce\Dto\OrderDto.class
 ecommerce\Repository\PaymentRepository.class
 ecommerce\Services\PaymentService.class
+ecommerce\Dto\ShippingDto.class
 ecommerce\Dto\WalletDto.class

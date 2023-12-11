@@ -1,0 +1,29 @@
+name: e-commerce
+services:
+  eureka-server:
+    container_name: eureka-server
+    build:
+      context: eureka-server
+    image: eureka-server
+    environment:
+      SPRING_PROFILES_ACTIVE: 'docker'
+    restart: unless-stopped
+    networks:
+      - e-commerce
+
+  users:
+    container_name: users
+    build:
+      context: users
+    image: users
+    environment:
+      SPRING_PROFILES_ACTIVE: 'docker'
+    restart: unless-stopped
+    depends_on:
+      - eureka-server
+    networks:
+      - e-commerce
+
+networks:
+  e-commerce:
+    driver: bridge

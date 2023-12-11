@@ -181,20 +181,28 @@ public class UsersControllerTest {
                 1,
                 Role.ADMIN);
 
-        users.add(user1);
+        User user2= new User(2,
+                "Luis",
+                "password",
+                1,
+                Role.ADMIN);
 
+        users.add(user1);
+        users.add(user2);
         //when
-        when(userService.getUserByName("Luis")).thenReturn(user1);
+        when(userService.getAllUserByName("Luis")).thenReturn(users);
 
         //then
         mvc.perform(MockMvcRequestBuilders
                         .get("/users?name=Luis")
                         .accept((MediaType.APPLICATION_JSON)))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$.id").value(1))
-                .andExpect(jsonPath("$.name").value("Luis"));
+                .andExpect(jsonPath("$[0].id").value(1))
+                .andExpect(jsonPath("$[0].name").value("Luis"))
+                .andExpect(jsonPath("$[1].id").value(2))
+                .andExpect(jsonPath("$[1].name").value("Luis"));
 
-        verify(userService, times(1)).getUserByName("Luis");
+        verify(userService, times(1)).getAllUserByName("Luis");
         verifyNoMoreInteractions(userService);
     }
 

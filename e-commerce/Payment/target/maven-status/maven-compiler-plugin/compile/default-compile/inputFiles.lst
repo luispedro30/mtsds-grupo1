@@ -4,6 +4,7 @@ D:\mtsds-grupo1\e-commerce\Payment\src\main\java\ecommerce\Auditing\JpaAuditingC
 D:\mtsds-grupo1\e-commerce\Payment\src\main\java\ecommerce\Repository\PaymentRepository.java
 D:\mtsds-grupo1\e-commerce\Payment\src\main\java\ecommerce\Dto\WalletDto.java
 D:\mtsds-grupo1\e-commerce\Payment\src\main\java\ecommerce\PaymentClass.java
+D:\mtsds-grupo1\e-commerce\Payment\src\main\java\ecommerce\Dto\ShippingDto.java
 D:\mtsds-grupo1\e-commerce\Payment\src\main\java\ecommerce\Exceptions\ItemDoesNotExistException.java
 D:\mtsds-grupo1\e-commerce\Payment\src\main\java\ecommerce\Models\Payment.java
 D:\mtsds-grupo1\e-commerce\Payment\src\main\java\ecommerce\Services\PaymentService.java

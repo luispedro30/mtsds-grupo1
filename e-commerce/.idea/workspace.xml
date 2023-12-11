@@ -5,11 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e63fab2e-ccd9-4599-8c37-fc239380bb02" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Shipping/src/main/java/ecommerce/Controllers/ShippingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Shipping/src/main/java/ecommerce/Controllers/ShippingController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Shipping/src/main/java/ecommerce/Services/ShippingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Shipping/src/main/java/ecommerce/Services/ShippingService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Shipping/target/classes/ecommerce/Controllers/ShippingController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Shipping/target/classes/ecommerce/Controllers/ShippingController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Shipping/target/classes/ecommerce/Services/ShippingService.class" beforeDir="false" afterPath="$PROJECT_DIR$/Shipping/target/classes/ecommerce/Services/ShippingService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Payment/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Payment/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Payment/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Payment/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eureka-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-server/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/users/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/src/main/java/ecommerce/Controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/users/src/main/java/ecommerce/Controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/src/main/java/ecommerce/Models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/users/src/main/java/ecommerce/Models/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/src/main/java/ecommerce/Repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/users/src/main/java/ecommerce/Repository/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/src/main/java/ecommerce/Service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/users/src/main/java/ecommerce/Service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/users/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/src/test/java/ecommerce/Controllers/UsersControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/users/src/test/java/ecommerce/Controllers/UsersControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/users/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/target/classes/ecommerce/Controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/users/target/classes/ecommerce/Controller/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/target/classes/ecommerce/Models/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/users/target/classes/ecommerce/Models/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/target/classes/ecommerce/Repository/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/users/target/classes/ecommerce/Repository/UserRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/target/classes/ecommerce/Service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/users/target/classes/ecommerce/Service/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/users/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,20 +50,34 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Payment/src/main/java/ecommerce/Services/PaymentService.java" root0="FORCE_HIGHLIGHTING" />
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2ZJDjbqAMb29jS57xJlttZP8sNa" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
   </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
     "jdk.selected.JAVA_MODULE": "20",
-    "last_opened_file_path": "D:/mtsds-grupo1/e-commerce/Shipping/src/main/java/ecommerce/Dto",
+    "last_opened_file_path": "D:/mtsds-grupo1/e-commerce/users/src/main/java/ecommerce",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0"
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "MavenSettings"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\mtsds-grupo1\e-commerce\users\src\main\java\ecommerce" />
+      <recent name="D:\mtsds-grupo1\e-commerce\eureka-server" />
+      <recent name="D:\mtsds-grupo1\e-commerce\users" />
       <recent name="D:\mtsds-grupo1\e-commerce\Shipping\src\main\java\ecommerce\Dto" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -59,6 +87,11 @@
       <recent name="ecommerce.Auditing" />
     </key>
   </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="mvn clean" />
+    </option>
+  </component>
   <component name="RunDashboard">
     <option name="configurationTypes">
       <set>
@@ -66,20 +99,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Application.PaymentClass">
-    <configuration name="ApiGateway" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ecommerce.ApiGateway" />
-      <module name="api-gateway" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ecommerce.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.UsersControllerTest">
     <configuration name="EurekaServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ecommerce.EurekaServer" />
       <module name="eureka-server" />
@@ -106,6 +126,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Users" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ecommerce.Users" />
+      <module name="users" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ecommerce.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="shipping" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ecommerce.shipping" />
       <module name="Shipping" />
@@ -119,22 +152,47 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="UsersControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="users" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ecommerce.Controllers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ecommerce.Controllers" />
+      <option name="MAIN_CLASS_NAME" value="ecommerce.Controllers.UsersControllerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
-      <item itemvalue="Application.ApiGateway" />
+      <item itemvalue="Application.Users" />
       <item itemvalue="Application.EurekaServer" />
       <item itemvalue="Application.shipping" />
       <item itemvalue="Application.PaymentClass" />
+      <item itemvalue="JUnit.UsersControllerTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Users" />
+        <item itemvalue="JUnit.UsersControllerTest" />
+        <item itemvalue="Application.EurekaServer" />
         <item itemvalue="Application.shipping" />
         <item itemvalue="Application.PaymentClass" />
-        <item itemvalue="Application.ApiGateway" />
-        <item itemvalue="Application.EurekaServer" />
       </list>
     </recent_temporary>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e63fab2e-ccd9-4599-8c37-fc239380bb02" name="Changes" comment="" />
+      <created>1702131429289</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1702131429289</updated>
+    </task>
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

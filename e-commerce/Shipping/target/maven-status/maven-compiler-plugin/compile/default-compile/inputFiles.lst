@@ -1,0 +1,12 @@
+D:\mtsds-grupo1\e-commerce\Shipping\src\main\java\ecommerce\Models\Shipping.java
+D:\mtsds-grupo1\e-commerce\Shipping\src\main\java\ecommerce\Repository\ShippingRepository.java
+D:\mtsds-grupo1\e-commerce\Shipping\src\main\java\ecommerce\Dto\UserDto.java
+D:\mtsds-grupo1\e-commerce\Shipping\src\main\java\ecommerce\Services\ShippingService.java
+D:\mtsds-grupo1\e-commerce\Shipping\src\main\java\ecommerce\Controllers\ShippingController.java
+D:\mtsds-grupo1\e-commerce\Shipping\src\main\java\ecommerce\Exceptions\ItemDoesNotExistException.java
+D:\mtsds-grupo1\e-commerce\Shipping\src\main\java\ecommerce\Auditing\JpaAuditingConfiguration.java
+D:\mtsds-grupo1\e-commerce\Shipping\src\main\java\ecommerce\Enum\Status.java
+D:\mtsds-grupo1\e-commerce\Shipping\src\main\java\ecommerce\Dto\WalletDto.java
+D:\mtsds-grupo1\e-commerce\Shipping\src\main\java\ecommerce\Dto\PaymentDto.java
+D:\mtsds-grupo1\e-commerce\Shipping\src\main\java\ecommerce\shipping.java
+D:\mtsds-grupo1\e-commerce\Shipping\src\main\java\ecommerce\Dto\OrderDto.java
