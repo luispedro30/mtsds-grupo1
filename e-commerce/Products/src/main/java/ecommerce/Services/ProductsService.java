@@ -1,6 +1,7 @@
 package ecommerce.Services;
 
 import ecommerce.Dto.UserDto;
+import ecommerce.Enums.Category;
 import ecommerce.Models.Product;
 import ecommerce.Repository.ProductsRepository;
 import jakarta.transaction.Transactional;
@@ -30,7 +31,8 @@ public class ProductsService   {
     }
 
     public List<Product> getAllProductByCategory(String category) {
-        return productRepository.findAllByCategory(category);
+        Category categoryFinal = Category.valueOf(category);
+        return productRepository.findAllByCategory(categoryFinal);
     }
 
 
