@@ -5,3 +5,4 @@ ecommerce\Models\User.class
 ecommerce\Users.class
 ecommerce\Repository\UserRepository.class
 ecommerce\Service\UserService.class
+ecommerce\Exceptions\AlreadyExistingException.class

@@ -1,0 +1,12 @@
+ecommerce\Repository\ShippingRepository.class
+ecommerce\Exceptions\ItemDoesNotExistException.class
+ecommerce\Auditing\JpaAuditingConfiguration.class
+ecommerce\Dto\OrderDto.class
+ecommerce\shipping.class
+ecommerce\Dto\WalletDto.class
+ecommerce\Models\Shipping.class
+ecommerce\Enum\Status.class
+ecommerce\Dto\UserDto.class
+ecommerce\Services\ShippingService.class
+ecommerce\Controllers\ShippingController.class
+ecommerce\Dto\PaymentDto.class

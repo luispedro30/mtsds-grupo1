@@ -22,4 +22,10 @@ public class User {
     private Role role;
 
 
+    public User(String name, String encryptedPassword, int active, Role role) {
+        this.name = name;
+        this.password = encryptedPassword;
+        this.active = active;
+        this.role = role;
+    }
 }

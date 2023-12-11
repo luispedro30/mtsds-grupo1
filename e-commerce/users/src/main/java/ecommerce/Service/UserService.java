@@ -1,5 +1,6 @@
 package ecommerce.Service;
 
+import ecommerce.Exceptions.AlreadyExistingException;
 import ecommerce.Models.User;
 import ecommerce.Repository.UserRepository;
 import jakarta.transaction.Transactional;
@@ -24,11 +25,11 @@ public class UserService {
         return userRepository.findById(id).orElseThrow(() -> new Exception("User não existe"));
     }
 
-    public User getUserByName(String userName) {
-        return userRepository.findByName(userName);
+    public List<User> getAllUserByName(String userName) {
+        return userRepository.findAllByName(userName);
     }
 
-    public User saveUser(User user) {
+    public User saveUser(User user) throws AlreadyExistingException {
         return userRepository.save(user);
     }
 
