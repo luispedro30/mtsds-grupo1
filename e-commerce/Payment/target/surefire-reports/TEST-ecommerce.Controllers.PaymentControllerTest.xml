@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="5" failures="0" name="ecommerce.Controllers.PaymentControllerTest" time="0.297" errors="0" skipped="0">
+<testsuite tests="5" failures="0" name="ecommerce.Controllers.PaymentControllerTest" time="0.273" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="idea.version" value="2022.2.2"/>
     <property name="java.vm.version" value="20.0.2+9-78"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-20\bin"/>
-    <property name="maven.multiModuleProjectDirectory" value="D:\mtsds-grupo1\e-commerce"/>
+    <property name="maven.multiModuleProjectDirectory" value="D:\mtsds-grupo1-github\mtsds-grupo1\e-commerce"/>
     <property name="java.vm.vendor" value="Oracle Corporation"/>
     <property name="java.vendor.url" value="https://java.oracle.com/"/>
     <property name="path.separator" value=";"/>
@@ -15,7 +15,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.script" value=""/>
     <property name="sun.os.patch.level" value=""/>
-    <property name="user.dir" value="D:\mtsds-grupo1\e-commerce"/>
+    <property name="user.dir" value="D:\mtsds-grupo1-github\mtsds-grupo1\e-commerce"/>
     <property name="java.vm.compressedOopsMode" value="Zero based"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
     <property name="java.runtime.version" value="20.0.2+9-78"/>
@@ -64,9 +64,9 @@
     <property name="sun.stdout.encoding" value="UTF-8"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="ecommerce.Controllers.PaymentControllerTest" name="createPaymentWithAlreadyExistingPayment" time="0.247"/>
-  <testcase classname="ecommerce.Controllers.PaymentControllerTest" name="getAllPaymentButEmpty" time="0.009"/>
-  <testcase classname="ecommerce.Controllers.PaymentControllerTest" name="getAllPayments" time="0.015"/>
+  <testcase classname="ecommerce.Controllers.PaymentControllerTest" name="createPaymentWithAlreadyExistingPayment" time="0.201"/>
+  <testcase classname="ecommerce.Controllers.PaymentControllerTest" name="getAllPaymentButEmpty" time="0.029"/>
+  <testcase classname="ecommerce.Controllers.PaymentControllerTest" name="getAllPayments" time="0.017"/>
   <testcase classname="ecommerce.Controllers.PaymentControllerTest" name="getLanding" time="0.015"/>
   <testcase classname="ecommerce.Controllers.PaymentControllerTest" name="createPayment" time="0.011"/>
 </testsuite>

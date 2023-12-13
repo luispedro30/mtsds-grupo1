@@ -1,5 +1,6 @@
 package ecommerce.Models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -17,7 +18,7 @@ public class User {
 
     private String name;
 
-    private boolean active;
+    private int active;
 
     private String role;
 

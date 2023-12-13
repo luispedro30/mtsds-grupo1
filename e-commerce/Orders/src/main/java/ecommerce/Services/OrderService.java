@@ -5,7 +5,9 @@ import ecommerce.Dto.UserDto;
 import ecommerce.Exceptions.ItemDoesNotExistException;
 import ecommerce.Models.Order;
 import ecommerce.Models.Products;
+import ecommerce.Models.User;
 import ecommerce.Repository.OrderRepository;
+import ecommerce.Repository.UserRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -31,6 +33,9 @@ public class OrderService {
     @Autowired
     OrderRepository orderRepository;
 
+    @Autowired
+    UserRepository userRepository;
+
     public List<Order> getAll(){
         return orderRepository.findAll();
     }
@@ -44,6 +49,7 @@ public class OrderService {
         //user must exist
         UserDto userDto;
         userDto = getUser(order.getUserId());
+
 
         double totalPrice = 0;
 
@@ -62,8 +68,10 @@ public class OrderService {
         order.setPriceTotal(totalPrice);
 
 
-
-
+        userRepository.save(new User(userDto.getUserId(),
+                userDto.getName(),
+                userDto.getActive(),
+                userDto.getRole()));
         return orderRepository.save(order);
     }
 

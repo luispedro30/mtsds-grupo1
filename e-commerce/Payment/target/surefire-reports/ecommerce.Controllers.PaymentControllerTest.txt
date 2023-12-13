@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: ecommerce.Controllers.PaymentControllerTest
 -------------------------------------------------------------------------------
-Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 13.973 sec
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 9.902 sec
