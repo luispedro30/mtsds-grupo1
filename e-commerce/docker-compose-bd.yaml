@@ -1,0 +1,44 @@
+name: e-commerce
+services:
+  bd-products:
+    image: postgres:16.0
+    container_name: bd-products
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: postgres123
+      POSTGRES_DB: products
+    ports:
+      - "5436:5432"
+    networks:
+      - e-commerce
+    volumes:
+      - D:/Docker/Postgres/products/:/var/lib/postgresql/data
+
+  bd-users:
+    image: postgres:16.0
+    container_name: bd-users
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: postgres123
+      POSTGRES_DB: users
+    ports:
+      - "5438:5432"
+    networks:
+      - e-commerce
+    volumes:
+      - D:/Docker/Postgres/users/:/var/lib/postgresql/data
+
+  pgadmin:
+    image: dpage/pgadmin4:7.8
+    container_name: pgadmin
+    environment:
+      PGADMIN_DEFAULT_EMAIL: 8220025@estg.ipp.pt
+      PGADMIN_DEFAULT_PASSWORD: pgadmin123
+    networks:
+      - e-commerce
+    ports:
+      - "9999:80"
+
+networks:
+  e-commerce:
+    driver: bridge
