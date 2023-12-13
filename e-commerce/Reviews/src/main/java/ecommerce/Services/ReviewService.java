@@ -56,13 +56,15 @@ public class ReviewService {
         int productIdToCheck = review.getProductId();
 
         boolean allContainProductId = true;
+        Integer countCheck = 0;
         for (LinkedHashMap<String, Object> product : products) {
-            if (!product.containsKey("productId") || !product.get("productId").equals(productIdToCheck)) {
-                allContainProductId = false;
+            if (product.get("productId").equals(productIdToCheck)){
+                countCheck += 1;
                 break;
             }
         }
-        if (allContainProductId) {
+        System.out.println(countCheck);
+        if (countCheck != 0) {
             System.out.println("All products contain the productId: " + productIdToCheck);
             Review save = reviewRepository.save(review);
 
@@ -73,6 +75,9 @@ public class ReviewService {
 
         }
     }
+
+
+
 
     public void deleteReview(Integer reviewId, Integer userId) throws Exception {
         UserDto userDto;

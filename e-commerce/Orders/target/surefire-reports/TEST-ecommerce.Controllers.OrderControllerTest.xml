@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="3" failures="0" name="ecommerce.Controllers.OrderControllerTest" time="0.172" errors="0" skipped="0">
+<testsuite tests="3" failures="0" name="ecommerce.Controllers.OrderControllerTest" time="0.221" errors="0" skipped="0">
   <properties>
-    <property name="idea.version" value="2022.2.2"/>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="idea.version" value="2022.2.2"/>
     <property name="java.vm.version" value="20.0.2+9-78"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-20\bin"/>
-    <property name="maven.multiModuleProjectDirectory" value="D:\mtsds-grupo1-github\mtsds-grupo1\e-commerce\Orders"/>
+    <property name="maven.multiModuleProjectDirectory" value="D:\mtsds-grupo1-github\mtsds-grupo1\e-commerce"/>
     <property name="java.vm.vendor" value="Oracle Corporation"/>
     <property name="java.vendor.url" value="https://java.oracle.com/"/>
-    <property name="guice.disable.misplaced.annotation.check" value="true"/>
     <property name="path.separator" value=";"/>
+    <property name="guice.disable.misplaced.annotation.check" value="true"/>
     <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
-    <property name="sun.os.patch.level" value=""/>
-    <property name="user.script" value=""/>
     <property name="user.country" value="PT"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
-    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="user.dir" value="D:\mtsds-grupo1-github\mtsds-grupo1\e-commerce\Orders"/>
+    <property name="user.script" value=""/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="user.dir" value="D:\mtsds-grupo1-github\mtsds-grupo1\e-commerce"/>
     <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
     <property name="java.runtime.version" value="20.0.2+9-78"/>
     <property name="os.arch" value="amd64"/>
     <property name="java.io.tmpdir" value="C:\Users\luisp\AppData\Local\Temp\"/>
@@ -25,8 +25,8 @@
 "/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="user.variant" value=""/>
-    <property name="stderr.encoding" value="UTF-8"/>
     <property name="os.name" value="Windows 11"/>
+    <property name="stderr.encoding" value="UTF-8"/>
     <property name="maven.ext.class.path" value="D:\IntelliJ IDEA Community Edition 2022.2.2\plugins\maven\lib\maven-event-listener.jar"/>
     <property name="classworlds.conf" value="D:\IntelliJ IDEA Community Edition 2022.2.2\plugins\maven\lib\maven3\bin\m2.conf"/>
     <property name="sun.jnu.encoding" value="Cp1252"/>
@@ -42,8 +42,8 @@
     <property name="user.timezone" value="Europe/Lisbon"/>
     <property name="file.encoding" value="UTF-8"/>
     <property name="java.specification.version" value="20"/>
-    <property name="user.name" value="luisp"/>
     <property name="java.class.path" value="D:\IntelliJ IDEA Community Edition 2022.2.2\plugins\maven\lib\maven3\boot\plexus-classworlds-2.6.0.jar;D:\IntelliJ IDEA Community Edition 2022.2.2\plugins\maven\lib\maven3\boot\plexus-classworlds.license"/>
+    <property name="user.name" value="luisp"/>
     <property name="java.vm.specification.version" value="20"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="sun.java.command" value="org.codehaus.classworlds.Launcher -Didea.version=2022.2.2 package"/>
@@ -59,12 +59,12 @@
     <property name="file.separator" value="\"/>
     <property name="java.version.date" value="2023-07-18"/>
     <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
-    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="sun.cpu.endian" value="little"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="sun.stdout.encoding" value="UTF-8"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="ecommerce.Controllers.OrderControllerTest" name="getAllOrdersButEmpty" time="0.112"/>
-  <testcase classname="ecommerce.Controllers.OrderControllerTest" name="getAllOrders" time="0.046"/>
-  <testcase classname="ecommerce.Controllers.OrderControllerTest" name="getLanding" time="0.014"/>
+  <testcase classname="ecommerce.Controllers.OrderControllerTest" name="getAllOrdersButEmpty" time="0.136"/>
+  <testcase classname="ecommerce.Controllers.OrderControllerTest" name="getAllOrders" time="0.074"/>
+  <testcase classname="ecommerce.Controllers.OrderControllerTest" name="getLanding" time="0.011"/>
 </testsuite>

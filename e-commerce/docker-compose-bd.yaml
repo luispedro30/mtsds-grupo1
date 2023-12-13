@@ -56,6 +56,47 @@ services:
     volumes:
       - D:/Docker/Postgres/wallets/:/var/lib/postgresql/data
 
+  bd-payments:
+    image: postgres:16.0
+    container_name: bd-payments
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: postgres123
+      POSTGRES_DB: payments
+    ports:
+      - "5440:5432"
+    networks:
+      - e-commerce
+    volumes:
+      - D:/Docker/Postgres/payments/:/var/lib/postgresql/data
+
+  bd-reviews:
+    image: postgres:16.0
+    container_name: bd-reviews
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: postgres123
+      POSTGRES_DB: reviews
+    ports:
+      - "5441:5432"
+    networks:
+      - e-commerce
+    volumes:
+      - D:/Docker/Postgres/reviews/:/var/lib/postgresql/data
+
+  bd-shippings:
+    image: postgres:16.0
+    container_name: bd-shippings
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: postgres123
+      POSTGRES_DB: shippings
+    ports:
+      - "5442:5432"
+    networks:
+      - e-commerce
+    volumes:
+      - D:/Docker/Postgres/shippings/:/var/lib/postgresql/data
   pgadmin:
     image: dpage/pgadmin4:7.8
     container_name: pgadmin

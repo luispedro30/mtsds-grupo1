@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="5" failures="0" name="ecommerce.Controllers.PaymentControllerTest" time="0.273" errors="0" skipped="0">
+<testsuite tests="5" failures="0" name="ecommerce.Controllers.PaymentControllerTest" time="0.288" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="idea.version" value="2022.2.2"/>
@@ -64,9 +64,9 @@
     <property name="sun.stdout.encoding" value="UTF-8"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="ecommerce.Controllers.PaymentControllerTest" name="createPaymentWithAlreadyExistingPayment" time="0.201"/>
-  <testcase classname="ecommerce.Controllers.PaymentControllerTest" name="getAllPaymentButEmpty" time="0.029"/>
-  <testcase classname="ecommerce.Controllers.PaymentControllerTest" name="getAllPayments" time="0.017"/>
+  <testcase classname="ecommerce.Controllers.PaymentControllerTest" name="createPaymentWithAlreadyExistingPayment" time="0.237"/>
+  <testcase classname="ecommerce.Controllers.PaymentControllerTest" name="getAllPaymentButEmpty" time="0.01"/>
+  <testcase classname="ecommerce.Controllers.PaymentControllerTest" name="getAllPayments" time="0.014"/>
   <testcase classname="ecommerce.Controllers.PaymentControllerTest" name="getLanding" time="0.015"/>
-  <testcase classname="ecommerce.Controllers.PaymentControllerTest" name="createPayment" time="0.011"/>
+  <testcase classname="ecommerce.Controllers.PaymentControllerTest" name="createPayment" time="0.012"/>
 </testsuite>
