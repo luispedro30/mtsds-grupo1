@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="6" failures="1" name="ecommerce.Controllers.WalletControllerTest" time="0.315" errors="0" skipped="0">
+<testsuite tests="5" failures="0" name="ecommerce.Controllers.WalletControllerTest" time="0.276" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="idea.version" value="2022.2.2"/>
     <property name="java.vm.version" value="20.0.2+9-78"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-20\bin"/>
-    <property name="maven.multiModuleProjectDirectory" value="D:\mtsds-grupo1\e-commerce"/>
+    <property name="maven.multiModuleProjectDirectory" value="D:\mtsds-grupo1-github\mtsds-grupo1\e-commerce"/>
     <property name="java.vm.vendor" value="Oracle Corporation"/>
     <property name="java.vendor.url" value="https://java.oracle.com/"/>
     <property name="path.separator" value=";"/>
@@ -15,7 +15,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.script" value=""/>
     <property name="sun.os.patch.level" value=""/>
-    <property name="user.dir" value="D:\mtsds-grupo1\e-commerce"/>
+    <property name="user.dir" value="D:\mtsds-grupo1-github\mtsds-grupo1\e-commerce"/>
     <property name="java.vm.compressedOopsMode" value="Zero based"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
     <property name="java.runtime.version" value="20.0.2+9-78"/>
@@ -31,7 +31,7 @@
     <property name="classworlds.conf" value="D:\IntelliJ IDEA Community Edition 2022.2.2\plugins\maven\lib\maven3\bin\m2.conf"/>
     <property name="sun.jnu.encoding" value="Cp1252"/>
     <property name="stdout.encoding" value="UTF-8"/>
-    <property name="java.library.path" value="C:\Program Files\Java\jdk-20\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Users\luisp\Downloads\WINDOWS.X64_193000_db_home\bin;D:\WINDOWS.X64_193000_client_home\bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\dotnet\;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\Microsoft SQL Server\150\DTS\Binn\;C:\Program Files (x86)\Microsoft SQL Server\150\DTS\Binn\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\110\DTS\Binn\;C:\Program Files (x86)\Microsoft SQL Server\120\DTS\Binn\;C:\Program Files (x86)\Microsoft SQL Server\130\DTS\Binn\;C:\Program Files (x86)\Microsoft SQL Server\140\DTS\Binn\;C:\Program Files (x86)\Microsoft SQL Server\160\DTS\Binn\;C:\Program Files\nodejs\;D:\Installs\;C:\Program Files\Git\cmd;D:\vagrant\bin;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\luisp\AppData\Local\Microsoft\WindowsApps;D:\IntelliJ IDEA Community Edition 2022.2.2\bin;;C:\Users\luisp\.dotnet\tools;D:\DataSpell 2022.2.2\bin;;C:\Program Files\Azure Data Studio\bin;C:\Users\luisp\AppData\Local\GitHubDesktop\bin;C:\Users\luisp\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\luisp\AppData\Roaming\npm;."/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk-20\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Users\luisp\Downloads\WINDOWS.X64_193000_db_home\bin;D:\WINDOWS.X64_193000_client_home\bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\dotnet\;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\Microsoft SQL Server\150\DTS\Binn\;C:\Program Files (x86)\Microsoft SQL Server\150\DTS\Binn\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\nodejs\;D:\Installs\;C:\Program Files\Git\cmd;D:\vagrant\bin;C:\minikube;C:\ProgramData\chocolatey\bin;C:\Users\luisp\AppData\Local\Microsoft\WindowsApps;D:\IntelliJ IDEA Community Edition 2022.2.2\bin;;C:\Users\luisp\.dotnet\tools;D:\DataSpell 2022.2.2\bin;;C:\Program Files\Azure Data Studio\bin;C:\Users\luisp\AppData\Local\GitHubDesktop\bin;C:\Users\luisp\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\luisp\AppData\Roaming\npm;."/>
     <property name="maven.conf" value="D:\IntelliJ IDEA Community Edition 2022.2.2\plugins\maven\lib\maven3/conf"/>
     <property name="jdk.debug" value="release"/>
     <property name="java.class.version" value="64.0"/>
@@ -64,128 +64,9 @@
     <property name="sun.stdout.encoding" value="UTF-8"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="ecommerce.Controllers.WalletControllerTest" name="getAllWallets" time="0.203"/>
-  <testcase classname="ecommerce.Controllers.WalletControllerTest" name="getAllWalletsButEmpty" time="0.01"/>
-  <testcase classname="ecommerce.Controllers.WalletControllerTest" name="addMoneyWallet" time="0.061"/>
-  <testcase classname="ecommerce.Controllers.WalletControllerTest" name="createWalletWithAlreadyExistingUser" time="0.02">
-    <failure message="Status expected:&lt;400&gt; but was:&lt;201&gt;" type="java.lang.AssertionError">java.lang.AssertionError: Status expected:&lt;400&gt; but was:&lt;201&gt;
-	at org.springframework.test.util.AssertionErrors.fail(AssertionErrors.java:59)
-	at org.springframework.test.util.AssertionErrors.assertEquals(AssertionErrors.java:122)
-	at org.springframework.test.web.servlet.result.StatusResultMatchers.lambda$matcher$9(StatusResultMatchers.java:637)
-	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:214)
-	at ecommerce.Controllers.WalletControllerTest.createWalletWithAlreadyExistingUser(WalletControllerTest.java:186)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
-	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
-	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
-	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
-	at org.springframework.test.context.junit4.statements.RunBeforeTestExecutionCallbacks.evaluate(RunBeforeTestExecutionCallbacks.java:76)
-	at org.springframework.test.context.junit4.statements.RunAfterTestExecutionCallbacks.evaluate(RunAfterTestExecutionCallbacks.java:84)
-	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
-	at org.springframework.test.context.junit4.statements.RunBeforeTestMethodCallbacks.evaluate(RunBeforeTestMethodCallbacks.java:75)
-	at org.springframework.test.context.junit4.statements.RunAfterTestMethodCallbacks.evaluate(RunAfterTestMethodCallbacks.java:86)
-	at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:84)
-	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:252)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97)
-	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
-	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
-	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
-	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
-	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:191)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
-	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
-	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
-	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
-	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
-</failure>
-    <system-out>
-MockHttpServletRequest:
-      HTTP Method = POST
-      Request URI = /wallet
-       Parameters = {}
-          Headers = [Content-Type:&quot;application/json;charset=UTF-8&quot;, Accept:&quot;application/json&quot;, Content-Length:&quot;33&quot;]
-             Body = {&quot;id&quot;:1,&quot;userId&quot;:1,&quot;value&quot;:100.0}
-    Session Attrs = {}
-
-Handler:
-             Type = ecommerce.Controllers.WalletController
-           Method = ecommerce.Controllers.WalletController#addWallet(Wallet, HttpServletRequest)
-
-Async:
-    Async started = false
-     Async result = null
-
-Resolved Exception:
-             Type = null
-
-ModelAndView:
-        View name = null
-             View = null
-            Model = null
-
-FlashMap:
-       Attributes = null
-
-MockHttpServletResponse:
-           Status = 201
-    Error message = null
-          Headers = [Content-Type:&quot;application/json&quot;]
-     Content type = application/json
-             Body = {&quot;id&quot;:1,&quot;userId&quot;:1,&quot;value&quot;:100.0}
-    Forwarded URL = null
-   Redirected URL = null
-          Cookies = []
-
-MockHttpServletRequest:
-      HTTP Method = POST
-      Request URI = /wallet
-       Parameters = {}
-          Headers = [Content-Type:&quot;application/json;charset=UTF-8&quot;, Accept:&quot;application/json&quot;, Content-Length:&quot;33&quot;]
-             Body = {&quot;id&quot;:2,&quot;userId&quot;:1,&quot;value&quot;:200.0}
-    Session Attrs = {}
-
-Handler:
-             Type = ecommerce.Controllers.WalletController
-           Method = ecommerce.Controllers.WalletController#addWallet(Wallet, HttpServletRequest)
-
-Async:
-    Async started = false
-     Async result = null
-
-Resolved Exception:
-             Type = null
-
-ModelAndView:
-        View name = null
-             View = null
-            Model = null
-
-FlashMap:
-       Attributes = null
-
-MockHttpServletResponse:
-           Status = 201
-    Error message = null
-          Headers = [Content-Type:&quot;application/json&quot;]
-     Content type = application/json
-             Body = {&quot;id&quot;:2,&quot;userId&quot;:1,&quot;value&quot;:200.0}
-    Forwarded URL = null
-   Redirected URL = null
-          Cookies = []
-</system-out>
-  </testcase>
-  <testcase classname="ecommerce.Controllers.WalletControllerTest" name="getLanding" time="0.013"/>
-  <testcase classname="ecommerce.Controllers.WalletControllerTest" name="createWallet" time="0.008"/>
+  <testcase classname="ecommerce.Controllers.WalletControllerTest" name="getAllWallets" time="0.19"/>
+  <testcase classname="ecommerce.Controllers.WalletControllerTest" name="getAllWalletsButEmpty" time="0.011"/>
+  <testcase classname="ecommerce.Controllers.WalletControllerTest" name="addMoneyWallet" time="0.055"/>
+  <testcase classname="ecommerce.Controllers.WalletControllerTest" name="getLanding" time="0.011"/>
+  <testcase classname="ecommerce.Controllers.WalletControllerTest" name="createWallet" time="0.009"/>
 </testsuite>
