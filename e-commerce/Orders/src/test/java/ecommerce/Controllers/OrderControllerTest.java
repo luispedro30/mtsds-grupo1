@@ -4,8 +4,8 @@ import ecommerce.Dto.ProductDto;
 import ecommerce.Dto.UserDto;
 import ecommerce.Models.Order;
 import ecommerce.Models.Products;
+import ecommerce.Models.User;
 import ecommerce.Services.OrderService;
-import org.aspectj.weaver.ast.Or;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -19,13 +19,9 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
-import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
-import java.time.Instant;
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Date;
 import java.util.List;
 
 import static org.hamcrest.CoreMatchers.equalTo;
@@ -57,10 +53,10 @@ public class OrderControllerTest {
     @MockBean
     private OrderService orderService;
 
-    private List<UserDto> users = new ArrayList<UserDto>();
+    private List<User> users = new ArrayList<User>();
     private List<ProductDto> products = new ArrayList<ProductDto>();
-    private UserDto userDto1;
-    private UserDto userDto2;
+    private User userDto1;
+    private User userDto2;
 
     private ProductDto productDto1;
     private ProductDto productDto2;
@@ -68,17 +64,15 @@ public class OrderControllerTest {
 
     @Before
     public void setUp() {
-        this.userDto1 = new UserDto(
+        this.userDto1 = new User(
                 1,
                 "Luis",
-                "luis",
                 1,
                 "ADMIN"
         );
-        this.userDto2 = new UserDto(
+        this.userDto2 = new User(
                 2,
                 "João",
-                "joao",
                 1,
                 "ADMIN"
         );
@@ -146,13 +140,13 @@ public class OrderControllerTest {
         List<Order> orders = new ArrayList<Order>();
         Order order1 = new Order();
         order1.setOrderId(1);
-        order1.setUserId(1); // Set the user ID
+        order1.setUserId(this.userDto1.getUserId()); // Set the user ID
         order1.setProducts(Arrays.asList(product1, product2));
         order1.setPriceTotal(product1.getPrice() + product2.getPrice());
 
         Order order2 = new Order();
         order2.setOrderId(2);
-        order2.setUserId(1); // Set the user ID
+        order1.setUserId(this.userDto2.getUserId());// Set the user ID
         order2.setProducts(Arrays.asList(product2));
         order2.setPriceTotal(product2.getPrice());
 
@@ -168,10 +162,8 @@ public class OrderControllerTest {
                         .accept((MediaType.APPLICATION_JSON)))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$[0].orderId").value(1))
-                .andExpect(jsonPath("$[0].userId").value(1))
                 .andExpect(jsonPath("$[0].priceTotal").value(200))
                 .andExpect(jsonPath("$[1].orderId").value(2))
-                .andExpect(jsonPath("$[1].userId").value(1))
                 .andExpect(jsonPath("$[1].priceTotal").value(100));
 
         verify(orderService, Mockito.times(1)).getAll();

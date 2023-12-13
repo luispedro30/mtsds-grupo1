@@ -28,6 +28,20 @@ services:
     volumes:
       - D:/Docker/Postgres/users/:/var/lib/postgresql/data
 
+  bd-orders:
+    image: postgres:16.0
+    container_name: bd-orders
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: postgres123
+      POSTGRES_DB: orders
+    ports:
+      - "5437:5432"
+    networks:
+      - e-commerce
+    volumes:
+      - D:/Docker/Postgres/orders/:/var/lib/postgresql/data
+
   pgadmin:
     image: dpage/pgadmin4:7.8
     container_name: pgadmin

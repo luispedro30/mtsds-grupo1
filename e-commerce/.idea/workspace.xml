@@ -5,40 +5,53 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e63fab2e-ccd9-4599-8c37-fc239380bb02" name="Changes" comment="fix: update users and products microservices db">
-      <change afterPath="$PROJECT_DIR$/docker-compose-bd.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Authentication/target/Authentication-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Authentication/target/Authentication-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Authentication/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Authentication/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Orders/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Orders/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Orders/src/main/java/ecommerce/Dto/UserDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/Orders/src/main/java/ecommerce/Dto/UserDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Orders/src/main/java/ecommerce/Models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/Orders/src/main/java/ecommerce/Models/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Orders/src/main/java/ecommerce/Services/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Orders/src/main/java/ecommerce/Services/OrderService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Orders/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Orders/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Orders/src/test/java/ecommerce/Controllers/OrderControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Orders/src/test/java/ecommerce/Controllers/OrderControllerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Orders/target/Orders-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Orders/target/Orders-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Payment/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Payment/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Payment/src/main/java/ecommerce/Controllers/PaymentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Payment/src/main/java/ecommerce/Controllers/PaymentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Payment/src/main/java/ecommerce/Dto/OrderDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/Payment/src/main/java/ecommerce/Dto/OrderDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Payment/src/main/java/ecommerce/Dto/UserDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/Payment/src/main/java/ecommerce/Dto/UserDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Products/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Products/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Products/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Products/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Products/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Products/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Products/target/products-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Products/target/products-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Products/target/surefire-reports/TEST-ecommerce.Controllers.ProductsControllerTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Products/target/surefire-reports/TEST-ecommerce.Controllers.ProductsControllerTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Products/target/surefire-reports/ecommerce.Controllers.ProductsControllerTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Products/target/surefire-reports/ecommerce.Controllers.ProductsControllerTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Wallet/src/test/java/ecommerce/Controllers/WalletControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Wallet/src/test/java/ecommerce/Controllers/WalletControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Wallet/target/surefire-reports/TEST-ecommerce.Controllers.WalletControllerTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Wallet/target/surefire-reports/TEST-ecommerce.Controllers.WalletControllerTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Wallet/target/surefire-reports/ecommerce.Controllers.WalletControllerTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Wallet/target/surefire-reports/ecommerce.Controllers.WalletControllerTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eureka-server/target/eureka-server.jar" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-server/target/eureka-server.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eureka-server/target/eureka-server.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-server/target/eureka-server.jar.original" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eureka-server/target/surefire-reports/TEST-ecommerce.AppTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-server/target/surefire-reports/TEST-ecommerce.AppTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eureka-server/target/surefire-reports/ecommerce.AppTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-server/target/surefire-reports/ecommerce.AppTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/users/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/users/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/users/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/users/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/users/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/users/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/users/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/target/surefire-reports/TEST-ecommerce.Controllers.UsersControllerTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/users/target/surefire-reports/TEST-ecommerce.Controllers.UsersControllerTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/target/surefire-reports/ecommerce.Controllers.UsersControllerTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/users/target/surefire-reports/ecommerce.Controllers.UsersControllerTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/target/users.jar" beforeDir="false" afterPath="$PROJECT_DIR$/users/target/users.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/target/users.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/users/target/users.jar.original" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Orders/target/Orders.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Orders/target/Orders.jar.original" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Orders/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Orders/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Orders/target/classes/ecommerce/Dto/UserDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/Orders/target/classes/ecommerce/Dto/UserDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Orders/target/classes/ecommerce/Models/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/Orders/target/classes/ecommerce/Models/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Orders/target/classes/ecommerce/Services/OrderService.class" beforeDir="false" afterPath="$PROJECT_DIR$/Orders/target/classes/ecommerce/Services/OrderService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Orders/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Orders/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Orders/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Orders/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Orders/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Orders/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Orders/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Orders/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Orders/target/surefire-reports/TEST-ecommerce.Controllers.OrderControllerTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Orders/target/surefire-reports/TEST-ecommerce.Controllers.OrderControllerTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Orders/target/surefire-reports/ecommerce.Controllers.OrderControllerTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Orders/target/surefire-reports/ecommerce.Controllers.OrderControllerTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Orders/target/test-classes/ecommerce/Controllers/OrderControllerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/Orders/target/test-classes/ecommerce/Controllers/OrderControllerTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Payment/target/classes/ecommerce/Controllers/PaymentController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Payment/target/classes/ecommerce/Controllers/PaymentController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Payment/target/classes/ecommerce/Dto/OrderDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/Payment/target/classes/ecommerce/Dto/OrderDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Payment/target/classes/ecommerce/Dto/UserDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/Payment/target/classes/ecommerce/Dto/UserDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Payment/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Payment/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Payment/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Payment/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Payment/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Payment/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Payment/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Payment/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Payment/target/surefire-reports/TEST-ecommerce.Controllers.PaymentControllerTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Payment/target/surefire-reports/TEST-ecommerce.Controllers.PaymentControllerTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Payment/target/surefire-reports/ecommerce.Controllers.PaymentControllerTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Payment/target/surefire-reports/ecommerce.Controllers.PaymentControllerTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Payment/target/test-classes/ecommerce/Controllers/PaymentControllerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/Payment/target/test-classes/ecommerce/Controllers/PaymentControllerTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Products/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Products/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Products/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Products/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Reviews/target/Reviews-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Reviews/target/Reviews-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Reviews/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Reviews/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shipping/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Shipping/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Wallet/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Wallet/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Wallet/target/test-classes/ecommerce/Controllers/WalletControllerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/Wallet/target/test-classes/ecommerce/Controllers/WalletControllerTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/target/surefire-reports/TEST-ecommerce.AppTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/target/surefire-reports/TEST-ecommerce.AppTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/target/surefire-reports/ecommerce.AppTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/target/surefire-reports/ecommerce.AppTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose-bd.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose-bd.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eureka-server/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-server/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eureka-server/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-server/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +70,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$/.." value="updates-microservices" />
+        <entry key="$PROJECT_DIR$/.." value="update-users-service-postgres" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -115,7 +128,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Products">
+  <component name="RunManager" selected="JUnit.OrderControllerTest">
     <configuration name="ApiGateway" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ecommerce.ApiGateway" />
       <module name="api-gateway" />
@@ -129,9 +142,9 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="EurekaServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ecommerce.EurekaServer" />
-      <module name="eureka-server" />
+    <configuration name="Orders" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ecommerce.Orders" />
+      <module name="Orders" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="ecommerce.*" />
@@ -168,8 +181,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PaymentControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Payment" />
+    <configuration name="OrderControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Orders" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="ecommerce.Controllers.*" />
@@ -177,26 +190,26 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="ecommerce.Controllers" />
-      <option name="MAIN_CLASS_NAME" value="ecommerce.Controllers.PaymentControllerTest" />
+      <option name="MAIN_CLASS_NAME" value="ecommerce.Controllers.OrderControllerTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
+      <item itemvalue="Application.Orders" />
       <item itemvalue="Application.Products" />
       <item itemvalue="Application.Users" />
       <item itemvalue="Application.ApiGateway" />
-      <item itemvalue="Application.EurekaServer" />
-      <item itemvalue="JUnit.PaymentControllerTest" />
+      <item itemvalue="JUnit.OrderControllerTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Orders" />
+        <item itemvalue="JUnit.OrderControllerTest" />
         <item itemvalue="Application.Products" />
         <item itemvalue="Application.Users" />
         <item itemvalue="Application.ApiGateway" />
-        <item itemvalue="Application.EurekaServer" />
-        <item itemvalue="JUnit.PaymentControllerTest" />
       </list>
     </recent_temporary>
   </component>
@@ -209,6 +222,14 @@
       <option name="presentableId" value="Default" />
       <updated>1702131429289</updated>
     </task>
+    <task id="LOCAL-00001" summary="fix: update users and products microservices db">
+      <created>1702485269778</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1702485269778</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
