@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: ecommerce.Controllers.WalletControllerTest
 -------------------------------------------------------------------------------
-Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 10.479 sec
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 18.763 sec
