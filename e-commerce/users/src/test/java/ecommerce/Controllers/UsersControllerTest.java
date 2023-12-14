@@ -56,6 +56,7 @@ public class UsersControllerTest {
 
         User user1 = new User(1,
                 "Luis",
+                "luis123",
                 "password",
                 1,
                 Role.ADMIN);
@@ -103,12 +104,14 @@ public class UsersControllerTest {
         List<User> users = new ArrayList<User>();
         User user1 = new User(1,
                 "Luis",
+                "luis123",
                 "password",
                 1,
                 Role.ADMIN);
 
         User user2 = new User(2,
                 "João",
+                "joao123",
                 "password2",
                 1,
                 Role.USER);
@@ -137,6 +140,7 @@ public class UsersControllerTest {
         //given
         User user1 = new User(1,
                 "Luis",
+                "luis123",
                 "password",
                 1,
                 Role.ADMIN);
@@ -158,6 +162,14 @@ public class UsersControllerTest {
 
     @Test
     public void getUnexistingUser() throws Exception {
+        //given
+        User user1 = new User(2,
+                "Luis",
+                "luis123",
+                "password",
+                1,
+                Role.ADMIN);
+
         //when
         when(userService.getUserById(1)).thenReturn(null);
 
@@ -177,12 +189,14 @@ public class UsersControllerTest {
         List<User> users = new ArrayList<User>();
         User user1 = new User(1,
                 "Luis",
+                "luis123",
                 "password",
                 1,
                 Role.ADMIN);
 
         User user2= new User(2,
                 "Luis",
+                "luis1234",
                 "password",
                 1,
                 Role.ADMIN);

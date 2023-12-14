@@ -1,0 +1,146 @@
+name: e-commerce
+services:
+  eureka-server:
+    container_name: eureka-server
+    build:
+      context: ./eureka-server
+    image: eureka-service
+    environment:
+      SPRING_PROFILES_ACTIVE: 'docker'
+    ports:
+      - "8761:8761"
+    restart: unless-stopped
+    networks:
+      - e-commerce
+
+  api-gateway-service:
+    container_name: api-gateway-service
+    build:
+      context: ./api-gateway
+    image: api-gateway
+    environment:
+      eureka.instance.hostname: eureka-server
+      eureka.client.serviceurl.defaultzone: http://eureka-server:8761/eureka/
+    restart: unless-stopped
+    ports:
+      - "8090:8090"
+    depends_on:
+      - eureka-server
+    networks:
+      - e-commerce
+
+  users-service:
+    container_name: users-service
+    build:
+      context: ./users
+    image: users
+    environment:
+      eureka.instance.hostname: eureka-server
+      eureka.client.serviceurl.defaultzone: http://eureka-server:8761/eureka/
+    restart: unless-stopped
+    ports:
+    - "7777:7777"
+    depends_on:
+      - eureka-server
+    networks:
+      - e-commerce
+
+  products-service:
+    container_name: products-service
+    build:
+      context: ./Products
+    image: products
+    environment:
+      eureka.instance.hostname: eureka-server
+      eureka.client.serviceurl.defaultzone: http://eureka-server:8761/eureka/
+    restart: unless-stopped
+    ports:
+    - "8091:8091"
+    depends_on:
+      - eureka-server
+    networks:
+      - e-commerce
+
+  orders-service:
+    container_name: orders-service
+    build:
+      context: ./Orders
+    image: orders
+    environment:
+      eureka.instance.hostname: eureka-server
+      eureka.client.serviceurl.defaultzone: http://eureka-server:8761/eureka/
+    restart: unless-stopped
+    ports:
+      - "8092:8092"
+    depends_on:
+      - eureka-server
+    networks:
+      - e-commerce
+
+  payment-service:
+    container_name: payment-service
+    build:
+      context: ./Payment
+    image: payment
+    environment:
+      eureka.instance.hostname: eureka-server
+      eureka.client.serviceurl.defaultzone: http://eureka-server:8761/eureka/
+    restart: unless-stopped
+    ports:
+      - "8095:8095"
+    depends_on:
+      - eureka-server
+    networks:
+      - e-commerce
+
+  reviews-service:
+    container_name: reviews-service
+    build:
+      context: ./Reviews
+    image: reviews
+    environment:
+      eureka.instance.hostname: eureka-server
+      eureka.client.serviceurl.defaultzone: http://eureka-server:8761/eureka/
+    restart: unless-stopped
+    ports:
+      - "8093:8093"
+    depends_on:
+      - eureka-server
+    networks:
+      - e-commerce
+
+  shipping-service:
+    container_name: shipping-service
+    build:
+      context: ./Shipping
+    image: shipping
+    environment:
+      eureka.instance.hostname: eureka-server
+      eureka.client.serviceurl.defaultzone: http://eureka-server:8761/eureka/
+    restart: unless-stopped
+    ports:
+      - "8096:8096"
+    depends_on:
+      - eureka-server
+    networks:
+      - e-commerce
+
+  wallet-service:
+    container_name: wallet-service
+    build:
+      context: ./Wallet
+    image: wallet
+    environment:
+      eureka.instance.hostname: eureka-server
+      eureka.client.serviceurl.defaultzone: http://eureka-server:8761/eureka/
+    restart: unless-stopped
+    ports:
+      - "8094:8094"
+    depends_on:
+      - eureka-server
+    networks:
+      - e-commerce
+
+networks:
+  e-commerce:
+    driver: bridge

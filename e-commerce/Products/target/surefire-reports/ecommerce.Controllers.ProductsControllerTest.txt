@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: ecommerce.Controllers.ProductsControllerTest
 -------------------------------------------------------------------------------
-Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 20.325 sec
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 16.387 sec
