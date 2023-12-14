@@ -19,17 +19,22 @@ import java.util.List;
 @EqualsAndHashCode(of = "id")
 public class User implements UserDetails {
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
-    private String id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+
+    private String name;
     private String login;
+
     private String password;
     private Role role;
 
-    public User(String login, String password, Role role){
+    public User(String login, String name, String password, Role role) {
         this.login = login;
+        this.name = name;
         this.password = password;
         this.role = role;
     }
+
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

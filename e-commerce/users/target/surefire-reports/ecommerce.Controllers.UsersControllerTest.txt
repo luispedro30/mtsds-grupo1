@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: ecommerce.Controllers.UsersControllerTest
 -------------------------------------------------------------------------------
-Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 11.551 sec
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 18.671 sec

@@ -1,4 +1,5 @@
 ecommerce\PaymentClass.class
+ecommerce\Dto\ProductDto.class
 ecommerce\Models\Payment.class
 ecommerce\Exceptions\ItemDoesNotExistException.class
 ecommerce\Auditing\JpaAuditingConfiguration.class
