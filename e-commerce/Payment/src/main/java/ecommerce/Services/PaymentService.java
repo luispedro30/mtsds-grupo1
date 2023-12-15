@@ -1,5 +1,6 @@
 package ecommerce.Services;
 
+import ecommerce.Config.MQConfig;
 import ecommerce.Dto.OrderDto;
 import ecommerce.Dto.ShippingDto;
 import ecommerce.Dto.UserDto;
@@ -7,6 +8,7 @@ import ecommerce.Dto.WalletDto;
 import ecommerce.Models.Payment;
 import ecommerce.Repository.PaymentRepository;
 import jakarta.transaction.Transactional;
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.*;
@@ -33,6 +35,8 @@ public class PaymentService {
     @Value("${endpoints.shipping-microservice.baseUrl}")
     private String shippingUrl;
 
+    @Autowired
+    private RabbitTemplate template;
     @Autowired
     private PaymentRepository paymentRepository;
 
@@ -63,12 +67,20 @@ public class PaymentService {
             throw new Exception("This payment already exists");
         }
 
+        /*
         RestTemplate restTemplate = new RestTemplate();
         restTemplate.postForEntity(walletUrl
                 + "/takeMoney/"
                 + walletDto.getId() + "?money=" + payment.getPriceTotal(),"",WalletDto.class);
+        */
 
         paymentRepository.save(payment);
+
+        template.convertAndSend(
+                MQConfig.EXCHANGE,
+                MQConfig.ROUTING_KEY,
+                payment
+        );
 
         RestTemplate restTemplate2 = new RestTemplate();
 

@@ -25,14 +25,13 @@ public class GatewayConfig {
                 .route("users-route", r -> r.method(HttpMethod.GET)
                         .and()
                         .path("/users/**")
-                        .filters(f -> f.filter(filter))
                         .uri("lb://users"))
-                .route("orders-route", r -> r.path("/orders/**").filters(f -> f.filter(filter)).uri("lb://orders"))
-                .route("products-route", r -> r.path("/products/**").filters(f -> f.filter(filter)).uri("lb://products"))
-                .route("reviews-route", r -> r.path("/reviews/**").filters(f -> f.filter(filter)).uri("lb://reviews"))
-                .route("wallet-route", r -> r.path("/wallet/**").filters(f -> f.filter(filter)).uri("lb://wallet"))
-                .route("payment-route", r -> r.path("/payment/**").filters(f -> f.filter(filter)).uri("lb://payment"))
-                .route("shipping-route", r -> r.path("/shipping/**").filters(f -> f.filter(filter)).uri("lb://shipping"))
+                .route("orders-route", r -> r.path("/orders/**").uri("lb://orders"))
+                .route("products-route", r -> r.path("/products/**").uri("lb://products"))
+                .route("reviews-route", r -> r.path("/reviews/**").uri("lb://reviews"))
+                .route("wallet-route", r -> r.path("/wallet/**").uri("lb://wallet"))
+                .route("payment-route", r -> r.path("/payment/**").uri("lb://payment"))
+                .route("shipping-route", r -> r.path("/shipping/**").uri("lb://shipping"))
                 .build();
     }
 

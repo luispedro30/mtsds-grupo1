@@ -64,15 +64,15 @@ public class AuthenticationController {
         int uniqueInteger = (int) (currentTimeMillis % Integer.MAX_VALUE);
 
         User newUser = new User(uniqueInteger,
-                data.login(),
                 data.name(),
+                data.login(),
                 encryptedPassword,
                 data.role());
         ResponseEntity<User> response = restTemplate.postForEntity(usersUrl,
                 new User(
                         uniqueInteger,
-                        data.login(),
                         data.name(),
+                        data.login(),
                         encryptedPassword,
                         data.role()),
                 User.class);
