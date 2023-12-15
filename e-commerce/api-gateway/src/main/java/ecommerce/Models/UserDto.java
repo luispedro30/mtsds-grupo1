@@ -1,16 +1,12 @@
 package ecommerce.Models;
 
-import jakarta.validation.constraints.NotNull;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.io.Serializable;
 
-
-public record UserDto(Integer id,
-                      @NotNull
-                      String name,
-                      @NotNull
-                      String login,
-                      @NotNull
-                      String email,
+public record UserDto( String login,
                       EUserRole role) implements Serializable {
 }

@@ -1,8 +1,10 @@
 package ecommerce.Config;
 
 
+import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import ecommerce.Models.EUserRole;
 import ecommerce.Models.UserDto;
 import ecommerce.Services.JwtUtil;
 import io.jsonwebtoken.Claims;
@@ -16,6 +18,8 @@ import org.springframework.http.server.reactive.ServerHttpResponse;
 import org.springframework.stereotype.Component;
 import org.springframework.web.server.ServerWebExchange;
 import reactor.core.publisher.Mono;
+
+import java.io.IOException;
 
 @RefreshScope
 @Component
@@ -32,7 +36,7 @@ public class AuthenticationFilter implements GatewayFilter {
 
         final String token = this.getAuthHeader(request).replace("Bearer ", "");
 
-        if (!jwtUtil.isInvalid(token)) {
+        if (jwtUtil.isInvalid(token)) {
             return this.onError(exchange, "Jwt token is invalid", HttpStatus.UNAUTHORIZED);
         }
 
@@ -42,6 +46,8 @@ public class AuthenticationFilter implements GatewayFilter {
         } catch (JsonProcessingException e) {
             e.printStackTrace();
             return this.onError(exchange, "Error while parsing authentication token", HttpStatus.UNAUTHORIZED);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
     }
 
@@ -59,14 +65,21 @@ public class AuthenticationFilter implements GatewayFilter {
         return !request.getHeaders().containsKey("Authorization");
     }
 
-    private ServerWebExchange populateRequestWithHeaders(ServerWebExchange exchange, String token) throws JsonProcessingException {
+    private ServerWebExchange populateRequestWithHeaders(ServerWebExchange exchange, String token) throws IOException {
         Claims claims = jwtUtil.getAllClaimsFromToken(token);
         ObjectMapper mapper = new ObjectMapper();
 
-        UserDto userDto = mapper.readValue(claims.getSubject(), UserDto.class);
+        System.out.println(claims.get("claims"));
+        System.out.println(claims.getSubject());
+        System.out.println(claims.get("claims"));
+        System.out.println(claims.get("login").toString());
+
+        //UserDto userDto = mapper.readValue((JsonParser) claims.get("claims"), UserDto.class);
+        UserDto userDto = new UserDto(claims.get("login").toString(),
+                EUserRole.valueOf(claims.get("role").toString()));
 
         ServerHttpRequest newRequest = exchange.getRequest().mutate()
-                .header("id", userDto.id().toString())
+                .header("login", userDto.login().toString())
                 .header("role", userDto.role().toString())
                 .build();
         ServerWebExchange webExchange = exchange.mutate().request(newRequest).build();
