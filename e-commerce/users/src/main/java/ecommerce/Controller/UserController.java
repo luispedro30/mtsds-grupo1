@@ -78,7 +78,7 @@ public class UserController {
                 HttpStatus.NOT_FOUND);
     }
 
-    /*
+
     @PostMapping (value = "/users")
     public ResponseEntity<User> addUser(@RequestBody User user, HttpServletRequest request) throws Exception {
         logger.info(marker,"addUser() request received ... pending");
@@ -108,5 +108,5 @@ public class UserController {
         logger.info(marker,"addUser() request received ... Bad Request{}");
         return new ResponseEntity<User>(HttpStatus.BAD_REQUEST);
     }
-    */
+
 }

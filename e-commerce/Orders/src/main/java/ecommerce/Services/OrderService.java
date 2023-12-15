@@ -55,14 +55,14 @@ public class OrderService {
 
         //fill the car foreign key
         if (order.getProducts() != null){
-            RestTemplate restTemplate = new RestTemplate();
+            //RestTemplate restTemplate = new RestTemplate();
             for (Products product: order.getProducts()){
                 //RestTemplate restTemplate = new RestTemplate();
                 ProductDto productDto = getProduct(product.getProductId());
                 product.setOrder(order);
                 product.setPrice(productDto.getPrice());
                 totalPrice += productDto.getPrice();
-                restTemplate.postForEntity(productsUrl + "/decreaseStock/" + product.getProductId(),"",ProductDto.class);
+                //restTemplate.postForEntity(productsUrl + "/decreaseStock/" + product.getProductId(),"",ProductDto.class);
             }
         }
         order.setPriceTotal(totalPrice);
