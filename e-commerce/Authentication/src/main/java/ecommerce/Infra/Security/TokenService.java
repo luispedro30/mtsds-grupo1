@@ -3,24 +3,22 @@ package ecommerce.Infra.Security;
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.JWTVerifier;
 import com.auth0.jwt.algorithms.Algorithm;
-import com.auth0.jwt.exceptions.JWTCreationException;
 import com.auth0.jwt.exceptions.JWTVerificationException;
 import com.auth0.jwt.interfaces.Claim;
 import com.auth0.jwt.interfaces.DecodedJWT;
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import ecommerce.Models.User;
 import io.jsonwebtoken.Claims;
+import io.jsonwebtoken.JwtException;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
-import io.jsonwebtoken.security.Keys;
+import jakarta.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.nio.charset.StandardCharsets;
-import java.security.Key;
 import java.time.LocalDateTime;
 import java.time.ZoneOffset;
+import java.util.Base64;
 import java.util.Date;
 import java.util.Map;
 
@@ -30,16 +28,26 @@ public class TokenService {
     @Value("${api.security.token.secret}")
     private String secret;
 
+    private byte[] secretKey;
+
+    @PostConstruct
+    public void init() {
+        secretKey = Base64.getEncoder().encode(secret.getBytes());
+    }
+
 
     public String generateToken(User user){
 
-        Algorithm algorithm = Algorithm.HMAC256(secret.getBytes(StandardCharsets.UTF_8));
+        Algorithm algorithm = Algorithm.HMAC256(secretKey);
 
         String token = JWT.create()
                 .withIssuer("auth-api")
                 .withSubject(user.getLogin())
                 .withExpiresAt(genExpirationDate())
+                .withClaim("login",user.getUsername())
+                .withClaim("role", user.getRole().toString())
                 .sign(algorithm);
+
 
         return token;
     }
@@ -57,6 +65,7 @@ public class TokenService {
             throw new RuntimeException("Error while parsing token", exception);
         }
     }
+
 
     private Date genExpirationDate() {
         return Date.from(LocalDateTime.now().plusHours(2).toInstant(ZoneOffset.of("-03:00")));
