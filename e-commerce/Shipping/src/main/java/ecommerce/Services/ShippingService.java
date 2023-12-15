@@ -48,7 +48,7 @@ public class ShippingService {
                 .orElseThrow(null);
     }
 
-    public Shipping addPayment(Shipping shipping) throws Exception {
+    public Shipping addShipping(Shipping shipping) throws Exception {
 
         UserDto userDto;
         userDto = getUser(shipping.getUserId());

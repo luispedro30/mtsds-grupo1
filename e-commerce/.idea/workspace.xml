@@ -6,18 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="e63fab2e-ccd9-4599-8c37-fc239380bb02" name="Changes" comment="fix: update authentication microservice with Postgres database and to connect with user microservice">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Authentication/src/main/java/ecommerce/Controllers/AuthenticationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Authentication/src/main/java/ecommerce/Controllers/AuthenticationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Authentication/target/classes/ecommerce/Controllers/AuthenticationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Authentication/target/classes/ecommerce/Controllers/AuthenticationController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Orders/src/main/java/ecommerce/Services/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Orders/src/main/java/ecommerce/Services/OrderService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Orders/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Orders/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Payment/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Payment/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Payment/src/main/java/ecommerce/Config/MQConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/Payment/src/main/java/ecommerce/Config/MQConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Payment/src/main/java/ecommerce/Services/PaymentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Payment/src/main/java/ecommerce/Services/PaymentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Payment/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Payment/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Wallet/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Wallet/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Wallet/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Wallet/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/java/ecommerce/Config/GatewayConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/java/ecommerce/Config/GatewayConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/target/classes/ecommerce/Config/GatewayConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/target/classes/ecommerce/Config/GatewayConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/src/main/java/ecommerce/Controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/users/src/main/java/ecommerce/Controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shipping/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Shipping/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shipping/src/main/java/ecommerce/Controllers/ShippingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Shipping/src/main/java/ecommerce/Controllers/ShippingController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shipping/src/main/java/ecommerce/Services/ShippingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Shipping/src/main/java/ecommerce/Services/ShippingService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shipping/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Shipping/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,7 +31,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$/.." value="update-payment-reviews-shipping-service-postgres" />
+        <entry key="$PROJECT_DIR$/.." value="update-authentication-service-postgres" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -61,7 +55,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "jdk.selected.JAVA_MODULE": "20",
-    "last_opened_file_path": "D:/mtsds-grupo1-github/mtsds-grupo1/e-commerce/Wallet/src/main/java/ecommerce",
+    "last_opened_file_path": "D:/mtsds-grupo1-github/mtsds-grupo1/e-commerce/Shipping/src/main/java/ecommerce",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
@@ -75,11 +69,11 @@
       <recent name="ecommerce" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\mtsds-grupo1-github\mtsds-grupo1\e-commerce\Shipping\src\main\java\ecommerce" />
       <recent name="D:\mtsds-grupo1-github\mtsds-grupo1\e-commerce\Wallet\src\main\java\ecommerce" />
       <recent name="D:\mtsds-grupo1-github\mtsds-grupo1\e-commerce\Wallet\src\main\java" />
       <recent name="D:\mtsds-grupo1-github\mtsds-grupo1\e-commerce\Orders\src\main\java\ecommerce\Messages" />
       <recent name="D:\mtsds-grupo1-github\mtsds-grupo1\e-commerce\Orders\src\main\java\ecommerce\Listeners" />
-      <recent name="D:\mtsds-grupo1-github\mtsds-grupo1\e-commerce\Auth\src\main\java\ecommerce\Services" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="ecommerce.Listeners" />
@@ -176,8 +170,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.wallet" />
         <item itemvalue="Application.PaymentClass" />
+        <item itemvalue="Application.wallet" />
         <item itemvalue="Application.ApiGateway" />
         <item itemvalue="Application.Orders" />
         <item itemvalue="Application.Products" />

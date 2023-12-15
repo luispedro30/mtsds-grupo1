@@ -37,7 +37,7 @@ public class ShippingController {
 
         Shipping newShipping;
         try {
-            newShipping = shippingService.addPayment(shipping);
+            newShipping = shippingService.addShipping(shipping);
         } catch (ItemDoesNotExistException e){
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("User does not exist");
         } catch (Exception e){
