@@ -1,5 +1,6 @@
 package ecommerce.Config;
 
+import jakarta.ws.rs.HttpMethod;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.gateway.route.RouteLocator;
 import org.springframework.cloud.gateway.route.builder.RouteLocatorBuilder;
@@ -17,7 +18,15 @@ public class GatewayConfig {
         return builder.routes()
                 .route("auth-service-route", r -> r.path("/auth/register").uri("lb://auth-service"))
                 .route("auth-service-route", r -> r.path("/auth/login").uri("lb://auth-service"))
-                .route("users-route", r -> r.path("/users/**").filters(f -> f.filter(filter)).uri("lb://users"))
+                .route("users-route", r -> r.method(HttpMethod.POST)
+                        .and()
+                        .path("/users")
+                        .uri("lb://users"))
+                .route("users-route", r -> r.method(HttpMethod.GET)
+                        .and()
+                        .path("/users/**")
+                        .filters(f -> f.filter(filter))
+                        .uri("lb://users"))
                 .route("orders-route", r -> r.path("/orders/**").filters(f -> f.filter(filter)).uri("lb://orders"))
                 .route("products-route", r -> r.path("/products/**").filters(f -> f.filter(filter)).uri("lb://products"))
                 .route("reviews-route", r -> r.path("/reviews/**").filters(f -> f.filter(filter)).uri("lb://reviews"))

@@ -1,6 +1,5 @@
 package ecommerce.Controllers;
 
-import ecommerce.Enums.Role;
 import ecommerce.Models.User;
 import ecommerce.Repository.UserRepository;
 import ecommerce.DTO.AuthenticationDTO;
@@ -61,17 +60,23 @@ public class AuthenticationController {
         if (this.userRepository.findByLogin(data.login()) != null) return ResponseEntity.badRequest().build();
         String encryptedPassword = new BCryptPasswordEncoder().encode(data.password());
 
-        User newUser = new User(data.login(), data.name(), encryptedPassword, data.role());
-        User savedUser = this.userRepository.save(newUser);
-        ResponseEntity<String> response = restTemplate.postForEntity(usersUrl,
+        long currentTimeMillis = System.currentTimeMillis();
+        int uniqueInteger = (int) (currentTimeMillis % Integer.MAX_VALUE);
+
+        User newUser = new User(uniqueInteger,
+                data.login(),
+                data.name(),
+                encryptedPassword,
+                data.role());
+        ResponseEntity<User> response = restTemplate.postForEntity(usersUrl,
                 new User(
-                        savedUser.getId(),
+                        uniqueInteger,
                         data.login(),
                         data.name(),
                         encryptedPassword,
                         data.role()),
-                String.class);
-
+                User.class);
+        User savedUser = this.userRepository.save(newUser);
         return ResponseEntity.ok().build();
 
     }
