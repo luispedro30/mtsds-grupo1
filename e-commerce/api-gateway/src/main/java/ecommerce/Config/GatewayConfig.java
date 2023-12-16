@@ -11,29 +11,36 @@ import org.springframework.context.annotation.Configuration;
 public class GatewayConfig {
 
     @Autowired
-    private AuthenticationFilter filter;
+    private final AuthenticationFilter filter;
+
+    public GatewayConfig(AuthenticationFilter filter) {
+        this.filter = filter;
+    }
 
     @Bean
     public RouteLocator customRouteLocator(RouteLocatorBuilder builder){
         return builder.routes()
                 .route("auth-service-route", r -> r.path("/auth/register").uri("lb://auth-service"))
                 .route("auth-service-route", r -> r.path("/auth/login").uri("lb://auth-service"))
-                .route("users-route", r -> r.method(HttpMethod.POST)
+                .route("users-route", r -> r.method(HttpMethod.POST, HttpMethod.GET)
                         .and()
                         .path("/users")
                         .uri("lb://users"))
-                .route("users-route", r -> r.method(HttpMethod.GET)
+                .route("users-route", r -> r.path("/users/**")
                         .and()
-                        .path("/users/**")
-                        .filters(f -> f.filter(filter))
+                        .predicate(serverWebExchange ->
+                        {
+                            String requestMethod = serverWebExchange.getRequest().getMethod().name();
+                            return "PUT".equals(requestMethod) || "DELETE".equals(requestMethod);
+                        })
+                        .filters(f -> f.filter(filter.apply("ADMIN")))
                         .uri("lb://users"))
-                .route("orders-route", r -> r.path("/orders/**").filters(f -> f.filter(filter)).uri("lb://orders"))
-                .route("products-route", r -> r.path("/products/**").filters(f -> f.filter(filter)).uri("lb://products"))
-                .route("reviews-route", r -> r.path("/reviews/**").filters(f -> f.filter(filter)).uri("lb://reviews"))
-                .route("wallet-route", r -> r.path("/wallet/**").filters(f -> f.filter(filter)).uri("lb://wallet"))
-                .route("payment-route", r -> r.path("/payment/**").filters(f -> f.filter(filter)).uri("lb://payment"))
-                .route("shipping-route", r -> r.path("/shipping/**").filters(f -> f.filter(filter)).uri("lb://shipping"))
+                .route("orders-route", r -> r.path("/orders/**").uri("lb://orders"))
+                .route("products-route", r -> r.path("/products/**").uri("lb://products"))
+                .route("reviews-route", r -> r.path("/reviews/**").uri("lb://reviews"))
+                .route("wallet-route", r -> r.path("/wallet/**").uri("lb://wallet"))
+                .route("payment-route", r -> r.path("/payment/**").uri("lb://payment"))
+                .route("shipping-route", r -> r.path("/shipping/**").uri("lb://shipping"))
                 .build();
     }
-
 }
