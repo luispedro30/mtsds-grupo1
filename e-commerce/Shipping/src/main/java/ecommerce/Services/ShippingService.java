@@ -48,6 +48,10 @@ public class ShippingService {
                 .orElseThrow(null);
     }
 
+    public Optional<Shipping> getShippingByOrderIdUserId(Integer orderId, Integer userId) {
+        return shippingRepository.findByOrderIdAndUserId(orderId, userId);
+    }
+
     public Shipping addShipping(Shipping shipping) throws Exception {
 
         UserDto userDto;
