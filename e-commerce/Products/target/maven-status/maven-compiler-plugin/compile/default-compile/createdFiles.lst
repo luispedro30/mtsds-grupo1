@@ -1,9 +1,9 @@
 ecommerce\Services\ProductsService.class
 ecommerce\Repository\ProductsRepository.class
+ecommerce\Auditing\JpaAuditingConfiguration.class
+ecommerce\Exceptions\AlreadyExistingException.class
 ecommerce\Dto\UserDto.class
 ecommerce\Products.class
 ecommerce\Controllers\ProductsController.class
 ecommerce\Models\Product.class
-ecommerce\Auditing\JpaAuditingConfiguration.class
 ecommerce\Enums\Category.class
-ecommerce\Exceptions\AlreadyExistingException.class

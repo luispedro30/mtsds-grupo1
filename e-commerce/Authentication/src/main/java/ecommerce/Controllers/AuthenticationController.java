@@ -68,6 +68,7 @@ public class AuthenticationController {
                 data.login(),
                 encryptedPassword,
                 data.role());
+
         ResponseEntity<User> response = restTemplate.postForEntity(usersUrl,
                 new User(
                         uniqueInteger,

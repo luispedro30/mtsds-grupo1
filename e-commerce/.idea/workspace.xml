@@ -6,11 +6,34 @@
   <component name="ChangeListManager">
     <list default="true" id="e63fab2e-ccd9-4599-8c37-fc239380bb02" name="Changes" comment="fix: update authentication microservice with Postgres database and to connect with user microservice">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reviews/src/main/java/ecommerce/Services/ReviewService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Reviews/src/main/java/ecommerce/Services/ReviewService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reviews/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Reviews/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Shipping/src/main/java/ecommerce/Controllers/ShippingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Shipping/src/main/java/ecommerce/Controllers/ShippingController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Shipping/src/main/java/ecommerce/Repository/ShippingRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Shipping/src/main/java/ecommerce/Repository/ShippingRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Shipping/src/main/java/ecommerce/Services/ShippingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Shipping/src/main/java/ecommerce/Services/ShippingService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Auth/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Auth/src/main/java/ecommerce/Auth.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Auth/src/main/java/ecommerce/Config/TokenGenerator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Auth/src/main/java/ecommerce/Controller/AuthController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Auth/src/main/java/ecommerce/Models/UserDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Auth/src/main/java/ecommerce/Models/UserDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Auth/src/main/java/ecommerce/Repository/UserRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Auth/src/main/java/ecommerce/Services/UserService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Auth/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Auth/src/main/resources/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Auth/target/classes/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Auth/target/classes/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Auth/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Auth/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Authentication/src/main/java/ecommerce/Controllers/AuthenticationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Authentication/src/main/java/ecommerce/Controllers/AuthenticationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Authentication/target/classes/ecommerce/Controllers/AuthenticationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Authentication/target/classes/ecommerce/Controllers/AuthenticationController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Orders/src/main/java/ecommerce/Controllers/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Orders/src/main/java/ecommerce/Controllers/OrderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Orders/src/main/java/ecommerce/Services/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Orders/src/main/java/ecommerce/Services/OrderService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Orders/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Orders/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Payment/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Payment/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Products/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Products/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Products/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Products/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Reviews/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Reviews/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shipping/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Shipping/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Wallet/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Wallet/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/java/ecommerce/Config/GatewayConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/java/ecommerce/Config/GatewayConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/target/classes/ecommerce/Config/GatewayConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/target/classes/ecommerce/Config/GatewayConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/src/main/java/ecommerce/Controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/users/src/main/java/ecommerce/Controller/UserController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -169,11 +192,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Orders" />
         <item itemvalue="Application.Reviews" />
         <item itemvalue="Application.PaymentClass" />
         <item itemvalue="Application.Products" />
         <item itemvalue="Application.wallet" />
-        <item itemvalue="Application.Orders" />
       </list>
     </recent_temporary>
   </component>
@@ -257,16 +280,6 @@
           <option name="timeStamp" value="23" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Authentication/src/main/java/ecommerce/Controllers/AuthenticationController.java</url>
-          <line>65</line>
-          <option name="timeStamp" value="32" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Authentication/src/main/java/ecommerce/Controllers/AuthenticationController.java</url>
-          <line>70</line>
-          <option name="timeStamp" value="34" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Reviews/src/main/java/ecommerce/Services/ReviewService.java</url>
           <line>197</line>
           <option name="timeStamp" value="54" />
@@ -275,6 +288,26 @@
           <url>file://$PROJECT_DIR$/Reviews/src/main/java/ecommerce/Services/ReviewService.java</url>
           <line>198</line>
           <option name="timeStamp" value="55" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Orders/src/main/java/ecommerce/Services/OrderService.java</url>
+          <line>94</line>
+          <option name="timeStamp" value="72" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Orders/src/main/java/ecommerce/Services/OrderService.java</url>
+          <line>96</line>
+          <option name="timeStamp" value="73" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Orders/src/main/java/ecommerce/Services/OrderService.java</url>
+          <line>129</line>
+          <option name="timeStamp" value="77" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Orders/src/main/java/ecommerce/Services/OrderService.java</url>
+          <line>152</line>
+          <option name="timeStamp" value="78" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
