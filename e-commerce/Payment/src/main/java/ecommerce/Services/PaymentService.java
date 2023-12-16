@@ -116,6 +116,12 @@ public class PaymentService {
                 payment
         );
 
+        template.convertAndSend(
+                MQConfig.EXCHANGE,
+                MQConfig.ROUTING_KEY_3,
+                payment
+        );
+
         return payment;
     }
 
