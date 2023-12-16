@@ -78,7 +78,7 @@ public class PaymentService {
 
         template.convertAndSend(
                 MQConfig.EXCHANGE,
-                MQConfig.ROUTING_KEY,
+                MQConfig.ROUTING_KEY_1,
                 payment
         );
 
@@ -87,7 +87,7 @@ public class PaymentService {
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
 
-
+        /*
         String requestJson = "{\"paymentId\":"+payment.getPaymentId()
                 +",\"orderId\":"+payment.getOrderId()
                 +",\"userId\":"+payment.getUserId()
@@ -108,6 +108,19 @@ public class PaymentService {
             System.out.println(e.getMessage());
             throw new Exception(e.getMessage());
         }
+        */
+
+        template.convertAndSend(
+                MQConfig.EXCHANGE,
+                MQConfig.ROUTING_KEY_2,
+                payment
+        );
+
+        template.convertAndSend(
+                MQConfig.EXCHANGE,
+                MQConfig.ROUTING_KEY_3,
+                payment
+        );
 
         return payment;
     }

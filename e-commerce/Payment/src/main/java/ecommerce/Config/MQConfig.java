@@ -15,7 +15,10 @@ public class MQConfig {
 
     public static final String EXCHANGE = "exchange_confirmation_requests";
 
-    public static final String ROUTING_KEY = "routing_key_1";
+    public static final String ROUTING_KEY_1 = "routing_key_1";
+    public static final String ROUTING_KEY_2 = "routing_key_2";
+
+    public static final String ROUTING_KEY_3 = "routing_key_3";
 
     @Bean
     public Queue queue(){
@@ -43,8 +46,18 @@ public class MQConfig {
     }
 
     @Bean
-    public Binding binding(Queue queue, TopicExchange exchange){
-        return BindingBuilder.bind(queue).to(exchange).with(ROUTING_KEY);
+    public Binding binding1(Queue queue, TopicExchange exchange){
+        return BindingBuilder.bind(queue).to(exchange).with(ROUTING_KEY_1);
+    }
+
+    @Bean
+    public Binding binding2(Queue queue, TopicExchange exchange){
+        return BindingBuilder.bind(queue).to(exchange).with(ROUTING_KEY_2);
+    }
+
+    @Bean
+    public Binding binding3(Queue queue, TopicExchange exchange){
+        return BindingBuilder.bind(queue).to(exchange).with(ROUTING_KEY_3);
     }
 
     @Bean

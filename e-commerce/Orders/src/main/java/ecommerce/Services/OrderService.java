@@ -7,8 +7,11 @@ import ecommerce.Models.Order;
 import ecommerce.Models.Products;
 import ecommerce.Models.User;
 import ecommerce.Repository.OrderRepository;
+import ecommerce.Repository.ProductsRepository;
 import ecommerce.Repository.UserRepository;
 import jakarta.transaction.Transactional;
+import org.aspectj.weaver.ast.Or;
+import org.hibernate.Hibernate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
@@ -19,6 +22,7 @@ import org.springframework.web.client.HttpServerErrorException;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class OrderService {
@@ -40,8 +44,38 @@ public class OrderService {
         return orderRepository.findAll();
     }
 
+    @Transactional
     public Order getOrderById(Integer id){
         return orderRepository.findById(id).orElseThrow(null);
+    }
+
+    @Transactional
+    public Order getOrderWithProducts(Integer orderId) {
+        Order order = orderRepository.findById(orderId).orElse(null);
+        if (order != null) {
+            Hibernate.initialize(order.getProducts());
+            return constructOrderDTO(order);
+        }
+        return null; // Or throw an exception indicating order not found
+    }
+
+    private Order constructOrderDTO(Order order) {
+        Order orderDTO = new Order();
+        orderDTO.setOrderId(order.getOrderId());
+
+        List<Products> productDTOs = order.getProducts().stream()
+                .map(this::constructProductDTO)
+                .collect(Collectors.toList());
+        orderDTO.setProducts(productDTOs);
+
+        return orderDTO;
+    }
+
+    private Products constructProductDTO(Products product) {
+        Products productDTO = new Products();
+        productDTO.setProductId(product.getProductId());
+        // Map other fields...
+        return productDTO;
     }
 
     @Transactional
