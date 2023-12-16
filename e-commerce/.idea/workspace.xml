@@ -6,15 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="e63fab2e-ccd9-4599-8c37-fc239380bb02" name="Changes" comment="fix: update authentication microservice with Postgres database and to connect with user microservice">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Orders/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Orders/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Orders/src/main/java/ecommerce/Repository/OrderRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Orders/src/main/java/ecommerce/Repository/OrderRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Orders/src/main/java/ecommerce/Repository/ProductsRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Orders/src/main/java/ecommerce/Repository/ProductsRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Orders/src/main/java/ecommerce/Services/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Orders/src/main/java/ecommerce/Services/OrderService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Orders/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Orders/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Payment/src/main/java/ecommerce/Config/MQConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/Payment/src/main/java/ecommerce/Config/MQConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Payment/src/main/java/ecommerce/Services/PaymentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Payment/src/main/java/ecommerce/Services/PaymentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Products/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Products/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Products/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Products/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Reviews/src/main/java/ecommerce/Services/ReviewService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Reviews/src/main/java/ecommerce/Services/ReviewService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Reviews/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Reviews/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shipping/src/main/java/ecommerce/Controllers/ShippingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Shipping/src/main/java/ecommerce/Controllers/ShippingController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shipping/src/main/java/ecommerce/Repository/ShippingRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Shipping/src/main/java/ecommerce/Repository/ShippingRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shipping/src/main/java/ecommerce/Services/ShippingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Shipping/src/main/java/ecommerce/Services/ShippingService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,17 +20,17 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Enum" />
         <option value="Interface" />
         <option value="AnnotationType" />
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$/.." value="update-authentication-service-postgres" />
+        <entry key="$PROJECT_DIR$/.." value="update-wallet-payment-service-postgres" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -79,11 +75,11 @@
       <recent name="D:\mtsds-grupo1-github\mtsds-grupo1\e-commerce\Wallet\src\main\java" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="ecommerce.Enum" />
       <recent name="ecommerce.Messages" />
       <recent name="ecommerce.Listeners" />
       <recent name="ecommerce.Config" />
       <recent name="ecommerce.Models" />
-      <recent name="ecommerce.Exceptions" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -98,20 +94,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Products">
-    <configuration name="ApiGateway" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ecommerce.ApiGateway" />
-      <module name="api-gateway" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ecommerce.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Application.Reviews">
     <configuration name="Orders" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ecommerce.Orders" />
       <module name="Orders" />
@@ -151,6 +134,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Reviews" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ecommerce.Reviews" />
+      <module name="Reviews" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ecommerce.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="wallet" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ecommerce.wallet" />
       <module name="Wallet" />
@@ -168,16 +164,16 @@
       <item itemvalue="Application.Orders" />
       <item itemvalue="Application.PaymentClass" />
       <item itemvalue="Application.Products" />
+      <item itemvalue="Application.Reviews" />
       <item itemvalue="Application.wallet" />
-      <item itemvalue="Application.ApiGateway" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Reviews" />
         <item itemvalue="Application.PaymentClass" />
         <item itemvalue="Application.Products" />
         <item itemvalue="Application.wallet" />
         <item itemvalue="Application.Orders" />
-        <item itemvalue="Application.ApiGateway" />
       </list>
     </recent_temporary>
   </component>
@@ -269,6 +265,16 @@
           <url>file://$PROJECT_DIR$/Authentication/src/main/java/ecommerce/Controllers/AuthenticationController.java</url>
           <line>70</line>
           <option name="timeStamp" value="34" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Reviews/src/main/java/ecommerce/Services/ReviewService.java</url>
+          <line>197</line>
+          <option name="timeStamp" value="54" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Reviews/src/main/java/ecommerce/Services/ReviewService.java</url>
+          <line>198</line>
+          <option name="timeStamp" value="55" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

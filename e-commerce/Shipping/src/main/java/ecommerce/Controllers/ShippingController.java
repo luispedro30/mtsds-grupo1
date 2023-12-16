@@ -32,6 +32,20 @@ public class ShippingController {
         return ResponseEntity.status(HttpStatus.OK).body(shipping);
     }
 
+    @GetMapping("/{orderId}/{userId}")
+    public ResponseEntity<Shipping> getShippingByOrderUserId(
+            @PathVariable Integer orderId,
+            @PathVariable Integer userId) {
+
+        Optional<Shipping> shipping = shippingService.getShippingByOrderIdUserId(orderId, userId);
+
+        if (shipping.isPresent()) {
+            return new ResponseEntity<>(shipping.get(), HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
+
     @PostMapping
     ResponseEntity<?> add(@RequestBody Shipping shipping){
 

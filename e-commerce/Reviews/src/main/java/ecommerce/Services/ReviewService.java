@@ -1,7 +1,9 @@
 package ecommerce.Services;
 
 import ecommerce.Dto.OrderDto;
+import ecommerce.Dto.ShippingDto;
 import ecommerce.Dto.UserDto;
+import ecommerce.Enum.Status;
 import ecommerce.Models.Review;
 import ecommerce.Repository.ReviewRepository;
 import jakarta.transaction.Transactional;
@@ -26,6 +28,9 @@ public class ReviewService {
     @Value("${endpoints.users-microservice.baseUrl}")
     private String usersUrl;
 
+    @Value("${endpoints.shipping-microservice.baseUrl}")
+    private String shippingUrl;
+
     @Autowired
     private ReviewRepository reviewRepository;
     private boolean n;
@@ -44,6 +49,9 @@ public class ReviewService {
 
         UserDto userDto;
         userDto = getUser(review.getUserId());
+
+        ShippingDto shippingDto;
+        shippingDto = getShipping(review.getOrderId(), review.getUserId());
 
         OrderDto orderDto;
         orderDto = getOrder(review.getOrderId());
@@ -152,6 +160,8 @@ public class ReviewService {
         }
     }
 
+
+
     public OrderDto getOrder(Integer orderId) throws Exception {
 
         OrderDto orderDto;
@@ -163,6 +173,38 @@ public class ReviewService {
                     OrderDto.class,
                     orderId
             );
+            return response.getBody();
+        }
+        catch (HttpClientErrorException | HttpServerErrorException e){
+            if(e.getStatusCode() == HttpStatus.BAD_REQUEST){
+                throw new Exception(e.getResponseBodyAsString());
+            }
+            if(e.getStatusCode() == HttpStatus.NOT_FOUND){
+                throw new Exception(e.getResponseBodyAsString());
+            }
+            else{
+                throw new Exception(e.getResponseBodyAsString());
+            }
+        }
+    }
+
+
+    public ShippingDto getShipping(Integer orderId,
+                                   Integer userId) throws Exception {
+
+        ShippingDto shippingDto;
+        RestTemplate restTemplate = new RestTemplate();
+
+        try {
+            ResponseEntity<ShippingDto> response = restTemplate.getForEntity(
+                    shippingUrl + "/{orderId}/{userId}",
+                    ShippingDto.class,
+                    orderId, userId
+            );
+
+            if (response.getBody().getStatus() != Status.DELIVERED){
+                throw new Exception("You cannot give review to this product");
+            }
             return response.getBody();
         }
         catch (HttpClientErrorException | HttpServerErrorException e){
