@@ -1,8 +1,8 @@
-ecommerce\wallet.class
-ecommerce\Dto\UserDto.class
 ecommerce\Controllers\WalletController.class
 ecommerce\Services\WalletService.class
 ecommerce\Auditing\JpaAuditingConfiguration.class
 ecommerce\Repository\WalletRepository.class
-ecommerce\Models\Wallet.class
 ecommerce\Exceptions\AlreadyExistingException.class
+ecommerce\wallet.class
+ecommerce\Dto\UserDto.class
+ecommerce\Models\Wallet.class

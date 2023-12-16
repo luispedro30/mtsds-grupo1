@@ -3,6 +3,8 @@ D:\mtsds-grupo1-github\mtsds-grupo1\e-commerce\Reviews\src\main\java\ecommerce\D
 D:\mtsds-grupo1-github\mtsds-grupo1\e-commerce\Reviews\src\main\java\ecommerce\Reviews.java
 D:\mtsds-grupo1-github\mtsds-grupo1\e-commerce\Reviews\src\main\java\ecommerce\Auditing\JpaAuditingConfiguration.java
 D:\mtsds-grupo1-github\mtsds-grupo1\e-commerce\Reviews\src\main\java\ecommerce\Dto\UserDto.java
+D:\mtsds-grupo1-github\mtsds-grupo1\e-commerce\Reviews\src\main\java\ecommerce\Enum\Status.java
+D:\mtsds-grupo1-github\mtsds-grupo1\e-commerce\Reviews\src\main\java\ecommerce\Dto\ShippingDto.java
 D:\mtsds-grupo1-github\mtsds-grupo1\e-commerce\Reviews\src\main\java\ecommerce\Models\Review.java
 D:\mtsds-grupo1-github\mtsds-grupo1\e-commerce\Reviews\src\main\java\ecommerce\Controllers\ReviewController.java
 D:\mtsds-grupo1-github\mtsds-grupo1\e-commerce\Reviews\src\main\java\ecommerce\Repository\ReviewRepository.java

@@ -25,6 +25,7 @@ public class GatewayConfig {
                 .route("users-route", r -> r.method(HttpMethod.GET)
                         .and()
                         .path("/users/**")
+                        .filters(f -> f.filters(filter))
                         .uri("lb://users"))
                 .route("orders-route", r -> r.path("/orders/**").uri("lb://orders"))
                 .route("products-route", r -> r.path("/products/**").uri("lb://products"))

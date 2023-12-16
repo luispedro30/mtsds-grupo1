@@ -3,6 +3,7 @@ package ecommerce.Controllers;
 import ecommerce.Exceptions.ItemDoesNotExistException;
 import ecommerce.Models.Order;
 import ecommerce.Services.OrderService;
+import jakarta.servlet.http.HttpServletRequest;
 import org.aspectj.weaver.ast.Or;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -52,11 +53,11 @@ public class OrderController {
     }
 
     @PostMapping
-    ResponseEntity<?> add(@RequestBody Order order){
+    ResponseEntity<?> add(@RequestBody Order order, HttpServletRequest request){
 
         Order newOrder;
         try {
-            newOrder = orderService.addOrder(order);
+            newOrder = orderService.addOrder(order, request);
         } catch (ItemDoesNotExistException e){
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("User does not exist");
         } catch (Exception e){

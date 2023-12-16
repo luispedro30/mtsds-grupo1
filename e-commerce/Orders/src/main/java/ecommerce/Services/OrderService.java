@@ -2,26 +2,25 @@ package ecommerce.Services;
 
 import ecommerce.Dto.ProductDto;
 import ecommerce.Dto.UserDto;
-import ecommerce.Exceptions.ItemDoesNotExistException;
 import ecommerce.Models.Order;
 import ecommerce.Models.Products;
 import ecommerce.Models.User;
 import ecommerce.Repository.OrderRepository;
-import ecommerce.Repository.ProductsRepository;
 import ecommerce.Repository.UserRepository;
+import jakarta.servlet.http.HttpServletRequest;
 import jakarta.transaction.Transactional;
-import org.aspectj.weaver.ast.Or;
 import org.hibernate.Hibernate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
+import org.springframework.http.*;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.HttpServerErrorException;
 import org.springframework.web.client.RestTemplate;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 @Service
@@ -78,11 +77,25 @@ public class OrderService {
         return productDTO;
     }
 
+    private String extractToken(HttpServletRequest request) {
+        // Your logic to extract the token from the incoming request headers
+        // For example:
+        String authorizationHeader = request.getHeader("Authorization");
+        if (authorizationHeader != null && authorizationHeader.startsWith("Bearer ")) {
+            return authorizationHeader.substring(7); // Extract the token without "Bearer " prefix
+        }
+        return null; // Handle token not found scenario
+    }
+
+
     @Transactional
-    public Order addOrder(Order order) throws Exception {
-        //user must exist
+    public Order addOrder(Order order, HttpServletRequest request) throws Exception {
+        //user must exists
         UserDto userDto;
-        userDto = getUser(order.getUserId());
+        String token = extractToken(request);
+
+        userDto = getUser(order.getUserId(),request, token);
+
 
 
         double totalPrice = 0;
@@ -109,17 +122,40 @@ public class OrderService {
         return orderRepository.save(order);
     }
 
-    public UserDto getUser(Integer userId) throws Exception {
+    public UserDto getUser(Integer userId, HttpServletRequest request, String token) throws Exception {
 
         UserDto userDto;
+
+        // Set token as a header in the outgoing request
+        HttpHeaders headers = new HttpHeaders();
+        headers.set("Authorization", "Bearer " + token);
+
+        HttpEntity<Object> httpEntity = new HttpEntity<>(headers);
+
+
         RestTemplate restTemplate = new RestTemplate();
 
         try {
-            ResponseEntity<UserDto> response = restTemplate.getForEntity(
+            /*ResponseEntity<UserDto> response = restTemplate.getForEntity(
                     usersUrl + "/{userId}",
                     UserDto.class,
                     userId
-            );
+            );*/
+            /*ResponseEntity<UserDto> response =
+                    restTemplate.getForEntity(usersUrl + "/{userId}",
+                            UserDto.class,
+                            httpEntity,
+                            userId);*/
+
+            System.out.println(userId);
+            System.out.println(usersUrl);
+            System.out.println(usersUrl + "/"+userId);
+            ResponseEntity<UserDto> response = restTemplate.exchange(usersUrl + "/"+userId,
+                    HttpMethod.GET,
+                    httpEntity,
+                    UserDto.class);
+
+
             System.out.println(response.getBody().getRole());
             if (response.getBody().getRole().equals("USER")){
                 return response.getBody();

@@ -65,6 +65,7 @@ public class UserController {
 
     @GetMapping (value = "/users/{id}")
     public ResponseEntity<User> getUserById(@PathVariable("id") Integer id) throws Exception {
+
         User user = userService.getUserById(id);
         logger.info(marker,"getUserById() request received ... pending");
         if(user != null) {
