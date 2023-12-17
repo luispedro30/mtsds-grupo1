@@ -2,6 +2,8 @@ package ecommerce.Enums;
 
 public enum Role {
     USER ("user"),
+
+    FORNECEDOR("fornecedor"),
     ADMIN ("admin");
 
     public String role;
