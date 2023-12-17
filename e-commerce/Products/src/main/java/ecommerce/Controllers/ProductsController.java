@@ -39,7 +39,7 @@ public class ProductsController {
         logger.info(marker,"addProduct() request received ... pending");
         if(product != null) {
             try {
-                productService.addProduct(product, idUser);
+                productService.addProduct(product, idUser, request);
                 logger.info(marker,"addProduct() request received ... 201 Created{}",product);
                 return new ResponseEntity<Product>(
                         product,
@@ -69,12 +69,14 @@ public class ProductsController {
     }
 
     @DeleteMapping(value = "/products/{id}")
-    private ResponseEntity<Void> deleteProduct(@PathVariable("id") Integer id,@RequestParam ("id") Integer idUser){
+    private ResponseEntity<Void> deleteProduct(@PathVariable("id") Integer id,
+                                               @RequestParam ("id") Integer idUser,
+                                               HttpServletRequest request){
         Product product = productService.getProductById(id);
         logger.info(marker,"deleteProduct() request received ... pending");
         if(product != null) {
             try {
-                productService.deleteProduct(id, idUser);
+                productService.deleteProduct(id, idUser, request);
                 logger.info(marker,"deleteProduct() request received ... 200 {}",product);
                 return new ResponseEntity<Void>(
                         HttpStatus.OK);

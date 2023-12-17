@@ -4,11 +4,11 @@ import ecommerce.Dto.UserDto;
 import ecommerce.Enums.Category;
 import ecommerce.Models.Product;
 import ecommerce.Repository.ProductsRepository;
+import jakarta.servlet.http.HttpServletRequest;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
+import org.springframework.http.*;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.HttpServerErrorException;
@@ -46,10 +46,12 @@ public class ProductsService   {
         return productRepository.findAllByName(name);
     }
 
-    public Product addProduct(Product product, Integer userId) throws Exception {
+    public Product addProduct(Product product,
+                              Integer userId,
+                              HttpServletRequest request) throws Exception {
 
         UserDto userDto;
-        userDto = getUser(userId);
+        userDto = getAdminFornecedor(userId, request, extractToken(request));
         return productRepository.save(product);
     }
 
@@ -61,24 +63,35 @@ public class ProductsService   {
         return product;
     }
 
-    public void deleteProduct(Integer productId, Integer userId) throws Exception {
+    public void deleteProduct(Integer productId,
+                              Integer userId,
+                              HttpServletRequest request) throws Exception {
         UserDto userDto;
-        userDto = getUser(userId);
+        userDto = getAdminFornecedor(userId, request, extractToken(request));
 
         productRepository.deleteById(productId);
     }
 
-    public UserDto getUser(Integer userId) throws Exception {
+    public UserDto getAdminFornecedor(Integer userId, HttpServletRequest request, String token) throws Exception {
 
         UserDto userDto;
+
+        // Set token as a header in the outgoing request
+        HttpHeaders headers = new HttpHeaders();
+        headers.set("Authorization", "Bearer " + token);
+
+
+        HttpEntity<Object> httpEntity = new HttpEntity<>(headers);
+
         RestTemplate restTemplate = new RestTemplate();
 
         try {
-            ResponseEntity<UserDto> response = restTemplate.getForEntity(
-                    usersUrl + "/{userId}",
-                    UserDto.class,
-                    userId
-            );
+            ResponseEntity<UserDto> response = restTemplate.exchange(usersUrl + "/"+userId,
+                    HttpMethod.GET,
+                    httpEntity,
+                    UserDto.class);
+
+
             System.out.println(response.getBody().getRole());
             if (response.getBody().getRole().equals("ADMIN")|| response.getBody().getRole().equals("FORNECEDOR")){
                 return response.getBody();
@@ -99,5 +112,15 @@ public class ProductsService   {
                 throw new Exception(e.getResponseBodyAsString());
             }
         }
+    }
+
+    private String extractToken(HttpServletRequest request) {
+        // Your logic to extract the token from the incoming request headers
+        // For example:
+        String authorizationHeader = request.getHeader("Authorization");
+        if (authorizationHeader != null && authorizationHeader.startsWith("Bearer ")) {
+            return authorizationHeader.substring(7); // Extract the token without "Bearer " prefix
+        }
+        return null; // Handle token not found scenario
     }
 }

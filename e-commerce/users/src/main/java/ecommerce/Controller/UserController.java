@@ -80,6 +80,7 @@ public class UserController {
     }
 
 
+
     @PostMapping (value = "/users")
     public ResponseEntity<User> addUser(@RequestBody User user, HttpServletRequest request) throws Exception {
         logger.info(marker,"addUser() request received ... pending");
@@ -108,6 +109,38 @@ public class UserController {
             }
         logger.info(marker,"addUser() request received ... Bad Request{}");
         return new ResponseEntity<User>(HttpStatus.BAD_REQUEST);
+    }
+
+    @PutMapping("/users/{id}")
+    public ResponseEntity<User> updateUserById(@RequestBody User user, HttpServletRequest request) {
+        try {
+            User updatedUser = userService.updateUser(user);
+            return new ResponseEntity<>(updatedUser, HttpStatus.OK);
+        } catch (Exception e) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
+
+    @PutMapping("/admin/users/{id}")
+    public ResponseEntity<User> updateUserByIdByAdmin(@RequestBody User user, HttpServletRequest request) {
+        try {
+            User updatedUser = userService.updateUserByAdmin(user);
+            return new ResponseEntity<>(updatedUser, HttpStatus.OK);
+        } catch (Exception e) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
+
+
+    @DeleteMapping("/users/{id}")
+    public ResponseEntity<Void> deleteUser(@PathVariable("id") Integer id,
+                                           HttpServletRequest request) {
+        try {
+            userService.deleteUser(id);
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        } catch (Exception e) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
     }
 
 }

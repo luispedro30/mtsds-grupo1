@@ -6,6 +6,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import ecommerce.Models.Product;
 import ecommerce.Repository.ProductsRepository;
 import ecommerce.Services.ProductsService;
+import jakarta.servlet.http.HttpServletRequest;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -125,7 +126,7 @@ public class ProductsControllerTest {
     }
 
     @Test
-    public void createProduct() throws Exception
+    public void createProduct(HttpServletRequest request) throws Exception
     {
 
         Product product1 = new Product(3,
@@ -139,7 +140,7 @@ public class ProductsControllerTest {
         params.add("id", String.valueOf(this.userDto.getId()));
 
         //when
-        when(productsService.addProduct(product1, this.userDto.getId())).thenReturn(product);
+        when(productsService.addProduct(product1, this.userDto.getId(),request)).thenReturn(product);
 
         //then
         mvc.perform(MockMvcRequestBuilders

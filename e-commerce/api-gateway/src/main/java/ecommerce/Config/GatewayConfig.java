@@ -13,6 +13,11 @@ public class GatewayConfig {
     @Autowired
     private AuthenticationFilter filter;
 
+    public GatewayConfig(AuthenticationFilter filter) {
+        this.filter = filter;
+    }
+
+
     @Bean
     public RouteLocator customRouteLocator(RouteLocatorBuilder builder){
         return builder.routes()
@@ -27,24 +32,45 @@ public class GatewayConfig {
                 .route("users-route", r -> r.method(HttpMethod.GET)
                         .and()
                         .path("/users/**")
-                        .filters(f -> f.filters(filter))
+                        .uri("lb://users"))
+                .route("users-route", r -> r.path("/users/**")
+                        .and()
+                        .predicate(serverWebExchange ->
+                        {
+                            String requestMethod = serverWebExchange.getRequest().getMethod().name();
+                            return "PUT".equals(requestMethod) || "DELETE".equals(requestMethod);
+                        })
+                        .filters(f -> f.filter(filter.apply("USER,FORNECEDOR")))
                         .uri("lb://users"))
                 .route("orders-route", r -> r.path("/orders/**")
-                        .filters(f -> f.filters(filter))
+                        .filters(f -> f.filter(filter.apply("USER")))
                         .uri("lb://orders"))
-                .route("products-route", r -> r.path("/products/**")
+                .route("products-route", r -> r.method(HttpMethod.POST)
+                        .and()
+                        .path("/products")
+                        .filters(f -> f.filter(filter.apply("FORNECEDOR")))
                         .uri("lb://products"))
-                .route("reviews-route", r -> r.path("/reviews/**")
-                        .filters(f -> f.filters(filter))
+                .route("products-route", r -> r.method(HttpMethod.GET)
+                        .and()
+                        .path("/products/**")
+                        .uri("lb://products"))
+                .route("reviews-route", r -> r.method(HttpMethod.POST)
+                        .and()
+                        .path("/reviews")
+                        .filters(f -> f.filter(filter.apply("USER")))
+                        .uri("lb://reviews"))
+                .route("reviews-route", r -> r.method(HttpMethod.GET)
+                        .and()
+                        .path("/products/**")
                         .uri("lb://reviews"))
                 .route("wallet-route", r -> r.path("/wallet/**")
-                        .filters(f -> f.filters(filter))
+                        .filters(f -> f.filter(filter.apply("USER")))
                         .uri("lb://wallet"))
                 .route("payment-route", r -> r.path("/payment/**")
-                        .filters(f -> f.filters(filter))
+                        .filters(f -> f.filter(filter.apply("USER")))
                         .uri("lb://payment"))
                 .route("shipping-route", r -> r.path("/shipping/**")
-                        .filters(f -> f.filters(filter))
+                        .filters(f -> f.filter(filter.apply("FORNECEDOR")))
                         .uri("lb://shipping"))
                 .build();
     }
