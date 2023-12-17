@@ -6,20 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="e63fab2e-ccd9-4599-8c37-fc239380bb02" name="Changes" comment="fix: update authentication microservice with Postgres database and to connect with user microservice">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Authentication/src/main/java/ecommerce/Controllers/AuthenticationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Authentication/src/main/java/ecommerce/Controllers/AuthenticationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Authentication/src/main/java/ecommerce/DTO/RegisterDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Authentication/src/main/java/ecommerce/DTO/RegisterDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Authentication/src/main/java/ecommerce/Models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/Authentication/src/main/java/ecommerce/Models/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Authentication/target/classes/ecommerce/Controllers/AuthenticationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Authentication/target/classes/ecommerce/Controllers/AuthenticationController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Authentication/target/classes/ecommerce/Models/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/Authentication/target/classes/ecommerce/Models/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Email/src/main/java/ecommerce/Model/EmailModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/Email/src/main/java/ecommerce/Model/EmailModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Email/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Email/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Email/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Email/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Email/target/classes/ecommerce/Model/EmailModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/Email/target/classes/ecommerce/Model/EmailModel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Wallet/src/main/java/ecommerce/Config/MQConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/Wallet/src/main/java/ecommerce/Config/MQConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Wallet/src/main/java/ecommerce/Dto/UserDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/Wallet/src/main/java/ecommerce/Dto/UserDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Wallet/src/main/java/ecommerce/Services/WalletService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Wallet/src/main/java/ecommerce/Services/WalletService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Wallet/src/test/java/ecommerce/Controllers/WalletControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Wallet/src/test/java/ecommerce/Controllers/WalletControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/src/main/java/ecommerce/Models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/users/src/main/java/ecommerce/Models/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Orders/src/main/java/ecommerce/Config/MQConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/Orders/src/main/java/ecommerce/Config/MQConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Orders/src/main/java/ecommerce/Dto/UserDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/Orders/src/main/java/ecommerce/Dto/UserDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Orders/src/main/java/ecommerce/Services/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Orders/src/main/java/ecommerce/Services/OrderService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,9 +73,9 @@
       <recent name="D:\mtsds-grupo1-github\mtsds-grupo1\e-commerce\Wallet\src\main\java\ecommerce" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="ecommerce.Config" />
-      <recent name="ecommerce.Listeners" />
       <recent name="ecommerce.Messages" />
+      <recent name="ecommerce.Listeners" />
+      <recent name="ecommerce.Config" />
       <recent name="ecommerce.Controllers" />
       <recent name="ecommerce.Dtos" />
     </key>
@@ -244,11 +233,6 @@
           <url>file://$PROJECT_DIR$/Reviews/src/main/java/ecommerce/Services/ReviewService.java</url>
           <line>252</line>
           <option name="timeStamp" value="55" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Orders/src/main/java/ecommerce/Services/OrderService.java</url>
-          <line>129</line>
-          <option name="timeStamp" value="77" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Payment/src/main/java/ecommerce/Services/PaymentService.java</url>
