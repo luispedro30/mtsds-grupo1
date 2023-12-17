@@ -2,6 +2,7 @@ package ecommerce.Services;
 
 import ecommerce.Dto.ProductDto;
 import ecommerce.Dto.UserDto;
+import ecommerce.Messages.Order2Email;
 import ecommerce.Models.Order;
 import ecommerce.Models.Products;
 import ecommerce.Models.User;
@@ -10,6 +11,7 @@ import ecommerce.Repository.UserRepository;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.transaction.Transactional;
 import org.hibernate.Hibernate;
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.*;
@@ -39,6 +41,8 @@ public class OrderService {
     @Autowired
     UserRepository userRepository;
 
+    @Autowired
+    RabbitTemplate template;
     public List<Order> getAll(){
         return orderRepository.findAll();
     }
@@ -119,7 +123,25 @@ public class OrderService {
                 userDto.getName(),
                 userDto.getActive(),
                 userDto.getRole()));
-        return orderRepository.save(order);
+
+
+        orderRepository.save(order);
+
+        Order2Email order2Email = new Order2Email();
+        order2Email.setOwnerRef("Ref: Orders");
+        order2Email.setSubject("It was created a order in your name");
+        order2Email.setEmailFrom("luispedrotrinta.1998@gmail.com");
+        order2Email.setEmailTo(userDto.getEmail());
+        order2Email.setText("Hello," +
+                "" +
+                "It was taken created a order in your name with the following id: "+ order.getOrderId()+"."+
+                "" +
+                "In order to proceed follow with the payment."+
+                ""+
+                "Best regards");
+        template.convertAndSend("order-2-email-queue",order2Email);
+
+        return order;
     }
 
     public UserDto getUser(Integer userId, HttpServletRequest request, String token) throws Exception {

@@ -4,6 +4,7 @@ import ecommerce.Config.MQConfig;
 import ecommerce.Dto.OrderDto;
 import ecommerce.Dto.UserDto;
 import ecommerce.Dto.WalletDto;
+import ecommerce.Messages.Payment2Email;
 import ecommerce.Models.Payment;
 import ecommerce.Repository.PaymentRepository;
 import jakarta.servlet.http.HttpServletRequest;
@@ -122,6 +123,21 @@ public class PaymentService {
                 MQConfig.ROUTING_KEY_3,
                 payment
         );
+
+        Payment2Email payment2Email = new Payment2Email();
+        payment2Email.setOwnerRef("Ref: Payment");
+        payment2Email.setSubject("Payment received with success");
+        payment2Email.setEmailFrom("luispedrotrinta.1998@gmail.com");
+        payment2Email.setEmailTo(userDto.getEmail());
+        payment2Email.setText("Hello," +
+                "" +
+                "It was taken a payment with the id: "+ payment.getPaymentId()+
+                " with the value of" + payment.getPriceTotal() + "euros with the userId "+
+                payment.getUserId() + "and orderId "+payment.getOrderId()+
+                "" +
+                "Best regards");
+        template.convertAndSend("payment-2-email-queue",payment2Email);
+
 
         return payment;
     }

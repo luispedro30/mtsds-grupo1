@@ -43,6 +43,11 @@ public class MQConfig {
     }
 
     @Bean
+    public Queue order2emailQueue() {
+        return new Queue("order-2-email-queue"); // Destination queue for sending messages
+    }
+
+    @Bean
     public TopicExchange exchange(){
         return new TopicExchange(EXCHANGE);
     }

@@ -66,6 +66,7 @@ public class AuthenticationController {
         User newUser = new User(uniqueInteger,
                 data.name(),
                 data.login(),
+                data.email(),
                 encryptedPassword,
                 data.role());
 

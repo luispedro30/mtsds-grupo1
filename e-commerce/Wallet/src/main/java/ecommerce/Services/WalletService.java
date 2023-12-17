@@ -1,11 +1,13 @@
 package ecommerce.Services;
 
 import ecommerce.Dto.UserDto;
+import ecommerce.Messages.Wallet2Email;
 import ecommerce.Models.Wallet;
 import ecommerce.Repository.WalletRepository;
 import ecommerce.wallet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.transaction.Transactional;
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.*;
@@ -25,6 +27,9 @@ public class WalletService {
 
     @Autowired
     private WalletRepository walletRepository;
+
+    @Autowired
+    private RabbitTemplate template;
 
     public List<Wallet> getAllWallets() {
         return walletRepository.findAll();
@@ -50,6 +55,19 @@ public class WalletService {
         if(getWalletByUserId(wallet.getUserId()) != null){
             throw new Exception("There is already a wallet for this User");
         }
+
+        Wallet2Email wallet2Email = new Wallet2Email();
+        wallet2Email.setOwnerRef("Ref: Wallet");
+        wallet2Email.setSubject("Wallet creation");
+        wallet2Email.setEmailFrom("luispedrotrinta.1998@gmail.com");
+        wallet2Email.setEmailTo(userDto.getEmail());
+        wallet2Email.setText("Hello," +
+                "" +
+                "It was created a wallet in your name with"+ wallet.getValue()+ " euros."+
+                "" +
+                "Best regards");
+        template.convertAndSend("wallet-2-email-queue",wallet2Email);
+
         return walletRepository.save(wallet);
     }
 
@@ -65,6 +83,18 @@ public class WalletService {
 
         wallet.setValue(wallet.getValue()+money);
 
+        Wallet2Email wallet2Email = new Wallet2Email();
+        wallet2Email.setOwnerRef("Ref: Wallet");
+        wallet2Email.setSubject("Wallet money added");
+        wallet2Email.setEmailFrom("luispedrotrinta.1998@gmail.com");
+        wallet2Email.setEmailTo(userDto.getEmail());
+        wallet2Email.setText("Hello," +
+                "" +
+                "It was added"+ wallet.getValue()+ " euros to your wallet."+
+                "" +
+                "Best regards");
+        template.convertAndSend("wallet-2-email-queue",wallet2Email);
+
         return wallet;
     }
 
@@ -79,6 +109,18 @@ public class WalletService {
         userDto = getUser(wallet.getUserId(),request, token);
 
         wallet.setValue(wallet.getValue()-money);
+
+        Wallet2Email wallet2Email = new Wallet2Email();
+        wallet2Email.setOwnerRef("Ref: Wallet");
+        wallet2Email.setSubject("Wallet money taken out");
+        wallet2Email.setEmailFrom("luispedrotrinta.1998@gmail.com");
+        wallet2Email.setEmailTo(userDto.getEmail());
+        wallet2Email.setText("Hello," +
+                "" +
+                "It was taken "+ wallet.getValue()+ " euros to your wallet."+
+                "" +
+                "Best regards");
+        template.convertAndSend("wallet-2-email-queue",wallet2Email);
 
         return wallet;
     }
