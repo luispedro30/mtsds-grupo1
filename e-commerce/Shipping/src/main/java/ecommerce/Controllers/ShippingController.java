@@ -5,6 +5,7 @@ import ecommerce.Exceptions.ItemDoesNotExistException;
 import ecommerce.Models.Shipping;
 import ecommerce.Services.ShippingService;
 import jakarta.persistence.criteria.CriteriaBuilder;
+import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -47,11 +48,11 @@ public class ShippingController {
     }
 
     @PostMapping
-    ResponseEntity<?> add(@RequestBody Shipping shipping){
+    ResponseEntity<?> add(@RequestBody Shipping shipping, HttpServletRequest request){
 
         Shipping newShipping;
         try {
-            newShipping = shippingService.addShipping(shipping);
+            newShipping = shippingService.addShipping(shipping, request);
         } catch (ItemDoesNotExistException e){
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("User does not exist");
         } catch (Exception e){
