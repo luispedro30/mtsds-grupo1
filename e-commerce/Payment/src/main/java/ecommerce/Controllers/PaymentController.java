@@ -3,6 +3,7 @@ package ecommerce.Controllers;
 import ecommerce.Exceptions.ItemDoesNotExistException;
 import ecommerce.Models.Payment;
 import ecommerce.Services.PaymentService;
+import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -44,11 +45,11 @@ public class PaymentController {
     }
 
     @PostMapping
-    ResponseEntity<?> add(@RequestBody Payment payment){
+    ResponseEntity<?> add(@RequestBody Payment payment, HttpServletRequest request){
 
         Payment newPayment;
         try {
-            newPayment = paymentService.addPayment(payment);
+            newPayment = paymentService.addPayment(payment, request);
         } catch (ItemDoesNotExistException e){
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("User does not exist");
         } catch (Exception e){

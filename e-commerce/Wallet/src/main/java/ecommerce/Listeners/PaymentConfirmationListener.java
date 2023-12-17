@@ -4,7 +4,9 @@ import ecommerce.Config.MQConfig;
 import ecommerce.Messages.PaymentConfirmationMessage;
 import ecommerce.Messages.WalletConcludedListener;
 import ecommerce.Models.Wallet;
+import ecommerce.Repository.WalletRepository;
 import ecommerce.Services.WalletService;
+import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +16,7 @@ import org.springframework.stereotype.Component;
 public class PaymentConfirmationListener {
 
     @Autowired
-    WalletService walletService;
+    WalletRepository walletRepository;
 
     @Autowired
     private RabbitTemplate template;
@@ -28,9 +30,11 @@ public class PaymentConfirmationListener {
                         "priceTotal: " + message.getPriceTotal() + ", " +
                         "messageDate" + message.getCreatedAt());
 
-        Wallet wallet = walletService.getWalletByUserId(message.getUserId());
+        Wallet wallet = walletRepository.findByUserId(message.getUserId());
 
-        walletService.takeMoneyWallet(wallet.getId(), (float) message.getPriceTotal());
+        wallet.setValue((float) (wallet.getValue()- message.getPriceTotal()));
+
+        walletRepository.save(wallet);
 
 
         System.out.println("Wallet value reduced");

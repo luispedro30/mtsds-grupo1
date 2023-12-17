@@ -4,11 +4,11 @@ import ecommerce.Dto.UserDto;
 import ecommerce.Models.Wallet;
 import ecommerce.Repository.WalletRepository;
 import ecommerce.wallet;
+import jakarta.servlet.http.HttpServletRequest;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
+import org.springframework.http.*;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.HttpServerErrorException;
@@ -40,10 +40,12 @@ public class WalletService {
         return walletRepository.findByUserId(id);
     }
 
-    public Wallet addWallet(Wallet wallet) throws Exception {
+    public Wallet addWallet(Wallet wallet, HttpServletRequest request) throws Exception {
 
         UserDto userDto;
-        userDto = getUser(wallet.getUserId());
+        String token = extractToken(request);
+
+        userDto = getUser(wallet.getUserId(),request, token);
 
         if(getWalletByUserId(wallet.getUserId()) != null){
             throw new Exception("There is already a wallet for this User");
@@ -51,38 +53,70 @@ public class WalletService {
         return walletRepository.save(wallet);
     }
 
-    public Wallet addMoneyWallet(Integer walletId, float money) throws Exception {
+    public Wallet addMoneyWallet(Integer walletId,
+                                 float money,
+                                 HttpServletRequest request) throws Exception {
         Wallet wallet = walletRepository.findById(walletId).orElseThrow(null);
 
         UserDto userDto;
-        userDto = getUser(wallet.getUserId());
+        String token = extractToken(request);
+
+        userDto = getUser(wallet.getUserId(),request, token);
 
         wallet.setValue(wallet.getValue()+money);
 
         return wallet;
     }
 
-    public Wallet takeMoneyWallet(Integer walletId, float money) throws Exception {
+    public Wallet takeMoneyWallet(Integer walletId,
+                                  float money,
+                                  HttpServletRequest request) throws Exception {
         Wallet wallet = walletRepository.findById(walletId).orElseThrow(null);
 
         UserDto userDto;
-        userDto = getUser(wallet.getUserId());
+        String token = extractToken(request);
+
+        userDto = getUser(wallet.getUserId(),request, token);
 
         wallet.setValue(wallet.getValue()-money);
 
         return wallet;
     }
-    public UserDto getUser(Integer userId) throws Exception {
+
+    public UserDto getUser(Integer userId, HttpServletRequest request, String token) throws Exception {
 
         UserDto userDto;
+
+        // Set token as a header in the outgoing request
+        HttpHeaders headers = new HttpHeaders();
+        headers.set("Authorization", "Bearer " + token);
+
+        HttpEntity<Object> httpEntity = new HttpEntity<>(headers);
+
+
         RestTemplate restTemplate = new RestTemplate();
 
         try {
-            ResponseEntity<UserDto> response = restTemplate.getForEntity(
+            /*ResponseEntity<UserDto> response = restTemplate.getForEntity(
                     usersUrl + "/{userId}",
                     UserDto.class,
                     userId
-            );
+            );*/
+            /*ResponseEntity<UserDto> response =
+                    restTemplate.getForEntity(usersUrl + "/{userId}",
+                            UserDto.class,
+                            httpEntity,
+                            userId);*/
+
+            System.out.println(userId);
+            System.out.println(usersUrl);
+            System.out.println(usersUrl + "/"+userId);
+            ResponseEntity<UserDto> response = restTemplate.exchange(usersUrl + "/"+userId,
+                    HttpMethod.GET,
+                    httpEntity,
+                    UserDto.class);
+
+
             System.out.println(response.getBody().getRole());
             if (response.getBody().getRole().equals("USER")){
                 return response.getBody();
@@ -103,5 +137,15 @@ public class WalletService {
                 throw new Exception(e.getResponseBodyAsString());
             }
         }
+    }
+
+    private String extractToken(HttpServletRequest request) {
+        // Your logic to extract the token from the incoming request headers
+        // For example:
+        String authorizationHeader = request.getHeader("Authorization");
+        if (authorizationHeader != null && authorizationHeader.startsWith("Bearer ")) {
+            return authorizationHeader.substring(7); // Extract the token without "Bearer " prefix
+        }
+        return null; // Handle token not found scenario
     }
 }

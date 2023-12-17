@@ -5,7 +5,9 @@ import ecommerce.Enum.Status;
 import ecommerce.Messages.PaymentConfirmationMessage;
 import ecommerce.Messages.ShippingConcludedListener;
 import ecommerce.Models.Shipping;
+import ecommerce.Repository.ShippingRepository;
 import ecommerce.Services.ShippingService;
+import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,8 +16,11 @@ import org.springframework.stereotype.Component;
 @Component
 public class PaymentConfirmationListener {
 
+    //@Autowired
+    //ShippingService shippingService;
+
     @Autowired
-    ShippingService shippingService;
+    ShippingRepository shippingRepository;
 
     @Autowired
     private RabbitTemplate template;
@@ -34,9 +39,10 @@ public class PaymentConfirmationListener {
         newShipping.setOrderId(message.getOrderId());
         newShipping.setUserId(message.getUserId());
         newShipping.setStatus(Status.REGISTED);
-        Shipping shipping = shippingService.addShipping(newShipping);
 
-        System.out.println("Wallet value reduced");
+        Shipping shipping = shippingRepository.save(newShipping);
+
+        System.out.println("Payment received");
 
         ShippingConcludedListener walletConcludedListener = new ShippingConcludedListener();
         walletConcludedListener.setMessage("Received your message: " + message);

@@ -6,6 +6,7 @@ import ecommerce.Dto.ProductDto;
 import ecommerce.Dto.UserDto;
 import ecommerce.Models.Payment;
 import ecommerce.Services.PaymentService;
+import jakarta.servlet.http.HttpServletRequest;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -183,9 +184,20 @@ public class PaymentControllerTest {
         verifyNoMoreInteractions(paymentService);
     }
 
+    private String extractToken(HttpServletRequest request) {
+        // Your logic to extract the token from the incoming request headers
+        // For example:
+        String authorizationHeader = request.getHeader("Authorization");
+        if (authorizationHeader != null && authorizationHeader.startsWith("Bearer ")) {
+            return authorizationHeader.substring(7); // Extract the token without "Bearer " prefix
+        }
+        return null; // Handle token not found scenario
+    }
     @Test
-    public void createPayment() throws Exception
+    public void createPayment(HttpServletRequest request) throws Exception
     {
+
+        String token = extractToken(request);
 
         Payment payment1 = new Payment(1,
                 1,
@@ -195,7 +207,7 @@ public class PaymentControllerTest {
                 Date.from(Instant.now()));
 
         //when
-        when(paymentService.addPayment(payment1)).thenReturn(payment1);
+        when(paymentService.addPayment(payment1, request)).thenReturn(payment1);
 
         //then
         mvc.perform(MockMvcRequestBuilders
@@ -208,7 +220,7 @@ public class PaymentControllerTest {
     }
 
     @Test
-    public void createPaymentWithAlreadyExistingPayment() throws Exception
+    public void createPaymentWithAlreadyExistingPayment(HttpServletRequest request) throws Exception
     {
 
         Payment payment1 = new Payment(1,
@@ -219,7 +231,7 @@ public class PaymentControllerTest {
                 Date.from(Instant.now()));
 
         //when
-        when(paymentService.addPayment(payment1)).thenReturn(payment1);
+        when(paymentService.addPayment(payment1, request)).thenReturn(payment1);
 
         //then
         mvc.perform(MockMvcRequestBuilders
@@ -251,7 +263,7 @@ public class PaymentControllerTest {
 
 
         // Verify that the save method was not called (to ensure the new wallet was not added)
-        verify(paymentService, times(0)).addPayment(payment2);
+        verify(paymentService, times(0)).addPayment(payment2, request);
     }
 
     public static String asJsonString(final Object obj) {

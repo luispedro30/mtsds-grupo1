@@ -3,6 +3,7 @@ package ecommerce.Controllers;
 import ecommerce.Exceptions.ItemDoesNotExistException;
 import ecommerce.Models.Review;
 import ecommerce.Services.ReviewService;
+import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -30,11 +31,11 @@ public class ReviewController {
     }
 
     @PostMapping
-    ResponseEntity<?> add(@RequestBody Review review){
+    ResponseEntity<?> add(@RequestBody Review review, HttpServletRequest request){
 
         Review newReview;
         try {
-            newReview = reviewService.addReview(review);
+            newReview = reviewService.addReview(review, request);
         } catch (ItemDoesNotExistException e){
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("User does not exist");
         } catch (Exception e){

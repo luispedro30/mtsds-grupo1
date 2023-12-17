@@ -6,11 +6,11 @@ import ecommerce.Dto.UserDto;
 import ecommerce.Dto.WalletDto;
 import ecommerce.Models.Shipping;
 import ecommerce.Repository.ShippingRepository;
+import jakarta.servlet.http.HttpServletRequest;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
+import org.springframework.http.*;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.HttpServerErrorException;
@@ -52,16 +52,17 @@ public class ShippingService {
         return shippingRepository.findByOrderIdAndUserId(orderId, userId);
     }
 
-    public Shipping addShipping(Shipping shipping) throws Exception {
+    public Shipping addShipping(Shipping shipping, HttpServletRequest request) throws Exception {
 
         UserDto userDto;
-        userDto = getUser(shipping.getUserId());
+        String token = extractToken(request);
+        userDto = getUser(shipping.getUserId(), request, token);
 
         OrderDto orderDto;
-        orderDto = getOrder(shipping.getOrderId());
+        orderDto = getOrder(shipping.getOrderId(), request, token);
 
         WalletDto walletDto;
-        walletDto = getWallet(shipping.getUserId());
+        walletDto = getWallet(shipping.getUserId(), request, token);
 
         //PaymentDto paymentDto;
         //paymentDto = getPayment(shipping.getPaymentId());
@@ -74,31 +75,46 @@ public class ShippingService {
         return shippingRepository.save(shipping);
     }
 
-    public void deletePayment(Integer paymentId, Integer userId) throws Exception {
+    public void deletePayment(Integer paymentId,
+                              Integer userId,
+                              HttpServletRequest request) throws Exception {
         UserDto userDto;
-        userDto = getAdminFornecedor(userId);
+        String token = extractToken(request);
+        userDto = getAdminFornecedor(userId, request, token);
 
         shippingRepository.deleteById(paymentId);
     }
 
-    public void updatePayment(Integer paymentId, Integer userId, Shipping newShipping) throws Exception {
+    public void updatePayment(Integer paymentId,
+                              Integer userId,
+                              Shipping newShipping,
+                              HttpServletRequest request) throws Exception {
         UserDto userDto;
-        userDto = getAdminFornecedor(userId);
+        String token = extractToken(request);
+        userDto = getAdminFornecedor(userId, request, token);
 
         shippingRepository.save(newShipping);
     }
 
-    public UserDto getAdminFornecedor(Integer userId) throws Exception {
+    public UserDto getAdminFornecedor(Integer userId, HttpServletRequest request, String token) throws Exception {
 
         UserDto userDto;
+
+        // Set token as a header in the outgoing request
+        HttpHeaders headers = new HttpHeaders();
+        headers.set("Authorization", "Bearer " + token);
+
+        HttpEntity<Object> httpEntity = new HttpEntity<>(headers);
+
         RestTemplate restTemplate = new RestTemplate();
 
         try {
-            ResponseEntity<UserDto> response = restTemplate.getForEntity(
-                    usersUrl + "/{userId}",
-                    UserDto.class,
-                    userId
-            );
+            ResponseEntity<UserDto> response = restTemplate.exchange(usersUrl + "/"+userId,
+                    HttpMethod.GET,
+                    httpEntity,
+                    UserDto.class);
+
+
             System.out.println(response.getBody().getRole());
             if (response.getBody().getRole().equals("ADMIN")|| response.getBody().getRole().equals("FORNECEDOR")){
                 return response.getBody();
@@ -121,23 +137,46 @@ public class ShippingService {
         }
     }
 
-    public UserDto getUser(Integer userId) throws Exception {
+    public UserDto getUser(Integer userId, HttpServletRequest request, String token) throws Exception {
 
         UserDto userDto;
+
+        // Set token as a header in the outgoing request
+        HttpHeaders headers = new HttpHeaders();
+        headers.set("Authorization", "Bearer " + token);
+
+        HttpEntity<Object> httpEntity = new HttpEntity<>(headers);
+
+
         RestTemplate restTemplate = new RestTemplate();
 
         try {
-            ResponseEntity<UserDto> response = restTemplate.getForEntity(
+            /*ResponseEntity<UserDto> response = restTemplate.getForEntity(
                     usersUrl + "/{userId}",
                     UserDto.class,
                     userId
-            );
+            );*/
+            /*ResponseEntity<UserDto> response =
+                    restTemplate.getForEntity(usersUrl + "/{userId}",
+                            UserDto.class,
+                            httpEntity,
+                            userId);*/
+
+            System.out.println(userId);
+            System.out.println(usersUrl);
+            System.out.println(usersUrl + "/"+userId);
+            ResponseEntity<UserDto> response = restTemplate.exchange(usersUrl + "/"+userId,
+                    HttpMethod.GET,
+                    httpEntity,
+                    UserDto.class);
+
+
             System.out.println(response.getBody().getRole());
             if (response.getBody().getRole().equals("USER")){
                 return response.getBody();
             }
             else {
-                throw new Exception("Tem de ser Comprador");
+                throw new Exception("There must be a buyer user");
             }
 
         }
@@ -154,17 +193,31 @@ public class ShippingService {
         }
     }
 
-    public OrderDto getOrder(Integer orderId) throws Exception {
+    public OrderDto getOrder(Integer orderId,
+                             HttpServletRequest request,
+                             String token) throws Exception {
 
         OrderDto orderDto;
+
+        HttpHeaders headers = new HttpHeaders();
+        headers.set("Authorization", "Bearer " + token);
+
+        HttpEntity<Object> httpEntity = new HttpEntity<>(headers);
+
         RestTemplate restTemplate = new RestTemplate();
 
         try {
-            ResponseEntity<OrderDto> response = restTemplate.getForEntity(
+            /*ResponseEntity<OrderDto> response = restTemplate.getForEntity(
                     ordersUrl + "/{orderId}",
                     OrderDto.class,
                     orderId
-            );
+            );*/
+
+            ResponseEntity<OrderDto> response = restTemplate.exchange(ordersUrl + "/"+orderId,
+                    HttpMethod.GET,
+                    httpEntity,
+                    OrderDto.class);
+
             return response.getBody();
         }
         catch (HttpClientErrorException | HttpServerErrorException e){
@@ -182,17 +235,31 @@ public class ShippingService {
 
     }
 
-    public WalletDto getWallet(Integer userId) throws Exception {
+    public WalletDto getWallet(Integer userId, HttpServletRequest request, String token) throws Exception {
 
         WalletDto walletDto;
+
+        HttpHeaders headers = new HttpHeaders();
+        headers.set("Authorization", "Bearer " + token);
+
+        HttpEntity<Object> httpEntity = new HttpEntity<>(headers);
+
         RestTemplate restTemplate = new RestTemplate();
 
+
         try {
-            ResponseEntity<WalletDto> response = restTemplate.getForEntity(
+            /*ResponseEntity<WalletDto> response = restTemplate.getForEntity(
                     walletUrl + "/userId/{walletID}",
                     WalletDto.class,
                     userId
-            );
+            );*/
+
+
+            ResponseEntity<WalletDto> response = restTemplate.exchange(
+                    walletUrl + "/userId/"+userId,
+                    HttpMethod.GET,
+                    httpEntity,
+                    WalletDto.class);
             return response.getBody();
         }
         catch (HttpClientErrorException | HttpServerErrorException e){
@@ -253,5 +320,15 @@ public class ShippingService {
         } else {
             return null;
         }
+    }
+
+    private String extractToken(HttpServletRequest request) {
+        // Your logic to extract the token from the incoming request headers
+        // For example:
+        String authorizationHeader = request.getHeader("Authorization");
+        if (authorizationHeader != null && authorizationHeader.startsWith("Bearer ")) {
+            return authorizationHeader.substring(7); // Extract the token without "Bearer " prefix
+        }
+        return null; // Handle token not found scenario
     }
 }

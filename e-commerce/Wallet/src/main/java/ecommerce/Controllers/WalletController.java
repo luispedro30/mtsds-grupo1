@@ -66,7 +66,7 @@ public class WalletController {
 
         if(wallet != null) {
             try {
-                walletService.addWallet(wallet);
+                walletService.addWallet(wallet, request);
                 return new ResponseEntity<Wallet>(
                         wallet,
                         HttpStatus.CREATED);
@@ -84,7 +84,7 @@ public class WalletController {
     private ResponseEntity<Wallet> addMoney(@PathVariable ("id") Integer idWallet,
                                             @RequestParam float money,
                                             HttpServletRequest request) throws Exception {
-        Wallet wallet = walletService.addMoneyWallet(idWallet, money);
+        Wallet wallet = walletService.addMoneyWallet(idWallet, money, request);
 
         return new ResponseEntity<Wallet>(
                 wallet,
@@ -96,7 +96,7 @@ public class WalletController {
     private ResponseEntity<Wallet> takeMoney(@PathVariable ("id") Integer idWallet,
                                             @RequestParam float money,
                                             HttpServletRequest request) throws Exception {
-        Wallet wallet = walletService.takeMoneyWallet(idWallet, money);
+        Wallet wallet = walletService.takeMoneyWallet(idWallet, money, request);
 
         return new ResponseEntity<Wallet>(
                 wallet,

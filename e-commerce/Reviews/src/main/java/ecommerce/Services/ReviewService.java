@@ -6,11 +6,11 @@ import ecommerce.Dto.UserDto;
 import ecommerce.Enum.Status;
 import ecommerce.Models.Review;
 import ecommerce.Repository.ReviewRepository;
+import jakarta.servlet.http.HttpServletRequest;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
+import org.springframework.http.*;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.HttpServerErrorException;
@@ -45,16 +45,17 @@ public class ReviewService {
                 .orElseThrow(null);
     }
 
-    public Review addReview(Review review) throws Exception {
+    public Review addReview(Review review, HttpServletRequest request) throws Exception {
 
         UserDto userDto;
-        userDto = getUser(review.getUserId());
+        String token = extractToken(request);
+        userDto = getUser(review.getUserId(), request, token);
 
         ShippingDto shippingDto;
-        shippingDto = getShipping(review.getOrderId(), review.getUserId());
+        shippingDto = getShipping(review.getOrderId(), review.getUserId(), request, token);
 
         OrderDto orderDto;
-        orderDto = getOrder(review.getOrderId());
+        orderDto = getOrder(review.getOrderId(), request, token);
 
         if(!doesNotExistAlready(review.getUserId(), review.getProductId(), review.getOrderId())){
             throw new Exception("This reviews already exists");
@@ -85,26 +86,32 @@ public class ReviewService {
     }
 
 
-
-
-    public void deleteReview(Integer reviewId, Integer userId) throws Exception {
+    public void deleteReview(Integer reviewId, Integer userId, HttpServletRequest request) throws Exception {
         UserDto userDto;
-        userDto = getAdminFornecedor(userId);
+        userDto = getAdminFornecedor(userId, request, extractToken(request));
 
         reviewRepository.deleteById(reviewId);
     }
 
-    public UserDto getAdminFornecedor(Integer userId) throws Exception {
+    public UserDto getAdminFornecedor(Integer userId, HttpServletRequest request, String token) throws Exception {
 
         UserDto userDto;
+
+        // Set token as a header in the outgoing request
+        HttpHeaders headers = new HttpHeaders();
+        headers.set("Authorization", "Bearer " + token);
+
+        HttpEntity<Object> httpEntity = new HttpEntity<>(headers);
+
         RestTemplate restTemplate = new RestTemplate();
 
         try {
-            ResponseEntity<UserDto> response = restTemplate.getForEntity(
-                    usersUrl + "/{userId}",
-                    UserDto.class,
-                    userId
-            );
+            ResponseEntity<UserDto> response = restTemplate.exchange(usersUrl + "/"+userId,
+                    HttpMethod.GET,
+                    httpEntity,
+                    UserDto.class);
+
+
             System.out.println(response.getBody().getRole());
             if (response.getBody().getRole().equals("ADMIN")|| response.getBody().getRole().equals("FORNECEDOR")){
                 return response.getBody();
@@ -127,23 +134,46 @@ public class ReviewService {
         }
     }
 
-    public UserDto getUser(Integer userId) throws Exception {
+    public UserDto getUser(Integer userId, HttpServletRequest request, String token) throws Exception {
 
         UserDto userDto;
+
+        // Set token as a header in the outgoing request
+        HttpHeaders headers = new HttpHeaders();
+        headers.set("Authorization", "Bearer " + token);
+
+        HttpEntity<Object> httpEntity = new HttpEntity<>(headers);
+
+
         RestTemplate restTemplate = new RestTemplate();
 
         try {
-            ResponseEntity<UserDto> response = restTemplate.getForEntity(
+            /*ResponseEntity<UserDto> response = restTemplate.getForEntity(
                     usersUrl + "/{userId}",
                     UserDto.class,
                     userId
-            );
+            );*/
+            /*ResponseEntity<UserDto> response =
+                    restTemplate.getForEntity(usersUrl + "/{userId}",
+                            UserDto.class,
+                            httpEntity,
+                            userId);*/
+
+            System.out.println(userId);
+            System.out.println(usersUrl);
+            System.out.println(usersUrl + "/"+userId);
+            ResponseEntity<UserDto> response = restTemplate.exchange(usersUrl + "/"+userId,
+                    HttpMethod.GET,
+                    httpEntity,
+                    UserDto.class);
+
+
             System.out.println(response.getBody().getRole());
             if (response.getBody().getRole().equals("USER")){
                 return response.getBody();
             }
             else {
-                throw new Exception("Tem de ser Comprador");
+                throw new Exception("There must be a buyer user");
             }
 
         }
@@ -162,17 +192,31 @@ public class ReviewService {
 
 
 
-    public OrderDto getOrder(Integer orderId) throws Exception {
+    public OrderDto getOrder(Integer orderId,
+                             HttpServletRequest request,
+                             String token) throws Exception {
 
         OrderDto orderDto;
+
+        HttpHeaders headers = new HttpHeaders();
+        headers.set("Authorization", "Bearer " + token);
+
+        HttpEntity<Object> httpEntity = new HttpEntity<>(headers);
+
         RestTemplate restTemplate = new RestTemplate();
 
         try {
-            ResponseEntity<OrderDto> response = restTemplate.getForEntity(
+            /*ResponseEntity<OrderDto> response = restTemplate.getForEntity(
                     ordersUrl + "/{orderId}",
                     OrderDto.class,
                     orderId
-            );
+            );*/
+
+            ResponseEntity<OrderDto> response = restTemplate.exchange(ordersUrl + "/"+orderId,
+                    HttpMethod.GET,
+                    httpEntity,
+                    OrderDto.class);
+
             return response.getBody();
         }
         catch (HttpClientErrorException | HttpServerErrorException e){
@@ -186,21 +230,37 @@ public class ReviewService {
                 throw new Exception(e.getResponseBodyAsString());
             }
         }
+
+
     }
 
 
     public ShippingDto getShipping(Integer orderId,
-                                   Integer userId) throws Exception {
+                                   Integer userId,
+                                   HttpServletRequest request,
+                                   String token) throws Exception {
 
         ShippingDto shippingDto;
+
+        HttpHeaders headers = new HttpHeaders();
+        headers.set("Authorization", "Bearer " + token);
+
+        HttpEntity<Object> httpEntity = new HttpEntity<>(headers);
+
         RestTemplate restTemplate = new RestTemplate();
 
         try {
-            ResponseEntity<ShippingDto> response = restTemplate.getForEntity(
+            /*ResponseEntity<ShippingDto> response = restTemplate.getForEntity(
                     shippingUrl + "/{orderId}/{userId}",
                     ShippingDto.class,
                     orderId, userId
-            );
+            );*/
+
+            ResponseEntity<ShippingDto> response = restTemplate.exchange(
+                    shippingUrl + "/"+orderId + "/"+userId,
+                    HttpMethod.GET,
+                    httpEntity,
+                    ShippingDto.class);
 
             if (response.getBody().getStatus() != Status.DELIVERED){
                 throw new Exception("You cannot give review to this product");
@@ -222,6 +282,16 @@ public class ReviewService {
 
     public boolean doesNotExistAlready(Integer userId, Integer productId, Integer orderId ) {
         return !reviewRepository.existsByUserIdAndProductIdAndOrderId(userId,productId,orderId);
+    }
+
+    private String extractToken(HttpServletRequest request) {
+        // Your logic to extract the token from the incoming request headers
+        // For example:
+        String authorizationHeader = request.getHeader("Authorization");
+        if (authorizationHeader != null && authorizationHeader.startsWith("Bearer ")) {
+            return authorizationHeader.substring(7); // Extract the token without "Bearer " prefix
+        }
+        return null; // Handle token not found scenario
     }
 
 }

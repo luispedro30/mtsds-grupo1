@@ -2,6 +2,7 @@ package ecommerce.Listeners;
 
 import ecommerce.Messages.OrderConcludedListener;
 import ecommerce.Messages.WalletConcludedListener;
+import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.stereotype.Component;
 
