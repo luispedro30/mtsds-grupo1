@@ -10,6 +10,7 @@
         <module name="Orders" />
         <module name="Payment" />
         <module name="Reviews" />
+        <module name="Email" />
         <module name="Authentication" />
         <module name="Wallet" />
         <module name="Auth" />
