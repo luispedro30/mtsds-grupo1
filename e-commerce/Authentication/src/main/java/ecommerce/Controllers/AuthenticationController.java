@@ -70,12 +70,7 @@ public class AuthenticationController {
                 data.role());
 
         ResponseEntity<User> response = restTemplate.postForEntity(usersUrl,
-                new User(
-                        uniqueInteger,
-                        data.name(),
-                        data.login(),
-                        encryptedPassword,
-                        data.role()),
+                newUser,
                 User.class);
         User savedUser = this.userRepository.save(newUser);
         return ResponseEntity.ok().build();
