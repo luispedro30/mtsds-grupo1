@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.antlr.v4.runtime.misc.NotNull;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -17,7 +18,11 @@ public class User {
     private Integer id;
     private String name;
 
+    @Column(nullable = false)
     private String login;
+
+    @Column(nullable = false)
+    private String email;
     private String password;
     private int active;
     private Role role;
