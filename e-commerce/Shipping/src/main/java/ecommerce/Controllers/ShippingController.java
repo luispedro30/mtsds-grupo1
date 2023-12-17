@@ -65,8 +65,9 @@ public class ShippingController {
 
     }
 
-    @PutMapping("/{id}")
+    @PutMapping("/{id}/{fornecedorId}")
     public ResponseEntity<Shipping> updateOrder(@PathVariable Integer id,
+                                                @PathVariable Integer fornecedorId,
                                                 @RequestBody Shipping updatedShipping) {
         Shipping savedShipping = shippingService.updateShipping(id, updatedShipping);
         if (savedShipping != null) {
