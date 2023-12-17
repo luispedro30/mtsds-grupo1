@@ -18,6 +18,7 @@
         <module>api-gateway</module>
         <module>eureka-server</module>
         <module>Shipping</module>
+        <module>Email</module>
     </modules>
 
     <properties>
