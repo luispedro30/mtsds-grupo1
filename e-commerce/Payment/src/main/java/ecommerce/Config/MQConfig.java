@@ -17,8 +17,8 @@ public class MQConfig {
 
     public static final String ROUTING_KEY_1 = "routing_key_1";
     public static final String ROUTING_KEY_2 = "routing_key_2";
-
     public static final String ROUTING_KEY_3 = "routing_key_3";
+
 
     @Bean
     public Queue queue(){
@@ -38,6 +38,11 @@ public class MQConfig {
     @Bean
     public Queue shippingQueue() {
         return new Queue("shipping-queue"); // Destination queue for sending messages
+    }
+
+    @Bean
+    public Queue payment2EmailQueue() {
+        return new Queue("payment-2-email-queue"); // Destination queue for sending messages
     }
 
     @Bean
