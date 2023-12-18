@@ -1,5 +1,6 @@
 package ecommerce.Controller;
 
+import ecommerce.Dto.WalletDto;
 import ecommerce.Exceptions.AlreadyExistingException;
 import ecommerce.Models.User;
 import ecommerce.Service.UserService;
@@ -25,6 +26,8 @@ public class UserController {
 
     @Autowired
     private UserService userService;
+    @Autowired
+    private WalletDto walletDto;
 
     @GetMapping("/Landing")
     public ResponseEntity<String> landing(){
@@ -88,13 +91,18 @@ public class UserController {
             try {
                 String encryptedPassword = new BCryptPasswordEncoder().encode(user.getPassword());
 
-                User newUser = new User(
+                /*User newUser = new User(
                         user.getName(),
                         encryptedPassword,
                         user.getActive(),
-                        user.getRole());
+                        user.getRole());*/
 
                 userService.saveUser(user);
+
+                walletDto.setUserId(user.getId());
+                walletDto.setValue(0);
+
+                userService.walletRegistration(walletDto);
                 logger.info(marker,"addUser() request received ... 201 Created{}",user);
                 return new ResponseEntity<User>(
                         user,

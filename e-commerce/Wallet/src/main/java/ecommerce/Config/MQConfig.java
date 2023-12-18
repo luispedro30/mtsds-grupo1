@@ -33,6 +33,11 @@ public class MQConfig {
     }
 
     @Bean
+    public Queue userQueue() {
+        return new Queue("user-queue"); // Destination queue for sending messages
+    }
+
+    @Bean
     public Queue wallet2emailQueue() {
         return new Queue("wallet-2-email-queue"); // Destination queue for sending messages
     }

@@ -21,7 +21,7 @@ import java.util.Optional;
 
 @Service
 @Transactional
-public class ShippingService {
+public class    ShippingService {
 
     @Value("${endpoints.orders-microservice.baseUrl}")
     private String ordersUrl;

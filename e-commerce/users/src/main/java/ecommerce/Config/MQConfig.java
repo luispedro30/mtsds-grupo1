@@ -1,50 +1,28 @@
 package ecommerce.Config;
 
-import org.springframework.amqp.core.*;
-import org.springframework.amqp.rabbit.connection.ConnectionFactory;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
+import org.springframework.amqp.core.*;
 import org.springframework.amqp.support.converter.Jackson2JsonMessageConverter;
 import org.springframework.amqp.support.converter.MessageConverter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.amqp.rabbit.connection.ConnectionFactory;
 
 @Configuration
 public class MQConfig {
 
-    public static final String QUEUE = "payment_confirmation_requests";
-
+    public static final String QUEUE = "user-queue";
     public static final String EXCHANGE = "exchange_confirmation_requests";
+    public static final String ROUTING_KEY_1 = "routing_key_1";
 
-    public static final String ROUTING_KEY = "routing_key_1";
 
     @Bean
     public Queue queue(){
         return new Queue(QUEUE);
     }
 
-    @Bean
-    public Queue productsQueue() {
-        return new Queue("products-queue"); // Destination queue for sending messages
-    }
-
-    @Bean
-    public Queue walletQueue() {
-        return new Queue("wallet-queue"); // Destination queue for sending messages
-    }
-
-    @Bean
-    public Queue wallet2emailQueue() {
-        return new Queue("wallet-2-email-queue"); // Destination queue for sending messages
-    }
-
-    @Bean
-    public Queue user2emailQueue() {
-        return new Queue("user-2-email-queue"); // Destination queue for sending messages
-    }
-
-    @Bean
-    public Queue shippingQueue() {
-        return new Queue("shipping-queue"); // Destination queue for sending messages
+    public Queue queueUser2Email(){
+        return new Queue("user-2-email-queue")         ;
     }
 
     @Bean
@@ -54,7 +32,7 @@ public class MQConfig {
 
     @Bean
     public Binding binding(Queue queue, TopicExchange exchange){
-        return BindingBuilder.bind(queue).to(exchange).with(ROUTING_KEY);
+        return BindingBuilder.bind(queue).to(exchange).with(ROUTING_KEY_1);
     }
 
     @Bean
@@ -68,6 +46,4 @@ public class MQConfig {
         template.setMessageConverter(messageConverter());
         return template;
     }
-
 }
-
