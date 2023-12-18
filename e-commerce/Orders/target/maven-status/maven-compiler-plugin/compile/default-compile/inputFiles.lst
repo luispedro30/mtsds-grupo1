@@ -1,6 +1,7 @@
 D:\mtsds-grupo1-github\mtsds-grupo1\e-commerce\Orders\src\main\java\ecommerce\Models\Order.java
 D:\mtsds-grupo1-github\mtsds-grupo1\e-commerce\Orders\src\main\java\ecommerce\Dto\ProductDto.java
 D:\mtsds-grupo1-github\mtsds-grupo1\e-commerce\Orders\src\main\java\ecommerce\Messages\PaymentConfirmationMessage.java
+D:\mtsds-grupo1-github\mtsds-grupo1\e-commerce\Orders\src\main\java\ecommerce\Messages\Order2Email.java
 D:\mtsds-grupo1-github\mtsds-grupo1\e-commerce\Orders\src\main\java\ecommerce\Auditing\JpaAuditingConfiguration.java
 D:\mtsds-grupo1-github\mtsds-grupo1\e-commerce\Orders\src\main\java\ecommerce\Repository\OrderRepository.java
 D:\mtsds-grupo1-github\mtsds-grupo1\e-commerce\Orders\src\main\java\ecommerce\Messages\OrderConcludedListener.java

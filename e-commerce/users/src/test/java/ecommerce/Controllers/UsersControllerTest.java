@@ -3,6 +3,7 @@ package ecommerce.Controllers;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import ecommerce.Enums.Role;
 import ecommerce.Models.User;
+import ecommerce.Repository.UserRepository;
 import ecommerce.Service.UserService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -43,6 +44,9 @@ public class UsersControllerTest {
     @MockBean
     private UserService userService;
 
+    @MockBean
+    private UserRepository userRepository;
+
     @Test
     public void getLanding() throws Exception{
         mvc.perform(MockMvcRequestBuilders.get("/Landing").accept(MediaType.TEXT_PLAIN))
@@ -57,6 +61,7 @@ public class UsersControllerTest {
         User user1 = new User(1,
                 "Luis",
                 "luis123",
+                "luis.pedro_1998@hotmail.com",
                 "password",
                 1,
                 Role.ADMIN);
@@ -105,6 +110,7 @@ public class UsersControllerTest {
         User user1 = new User(1,
                 "Luis",
                 "luis123",
+                "luis.pedro_1998@hotmail.com",
                 "password",
                 1,
                 Role.ADMIN);
@@ -112,6 +118,7 @@ public class UsersControllerTest {
         User user2 = new User(2,
                 "João",
                 "joao123",
+                "luis.pedro_1998@hotmail.com",
                 "password2",
                 1,
                 Role.USER);
@@ -141,6 +148,7 @@ public class UsersControllerTest {
         User user1 = new User(1,
                 "Luis",
                 "luis123",
+                "luis.pedro_1998@hotmail.com",
                 "password",
                 1,
                 Role.ADMIN);
@@ -166,6 +174,7 @@ public class UsersControllerTest {
         User user1 = new User(2,
                 "Luis",
                 "luis123",
+                "luis.pedro_1998@hotmail.com",
                 "password",
                 1,
                 Role.ADMIN);
@@ -190,6 +199,7 @@ public class UsersControllerTest {
         User user1 = new User(1,
                 "Luis",
                 "luis123",
+                "luis.pedro_1998@hotmail.com",
                 "password",
                 1,
                 Role.ADMIN);
@@ -197,6 +207,7 @@ public class UsersControllerTest {
         User user2= new User(2,
                 "Luis",
                 "luis1234",
+                "luis.pedro_1998@hotmail.com",
                 "password",
                 1,
                 Role.ADMIN);

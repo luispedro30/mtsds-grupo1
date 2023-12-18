@@ -3,6 +3,7 @@ package ecommerce.Controllers;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import ecommerce.Dto.UserDto;
 import ecommerce.Models.Wallet;
+import ecommerce.Repository.WalletRepository;
 import ecommerce.Services.WalletService;
 import jakarta.servlet.http.HttpServletRequest;
 import org.junit.Before;
@@ -51,6 +52,9 @@ public class WalletControllerTest {
 
     @MockBean
     private WalletService walletService;
+
+    @MockBean
+    private WalletRepository walletRepository;
 
     private List<UserDto> users = new ArrayList<UserDto>();;
     private UserDto userDto1;
@@ -139,7 +143,7 @@ public class WalletControllerTest {
     }
 
     @Test
-    public void createWallet(HttpServletRequest request) throws Exception
+    public void createWallet() throws Exception
     {
 
         Wallet wallet1 = new Wallet(1,
@@ -147,7 +151,7 @@ public class WalletControllerTest {
                 100);
 
         //when
-        when(walletService.addWallet(wallet1,request)).thenReturn(product);
+        when(walletRepository.save(wallet1)).thenReturn(wallet1);
 
         //then
         mvc.perform(MockMvcRequestBuilders
@@ -193,7 +197,7 @@ public class WalletControllerTest {
     }
     */
     @Test
-    public void addMoneyWallet(HttpServletRequest request) throws Exception
+    public void addMoneyWallet() throws Exception
     {
 
 
@@ -202,9 +206,11 @@ public class WalletControllerTest {
                 100);
 
 
+
         //when
-        when(walletService.addWallet(wallet1, request)).thenReturn(wallet1);
-        when(walletService.addMoneyWallet(1, 100, request)).thenReturn(wallet1);
+        when(walletRepository.save(wallet1)).thenReturn(wallet1);
+        wallet1.setValue(wallet1.getValue() + 50);
+        when(walletRepository.save(wallet1)).thenReturn(wallet1);
 
         //then
         mvc.perform(MockMvcRequestBuilders
