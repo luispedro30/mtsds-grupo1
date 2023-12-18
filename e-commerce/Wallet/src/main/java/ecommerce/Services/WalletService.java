@@ -56,18 +56,6 @@ public class WalletService {
             throw new Exception("There is already a wallet for this User");
         }
 
-        Wallet2Email wallet2Email = new Wallet2Email();
-        wallet2Email.setOwnerRef("Ref: Wallet");
-        wallet2Email.setSubject("Wallet creation");
-        wallet2Email.setEmailFrom("luispedrotrinta.1998@gmail.com");
-        wallet2Email.setEmailTo(userDto.getEmail());
-        wallet2Email.setText("Hello," +
-                "" +
-                "It was created a wallet in your name with"+ wallet.getValue()+ " euros."+
-                "" +
-                "Best regards");
-        template.convertAndSend("wallet-2-email-queue",wallet2Email);
-
         return walletRepository.save(wallet);
     }
 

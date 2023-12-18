@@ -1,0 +1,127 @@
+services:
+  bd-products:
+    image: postgres:16.0
+    container_name: bd-products
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: postgres123
+      POSTGRES_DB: products
+    ports:
+      - "5436:5432"
+    networks:
+      - e-commerce
+    volumes:
+      - /Users/joaosilva/Documents/ESTG/MTSDS/mtsds-grupo1/Database_Docker/Docker/postgres/products/
+
+  bd-users:
+    image: postgres:16.0
+    container_name: bd-users
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: postgres123
+      POSTGRES_DB: users
+    ports:
+      - "5454:5432"
+    networks:
+      - e-commerce
+    volumes:
+      - /Users/joaosilva/Documents/ESTG/MTSDS/mtsds-grupo1/Database_Docker/Docker/postgres/users/
+
+  bd-orders:
+    image: postgres:16.0
+    container_name: bd-orders
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: postgres123
+      POSTGRES_DB: orders
+    ports:
+      - "5437:5432"
+    networks:
+      - e-commerce
+    volumes:
+      - /Users/joaosilva/Documents/ESTG/MTSDS/mtsds-grupo1/Database_Docker/Docker/postgres/orders/
+
+  bd-wallets:
+    image: postgres:16.0
+    container_name: bd-wallets
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: postgres123
+      POSTGRES_DB: wallets
+    ports:
+      - "5439:5432"
+    networks:
+      - e-commerce
+    volumes:
+      - /Users/joaosilva/Documents/ESTG/MTSDS/mtsds-grupo1/Database_Docker/Docker/postgres/wallets/
+
+  bd-payments:
+    image: postgres:16.0
+    container_name: bd-payments
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: postgres123
+      POSTGRES_DB: payments
+    ports:
+      - "5440:5432"
+    networks:
+      - e-commerce
+    volumes:
+      - /Users/joaosilva/Documents/ESTG/MTSDS/mtsds-grupo1/Database_Docker/Docker/postgres/payments/
+
+  bd-reviews:
+    image: postgres:16.0
+    container_name: bd-reviews
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: postgres123
+      POSTGRES_DB: reviews
+    ports:
+      - "5441:5432"
+    networks:
+      - e-commerce
+    volumes:
+      - /Users/joaosilva/Documents/ESTG/MTSDS/mtsds-grupo1/Database_Docker/Docker/postgres/reviews/
+
+  bd-shippings:
+    image: postgres:16.0
+    container_name: bd-shippings
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: postgres123
+      POSTGRES_DB: shippings
+    ports:
+      - "5442:5432"
+    networks:
+      - e-commerce
+    volumes:
+      - /Users/joaosilva/Documents/ESTG/MTSDS/mtsds-grupo1/Database_Docker/Docker/postgres/shippings/
+
+  bd-auth:
+    image: postgres:16.0
+    container_name: bd-auth
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: postgres123
+      POSTGRES_DB: auth
+    ports:
+      - "5450:5432"
+    networks:
+      - e-commerce
+    volumes:
+      - /Users/joaosilva/Documents/ESTG/MTSDS/mtsds-grupo1/Database_Docker/Docker/postgres/auth/
+
+  pgadmin:
+    image: dpage/pgadmin4:7.8
+    container_name: pgadmin
+    environment:
+      PGADMIN_DEFAULT_EMAIL: 8220025@estg.ipp.pt
+      PGADMIN_DEFAULT_PASSWORD: pgadmin123
+    networks:
+      - e-commerce
+    ports:
+      - "9999:80"
+
+networks:
+  e-commerce:
+    driver: bridge
