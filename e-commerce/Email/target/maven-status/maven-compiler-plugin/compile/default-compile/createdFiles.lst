@@ -1,7 +1,7 @@
-ecommerce\Repository\EmailRepository.class
-ecommerce\Model\EmailModel.class
-ecommerce\email.class
 ecommerce\Enums\StatusEmail.class
 ecommerce\Controllers\EmailController.class
 ecommerce\Service\EmailService.class
+ecommerce\Repository\EmailRepository.class
+ecommerce\Model\EmailModel.class
+ecommerce\email.class
 ecommerce\Dtos\EmailDto.class

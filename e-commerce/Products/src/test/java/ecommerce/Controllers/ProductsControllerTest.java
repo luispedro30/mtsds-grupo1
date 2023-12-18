@@ -58,6 +58,9 @@ public class ProductsControllerTest {
 
     @MockBean
     private ProductsService productsService;
+
+    @MockBean
+    private ProductsRepository productsRepository;
     @Before
     public void setUp() {
 
@@ -126,7 +129,7 @@ public class ProductsControllerTest {
     }
 
     @Test
-    public void createProduct(HttpServletRequest request) throws Exception
+    public void createProduct() throws Exception
     {
 
         Product product1 = new Product(3,
@@ -140,7 +143,8 @@ public class ProductsControllerTest {
         params.add("id", String.valueOf(this.userDto.getId()));
 
         //when
-        when(productsService.addProduct(product1, this.userDto.getId(),request)).thenReturn(product);
+        HttpServletRequest HttpServletRequest = null;
+        when(productsRepository.save(product)).thenReturn(product);
 
         //then
         mvc.perform(MockMvcRequestBuilders
@@ -183,6 +187,16 @@ public class ProductsControllerTest {
 
         verify(productsService, times(1)).getProductById(1);
         verifyNoMoreInteractions(productsService);
+    }
+
+    private String extractToken(HttpServletRequest request) {
+        // Your logic to extract the token from the incoming request headers
+        // For example:
+        String authorizationHeader = request.getHeader("Authorization");
+        if (authorizationHeader != null && authorizationHeader.startsWith("Bearer ")) {
+            return authorizationHeader.substring(7); // Extract the token without "Bearer " prefix
+        }
+        return null; // Handle token not found scenario
     }
 
 }
