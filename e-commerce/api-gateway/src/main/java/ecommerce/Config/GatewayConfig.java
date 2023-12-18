@@ -138,6 +138,10 @@ public class GatewayConfig {
                         .path("/orders/**")
                         .filters(f -> f.filter(filter.apply("USER")))
                         .uri("lb://orders"))
+                .route("email-route", r -> r.path("/sending-email")
+                        .uri("lb://email"))
+                .route("email-route", r -> r.path("/emails/**")
+                        .uri("lb://email"))
                 .build();
     }
 
