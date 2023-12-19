@@ -5,19 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e63fab2e-ccd9-4599-8c37-fc239380bb02" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Email/target/classes/ecommerce/Config/MQConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/Email/target/classes/ecommerce/Config/MQConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Wallet/src/main/java/ecommerce/Listeners/UserRegistrationListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/Wallet/src/main/java/ecommerce/Listeners/UserRegistrationListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Wallet/target/classes/ecommerce/Config/MQConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/Wallet/target/classes/ecommerce/Config/MQConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Wallet/target/classes/ecommerce/Services/WalletService.class" beforeDir="false" afterPath="$PROJECT_DIR$/Wallet/target/classes/ecommerce/Services/WalletService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/target/classes/ecommerce/Config/GatewayConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/target/classes/ecommerce/Config/GatewayConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/src/main/java/ecommerce/Controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/users/src/main/java/ecommerce/Controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/src/main/java/ecommerce/Dto/WalletDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/users/src/main/java/ecommerce/Dto/WalletDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/src/main/java/ecommerce/Service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/users/src/main/java/ecommerce/Service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/users/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/target/classes/ecommerce/Controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/users/target/classes/ecommerce/Controller/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/target/classes/ecommerce/Service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/users/target/classes/ecommerce/Service/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Products/src/main/java/ecommerce/Models/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/Products/src/main/java/ecommerce/Models/Product.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
