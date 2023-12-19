@@ -52,6 +52,19 @@ public class UserService {
 
         template.convertAndSend("user-2-email-queue", user2Email);
 
+        WalletRegistrationMessage message;
+
+        message = new WalletRegistrationMessage();
+
+        message.setUserId(user.getId());
+        message.setValue(0);
+
+        template.convertAndSend(
+                MQConfig.EXCHANGE,
+                MQConfig.ROUTING_KEY_1,
+                message
+        );
+
         return userRepository.save(user);
     }
 
@@ -103,21 +116,4 @@ public class UserService {
 
         userRepository.delete(user);
     }
-
-    public void walletRegistration(WalletDto walletDto){
-
-        WalletRegistrationMessage message;
-
-        message = new WalletRegistrationMessage();
-
-        message.setUserId(walletDto.getUserId());
-        message.setValue(walletDto.getValue());
-
-        template.convertAndSend(
-                MQConfig.EXCHANGE,
-                MQConfig.ROUTING_KEY_1,
-                message
-        );
-    }
-
 }

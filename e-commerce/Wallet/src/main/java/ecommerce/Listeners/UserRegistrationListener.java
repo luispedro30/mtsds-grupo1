@@ -17,14 +17,14 @@ public class UserRegistrationListener {
     public void listener(UserRegistrationMessage userRegistrationMessage){
 
         System.out.println(
-                "paymentId :" + userRegistrationMessage.getUserId() + ", " +
-                        "orderId :" + userRegistrationMessage.getValue());
+                "userId :" + userRegistrationMessage.getUserId() + ", " +
+                        "value :" + userRegistrationMessage.getValue());
 
-        Wallet wallet = walletRepository.findByUserId(userRegistrationMessage.getUserId());
+        Wallet newWallet = new Wallet();
+        newWallet.setUserId(userRegistrationMessage.getUserId());
+        newWallet.setValue(userRegistrationMessage.getValue());
 
-        wallet.setValue((userRegistrationMessage.getValue()));
-
-        walletRepository.save(wallet);
+        walletRepository.save(newWallet);
 
     }
 }
