@@ -26,8 +26,6 @@ public class UserController {
 
     @Autowired
     private UserService userService;
-    @Autowired
-    private WalletDto walletDto;
 
     @GetMapping("/Landing")
     public ResponseEntity<String> landing(){
@@ -99,10 +97,10 @@ public class UserController {
 
                 userService.saveUser(user);
 
+                WalletDto walletDto = new WalletDto();
                 walletDto.setUserId(user.getId());
                 walletDto.setValue(0);
 
-                userService.walletRegistration(walletDto);
                 logger.info(marker,"addUser() request received ... 201 Created{}",user);
                 return new ResponseEntity<User>(
                         user,

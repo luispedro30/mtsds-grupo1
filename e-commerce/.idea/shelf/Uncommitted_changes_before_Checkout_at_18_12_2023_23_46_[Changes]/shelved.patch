@@ -1,0 +1,79 @@
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	
++++ b/.idea/workspace.xml	
+@@ -5,14 +5,8 @@
+   </component>
+   <component name="ChangeListManager">
+     <list default="true" id="e63fab2e-ccd9-4599-8c37-fc239380bb02" name="Changes" comment="">
+-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/Products/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Products/pom.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/Products/src/main/java/ecommerce/Controllers/ProductsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Products/src/main/java/ecommerce/Controllers/ProductsController.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/Products/src/main/java/ecommerce/Repository/ProductsRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Products/src/main/java/ecommerce/Repository/ProductsRepository.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/Products/src/main/java/ecommerce/Services/ProductsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Products/src/main/java/ecommerce/Services/ProductsService.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/Products/target/classes/ecommerce/Controllers/ProductsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Products/target/classes/ecommerce/Controllers/ProductsController.class" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/Products/target/classes/ecommerce/Repository/ProductsRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/Products/target/classes/ecommerce/Repository/ProductsRepository.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/Products/target/classes/ecommerce/Services/ProductsService.class" beforeDir="false" afterPath="$PROJECT_DIR$/Products/target/classes/ecommerce/Services/ProductsService.class" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -31,7 +25,7 @@
+   <component name="Git.Settings">
+     <option name="RECENT_BRANCH_BY_REPOSITORY">
+       <map>
+-        <entry key="$PROJECT_DIR$/.." value="shippingmicroservice" />
++        <entry key="$PROJECT_DIR$/.." value="email-microservice" />
+       </map>
+     </option>
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+@@ -50,18 +44,18 @@
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+-  <component name="PropertiesComponent"><![CDATA[{
+-  "keyToString": {
+-    "RunOnceActivity.OpenProjectViewOnStart": "true",
+-    "RunOnceActivity.ShowReadmeOnStart": "true",
+-    "jdk.selected.JAVA_MODULE": "20",
+-    "last_opened_file_path": "D:/mtsds-grupo1/e-commerce/users/src/main/resources",
+-    "project.structure.last.edited": "Modules",
+-    "project.structure.proportion": "0.0",
+-    "project.structure.side.proportion": "0.0",
+-    "settings.editor.selected.configurable": "MavenSettings"
++  <component name="PropertiesComponent">{
++  &quot;keyToString&quot;: {
++    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
++    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
++    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;20&quot;,
++    &quot;last_opened_file_path&quot;: &quot;D:/mtsds-grupo1/e-commerce/users/src/main/resources&quot;,
++    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
++    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
++    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
++    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;
+   }
+-}]]></component>
++}</component>
+   <component name="RecentsManager">
+     <key name="CopyFile.RECENT_KEYS">
+       <recent name="D:\mtsds-grupo1\e-commerce\users\src\main\resources" />
+@@ -89,7 +83,7 @@
+       </set>
+     </option>
+   </component>
+-  <component name="RunManager" selected="Application.ApiGateway">
++  <component name="RunManager">
+     <configuration name="ApiGateway" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+       <option name="MAIN_CLASS_NAME" value="ecommerce.ApiGateway" />
+       <module name="api-gateway" />
+@@ -200,6 +194,7 @@
+     <pin-to-top-manager>
+       <pinned-members>
+         <PinnedItemInfo parentTag="org.springframework.test.web.servlet.MockMvc" memberName="defaultResultHandlers" />
++        <PinnedItemInfo parentTag="ecommerce.Models.Order" memberName="products" />
+       </pinned-members>
+     </pin-to-top-manager>
+   </component>
