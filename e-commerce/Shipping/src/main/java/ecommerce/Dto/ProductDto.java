@@ -9,9 +9,16 @@ import lombok.Setter;
 @NoArgsConstructor
 @Getter
 @Setter
-public class WalletDto {
+public class ProductDto {
     private Integer id;
-    private Integer userId;
-    private Integer value;
 
+    private String name;
+
+    private String description;
+
+    private String category;
+
+    private double price;
+
+    private Integer stockQuantity;
 }
