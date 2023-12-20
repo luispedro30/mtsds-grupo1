@@ -68,8 +68,11 @@ public class ShippingController {
     @PutMapping("/{id}/{fornecedorId}")
     public ResponseEntity<Shipping> updateOrder(@PathVariable Integer id,
                                                 @PathVariable Integer fornecedorId,
-                                                @RequestBody Shipping updatedShipping) {
-        Shipping savedShipping = shippingService.updateShipping(id, updatedShipping);
+                                                @RequestBody Shipping updatedShipping,
+                                                HttpServletRequest request) throws Exception {
+        Shipping savedShipping = shippingService.updateShipping(id,
+                updatedShipping,
+                request);
         if (savedShipping != null) {
             return ResponseEntity.ok(savedShipping);
         } else {

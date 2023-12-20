@@ -4,10 +4,12 @@ import ecommerce.Dto.OrderDto;
 import ecommerce.Dto.PaymentDto;
 import ecommerce.Dto.UserDto;
 import ecommerce.Dto.WalletDto;
+import ecommerce.Messages.Shipping2Email;
 import ecommerce.Models.Shipping;
 import ecommerce.Repository.ShippingRepository;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.transaction.Transactional;
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.*;
@@ -37,6 +39,9 @@ public class    ShippingService {
 
     @Autowired
     private ShippingRepository shippingRepository;
+
+    @Autowired
+    RabbitTemplate template;
 
     public List<Shipping> getAllShipping() {
         return shippingRepository.findAll();
@@ -310,13 +315,34 @@ public class    ShippingService {
     }
 
 
-    public Shipping updateShipping(Integer id, Shipping updatedShipping) {
+    public Shipping updateShipping(Integer id, Shipping updatedShipping, HttpServletRequest request) throws Exception {
         Optional<Shipping> optionalShipping = shippingRepository.findById(id);
+
+        UserDto userDto;
+        String token = extractToken(request);
+
         if (optionalShipping.isPresent()) {
             Shipping existingShipping = optionalShipping.get();
             existingShipping.setStatus(updatedShipping.getStatus()); // Update other fields similarly
 
-            return shippingRepository.save(existingShipping);
+            userDto = getUser(existingShipping.getUserId(), request, token);
+
+            Shipping2Email shipping2Email = new Shipping2Email();
+            shipping2Email.setOwnerRef("Ref: Shipping Status");
+            shipping2Email.setSubject("The status of your shipping order was updated");
+            shipping2Email.setEmailFrom("luispedrotrinta.1998@gmail.com");
+            shipping2Email.setEmailTo(userDto.getEmail());
+            shipping2Email.setText("Hello user number "+existingShipping.getUserId()+"," +
+                    "" +
+                    "The status of your order "+existingShipping.getOrderId()+ "was updated" +
+                            " to " + existingShipping.getStatus() + ". " +
+                    "" +
+                    "Best regards.");
+
+            template.convertAndSend("shipping-2-email-queue", shipping2Email);
+
+            shippingRepository.save(existingShipping);
+            return existingShipping;
         } else {
             return null;
         }

@@ -4,9 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e63fab2e-ccd9-4599-8c37-fc239380bb02" name="Changes" comment="">
+    <list default="true" id="e63fab2e-ccd9-4599-8c37-fc239380bb02" name="Changes" comment="fix: update authentication microservice with Postgres database and to connect with user microservice">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Products/src/main/java/ecommerce/Models/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/Products/src/main/java/ecommerce/Models/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shipping/src/main/java/ecommerce/Config/MQConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/Shipping/src/main/java/ecommerce/Config/MQConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shipping/src/main/java/ecommerce/Controllers/ShippingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Shipping/src/main/java/ecommerce/Controllers/ShippingController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shipping/src/main/java/ecommerce/Dto/UserDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/Shipping/src/main/java/ecommerce/Dto/UserDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shipping/src/main/java/ecommerce/Services/ShippingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Shipping/src/main/java/ecommerce/Services/ShippingService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shipping/target/classes/ecommerce/Config/MQConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/Shipping/target/classes/ecommerce/Config/MQConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shipping/target/classes/ecommerce/Controllers/ShippingController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Shipping/target/classes/ecommerce/Controllers/ShippingController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shipping/target/classes/ecommerce/Dto/UserDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/Shipping/target/classes/ecommerce/Dto/UserDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shipping/target/classes/ecommerce/Services/ShippingService.class" beforeDir="false" afterPath="$PROJECT_DIR$/Shipping/target/classes/ecommerce/Services/ShippingService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,9 +79,9 @@
       <recent name="D:\mtsds-grupo1-github\mtsds-grupo1\e-commerce\Wallet\src\main\java\ecommerce" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="Controllers" />
       <recent name="ecommerce.Messages" />
       <recent name="ecommerce.Listeners" />
+      <recent name="Controllers" />
       <recent name="ecommerce.Config" />
       <recent name="ecommerce.Controllers" />
     </key>
@@ -287,21 +294,6 @@
           <url>file://$PROJECT_DIR$/Products/src/main/java/ecommerce/Services/ProductsService.java</url>
           <line>92</line>
           <option name="timeStamp" value="87" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/api-gateway/src/main/java/ecommerce/Config/AuthenticationFilter.java</url>
-          <line>73</line>
-          <option name="timeStamp" value="96" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/api-gateway/src/main/java/ecommerce/Config/AuthenticationFilter.java</url>
-          <line>74</line>
-          <option name="timeStamp" value="98" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/api-gateway/src/main/java/ecommerce/Config/AuthenticationFilter.java</url>
-          <line>75</line>
-          <option name="timeStamp" value="99" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/api-gateway/src/main/java/ecommerce/Config/AuthenticationFilter.java</url>
