@@ -1,0 +1,12 @@
+-------------------------------------------------------------------------------
+Test set: ecommerce.Controllers.EmailControllersTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 1.031 sec <<< FAILURE!
+ecommerce.Controllers.EmailControllersTest.testSendEmail_Success()  Time elapsed: 1.03 sec  <<< FAILURE!
+org.mockito.exceptions.misusing.NullInsteadOfMockException: 
+Argument passed to when() is null!
+Example of correct stubbing:
+    doThrow(new RuntimeException()).when(mock).someMethod();
+Also, if you use @Mock annotation don't miss openMocks()
+	at ecommerce.Controllers.EmailControllersTest.testSendEmail_Success(EmailControllersTest.java:46)
+

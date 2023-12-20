@@ -6,14 +6,54 @@
   <component name="ChangeListManager">
     <list default="true" id="e63fab2e-ccd9-4599-8c37-fc239380bb02" name="Changes" comment="fix: update authentication microservice with Postgres database and to connect with user microservice">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Shipping/src/main/java/ecommerce/Config/MQConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/Shipping/src/main/java/ecommerce/Config/MQConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Shipping/src/main/java/ecommerce/Controllers/ShippingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Shipping/src/main/java/ecommerce/Controllers/ShippingController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Shipping/src/main/java/ecommerce/Dto/UserDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/Shipping/src/main/java/ecommerce/Dto/UserDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Shipping/src/main/java/ecommerce/Services/ShippingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Shipping/src/main/java/ecommerce/Services/ShippingService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Shipping/target/classes/ecommerce/Config/MQConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/Shipping/target/classes/ecommerce/Config/MQConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Shipping/target/classes/ecommerce/Controllers/ShippingController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Shipping/target/classes/ecommerce/Controllers/ShippingController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Shipping/target/classes/ecommerce/Dto/UserDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/Shipping/target/classes/ecommerce/Dto/UserDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Authentication/target/Authentication-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Authentication/target/Authentication-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Authentication/target/surefire-reports/TEST-ecommerce.Controllers.AuthenticationControllerTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Authentication/target/surefire-reports/TEST-ecommerce.Controllers.AuthenticationControllerTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Authentication/target/surefire-reports/ecommerce.Controllers.AuthenticationControllerTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Authentication/target/surefire-reports/ecommerce.Controllers.AuthenticationControllerTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Email/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Email/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Email/src/main/java/ecommerce/Service/EmailService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Email/src/main/java/ecommerce/Service/EmailService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Email/src/test/java/ecommerce/Controllers/EmailControllersTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Email/src/test/java/ecommerce/Controllers/EmailControllersTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Email/target/Email-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Email/target/Email-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Email/target/classes/ecommerce/Service/EmailService.class" beforeDir="false" afterPath="$PROJECT_DIR$/Email/target/classes/ecommerce/Service/EmailService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Email/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Email/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Email/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Email/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Email/target/test-classes/ecommerce/Controllers/EmailControllersTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/Email/target/test-classes/ecommerce/Controllers/EmailControllersTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Orders/target/Orders-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Orders/target/Orders-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Orders/target/surefire-reports/TEST-ecommerce.Controllers.OrderControllerTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Orders/target/surefire-reports/TEST-ecommerce.Controllers.OrderControllerTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Orders/target/surefire-reports/ecommerce.Controllers.OrderControllerTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Orders/target/surefire-reports/ecommerce.Controllers.OrderControllerTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Payment/target/Payment-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Payment/target/Payment-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Payment/target/surefire-reports/TEST-ecommerce.Controllers.PaymentControllerTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Payment/target/surefire-reports/TEST-ecommerce.Controllers.PaymentControllerTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Payment/target/surefire-reports/ecommerce.Controllers.PaymentControllerTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Payment/target/surefire-reports/ecommerce.Controllers.PaymentControllerTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Products/src/test/java/ecommerce/Controllers/ProductsControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Products/src/test/java/ecommerce/Controllers/ProductsControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Products/target/products-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Products/target/products-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Products/target/surefire-reports/TEST-ecommerce.Controllers.ProductsControllerTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Products/target/surefire-reports/TEST-ecommerce.Controllers.ProductsControllerTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Products/target/surefire-reports/ecommerce.Controllers.ProductsControllerTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Products/target/surefire-reports/ecommerce.Controllers.ProductsControllerTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Products/target/test-classes/ecommerce/Controllers/ProductsControllerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/Products/target/test-classes/ecommerce/Controllers/ProductsControllerTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Reviews/target/Reviews-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Reviews/target/Reviews-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shipping/target/Shipping-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Shipping/target/Shipping-1.0-SNAPSHOT.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Shipping/target/classes/ecommerce/Services/ShippingService.class" beforeDir="false" afterPath="$PROJECT_DIR$/Shipping/target/classes/ecommerce/Services/ShippingService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Wallet/target/Wallet-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Wallet/target/Wallet-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Wallet/target/surefire-reports/TEST-ecommerce.Controllers.WalletControllerTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Wallet/target/surefire-reports/TEST-ecommerce.Controllers.WalletControllerTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Wallet/target/surefire-reports/ecommerce.Controllers.WalletControllerTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Wallet/target/surefire-reports/ecommerce.Controllers.WalletControllerTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/target/api-gateway-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/target/api-gateway-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/target/surefire-reports/TEST-ecommerce.AppTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/target/surefire-reports/TEST-ecommerce.AppTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/target/surefire-reports/ecommerce.AppTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/target/surefire-reports/ecommerce.AppTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/target/surefire-reports/ecommerce.AppTest/Command line test.html" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/target/surefire-reports/ecommerce.AppTest/Command line test.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/target/surefire-reports/ecommerce.AppTest/Command line test.xml" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/target/surefire-reports/ecommerce.AppTest/Command line test.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/target/surefire-reports/emailable-report.html" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/target/surefire-reports/emailable-report.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/target/surefire-reports/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/target/surefire-reports/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/target/surefire-reports/old/ecommerce.AppTest/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/target/surefire-reports/old/ecommerce.AppTest/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/target/surefire-reports/old/ecommerce.AppTest/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/target/surefire-reports/old/ecommerce.AppTest/main.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/target/surefire-reports/testng-results.xml" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/target/surefire-reports/testng-results.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eureka-server/target/eureka-server.jar" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-server/target/eureka-server.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eureka-server/target/eureka-server.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-server/target/eureka-server.jar.original" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eureka-server/target/surefire-reports/TEST-ecommerce.AppTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-server/target/surefire-reports/TEST-ecommerce.AppTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eureka-server/target/surefire-reports/ecommerce.AppTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-server/target/surefire-reports/ecommerce.AppTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/users/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/users/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/target/surefire-reports/TEST-ecommerce.Controllers.UsersControllerTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/users/target/surefire-reports/TEST-ecommerce.Controllers.UsersControllerTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/target/surefire-reports/ecommerce.Controllers.UsersControllerTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/users/target/surefire-reports/ecommerce.Controllers.UsersControllerTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/target/users.jar" beforeDir="false" afterPath="$PROJECT_DIR$/users/target/users.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/target/users.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/users/target/users.jar.original" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,7 +73,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$/.." value="master" />
+        <entry key="$PROJECT_DIR$/.." value="update-shipping-email-microservice" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -99,36 +139,6 @@
     </option>
   </component>
   <component name="RunManager" selected="JUnit.EmailControllersTest">
-    <configuration name="AuthenticationControllerTest (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Authentication" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ecommerce.Controllers.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="ecommerce.Controllers" />
-      <option name="MAIN_CLASS_NAME" value="ecommerce.Controllers.AuthenticationControllerTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="AuthenticationControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Authentication" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Controllers.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="Controllers" />
-      <option name="MAIN_CLASS_NAME" value="Controllers.AuthenticationControllerTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="EmailControllersTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Email" />
       <extension name="coverage">
@@ -144,8 +154,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="OrderControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Orders" />
+    <configuration name="EmailControllersTest.createEmail" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Email" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="ecommerce.Controllers.*" />
@@ -153,14 +163,15 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="ecommerce.Controllers" />
-      <option name="MAIN_CLASS_NAME" value="ecommerce.Controllers.OrderControllerTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="MAIN_CLASS_NAME" value="ecommerce.Controllers.EmailControllersTest" />
+      <option name="METHOD_NAME" value="createEmail" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PaymentControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Payment" />
+    <configuration name="EmailControllersTest.createEmailSuccess" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Email" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="ecommerce.Controllers.*" />
@@ -168,26 +179,58 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="ecommerce.Controllers" />
-      <option name="MAIN_CLASS_NAME" value="ecommerce.Controllers.PaymentControllerTest" />
+      <option name="MAIN_CLASS_NAME" value="ecommerce.Controllers.EmailControllersTest" />
+      <option name="METHOD_NAME" value="createEmailSuccess" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EmailControllersTest.testSendingEmailEndpoint_Success" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Email" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ecommerce.Controllers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ecommerce.Controllers" />
+      <option name="MAIN_CLASS_NAME" value="ecommerce.Controllers.EmailControllersTest" />
+      <option name="METHOD_NAME" value="testSendingEmailEndpoint_Success" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProductsControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="products" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ecommerce.Controllers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ecommerce.Controllers" />
+      <option name="MAIN_CLASS_NAME" value="ecommerce.Controllers.ProductsControllerTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.AuthenticationControllerTest" />
-      <item itemvalue="JUnit.AuthenticationControllerTest (1)" />
+      <item itemvalue="JUnit.EmailControllersTest.createEmail" />
+      <item itemvalue="JUnit.EmailControllersTest.createEmailSuccess" />
+      <item itemvalue="JUnit.EmailControllersTest.testSendingEmailEndpoint_Success" />
+      <item itemvalue="JUnit.ProductsControllerTest" />
       <item itemvalue="JUnit.EmailControllersTest" />
-      <item itemvalue="JUnit.OrderControllerTest" />
-      <item itemvalue="JUnit.PaymentControllerTest" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.EmailControllersTest" />
-        <item itemvalue="JUnit.AuthenticationControllerTest (1)" />
-        <item itemvalue="JUnit.OrderControllerTest" />
-        <item itemvalue="JUnit.AuthenticationControllerTest" />
-        <item itemvalue="JUnit.PaymentControllerTest" />
+        <item itemvalue="JUnit.EmailControllersTest.createEmailSuccess" />
+        <item itemvalue="JUnit.EmailControllersTest.createEmail" />
+        <item itemvalue="JUnit.EmailControllersTest.testSendingEmailEndpoint_Success" />
+        <item itemvalue="JUnit.ProductsControllerTest" />
       </list>
     </recent_temporary>
   </component>
@@ -314,6 +357,21 @@
           <url>file://$PROJECT_DIR$/api-gateway/src/main/java/ecommerce/Config/AuthenticationFilter.java</url>
           <line>90</line>
           <option name="timeStamp" value="104" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Email/src/test/java/ecommerce/Controllers/EmailControllersTest.java</url>
+          <line>60</line>
+          <option name="timeStamp" value="117" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Email/src/test/java/ecommerce/Controllers/EmailControllersTest.java</url>
+          <line>53</line>
+          <option name="timeStamp" value="118" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Email/src/test/java/ecommerce/Controllers/EmailControllersTest.java</url>
+          <line>50</line>
+          <option name="timeStamp" value="119" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -110,7 +110,8 @@ public class ProductsControllerTest {
                 "Printer 001",
                 Category.PRINTERS,
                 942.4f,
-                5);
+                5,
+                "");
         products.add(product1);
 
 
@@ -137,7 +138,8 @@ public class ProductsControllerTest {
                 "Printer 003",
                 Category.PRINTERS,
                 942.4f,
-                5);
+                5,
+                "");
 
         MultiValueMap<String, String> params = new LinkedMultiValueMap<>();
         params.add("id", String.valueOf(this.userDto.getId()));
@@ -172,7 +174,8 @@ public class ProductsControllerTest {
                 "Printer 001",
                 Category.PRINTERS,
                 942.4f,
-                5);
+                5,
+                "");
 
         //when
         when(productsService.getProductById(1)).thenReturn(product1);
