@@ -7,15 +7,18 @@ import lombok.Setter;
 
 @AllArgsConstructor
 @NoArgsConstructor
-
 @Getter
 @Setter
-public class UserDto {
+public class ProductDto {
     private Integer id;
+
     private String name;
-    private String login;
-    private String email;
-    private String password;
-    private int active;
-    private String role;
+
+    private String description;
+
+    private String category;
+
+    private double price;
+
+    private Integer stockQuantity;
 }

@@ -6,17 +6,14 @@
   <component name="ChangeListManager">
     <list default="true" id="e63fab2e-ccd9-4599-8c37-fc239380bb02" name="Changes" comment="fix: update authentication microservice with Postgres database and to connect with user microservice">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Shipping/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Shipping/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Shipping/src/main/java/ecommerce/Controllers/ShippingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Shipping/src/main/java/ecommerce/Controllers/ShippingController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Shipping/src/main/java/ecommerce/Dto/OrderDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/Shipping/src/main/java/ecommerce/Dto/OrderDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Shipping/src/main/java/ecommerce/Dto/PaymentDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/Shipping/src/main/java/ecommerce/Dto/PaymentDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Shipping/src/main/java/ecommerce/Dto/UserDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/Shipping/src/main/java/ecommerce/Dto/UserDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Shipping/src/main/java/ecommerce/Dto/WalletDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/Shipping/src/main/java/ecommerce/Dto/WalletDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Shipping/target/classes/ecommerce/Controllers/ShippingController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Shipping/target/classes/ecommerce/Controllers/ShippingController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Shipping/target/classes/ecommerce/Dto/OrderDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/Shipping/target/classes/ecommerce/Dto/OrderDto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Shipping/target/classes/ecommerce/Dto/PaymentDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/Shipping/target/classes/ecommerce/Dto/PaymentDto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Shipping/target/classes/ecommerce/Dto/UserDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/Shipping/target/classes/ecommerce/Dto/UserDto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Shipping/target/classes/ecommerce/Dto/WalletDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/Shipping/target/classes/ecommerce/Dto/WalletDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Reviews/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Reviews/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Reviews/src/main/java/ecommerce/Controllers/ReviewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Reviews/src/main/java/ecommerce/Controllers/ReviewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Reviews/src/main/java/ecommerce/Dto/OrderDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/Reviews/src/main/java/ecommerce/Dto/OrderDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Reviews/src/main/java/ecommerce/Dto/UserDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/Reviews/src/main/java/ecommerce/Dto/UserDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Reviews/target/classes/ecommerce/Controllers/ReviewController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Reviews/target/classes/ecommerce/Controllers/ReviewController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Reviews/target/classes/ecommerce/Dto/OrderDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/Reviews/target/classes/ecommerce/Dto/OrderDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Reviews/target/classes/ecommerce/Dto/UserDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/Reviews/target/classes/ecommerce/Dto/UserDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shipping/src/test/java/ecommerce/Controllers/ShippingControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Shipping/src/test/java/ecommerce/Controllers/ShippingControllerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,7 +98,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.ShippingControllerTest">
+  <component name="RunManager" selected="JUnit.ReviewsControllerTest">
     <configuration name="EmailControllersTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Email" />
       <extension name="coverage">
@@ -113,22 +110,6 @@
       <option name="PACKAGE_NAME" value="ecommerce.Controllers" />
       <option name="MAIN_CLASS_NAME" value="ecommerce.Controllers.EmailControllersTest" />
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="EmailControllersTest.createEmail" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Email" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ecommerce.Controllers.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="ecommerce.Controllers" />
-      <option name="MAIN_CLASS_NAME" value="ecommerce.Controllers.EmailControllersTest" />
-      <option name="METHOD_NAME" value="createEmail" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -164,6 +145,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ReviewsControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Reviews" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ecommerce.Controllers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ecommerce.Controllers" />
+      <option name="MAIN_CLASS_NAME" value="ecommerce.Controllers.ReviewsControllerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ShippingControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Shipping" />
       <extension name="coverage">
@@ -180,19 +176,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.EmailControllersTest.createEmail" />
       <item itemvalue="JUnit.EmailControllersTest.createEmailSuccess" />
+      <item itemvalue="JUnit.ReviewsControllerTest" />
       <item itemvalue="JUnit.ShippingControllerTest" />
       <item itemvalue="JUnit.EmailControllersTest" />
       <item itemvalue="JUnit.PaymentControllerTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ReviewsControllerTest" />
         <item itemvalue="JUnit.ShippingControllerTest" />
         <item itemvalue="JUnit.PaymentControllerTest" />
         <item itemvalue="JUnit.EmailControllersTest" />
         <item itemvalue="JUnit.EmailControllersTest.createEmailSuccess" />
-        <item itemvalue="JUnit.EmailControllersTest.createEmail" />
       </list>
     </recent_temporary>
   </component>

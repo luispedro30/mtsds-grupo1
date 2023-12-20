@@ -1,11 +1,14 @@
 package ecommerce.Controllers;
 
-import ecommerce.Dto.*;
+import ecommerce.Dto.OrderDto;
+import ecommerce.Dto.ProductDto;
+import ecommerce.Dto.ShippingDto;
+import ecommerce.Dto.UserDto;
 import ecommerce.Enum.Status;
-import ecommerce.Exceptions.ItemDoesNotExistException;
-import ecommerce.Models.Shipping;
-import ecommerce.Repository.ShippingRepository;
-import ecommerce.Services.ShippingService;
+import ecommerce.Models.Review;
+import ecommerce.Repository.ReviewRepository;
+import ecommerce.Reviews;
+import ecommerce.Services.ReviewService;
 import jakarta.servlet.http.HttpServletRequest;
 import org.junit.Before;
 import org.junit.Test;
@@ -16,56 +19,48 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
-import java.sql.Date;
 import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.hamcrest.CoreMatchers.equalTo;
-import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @SpringBootTest
 @AutoConfigureMockMvc
 @RunWith(SpringRunner.class)
-public class ShippingControllerTest {
+public class ReviewsControllerTest {
 
     @Autowired
     private MockMvc mvc;
 
 
-    UserDto userDto;
+    private UserDto userDto;
 
     private OrderDto orderDto;
 
-    private PaymentDto paymentDto;
-
-    private WalletDto walletDto;
-
-    @MockBean
-    private ShippingService shippingService;
+    private ShippingDto shippingDto;
 
 
     @MockBean
-    private ShippingRepository shippingRepository;
+    private ReviewService reviewService;
+
+
+    @MockBean
+    private ReviewRepository reviewRepository;
 
     private List<UserDto> users = new ArrayList<UserDto>();
     private List<OrderDto> orders = new ArrayList<OrderDto>();
     private List<ProductDto> products = new ArrayList<ProductDto>();
 
-    private List<WalletDto> wallets = new ArrayList<WalletDto>();
-
-    private List<PaymentDto> payments = new ArrayList<PaymentDto>();
+    private List<ShippingDto> shippings = new ArrayList<ShippingDto>();
 
     private UserDto userDto1;
     private UserDto userDto2;
@@ -77,11 +72,8 @@ public class ShippingControllerTest {
     private OrderDto orderDto1;
     private OrderDto orderDto2;
 
-    private PaymentDto paymentDto1;
-    private PaymentDto paymentDto2;
-
-    private WalletDto walletDto1;
-    private WalletDto walletDto2;
+    private ShippingDto shippingDto1;
+    private ShippingDto shippingDto2;
 
     @Mock
     private HttpServletRequest request;
@@ -114,7 +106,7 @@ public class ShippingControllerTest {
                 100,
                 2);
 
-        this.productDto1 = new ProductDto(2,
+        this.productDto2 = new ProductDto(2,
                 "Tshirt curta",
                 "Tshirt manga curta",
                 "Tshirt",
@@ -128,15 +120,10 @@ public class ShippingControllerTest {
         ArrayList<ProductDto> productsOfOrder2 = new ArrayList<>();
         productsOfOrder2.add(this.productDto2);
 
-        this.orderDto1 = new OrderDto(1, productsOfOrder1, 200d);
+        this.orderDto1 = new OrderDto(1, productsOfOrder1);
 
-        this.orderDto2 = new OrderDto(2, productsOfOrder2, 100d);
+        this.orderDto2 = new OrderDto(2, productsOfOrder2);
 
-        this.paymentDto1 = new PaymentDto(1, 1, 200);
-        this.paymentDto2 = new PaymentDto(2, 2, 100);
-
-        this.walletDto1 = new WalletDto(1,1, 300);
-        this.walletDto2 = new WalletDto(2,2, 400);
 
         this.users.add(this.userDto1);
         this.users.add(this.userDto2);
@@ -144,97 +131,92 @@ public class ShippingControllerTest {
         this.products.add(this.productDto2);
         this.orders.add(this.orderDto1);
         this.orders.add(this.orderDto2);
-        this.payments.add(this.paymentDto1);
-        this.payments.add(this.paymentDto2);
-        this.wallets.add(this.walletDto1);
-        this.wallets.add(this.walletDto2);
+        this.shippings.add(this.shippingDto1);
+        this.shippings.add(this.shippingDto2);
     }
 
     @Test
-    public void  getAllShippingButEmpty() throws Exception {
+    public void  getAllReviewsButEmpty() throws Exception {
         //given
-        List<Shipping> shippings = new ArrayList<Shipping>();
+        List<Review> reviews = new ArrayList<Review>();
 
         //when
-        when(shippingService.getAllShipping()).thenReturn(shippings);
+        when(reviewService.getAllReviews()).thenReturn(reviews);
 
         //then
         MvcResult mvcResult = mvc.perform(MockMvcRequestBuilders
-                        .get("/shipping")
+                        .get("/reviews")
                         .accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isNotFound())
                 .andReturn();
 
-        verify(shippingService, Mockito.times(1)).getAllShipping();
-        verifyNoMoreInteractions(shippingService);
+        verify(reviewService, Mockito.times(1)).getAllReviews();
+        verifyNoMoreInteractions(reviewService);
     }
 
     @Test
-    public void getAllShipping() throws Exception {
+    public void getAllReviews() throws Exception {
         //given
-        List<Shipping> shippings = new ArrayList<Shipping>();
+        List<Review> reviews = new ArrayList<Review>();
 
-        Shipping shipping1 = new Shipping(1,
-                this.paymentDto1.getPaymentId(),
-                this.orderDto1.getOrderId(),
+        Review review1 = new Review(1,
                 this.userDto1.getId(),
-                Status.REGISTED,
+                this.productDto1.getId(),
+                this.orderDto1.getOrderId(),
+                10,
+                "Muito bom produto",
                 java.util.Date.from(Instant.now()),
                 java.util.Date.from(Instant.now()));
 
-        Shipping shipping2 = new Shipping(2,
-                this.paymentDto2.getPaymentId(),
-                this.orderDto2.getOrderId(),
+        Review review2 =  new Review(2,
                 this.userDto2.getId(),
-                Status.REGISTED,
+                this.productDto2.getId(),
+                this.orderDto2.getOrderId(),
+                10,
+                "Muito bom produto",
                 java.util.Date.from(Instant.now()),
                 java.util.Date.from(Instant.now()));
 
 
-        shippings.add(shipping1);
-        shippings.add(shipping2);
+        reviews.add(review1);
+        reviews.add(review2);
 
         //when
-        when(shippingService.getAllShipping()).thenReturn(shippings);
+        when(reviewService.getAllReviews()).thenReturn(reviews);
 
         //then
         mvc.perform(MockMvcRequestBuilders
-                        .get("/shipping")
+                        .get("/reviews")
                         .accept((MediaType.APPLICATION_JSON)))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$[0].orderId").value(1))
-                .andExpect(jsonPath("$[0].userId").value(1))
-                .andExpect(jsonPath("$[0].status").value("REGISTED"))
-                .andExpect(jsonPath("$[1].orderId").value(2))
-                .andExpect(jsonPath("$[1].userId").value(2))
-                .andExpect(jsonPath("$[1].status").value("REGISTED"));
+                .andExpect(jsonPath("$[1].orderId").value(2));
 
-        verify(shippingService, Mockito.times(1)).getAllShipping();
-        verifyNoMoreInteractions(shippingService);
+        verify(reviewService, Mockito.times(1)).getAllReviews();
+        verifyNoMoreInteractions(reviewService);
     }
 
     @Test
-    public void addShippingSuccess() throws Exception {
-        // Mocked Shipping object for testing
-        Shipping shipping1 = new Shipping(1,
-                this.paymentDto1.getPaymentId(),
-                this.orderDto1.getOrderId(),
+    public void addReviewSuccess() throws Exception {
+        Review review1 = new Review(1,
                 this.userDto1.getId(),
-                Status.REGISTED,
+                this.productDto1.getId(),
+                this.orderDto1.getOrderId(),
+                10,
+                "Muito bom produto",
                 java.util.Date.from(Instant.now()),
                 java.util.Date.from(Instant.now()));
 
         // Stubbing the service method to return the mocked Shipping object
-        when(shippingService.addShipping(shipping1, request)).thenReturn(shipping1);
+        when(reviewService.addReview(review1, request)).thenReturn(review1);
 
         // Performing the test by calling the controller method
-        Shipping response = shippingService.addShipping(shipping1, request);
+        Review response = reviewService.addReview(review1, request);
 
         // Assertions for a successful scenario
         //then
-        verify(shippingService, Mockito.times(1)).
-                addShipping(shipping1, request);
-        verifyNoMoreInteractions(shippingService);;
+        verify(reviewService, Mockito.times(1)).
+                addReview(review1, request);
+        verifyNoMoreInteractions(reviewService);
     }
-
 }
