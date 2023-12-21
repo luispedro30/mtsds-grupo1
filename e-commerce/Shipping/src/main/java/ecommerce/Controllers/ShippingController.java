@@ -21,10 +21,24 @@ public class ShippingController {
     @Autowired
     private ShippingService shippingService;
 
+    @GetMapping("/Landing")
+    public ResponseEntity<String> landing(){
+        return ResponseEntity
+                .status(HttpStatus.OK)
+                .body("Application is working fine.");
+
+    }
+
     @GetMapping
     ResponseEntity<List<Shipping>> getAll(){
-        List<Shipping> payments = shippingService.getAllShipping();
-        return ResponseEntity.status(HttpStatus.OK).body(payments);
+        List<Shipping> shippings =  shippingService.getAllShipping();
+        if(!shippings.isEmpty()) {
+            return new ResponseEntity<List<Shipping>>(
+                    shippings,
+                    HttpStatus.OK);
+        }
+        return new ResponseEntity<List<Shipping>>(
+                HttpStatus.NOT_FOUND);
     }
 
     @GetMapping("/{id}")

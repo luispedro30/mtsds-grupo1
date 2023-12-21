@@ -64,7 +64,7 @@
     <property name="sun.stdout.encoding" value="UTF-8"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="ecommerce.Controllers.OrderControllerTest" name="getAllOrdersButEmpty" time="0.128"/>
-  <testcase classname="ecommerce.Controllers.OrderControllerTest" name="getAllOrders" time="0.04"/>
-  <testcase classname="ecommerce.Controllers.OrderControllerTest" name="getLanding" time="0.008"/>
+  <testcase classname="ecommerce.Controllers.OrderControllerTest" name="getAllOrdersButEmpty" time="0.114"/>
+  <testcase classname="ecommerce.Controllers.OrderControllerTest" name="getAllOrders" time="0.049"/>
+  <testcase classname="ecommerce.Controllers.OrderControllerTest" name="getLanding" time="0.013"/>
 </testsuite>

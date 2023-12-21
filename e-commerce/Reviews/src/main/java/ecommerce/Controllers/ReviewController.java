@@ -20,8 +20,14 @@ public class ReviewController {
 
     @GetMapping
     ResponseEntity<List<Review>> getAll(){
-        List<Review> reviews = reviewService.getAllReviews();
-        return ResponseEntity.status(HttpStatus.OK).body(reviews);
+        List<Review> reviews =  reviewService.getAllReviews();
+        if(!reviews.isEmpty()) {
+            return new ResponseEntity<List<Review>>(
+                    reviews,
+                    HttpStatus.OK);
+        }
+        return new ResponseEntity<List<Review>>(
+                HttpStatus.NOT_FOUND);
     }
 
     @GetMapping("/{id}")
