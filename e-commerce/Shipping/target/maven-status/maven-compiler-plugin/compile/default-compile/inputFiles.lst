@@ -4,10 +4,12 @@ D:\mtsds-grupo1-github\mtsds-grupo1\e-commerce\Shipping\src\main\java\ecommerce\
 D:\mtsds-grupo1-github\mtsds-grupo1\e-commerce\Shipping\src\main\java\ecommerce\shipping.java
 D:\mtsds-grupo1-github\mtsds-grupo1\e-commerce\Shipping\src\main\java\ecommerce\Enum\Status.java
 D:\mtsds-grupo1-github\mtsds-grupo1\e-commerce\Shipping\src\main\java\ecommerce\Messages\PaymentConfirmationMessage.java
+D:\mtsds-grupo1-github\mtsds-grupo1\e-commerce\Shipping\src\main\java\ecommerce\Dto\ProductDto.java
 D:\mtsds-grupo1-github\mtsds-grupo1\e-commerce\Shipping\src\main\java\ecommerce\Listeners\PaymentConfirmationListener.java
 D:\mtsds-grupo1-github\mtsds-grupo1\e-commerce\Shipping\src\main\java\ecommerce\Dto\WalletDto.java
 D:\mtsds-grupo1-github\mtsds-grupo1\e-commerce\Shipping\src\main\java\ecommerce\Models\Shipping.java
 D:\mtsds-grupo1-github\mtsds-grupo1\e-commerce\Shipping\src\main\java\ecommerce\Controllers\ShippingController.java
+D:\mtsds-grupo1-github\mtsds-grupo1\e-commerce\Shipping\src\main\java\ecommerce\Messages\Shipping2Email.java
 D:\mtsds-grupo1-github\mtsds-grupo1\e-commerce\Shipping\src\main\java\ecommerce\Exceptions\ItemDoesNotExistException.java
 D:\mtsds-grupo1-github\mtsds-grupo1\e-commerce\Shipping\src\main\java\ecommerce\Config\MQConfig.java
 D:\mtsds-grupo1-github\mtsds-grupo1\e-commerce\Shipping\src\main\java\ecommerce\Repository\ShippingRepository.java

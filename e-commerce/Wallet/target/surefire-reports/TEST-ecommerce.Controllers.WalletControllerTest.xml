@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="5" failures="0" name="ecommerce.Controllers.WalletControllerTest" time="0.372" errors="0" skipped="0">
+<testsuite tests="5" failures="0" name="ecommerce.Controllers.WalletControllerTest" time="0.351" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="idea.version" value="2022.2.2"/>
@@ -64,9 +64,9 @@
     <property name="sun.stdout.encoding" value="UTF-8"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="ecommerce.Controllers.WalletControllerTest" name="getAllWallets" time="0.274"/>
-  <testcase classname="ecommerce.Controllers.WalletControllerTest" name="getAllWalletsButEmpty" time="0.014"/>
-  <testcase classname="ecommerce.Controllers.WalletControllerTest" name="addMoneyWallet" time="0.058"/>
-  <testcase classname="ecommerce.Controllers.WalletControllerTest" name="getLanding" time="0.014"/>
-  <testcase classname="ecommerce.Controllers.WalletControllerTest" name="createWallet" time="0.012"/>
+  <testcase classname="ecommerce.Controllers.WalletControllerTest" name="getAllWallets" time="0.248"/>
+  <testcase classname="ecommerce.Controllers.WalletControllerTest" name="getAllWalletsButEmpty" time="0.012"/>
+  <testcase classname="ecommerce.Controllers.WalletControllerTest" name="addMoneyWallet" time="0.052"/>
+  <testcase classname="ecommerce.Controllers.WalletControllerTest" name="getLanding" time="0.017"/>
+  <testcase classname="ecommerce.Controllers.WalletControllerTest" name="createWallet" time="0.022"/>
 </testsuite>

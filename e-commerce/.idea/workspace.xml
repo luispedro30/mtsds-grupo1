@@ -6,14 +6,50 @@
   <component name="ChangeListManager">
     <list default="true" id="e63fab2e-ccd9-4599-8c37-fc239380bb02" name="Changes" comment="fix: update authentication microservice with Postgres database and to connect with user microservice">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Authentication/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Authentication/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Authentication/target/surefire-reports/TEST-ecommerce.Controllers.AuthenticationControllerTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Authentication/target/surefire-reports/TEST-ecommerce.Controllers.AuthenticationControllerTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Authentication/target/surefire-reports/ecommerce.Controllers.AuthenticationControllerTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Authentication/target/surefire-reports/ecommerce.Controllers.AuthenticationControllerTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Email/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Email/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Kubernetes/deployment-user.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/Kubernetes/deployment-user.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Orders/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Orders/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Orders/target/surefire-reports/TEST-ecommerce.Controllers.OrderControllerTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Orders/target/surefire-reports/TEST-ecommerce.Controllers.OrderControllerTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Orders/target/surefire-reports/ecommerce.Controllers.OrderControllerTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Orders/target/surefire-reports/ecommerce.Controllers.OrderControllerTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Payment/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Payment/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Payment/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Payment/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Payment/target/surefire-reports/TEST-ecommerce.Controllers.PaymentControllerTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Payment/target/surefire-reports/TEST-ecommerce.Controllers.PaymentControllerTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Payment/target/surefire-reports/ecommerce.Controllers.PaymentControllerTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Payment/target/surefire-reports/ecommerce.Controllers.PaymentControllerTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Products/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Products/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Products/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Products/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Products/target/products-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Products/target/products-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Products/target/surefire-reports/TEST-ecommerce.Controllers.ProductsControllerTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Products/target/surefire-reports/TEST-ecommerce.Controllers.ProductsControllerTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Products/target/surefire-reports/ecommerce.Controllers.ProductsControllerTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Products/target/surefire-reports/ecommerce.Controllers.ProductsControllerTest.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Reviews/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Reviews/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reviews/src/main/java/ecommerce/Controllers/ReviewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Reviews/src/main/java/ecommerce/Controllers/ReviewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reviews/src/main/java/ecommerce/Dto/OrderDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/Reviews/src/main/java/ecommerce/Dto/OrderDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reviews/src/main/java/ecommerce/Dto/UserDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/Reviews/src/main/java/ecommerce/Dto/UserDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reviews/target/classes/ecommerce/Controllers/ReviewController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Reviews/target/classes/ecommerce/Controllers/ReviewController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reviews/target/classes/ecommerce/Dto/OrderDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/Reviews/target/classes/ecommerce/Dto/OrderDto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reviews/target/classes/ecommerce/Dto/UserDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/Reviews/target/classes/ecommerce/Dto/UserDto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Shipping/src/test/java/ecommerce/Controllers/ShippingControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Shipping/src/test/java/ecommerce/Controllers/ShippingControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Reviews/target/Reviews-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Reviews/target/Reviews-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Reviews/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Reviews/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Reviews/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Reviews/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Reviews/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Reviews/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shipping/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Shipping/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shipping/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Shipping/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shipping/target/Shipping-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Shipping/target/Shipping-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shipping/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Shipping/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shipping/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Shipping/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shipping/target/test-classes/ecommerce/Controllers/ShippingControllerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/Shipping/target/test-classes/ecommerce/Controllers/ShippingControllerTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Wallet/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Wallet/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Wallet/target/Wallet-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Wallet/target/Wallet-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Wallet/target/surefire-reports/TEST-ecommerce.Controllers.WalletControllerTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Wallet/target/surefire-reports/TEST-ecommerce.Controllers.WalletControllerTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Wallet/target/surefire-reports/ecommerce.Controllers.WalletControllerTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Wallet/target/surefire-reports/ecommerce.Controllers.WalletControllerTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/target/surefire-reports/TEST-ecommerce.AppTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/target/surefire-reports/TEST-ecommerce.AppTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/target/surefire-reports/ecommerce.AppTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/target/surefire-reports/ecommerce.AppTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/target/surefire-reports/ecommerce.AppTest/Command line test.html" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/target/surefire-reports/ecommerce.AppTest/Command line test.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/target/surefire-reports/ecommerce.AppTest/Command line test.xml" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/target/surefire-reports/ecommerce.AppTest/Command line test.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/target/surefire-reports/emailable-report.html" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/target/surefire-reports/emailable-report.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/target/surefire-reports/testng-results.xml" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/target/surefire-reports/testng-results.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eureka-server/target/surefire-reports/TEST-ecommerce.AppTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-server/target/surefire-reports/TEST-ecommerce.AppTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eureka-server/target/surefire-reports/ecommerce.AppTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-server/target/surefire-reports/ecommerce.AppTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/users/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/target/surefire-reports/TEST-ecommerce.Controllers.UsersControllerTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/users/target/surefire-reports/TEST-ecommerce.Controllers.UsersControllerTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/target/surefire-reports/ecommerce.Controllers.UsersControllerTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/users/target/surefire-reports/ecommerce.Controllers.UsersControllerTest.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,18 +89,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;20&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/mtsds-grupo1-github/mtsds-grupo1/e-commerce/Email/src/main/java/ecommerce&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "jdk.selected.JAVA_MODULE": "20",
+    "last_opened_file_path": "D:/mtsds-grupo1-github/mtsds-grupo1/e-commerce/Kubernetes",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="ecommerce.Controller" />
@@ -72,11 +108,11 @@
       <recent name="ecommerce" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\mtsds-grupo1-github\mtsds-grupo1\e-commerce\Kubernetes" />
+      <recent name="D:\mtsds-grupo1-github\mtsds-grupo1\e-commerce\Authentication" />
+      <recent name="D:\mtsds-grupo1-github\mtsds-grupo1\e-commerce\Email" />
       <recent name="D:\mtsds-grupo1-github\mtsds-grupo1\e-commerce\Email\src\main\java\ecommerce" />
       <recent name="D:\mtsds-grupo1-github\mtsds-grupo1\e-commerce\Products\src\main\java\ecommerce" />
-      <recent name="D:\mtsds-grupo1-github\mtsds-grupo1\e-commerce\Orders\src\main\java\ecommerce" />
-      <recent name="D:\mtsds-grupo1-github\mtsds-grupo1\e-commerce\Shipping\src\main\java\ecommerce" />
-      <recent name="D:\mtsds-grupo1-github\mtsds-grupo1\e-commerce\Wallet\src\main\java\ecommerce" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="ecommerce.Dto" />
