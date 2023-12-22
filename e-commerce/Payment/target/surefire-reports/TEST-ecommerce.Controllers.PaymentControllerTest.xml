@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="3" failures="0" name="ecommerce.Controllers.PaymentControllerTest" time="0.271" errors="0" skipped="0">
+<testsuite tests="3" failures="0" name="ecommerce.Controllers.PaymentControllerTest" time="0.232" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="idea.version" value="2022.2.2"/>
@@ -64,7 +64,7 @@
     <property name="sun.stdout.encoding" value="UTF-8"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="ecommerce.Controllers.PaymentControllerTest" name="getAllPaymentButEmpty" time="0.185"/>
-  <testcase classname="ecommerce.Controllers.PaymentControllerTest" name="getAllPayments" time="0.074"/>
-  <testcase classname="ecommerce.Controllers.PaymentControllerTest" name="getLanding" time="0.012"/>
+  <testcase classname="ecommerce.Controllers.PaymentControllerTest" name="getAllPaymentButEmpty" time="0.18"/>
+  <testcase classname="ecommerce.Controllers.PaymentControllerTest" name="getAllPayments" time="0.043"/>
+  <testcase classname="ecommerce.Controllers.PaymentControllerTest" name="getLanding" time="0.009"/>
 </testsuite>

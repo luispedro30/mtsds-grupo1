@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="3" failures="0" name="ecommerce.Controllers.OrderControllerTest" time="0.176" errors="0" skipped="0">
+<testsuite tests="3" failures="0" name="ecommerce.Controllers.OrderControllerTest" time="0.153" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="idea.version" value="2022.2.2"/>
@@ -64,7 +64,7 @@
     <property name="sun.stdout.encoding" value="UTF-8"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="ecommerce.Controllers.OrderControllerTest" name="getAllOrdersButEmpty" time="0.114"/>
-  <testcase classname="ecommerce.Controllers.OrderControllerTest" name="getAllOrders" time="0.049"/>
-  <testcase classname="ecommerce.Controllers.OrderControllerTest" name="getLanding" time="0.013"/>
+  <testcase classname="ecommerce.Controllers.OrderControllerTest" name="getAllOrdersButEmpty" time="0.104"/>
+  <testcase classname="ecommerce.Controllers.OrderControllerTest" name="getAllOrders" time="0.04"/>
+  <testcase classname="ecommerce.Controllers.OrderControllerTest" name="getLanding" time="0.009"/>
 </testsuite>

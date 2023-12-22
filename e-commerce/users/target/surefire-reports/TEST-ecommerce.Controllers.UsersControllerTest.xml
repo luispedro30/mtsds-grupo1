@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="7" failures="0" name="ecommerce.Controllers.UsersControllerTest" time="0.489" errors="0" skipped="0">
+<testsuite tests="7" failures="0" name="ecommerce.Controllers.UsersControllerTest" time="0.48" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="idea.version" value="2022.2.2"/>
@@ -64,11 +64,11 @@
     <property name="sun.stdout.encoding" value="UTF-8"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="ecommerce.Controllers.UsersControllerTest" name="getUnexistingUser" time="0.264"/>
-  <testcase classname="ecommerce.Controllers.UsersControllerTest" name="getUserByName1" time="0.054"/>
-  <testcase classname="ecommerce.Controllers.UsersControllerTest" name="getAllUsers" time="0.01"/>
-  <testcase classname="ecommerce.Controllers.UsersControllerTest" name="createUserNull" time="0.019"/>
-  <testcase classname="ecommerce.Controllers.UsersControllerTest" name="getLanding" time="0.013"/>
-  <testcase classname="ecommerce.Controllers.UsersControllerTest" name="createUser" time="0.117"/>
-  <testcase classname="ecommerce.Controllers.UsersControllerTest" name="getUser1" time="0.012"/>
+  <testcase classname="ecommerce.Controllers.UsersControllerTest" name="getUnexistingUser" time="0.216"/>
+  <testcase classname="ecommerce.Controllers.UsersControllerTest" name="getUserByName1" time="0.062"/>
+  <testcase classname="ecommerce.Controllers.UsersControllerTest" name="getAllUsers" time="0.013"/>
+  <testcase classname="ecommerce.Controllers.UsersControllerTest" name="createUserNull" time="0.018"/>
+  <testcase classname="ecommerce.Controllers.UsersControllerTest" name="getLanding" time="0.012"/>
+  <testcase classname="ecommerce.Controllers.UsersControllerTest" name="createUser" time="0.144"/>
+  <testcase classname="ecommerce.Controllers.UsersControllerTest" name="getUser1" time="0.015"/>
 </testsuite>

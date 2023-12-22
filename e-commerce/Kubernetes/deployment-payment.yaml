@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: payment
+  labels:
+    app.kubernetes.io/name: payment
+spec:
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: payment
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: payment
+    spec:
+      containers:
+        - name: payment
+          image: luispedro189/payment-service:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 7782
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: payment
+  labels:
+    app.kubernetes.io/name: payment
+spec:
+  type: LoadBalancer
+  ports:
+    - port: 8095 #porta a que dá expose da aplicação (para fora)
+      targetPort: 7782 #faz bonding com a porta do container (tem de ser a mesma)
+  selector: #match com a parte c cima da linha 8 (labels para saber que pertence ao mesmo)
+    app.kubernetes.io/name: payment

@@ -15,12 +15,11 @@ spec:
         app.kubernetes.io/name: user
     spec:
       containers:
-        - name: eureka
+        - name: user
           image: luispedro189/user-service:latest
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 7777
-
 ---
 
 apiVersion: v1
