@@ -1,8 +1,12 @@
 ecommerce\Controller\RegisterController.class
 ecommerce\Models\User.class
 ecommerce\Users.class
+ecommerce\Config\MQConfig.class
+ecommerce\Messages\WalletRegistrationMessage.class
 ecommerce\Repository\UserRepository.class
 ecommerce\Service\UserService.class
+ecommerce\Dto\WalletDto.class
 ecommerce\Exceptions\AlreadyExistingException.class
 ecommerce\Enums\Role.class
 ecommerce\Controller\UserController.class
+ecommerce\Messages\User2Email.class

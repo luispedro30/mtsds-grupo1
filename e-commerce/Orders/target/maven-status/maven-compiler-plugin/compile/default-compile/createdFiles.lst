@@ -1,5 +1,7 @@
 ecommerce\Repository\ProductsRepository.class
+ecommerce\Messages\OrderConcludedListener.class
 ecommerce\Models\User.class
+ecommerce\Config\MQConfig.class
 ecommerce\Dto\ProductDto.class
 ecommerce\Services\OrderService.class
 ecommerce\Repository\UserRepository.class
@@ -9,5 +11,8 @@ ecommerce\Repository\OrderRepository.class
 ecommerce\Controllers\OrderController.class
 ecommerce\Orders.class
 ecommerce\Dto\UserDto.class
+ecommerce\Listeners\PaymentConfirmationListener.class
+ecommerce\Messages\PaymentConfirmationMessage.class
+ecommerce\Messages\Order2Email.class
 ecommerce\Models\Order.class
 ecommerce\Models\Products.class

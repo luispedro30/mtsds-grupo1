@@ -1,46 +1,37 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: authentication
+  name: auth
   labels:
-    app.kubernetes.io/name: authentication
+    app.kubernetes.io/name: auth
 spec:
   selector:
     matchLabels:
-      app.kubernetes.io/name: authentication
+      app.kubernetes.io/name: auth
   replicas: 1
   template:
     metadata:
       labels:
-        app.kubernetes.io/name: authentication
+        app.kubernetes.io/name: auth
     spec:
       containers:
-        - name: authentication
+        - name: auth
           image: luispedro189/authentication-service:latest
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 9898
-          env:
-            - name: SPRING_DATASOURCE_URL
-              value: jdbc:postgresql://localhost:5432/auth
-            - name: SPRING_DATASOURCE_USERNAME
-              value: admin
-            - name: SPRING_DATASOURCE_PASSWORD
-              value: postgres123
-
 ---
 
 apiVersion: v1
 kind: Service
 metadata:
-  name: authentication
+  name: auth
   labels:
-    app.kubernetes.io/name: authentication
+    app.kubernetes.io/name: auth
 spec:
   type: LoadBalancer
   ports:
-    - port: 7785 #porta a que dá expose da aplicação (para fora)
+    - port: 8084 #porta a que dá expose da aplicação (para fora)
       targetPort: 9898 #faz bonding com a porta do container (tem de ser a mesma)
   selector: #match com a parte c cima da linha 8 (labels para saber que pertence ao mesmo)
-    app.kubernetes.io/name: authentication
-
+    app.kubernetes.io/name: auth

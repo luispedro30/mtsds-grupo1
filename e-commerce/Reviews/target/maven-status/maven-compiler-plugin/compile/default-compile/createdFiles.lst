@@ -1,9 +1,12 @@
 ecommerce\Repository\ReviewRepository.class
 ecommerce\Controllers\ReviewController.class
+ecommerce\Dto\ProductDto.class
 ecommerce\Exceptions\ItemDoesNotExistException.class
 ecommerce\Auditing\JpaAuditingConfiguration.class
 ecommerce\Dto\OrderDto.class
 ecommerce\Reviews.class
+ecommerce\Dto\ShippingDto.class
+ecommerce\Enum\Status.class
 ecommerce\Dto\UserDto.class
 ecommerce\Models\Review.class
 ecommerce\Services\ReviewService.class
