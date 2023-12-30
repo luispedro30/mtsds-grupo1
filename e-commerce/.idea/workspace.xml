@@ -5,23 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e63fab2e-ccd9-4599-8c37-fc239380bb02" name="Changes" comment="fix: update authentication microservice with Postgres database and to connect with user microservice">
-      <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Authentication/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Authentication/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Authentication/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/Authentication/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Authentication/target/Authentication.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Authentication/target/Authentication.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Authentication/target/Authentication.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/Authentication/target/Authentication.jar.original" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Authentication/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Authentication/target/classes/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Authentication/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Authentication/target/maven-archiver/pom.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Email/target/Email.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Email/target/Email.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Email/target/Email.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/Email/target/Email.jar.original" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Email/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Email/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kubernetes/deployment-authentication.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/Kubernetes/deployment-authentication.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kubernetes/deployment-db-authentication.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/Kubernetes/deployment-db-authentication.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kubernetes/deployment-db-users.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/Kubernetes/deployment-db-users.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kubernetes/deployment-eureka.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/Kubernetes/deployment-eureka.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kubernetes/deployment-gateway.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/Kubernetes/deployment-gateway.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kubernetes/deployment-user.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/Kubernetes/deployment-user.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Kubernetes/deployment-wallet.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/Kubernetes/deployment-wallet.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Kubernetes/postgres-configmap.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Kubernetes/postgres-credentials.yaml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Orders/target/Orders.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Orders/target/Orders.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Orders/target/Orders.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/Orders/target/Orders.jar.original" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Orders/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Orders/target/maven-archiver/pom.properties" afterDir="false" />
@@ -37,24 +30,17 @@
       <change beforePath="$PROJECT_DIR$/Shipping/target/Shipping.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Shipping/target/Shipping.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Shipping/target/Shipping.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/Shipping/target/Shipping.jar.original" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Shipping/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Shipping/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Wallet/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Wallet/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Wallet/target/Wallet.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Wallet/target/Wallet.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Wallet/target/Wallet.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/Wallet/target/Wallet.jar.original" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Wallet/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Wallet/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api-gateway/target/api-gateway.jar" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/target/api-gateway.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api-gateway/target/api-gateway.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/target/api-gateway.jar.original" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api-gateway/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eureka-server/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-server/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eureka-server/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-server/target/classes/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/eureka-server/target/eureka-server.jar" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-server/target/eureka-server.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/eureka-server/target/eureka-server.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-server/target/eureka-server.jar.original" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/eureka-server/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-server/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/users/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/users/target/classes/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/users/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/target/surefire-reports/TEST-ecommerce.Controllers.UsersControllerTest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/target/surefire-reports/ecommerce.Controllers.UsersControllerTest.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/users/target/users.jar" beforeDir="false" afterPath="$PROJECT_DIR$/users/target/users.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users/target/users.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/users/target/users.jar.original" afterDir="false" />
     </list>

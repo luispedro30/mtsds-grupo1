@@ -1,0 +1,56 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: shipping-pvc
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 100Mi
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: bd-shipping
+spec:
+  selector:
+    app: bd-shipping
+  ports:
+    - protocol: TCP
+      port: 5439
+      targetPort: 5432
+  clusterIP: None
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bd-shipping
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: bd-shipping
+  template:
+    metadata:
+      labels:
+        app: bd-shipping
+    spec:
+      containers:
+        - name: bd-shipping
+          image: postgres:16.0
+          ports:
+            - containerPort: 5432
+          env:
+            - name: POSTGRES_DB
+              value: shipping
+            - name: POSTGRES_USER
+              value: admin
+            - name: POSTGRES_PASSWORD
+              value: postgres123
+      volumes:
+        - name: shipping-data
+          persistentVolumeClaim:
+            claimName: shipping-pvc
