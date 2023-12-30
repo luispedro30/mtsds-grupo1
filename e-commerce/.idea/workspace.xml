@@ -6,43 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="e63fab2e-ccd9-4599-8c37-fc239380bb02" name="Changes" comment="fix: update authentication microservice with Postgres database and to connect with user microservice">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Authentication/target/Authentication.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Authentication/target/Authentication.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Authentication/target/Authentication.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/Authentication/target/Authentication.jar.original" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Authentication/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Authentication/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Email/target/Email.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Email/target/Email.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Email/target/Email.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/Email/target/Email.jar.original" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Email/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Email/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Kubernetes/deployment-products.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/Kubernetes/deployment-products.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Kubernetes/deployment-wallet.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/Kubernetes/deployment-wallet.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kubernetes/postgres-configmap.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kubernetes/postgres-credentials.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Orders/target/Orders.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Orders/target/Orders.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Orders/target/Orders.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/Orders/target/Orders.jar.original" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Orders/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Orders/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Payment/target/Payment.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Payment/target/Payment.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Payment/target/Payment.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/Payment/target/Payment.jar.original" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Payment/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Payment/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Products/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Products/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Products/target/products.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Products/target/products.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Products/target/products.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/Products/target/products.jar.original" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reviews/target/Reviews.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Reviews/target/Reviews.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reviews/target/Reviews.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/Reviews/target/Reviews.jar.original" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reviews/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Reviews/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Shipping/target/Shipping.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Shipping/target/Shipping.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Shipping/target/Shipping.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/Shipping/target/Shipping.jar.original" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Shipping/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Shipping/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Wallet/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Wallet/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Wallet/target/Wallet.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Wallet/target/Wallet.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Wallet/target/Wallet.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/Wallet/target/Wallet.jar.original" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Wallet/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Wallet/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/target/api-gateway.jar" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/target/api-gateway.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/target/api-gateway.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/target/api-gateway.jar.original" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eureka-server/target/eureka-server.jar" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-server/target/eureka-server.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eureka-server/target/eureka-server.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-server/target/eureka-server.jar.original" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eureka-server/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-server/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/users/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/target/users.jar" beforeDir="false" afterPath="$PROJECT_DIR$/users/target/users.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/target/users.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/users/target/users.jar.original" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Products/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Products/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

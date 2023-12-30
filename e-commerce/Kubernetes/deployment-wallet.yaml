@@ -17,7 +17,7 @@ spec:
         - name: wallet-service
           image: luispedro189/wallet-service:latest
           ports:
-            - containerPort: 9898
+            - containerPort: 8094
           env:
             - name: EUREKA_SERVER
               value: eureka-server
