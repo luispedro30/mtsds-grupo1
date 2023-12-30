@@ -1,37 +1,40 @@
+#deployment-driver
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: auth
-  labels:
-    app.kubernetes.io/name: auth
+  name: auth-service
 spec:
+  replicas: 1
   selector:
     matchLabels:
-      app.kubernetes.io/name: auth
-  replicas: 1
+      app: auth-service
   template:
     metadata:
       labels:
-        app.kubernetes.io/name: auth
+        app: auth-service
     spec:
       containers:
-        - name: auth
+        - name: auth-service
           image: luispedro189/authentication-service:latest
-          imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 9898
+          env:
+            - name: EUREKA_SERVER
+              value: eureka-server
+            - name: USER-SERVICE
+              value: user-service
+            - name: AUTH_DB
+              value: bd-auth
 ---
-
 apiVersion: v1
 kind: Service
 metadata:
-  name: auth
-  labels:
-    app.kubernetes.io/name: auth
+  name: auth-service
 spec:
-  type: LoadBalancer
+  selector:
+    app: auth-service
   ports:
-    - port: 8084 #porta a que dá expose da aplicação (para fora)
-      targetPort: 9898 #faz bonding com a porta do container (tem de ser a mesma)
-  selector: #match com a parte c cima da linha 8 (labels para saber que pertence ao mesmo)
-    app.kubernetes.io/name: auth
+    - name: http
+      port: 9898
+      targetPort: 9898
+  type: ClusterIP
