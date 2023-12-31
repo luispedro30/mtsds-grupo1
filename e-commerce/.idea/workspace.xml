@@ -9,12 +9,12 @@
       <change beforePath="$PROJECT_DIR$/Authentication/target/Authentication.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Authentication/target/Authentication.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Authentication/target/Authentication.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/Authentication/target/Authentication.jar.original" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Authentication/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Authentication/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Email/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Email/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Email/target/Email.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Email/target/Email.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Email/target/Email.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/Email/target/Email.jar.original" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Email/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Email/target/classes/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Email/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Email/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kubernetes/deployment-email.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/Kubernetes/deployment-email.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Kubernetes/deployment-db-orders.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/Kubernetes/deployment-db-orders.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Kubernetes/deployment-orders.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/Kubernetes/deployment-orders.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Orders/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Orders/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Orders/target/Orders.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Orders/target/Orders.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Orders/target/Orders.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/Orders/target/Orders.jar.original" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Orders/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Orders/target/maven-archiver/pom.properties" afterDir="false" />

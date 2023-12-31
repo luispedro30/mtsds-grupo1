@@ -19,7 +19,7 @@ spec:
     app: bd-orders
   ports:
     - protocol: TCP
-      port: 5435
+      port: 5438
       targetPort: 5432
   clusterIP: None
 
