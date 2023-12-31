@@ -1,38 +1,38 @@
+# deployment-gateway.yaml
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: api-gateway
-  labels:
-    app.kubernetes.io/name: api-gateway
+  name: spring-cloud-gateway
 spec:
+  replicas: 1
   selector:
     matchLabels:
-      app.kubernetes.io/name: api-gateway
-  replicas: 1
+      app: spring-cloud-gateway
   template:
     metadata:
       labels:
-        app.kubernetes.io/name: api-gateway
+        app: spring-cloud-gateway
     spec:
       containers:
-        - name: api-gateway
+        - name: spring-cloud-gateway
           image: luispedro189/api-gateway-service:latest
-          imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8090
+          env:
+            - name: EUREKA_SERVER
+              value: eureka-server
+
 
 ---
-
 apiVersion: v1
 kind: Service
 metadata:
-  name: api-gateway
-  labels:
-    app.kubernetes.io/name: api-gateway
+  name: spring-cloud-gateway
 spec:
-  type: LoadBalancer
+  selector:
+    app: spring-cloud-gateway
   ports:
-    - port: 7780 #porta a que dá expose da aplicação (para fora)
-      targetPort: 8090 #faz bonding com a porta do container (tem de ser a mesma)
-  selector: #match com a parte c cima da linha 8 (labels para saber que pertence ao mesmo)
-    app.kubernetes.io/name: api-gateway
+    - protocol: TCP
+      port: 8090
+      targetPort: 8090
+  type: LoadBalancer

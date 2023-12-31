@@ -1,8 +1,15 @@
 ecommerce\Controllers\WalletController.class
 ecommerce\Services\WalletService.class
+ecommerce\Config\MQConfig.class
 ecommerce\Auditing\JpaAuditingConfiguration.class
 ecommerce\Repository\WalletRepository.class
+ecommerce\Messages\WalletConcludedListener.class
 ecommerce\Exceptions\AlreadyExistingException.class
+ecommerce\Messages\UserRegistrationMessage.class
 ecommerce\wallet.class
 ecommerce\Dto\UserDto.class
+ecommerce\Listeners\PaymentConfirmationListener.class
+ecommerce\Messages\PaymentConfirmationMessage.class
+ecommerce\Listeners\UserRegistrationListener.class
 ecommerce\Models\Wallet.class
+ecommerce\Messages\Wallet2Email.class

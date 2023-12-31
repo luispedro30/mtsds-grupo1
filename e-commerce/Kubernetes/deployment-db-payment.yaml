@@ -1,0 +1,56 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: payments-pvc
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 100Mi
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: bd-payments
+spec:
+  selector:
+    app: bd-payments
+  ports:
+    - protocol: TCP
+      port: 5439
+      targetPort: 5432
+  clusterIP: None
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bd-payments
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: bd-payments
+  template:
+    metadata:
+      labels:
+        app: bd-payments
+    spec:
+      containers:
+        - name: bd-payments
+          image: postgres:16.0
+          ports:
+            - containerPort: 5432
+          env:
+            - name: POSTGRES_DB
+              value: payments
+            - name: POSTGRES_USER
+              value: admin
+            - name: POSTGRES_PASSWORD
+              value: postgres123
+      volumes:
+        - name: payments-data
+          persistentVolumeClaim:
+            claimName: payments-pvc

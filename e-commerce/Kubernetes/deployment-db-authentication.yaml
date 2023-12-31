@@ -13,36 +13,36 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: auth-db
+  name: bd-auth
 spec:
   selector:
-    app: auth-db
+    app: bd-auth
   ports:
     - protocol: TCP
-      port: 5450
-      targetPort: 5450
+      port: 5434
+      targetPort: 5432
   clusterIP: None
 
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: auth-db
+  name: bd-auth
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: auth-db
+      app: bd-auth
   template:
     metadata:
       labels:
-        app: auth-db
+        app: bd-auth
     spec:
       containers:
         - name: bd-auth
           image: postgres:16.0
           ports:
-            - containerPort: 5450
+            - containerPort: 5432
           env:
             - name: POSTGRES_DB
               value: auth

@@ -1,2 +1,6 @@
 ecommerce\Config\GatewayConfig.class
+ecommerce\Services\JwtUtil.class
+ecommerce\Config\AuthenticationFilter.class
 ecommerce\ApiGateway.class
+ecommerce\Models\EUserRole.class
+ecommerce\Models\UserDto.class

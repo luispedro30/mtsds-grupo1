@@ -1,5 +1,128 @@
 name: e-commerce
 services:
+  bd-products:
+    image: postgres:16.0
+    container_name: bd-products
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: postgres123
+      POSTGRES_DB: products
+    #ports:
+    #  - "5436:5432"
+    networks:
+      - e-commerce
+    volumes:
+      - D:/Docker/Postgres/products-db/:/var/lib/postgresql/data
+
+  bd-users:
+    image: postgres:16.0
+    container_name: bd-users
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: postgres123
+      POSTGRES_DB: users
+    #ports:
+    #  - "5454:5432"
+    networks:
+      - e-commerce
+    volumes:
+      - D:/Docker/Postgres/users-db/:/var/lib/postgresql/data
+
+  bd-orders:
+    image: postgres:16.0
+    container_name: bd-orders
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: postgres123
+      POSTGRES_DB: orders
+    #ports:
+    #  - "5437:5432"
+    networks:
+      - e-commerce
+    volumes:
+      - D:/Docker/Postgres/orders-db/:/var/lib/postgresql/data
+
+  bd-wallets:
+    image: postgres:16.0
+    container_name: bd-wallets
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: postgres123
+      POSTGRES_DB: wallets
+    #ports:
+    #  - "5439:5432"
+    networks:
+      - e-commerce
+    volumes:
+      - D:/Docker/Postgres/wallets-db/:/var/lib/postgresql/data
+
+  bd-payments:
+    image: postgres:16.0
+    container_name: bd-payments
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: postgres123
+      POSTGRES_DB: payments
+    #ports:
+    #  - "5440:5432"
+    networks:
+      - e-commerce
+    volumes:
+      - D:/Docker/Postgres/payments-db/:/var/lib/postgresql/data
+
+  bd-reviews:
+    image: postgres:16.0
+    container_name: bd-reviews
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: postgres123
+      POSTGRES_DB: reviews
+    #ports:
+    #  - "5441:5432"
+    networks:
+      - e-commerce
+    volumes:
+      - D:/Docker/Postgres/reviews-db/:/var/lib/postgresql/data
+
+  bd-shippings:
+    image: postgres:16.0
+    container_name: bd-shippings
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: postgres123
+      POSTGRES_DB: shippings
+    #ports:
+    #  - "5442:5432"
+    networks:
+      - e-commerce
+    volumes:
+      - D:/Docker/Postgres/shippings-db/:/var/lib/postgresql/data
+
+  bd-auth:
+    image: postgres:16.0
+    container_name: bd-auth
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: postgres123
+      POSTGRES_DB: auth
+    #ports:
+    #  - "5450:5432"
+    networks:
+      - e-commerce
+    volumes:
+      - D:/Docker/Postgres/auth-db/:/var/lib/postgresql/data
+
+  pgadmin:
+    image: dpage/pgadmin4:7.8
+    container_name: pgadmin
+    environment:
+      PGADMIN_DEFAULT_EMAIL: 8220025@estg.ipp.pt
+      PGADMIN_DEFAULT_PASSWORD: pgadmin123
+    networks:
+      - e-commerce
+    #ports:
+    #  - "9999:80"
+
   eureka-server:
     container_name: eureka-server
     build:
@@ -7,8 +130,8 @@ services:
     image: eureka-service
     environment:
       SPRING_PROFILES_ACTIVE: 'docker'
-    ports:
-      - "8761:8761"
+    #ports:
+    #  - "8761:8761"
     restart: unless-stopped
     networks:
       - e-commerce
@@ -22,8 +145,8 @@ services:
       eureka.instance.hostname: eureka-server
       eureka.client.serviceurl.defaultzone: http://eureka-server:8761/eureka/
     restart: unless-stopped
-    ports:
-      - "8090:8090"
+    #ports:
+    #  - "8090:8090"
     depends_on:
       - eureka-server
     networks:
@@ -33,15 +156,16 @@ services:
     container_name: users-service
     build:
       context: ./users
-    image: users
+    image: luispedro189/user-service
     environment:
       eureka.instance.hostname: eureka-server
       eureka.client.serviceurl.defaultzone: http://eureka-server:8761/eureka/
     restart: unless-stopped
-    ports:
-    - "7777:7777"
+    #ports:
+    #- "7777:7777"
     depends_on:
       - eureka-server
+      - bd-users
     networks:
       - e-commerce
 
@@ -49,15 +173,16 @@ services:
     container_name: products-service
     build:
       context: ./Products
-    image: products
+    image: luispedro189/products-service
     environment:
       eureka.instance.hostname: eureka-server
       eureka.client.serviceurl.defaultzone: http://eureka-server:8761/eureka/
     restart: unless-stopped
-    ports:
-    - "8091:8091"
+    #ports:
+    #- "8091:8091"
     depends_on:
       - eureka-server
+      - bd-products
     networks:
       - e-commerce
 
@@ -70,10 +195,11 @@ services:
       eureka.instance.hostname: eureka-server
       eureka.client.serviceurl.defaultzone: http://eureka-server:8761/eureka/
     restart: unless-stopped
-    ports:
-      - "8092:8092"
+    #ports:
+    #  - "8092:8092"
     depends_on:
       - eureka-server
+      - bd-orders
     networks:
       - e-commerce
 
@@ -86,10 +212,11 @@ services:
       eureka.instance.hostname: eureka-server
       eureka.client.serviceurl.defaultzone: http://eureka-server:8761/eureka/
     restart: unless-stopped
-    ports:
-      - "8095:8095"
+    #ports:
+    #  - "8095:8095"
     depends_on:
       - eureka-server
+      - bd-payments
     networks:
       - e-commerce
 
@@ -102,10 +229,11 @@ services:
       eureka.instance.hostname: eureka-server
       eureka.client.serviceurl.defaultzone: http://eureka-server:8761/eureka/
     restart: unless-stopped
-    ports:
-      - "8093:8093"
+    #ports:
+    #  - "8093:8093"
     depends_on:
       - eureka-server
+      - bd-reviews
     networks:
       - e-commerce
 
@@ -118,10 +246,11 @@ services:
       eureka.instance.hostname: eureka-server
       eureka.client.serviceurl.defaultzone: http://eureka-server:8761/eureka/
     restart: unless-stopped
-    ports:
-      - "8096:8096"
+    #ports:
+    #   - "8096:8096"
     depends_on:
       - eureka-server
+      - bd-shippings
     networks:
       - e-commerce
 
@@ -134,10 +263,28 @@ services:
       eureka.instance.hostname: eureka-server
       eureka.client.serviceurl.defaultzone: http://eureka-server:8761/eureka/
     restart: unless-stopped
-    ports:
-      - "8094:8094"
+    #ports:
+    #  - "8094:8094"
     depends_on:
       - eureka-server
+      - bd-wallets
+    networks:
+      - e-commerce
+
+  authentication-service:
+    container_name: authentication-service
+    build:
+      context: ./Authentication
+    image: luispedro189/authentication-service
+    environment:
+      eureka.instance.hostname: eureka-server
+      eureka.client.serviceurl.defaultzone: http://eureka-server:8761/eureka/
+    restart: unless-stopped
+    #ports:
+    #  - "9898:9898"
+    depends_on:
+      - eureka-server
+      - bd-wallets
     networks:
       - e-commerce
 

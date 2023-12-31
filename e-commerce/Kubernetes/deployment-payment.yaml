@@ -1,38 +1,46 @@
+#deployment-driver
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: payment
-  labels:
-    app.kubernetes.io/name: payment
+  name: payment-service
 spec:
+  replicas: 1
   selector:
     matchLabels:
-      app.kubernetes.io/name: payment
-  replicas: 1
+      app: payment-service
   template:
     metadata:
       labels:
-        app.kubernetes.io/name: payment
+        app: payment-service
     spec:
       containers:
-        - name: payment
+        - name: payment-service
           image: luispedro189/payment-service:latest
-          imagePullPolicy: IfNotPresent
           ports:
-            - containerPort: 7782
-
+            - containerPort: 8095
+          env:
+            - name: EUREKA_SERVER
+              value: eureka-server
+            - name: USER-SERVICE
+              value: user-service
+            - name: ORDERS-SERVICE
+              value: orders-service
+            - name: WALLET-SERVICE
+              value: wallet-service
+            - name: SHIPPING-SERVICE
+              value: shipping-service
+            - name: AUTH_DB
+              value: payments
 ---
-
 apiVersion: v1
 kind: Service
 metadata:
-  name: payment
-  labels:
-    app.kubernetes.io/name: payment
+  name: payment-service
 spec:
-  type: LoadBalancer
+  selector:
+    app: payment-service
   ports:
-    - port: 8095 #porta a que dá expose da aplicação (para fora)
-      targetPort: 7782 #faz bonding com a porta do container (tem de ser a mesma)
-  selector: #match com a parte c cima da linha 8 (labels para saber que pertence ao mesmo)
-    app.kubernetes.io/name: payment
+    - name: http
+      port: 8095
+      targetPort: 8095
+  type: ClusterIP

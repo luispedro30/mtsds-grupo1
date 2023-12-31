@@ -1,38 +1,44 @@
+#deployment-driver
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: reviews
-  labels:
-    app.kubernetes.io/name: reviews
+  name: reviews-service
 spec:
+  replicas: 1
   selector:
     matchLabels:
-      app.kubernetes.io/name: reviews
-  replicas: 1
+      app: reviews-service
   template:
     metadata:
       labels:
-        app.kubernetes.io/name: reviews
+        app: reviews-service
     spec:
       containers:
-        - name: reviews
+        - name: reviews-service
           image: luispedro189/reviews-service:latest
-          imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8093
-
+          env:
+            - name: EUREKA_SERVER
+              value: eureka-server
+            - name: USER-SERVICE
+              value: user-service
+            - name: ORDERS-SERVICE
+              value: orders-service
+            - name: SHIPPING-SERVICE
+              value: shipping-service
+            - name: AUTH_DB
+              value: payments
 ---
-
 apiVersion: v1
 kind: Service
 metadata:
-  name: reviews
-  labels:
-    app.kubernetes.io/name: reviews
+  name: reviews-service
 spec:
-  type: LoadBalancer
+  selector:
+    app: reviews-service
   ports:
-    - port: 8026 #porta a que dá expose da aplicação (para fora)
-      targetPort: 8093 #faz bonding com a porta do container (tem de ser a mesma)
-  selector: #match com a parte c cima da linha 8 (labels para saber que pertence ao mesmo)
-    app.kubernetes.io/name: reviews
+    - name: http
+      port: 8093
+      targetPort: 8093
+  type: ClusterIP

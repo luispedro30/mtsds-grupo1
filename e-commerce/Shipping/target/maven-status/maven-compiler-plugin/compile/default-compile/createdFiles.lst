@@ -1,5 +1,8 @@
 ecommerce\Repository\ShippingRepository.class
+ecommerce\Config\MQConfig.class
+ecommerce\Dto\ProductDto.class
 ecommerce\Exceptions\ItemDoesNotExistException.class
+ecommerce\Messages\Shipping2Email.class
 ecommerce\Auditing\JpaAuditingConfiguration.class
 ecommerce\Dto\OrderDto.class
 ecommerce\shipping.class
@@ -7,6 +10,9 @@ ecommerce\Dto\WalletDto.class
 ecommerce\Models\Shipping.class
 ecommerce\Enum\Status.class
 ecommerce\Dto\UserDto.class
+ecommerce\Listeners\PaymentConfirmationListener.class
+ecommerce\Messages\PaymentConfirmationMessage.class
 ecommerce\Services\ShippingService.class
 ecommerce\Controllers\ShippingController.class
+ecommerce\Messages\ShippingConcludedListener.class
 ecommerce\Dto\PaymentDto.class

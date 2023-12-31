@@ -1,0 +1,56 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: orders-pvc
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 100Mi
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: bd-orders
+spec:
+  selector:
+    app: bd-orders
+  ports:
+    - protocol: TCP
+      port: 5438
+      targetPort: 5432
+  clusterIP: None
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bd-orders
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: bd-orders
+  template:
+    metadata:
+      labels:
+        app: bd-orders
+    spec:
+      containers:
+        - name: bd-orders
+          image: postgres:16.0
+          ports:
+            - containerPort: 5432
+          env:
+            - name: POSTGRES_DB
+              value: orders
+            - name: POSTGRES_USER
+              value: admin
+            - name: POSTGRES_PASSWORD
+              value: postgres123
+      volumes:
+        - name: orders-data
+          persistentVolumeClaim:
+            claimName: orders-pvc

@@ -1,37 +1,38 @@
+#deployment-driver
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: user
-  labels:
-    app.kubernetes.io/name: user
+  name: user-service
 spec:
+  replicas: 1
   selector:
     matchLabels:
-      app.kubernetes.io/name: user
-  replicas: 1
+      app: user-service
   template:
     metadata:
       labels:
-        app.kubernetes.io/name: user
+        app: user-service
     spec:
       containers:
-        - name: user
+        - name: user-service
           image: luispedro189/user-service:latest
-          imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 7777
+          env:
+            - name: EUREKA_SERVER
+              value: eureka-server
+            - name: USER_DB
+              value: bd-users
 ---
-
 apiVersion: v1
 kind: Service
 metadata:
-  name: user
-  labels:
-    app.kubernetes.io/name: user
+  name: user-service
 spec:
-  type: LoadBalancer
+  selector:
+    app: user-service
   ports:
-    - port: 8083 #porta a que dá expose da aplicação (para fora)
-      targetPort: 7777 #faz bonding com a porta do container (tem de ser a mesma)
-  selector: #match com a parte c cima da linha 8 (labels para saber que pertence ao mesmo)
-    app.kubernetes.io/name: user
+    - name: http
+      port: 7777
+      targetPort: 7777
+  type: ClusterIP
