@@ -19,7 +19,7 @@ spec:
     app: bd-reviews
   ports:
     - protocol: TCP
-      port: 5437
+      port: 5441
       targetPort: 5432
   clusterIP: None
 
