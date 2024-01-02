@@ -12,8 +12,6 @@
       <change beforePath="$PROJECT_DIR$/Email/target/Email.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Email/target/Email.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Email/target/Email.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/Email/target/Email.jar.original" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Email/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Email/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kubernetes/deployment-db-reviews.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/Kubernetes/deployment-db-reviews.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kubernetes/deployment-reviews.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/Kubernetes/deployment-reviews.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Orders/target/Orders.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Orders/target/Orders.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Orders/target/Orders.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/Orders/target/Orders.jar.original" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Orders/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Orders/target/maven-archiver/pom.properties" afterDir="false" />
@@ -23,7 +21,6 @@
       <change beforePath="$PROJECT_DIR$/Products/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Products/target/maven-archiver/pom.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Products/target/products.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Products/target/products.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Products/target/products.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/Products/target/products.jar.original" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reviews/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Reviews/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Reviews/target/Reviews.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Reviews/target/Reviews.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Reviews/target/Reviews.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/Reviews/target/Reviews.jar.original" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Reviews/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Reviews/target/maven-archiver/pom.properties" afterDir="false" />
@@ -81,18 +78,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;20&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/mtsds-grupo1-github/mtsds-grupo1/e-commerce/Kubernetes&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "jdk.selected.JAVA_MODULE": "20",
+    "last_opened_file_path": "D:/mtsds-grupo1-github/mtsds-grupo1/e-commerce/Authentication",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="ecommerce.Controller" />
@@ -100,11 +97,11 @@
       <recent name="ecommerce" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\mtsds-grupo1-github\mtsds-grupo1\e-commerce\Kubernetes" />
-      <recent name="D:\mtsds-grupo1-github\mtsds-grupo1\e-commerce\Authentication" />
-      <recent name="D:\mtsds-grupo1-github\mtsds-grupo1\e-commerce\Email" />
-      <recent name="D:\mtsds-grupo1-github\mtsds-grupo1\e-commerce\Email\src\main\java\ecommerce" />
-      <recent name="D:\mtsds-grupo1-github\mtsds-grupo1\e-commerce\Products\src\main\java\ecommerce" />
+      <recent name="D:\mtsds-grupo1-github\mtsds-grupo1\e-commerce\Wallet\src\main\resources" />
+      <recent name="D:\mtsds-grupo1-github\mtsds-grupo1\e-commerce\users\src\main\resources" />
+      <recent name="D:\mtsds-grupo1-github\mtsds-grupo1\e-commerce\Shipping\src\main\resources" />
+      <recent name="D:\mtsds-grupo1-github\mtsds-grupo1\e-commerce\Reviews\src\main\resources" />
+      <recent name="D:\mtsds-grupo1-github\mtsds-grupo1\e-commerce\Products\src\main\resources" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="ecommerce.Dto" />
@@ -126,13 +123,16 @@
     <option name="configurationTypes">
       <set>
         <option value="Application" />
+        <option value="MavenRunConfiguration" />
       </set>
     </option>
+    <option name="openRunningConfigInTab" value="true" />
   </component>
-  <component name="RunManager" selected="Application.ApiGateway">
-    <configuration name="ApiGateway" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Application.Reviews-local">
+    <configuration name="ApiGateway-local" type="Application" factoryName="Application" folderName="e-commerce">
       <option name="MAIN_CLASS_NAME" value="ecommerce.ApiGateway" />
       <module name="api-gateway" />
+      <option name="VM_PARAMETERS" value="-Dspring.profiles.active=dev" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="ecommerce.*" />
@@ -143,9 +143,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Authentication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ecommerce.Authentication" />
-      <module name="Authentication" />
+    <configuration name="Orders-local" type="Application" factoryName="Application" folderName="e-commerce" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="ecommerce.Orders" />
+      <module name="Orders" />
+      <option name="VM_PARAMETERS" value="-Dspring.profiles.active=dev" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="ecommerce.*" />
@@ -156,9 +157,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="EurekaServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ecommerce.EurekaServer" />
-      <module name="eureka-server" />
+    <configuration name="PaymentClass-local" type="Application" factoryName="Application" folderName="e-commerce" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="ecommerce.PaymentClass" />
+      <module name="Payment" />
+      <option name="VM_PARAMETERS" value="-Dspring.profiles.active=dev" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="ecommerce.*" />
@@ -169,9 +171,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Products" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ecommerce.Products" />
-      <module name="products" />
+    <configuration name="Reviews-local" type="Application" factoryName="Application" folderName="e-commerce" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="ecommerce.Reviews" />
+      <module name="Reviews" />
+      <option name="VM_PARAMETERS" value="-Dspring.profiles.active=dev" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="ecommerce.*" />
@@ -182,9 +185,38 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Users" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ecommerce.Users" />
-      <module name="users" />
+    <configuration name="email-local" type="Application" factoryName="Application" folderName="e-commerce">
+      <option name="MAIN_CLASS_NAME" value="ecommerce.email" />
+      <module name="Email" />
+      <option name="VM_PARAMETERS" value="-Dspring.profiles.active=dev" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ecommerce.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="shipping-local" type="Application" factoryName="Application" folderName="e-commerce" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="ecommerce.shipping" />
+      <module name="Shipping" />
+      <option name="VM_PARAMETERS" value="-Dspring.profiles.active=dev" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ecommerce.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="wallet-local" type="Application" factoryName="Application" folderName="e-commerce" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="ecommerce.wallet" />
+      <module name="Wallet" />
+      <option name="VM_PARAMETERS" value="-Dspring.profiles.active=dev" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="ecommerce.*" />
@@ -196,19 +228,21 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.ApiGateway" />
-      <item itemvalue="Application.EurekaServer" />
-      <item itemvalue="Application.Authentication" />
-      <item itemvalue="Application.Products" />
-      <item itemvalue="Application.Users" />
+      <item itemvalue="Application.email-local" />
+      <item itemvalue="Application.ApiGateway-local" />
+      <item itemvalue="Application.wallet-local" />
+      <item itemvalue="Application.Orders-local" />
+      <item itemvalue="Application.PaymentClass-local" />
+      <item itemvalue="Application.shipping-local" />
+      <item itemvalue="Application.Reviews-local" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Users" />
-        <item itemvalue="Application.EurekaServer" />
-        <item itemvalue="Application.ApiGateway" />
-        <item itemvalue="Application.Products" />
-        <item itemvalue="Application.Authentication" />
+        <item itemvalue="Application.Reviews-local" />
+        <item itemvalue="Application.shipping-local" />
+        <item itemvalue="Application.PaymentClass-local" />
+        <item itemvalue="Application.Orders-local" />
+        <item itemvalue="Application.wallet-local" />
       </list>
     </recent_temporary>
   </component>
