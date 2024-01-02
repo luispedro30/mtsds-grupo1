@@ -1,0 +1,1161 @@
+{
+	"info": {
+		"_postman_id": "5ba89bd4-4ba4-4b35-9a7e-a542527e5355",
+		"name": "E-commerce",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GetById",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"code\": \"C005\",\r\n        \"description\": \"Computer 005\",\r\n        \"category\": \"COMPUTERS\",\r\n        \"price\": 932.4\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{urlDevProducts}}/products/1",
+					"host": [
+						"{{urlDevProducts}}"
+					],
+					"path": [
+						"products",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetByCategory",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{urlDevProducts}}/products/products-by-category/PRINTERS",
+					"host": [
+						"{{urlDevProducts}}"
+					],
+					"path": [
+						"products",
+						"products-by-category",
+						"PRINTERS"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetByName",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{urlDevProducts}}/products/products-by-name/computer4",
+					"host": [
+						"{{urlDevProducts}}"
+					],
+					"path": [
+						"products",
+						"products-by-name",
+						"computer4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetAll",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{urlDevProducts}}/products",
+					"host": [
+						"{{urlDevProducts}}"
+					],
+					"path": [
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AddProduct",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{tokenFornecedor}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{       \r\n    \"name\":\"computer4\",\r\n    \"description\": \"Computer 004\",\r\n    \"category\": \"PRINTERS\",\r\n    \"price\": 932.4,\r\n    \"stockQuantity\":4,\r\n    \"imageUrl\": \"https://digiplanet.pt/products/lenovo-thinkpad-x1-carbon-g7-i78th-gen-16gb-ram-256gb-ssd-14?variant=47026840797523&gclid=CjwKCAiA-P-rBhBEEiwAQEXhH9tSn4za7mSHvAWO1R2uY0kBH9_0FDB4uSIZV7ol1lPkeHYdNuyfqRoCDJ0QAvD_BwE\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{urlDevProducts}}/products?id=2045838758",
+					"host": [
+						"{{urlDevProducts}}"
+					],
+					"path": [
+						"products"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "2045838758"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteByCode",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{tokenFornecedor}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{urlDevProducts}}/catalog/products/Computer 004",
+					"host": [
+						"{{urlDevProducts}}"
+					],
+					"path": [
+						"catalog",
+						"products",
+						"Computer 004"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateByCode",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{tokenFornecedor}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"id\": 4,\r\n        \"name\": \"computer4\",\r\n        \"description\": \"Computer 004\",\r\n        \"category\": \"PRINTERS\",\r\n        \"price\": 932.4,\r\n        \"stockQuantity\": 4,\r\n        \"imageUrl\": null\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{urlDevProducts}}/products/4?idUser=2045838758",
+					"host": [
+						"{{urlDevProducts}}"
+					],
+					"path": [
+						"products",
+						"4"
+					],
+					"query": [
+						{
+							"key": "idUser",
+							"value": "2045838758"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetLanding",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{urlDevProducts}}/products/landing",
+					"host": [
+						"{{urlDevProducts}}"
+					],
+					"path": [
+						"products",
+						"landing"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetAllUsers",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1dGlsaXphZG9ybm92bzIiLCJpc3MiOiJhdXRoLWFwaSIsImV4cCI6MTcwMjU5NTgyNH0.k5p2iLNbZ5qwGrejBpJM6LBkknnfF5Yh2v7shUZNwTg",
+						"type": "default",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"code\": \"C005\",\r\n        \"description\": \"Computer 005\",\r\n        \"category\": \"COMPUTERS\",\r\n        \"price\": 932.4\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{urlDevUser}}/users",
+					"host": [
+						"{{urlDevUser}}"
+					],
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetAllUsersByName",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"code\": \"C005\",\r\n        \"description\": \"Computer 005\",\r\n        \"category\": \"COMPUTERS\",\r\n        \"price\": 932.4\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{urlDevUser}}/users?name=Luis",
+					"host": [
+						"{{urlDevUser}}"
+					],
+					"path": [
+						"users"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Luis"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetAllUsersById",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{urlDevUser}}/users/2026564864",
+					"host": [
+						"{{urlDevUser}}"
+					],
+					"path": [
+						"users",
+						"2026564864"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateUserById",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{tokenAdmin}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"id\": 2045815968,\r\n        \"name\": \"Carlos1\",\r\n        \"login\": \"carlos\",\r\n        \"password\": \"analuisa2\",\r\n        \"active\": 0,\r\n        \"role\": \"ADMIN\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{urlDevUser}}/users/2045815968",
+					"host": [
+						"{{urlDevUser}}"
+					],
+					"path": [
+						"users",
+						"2045815968"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateUserByIdAdmin",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{tokenAdmin}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"id\": 2045815968,\r\n        \"name\": \"Carlos1\",\r\n        \"login\": \"carlos\",\r\n        \"password\": \"analuisa2\",\r\n        \"active\": 0,\r\n        \"role\": \"ADMIN\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{urlDevUser}}/admin/users/2045815968",
+					"host": [
+						"{{urlDevUser}}"
+					],
+					"path": [
+						"admin",
+						"users",
+						"2045815968"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteUsersById",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{tokenAdmin}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{urlDevUser}}/users/2046406334",
+					"host": [
+						"{{urlDevUser}}"
+					],
+					"path": [
+						"users",
+						"2046406334"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getOrders",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{tokenUser}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{urlDevOrders}}/orders",
+					"host": [
+						"{{urlDevOrders}}"
+					],
+					"path": [
+						"orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getOrderById",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{tokenUser}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{urlDevOrders}}/orders/2",
+					"host": [
+						"{{urlDevOrders}}"
+					],
+					"path": [
+						"orders",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addOrders",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{tokenUser}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userId\":  1083586219,\r\n    \"products\": [{\"productId\": 1},{\"productId\": 2}]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{urlDevOrders}}/orders",
+					"host": [
+						"{{urlDevOrders}}"
+					],
+					"path": [
+						"orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "decreaseStock",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{urlDevProducts}}/products/decreaseStock/1",
+					"host": [
+						"{{urlDevProducts}}"
+					],
+					"path": [
+						"products",
+						"decreaseStock",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetReviews",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{tokenUser}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{urlDevReviews}}/reviews",
+					"host": [
+						"{{urlDevReviews}}"
+					],
+					"path": [
+						"reviews"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AddReviews",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{tokenUser}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userId\":2037996537,\r\n    \"productId\":1,\r\n    \"orderId\":1,\r\n    \"rating\":10,\r\n    \"reviewText\": \"oi\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{urlDevReviews}}/reviews",
+					"host": [
+						"{{urlDevReviews}}"
+					],
+					"path": [
+						"reviews"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetWallets",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{tokenAdmin}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{urlDevWallet}}/wallet",
+					"host": [
+						"{{urlDevWallet}}"
+					],
+					"path": [
+						"wallet"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addWallet",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{tokenUser}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userId\": 2046406334,\r\n    \"value\": 50000\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{urlDevWallet}}/wallet",
+					"host": [
+						"{{urlDevWallet}}"
+					],
+					"path": [
+						"wallet"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TakeMoneyWallet",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{tokenUser}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{urlDevWallet}}/wallet/takeMoney/1?money=12",
+					"host": [
+						"{{urlDevWallet}}"
+					],
+					"path": [
+						"wallet",
+						"takeMoney",
+						"1"
+					],
+					"query": [
+						{
+							"key": "money",
+							"value": "12"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AddMoneyWallet",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{tokenUser}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{urlDevWallet}}/wallet/addMoney/1?money=100000",
+					"host": [
+						"{{urlDevWallet}}"
+					],
+					"path": [
+						"wallet",
+						"addMoney",
+						"1"
+					],
+					"query": [
+						{
+							"key": "money",
+							"value": "100000"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetWalletsUserId",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{tokenUser}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{urlDevWallet}}/wallet/userId/2037996537",
+					"host": [
+						"{{urlDevWallet}}"
+					],
+					"path": [
+						"wallet",
+						"userId",
+						"2037996537"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetPayments",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{tokenUser}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{urlDevPayments}}/payment",
+					"host": [
+						"{{urlDevPayments}}"
+					],
+					"path": [
+						"payment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addPayment",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{tokenUser}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"orderId\":3,\r\n    \"userId\": 2046406334\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{urlDevPayments}}/payment",
+					"host": [
+						"{{urlDevPayments}}"
+					],
+					"path": [
+						"payment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetShipping",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{tokenFornecedor}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{urlDevShipping}}/shipping",
+					"host": [
+						"{{urlDevShipping}}"
+					],
+					"path": [
+						"shipping"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetShippingOrderIdUserId",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{tokenFornecedor}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{urlDevShipping}}/shipping/3/1866565445",
+					"host": [
+						"{{urlDevShipping}}"
+					],
+					"path": [
+						"shipping",
+						"3",
+						"1866565445"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addShipping",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"paymentId\":1,\r\n    \"orderId\":1,\r\n    \"userId\": 1,\r\n    \"status\":\"REGISTED\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{urlDevShipping}}/shipping",
+					"host": [
+						"{{urlDevShipping}}"
+					],
+					"path": [
+						"shipping"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateShipping",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{tokenFornecedor}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"shippingId\": 2,\r\n    \"paymentId\": 3,\r\n    \"orderId\": 3,\r\n    \"userId\": 2046406334,\r\n    \"status\":\"DELIVERED\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{urlDevShipping}}/shipping/2/2045838758",
+					"host": [
+						"{{urlDevShipping}}"
+					],
+					"path": [
+						"shipping",
+						"2",
+						"2045838758"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UserLoginLanding",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{urlDevAuth}}/auth/Landing",
+					"host": [
+						"{{urlDevAuth}}"
+					],
+					"path": [
+						"auth",
+						"Landing"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UserLogin",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Parse the response body as JSON\r",
+							"var jsonData = pm.response.json();\r",
+							"\r",
+							"// Check if the request was successful (status code in the 2xx range)\r",
+							"if (pm.response.code >= 200 && pm.response.code <= 299) {\r",
+							"    // Extract the token from the JSON response\r",
+							"    var token = jsonData.token;\r",
+							"    \r",
+							"    // Set the extracted token as an environment variable named 'tokenUser'\r",
+							"    pm.environment.set('tokenUser', token);\r",
+							"} else {\r",
+							"    // Log an error if the request failed\r",
+							"    console.error('Request failed with status code ' + pm.response.code);\r",
+							"    // Mark the test as failed\r",
+							"    tests['Error occurred'] = false;\r",
+							"}\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"login\": \"carlos\",\r\n        \"password\": \"oi\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{urlDevAuth}}/auth/login",
+					"host": [
+						"{{urlDevAuth}}"
+					],
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UserRegister",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Carlos\",\r\n    \"login\": \"carlos8\",\r\n    \"email\": \"luis.pedro_1998@hotmail.com\",\r\n    \"password\": \"oi\",\r\n    \"active\": 1,\r\n    \"role\": \"ADMIN\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{urlDevAuth}}/auth/register",
+					"host": [
+						"{{urlDevAuth}}"
+					],
+					"path": [
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "sendEmail",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"ownerRef\": \"Luis Pedro\",\r\n    \"emailFrom\":\"luispedrotrinta.1998@gmail.com\",\r\n    \"emailTo\": \"8220025@estg.ipp.pt\",\r\n    \"subject\": \"luis\",\r\n    \"text\": \"Luis 124\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{urlDevEmail}}/sending-email",
+					"host": [
+						"{{urlDevEmail}}"
+					],
+					"path": [
+						"sending-email"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getEmails",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"ownerRef\": \"luistowmasdasdssaddsasad\",\r\n    \"emailFrom\":\"luis.pedro_1998@hotmail.com\",\r\n    \"emailTo\": \"8220025@estg.ipp.pt\",\r\n    \"subject\": \"luis\",\r\n    \"text\": \"Luis 124asddsasdaasddsaasdassadsadasdasdasdasd\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{urlDevEmail}}/emails",
+					"host": [
+						"{{urlDevEmail}}"
+					],
+					"path": [
+						"emails"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
