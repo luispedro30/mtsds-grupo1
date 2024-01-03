@@ -4,6 +4,7 @@ package ecommerce.Controllers;
 import ecommerce.Dtos.EmailDto;
 import ecommerce.Model.EmailModel;
 import ecommerce.Service.EmailService;
+import io.swagger.v3.oas.annotations.Operation;
 import jakarta.validation.Valid;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +25,13 @@ public class EmailController {
     @Autowired
     EmailService emailService;
 
+    /**
+     * Send email with provided details.
+     *
+     * @param emailDto Details for sending the email
+     * @return ResponseEntity with the sent email details
+     */
+    @Operation(summary = "Send email")
     @PostMapping("/sending-email")
     public ResponseEntity<EmailModel> sendingEmail(@RequestBody @Valid EmailDto emailDto) {
         EmailModel emailModel = new EmailModel();
@@ -32,11 +40,25 @@ public class EmailController {
         return new ResponseEntity<>(emailModel, HttpStatus.CREATED);
     }
 
+    /**
+     * Retrieve all emails.
+     *
+     * @param pageable Pagination details
+     * @return ResponseEntity with a page of email details
+     */
+    @Operation(summary = "Get all emails")
     @GetMapping("/emails")
     public ResponseEntity<Page<EmailModel>> getAllEmails(@PageableDefault(page = 0, size = 5, sort = "emailId", direction = Sort.Direction.DESC) Pageable pageable){
         return new ResponseEntity<>(emailService.findAll(pageable), HttpStatus.OK);
     }
 
+    /**
+     * Retrieve a specific email by its ID.
+     *
+     * @param emailId ID of the email to retrieve
+     * @return ResponseEntity with the requested email details
+     */
+    @Operation(summary = "Get one email by ID")
     @GetMapping("/emails/{emailId}")
     public ResponseEntity<Object> getOneEmail(@PathVariable(value="emailId") UUID emailId){
         Optional<EmailModel> emailModelOptional = emailService.findById(emailId);

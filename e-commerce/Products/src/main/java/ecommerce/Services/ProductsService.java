@@ -51,7 +51,7 @@ public class ProductsService   {
                               HttpServletRequest request) throws Exception {
 
         UserDto userDto;
-        userDto = getAdminFornecedor(userId, request, extractToken(request));
+        userDto = getAdminSupplier(userId, request, extractToken(request));
         return productRepository.save(product);
     }
 
@@ -67,12 +67,12 @@ public class ProductsService   {
                               Integer userId,
                               HttpServletRequest request) throws Exception {
         UserDto userDto;
-        userDto = getAdminFornecedor(userId, request, extractToken(request));
+        userDto = getAdminSupplier(userId, request, extractToken(request));
 
         productRepository.deleteById(productId);
     }
 
-    public UserDto getAdminFornecedor(Integer userId, HttpServletRequest request, String token) throws Exception {
+    public UserDto getAdminSupplier(Integer userId, HttpServletRequest request, String token) throws Exception {
 
         UserDto userDto;
 
@@ -93,11 +93,11 @@ public class ProductsService   {
 
 
             System.out.println(response.getBody().getRole());
-            if (response.getBody().getRole().equals("ADMIN")|| response.getBody().getRole().equals("FORNECEDOR")){
+            if (response.getBody().getRole().equals("ADMIN")|| response.getBody().getRole().equals("SUPPLIER")){
                 return response.getBody();
             }
             else {
-                throw new Exception("O user tem de ser fornecedor ou Administrador");
+                throw new Exception("The user must be Supplier or Admin");
             }
 
         }

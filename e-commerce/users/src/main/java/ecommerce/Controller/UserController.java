@@ -4,6 +4,9 @@ import ecommerce.Dto.WalletDto;
 import ecommerce.Exceptions.AlreadyExistingException;
 import ecommerce.Models.User;
 import ecommerce.Service.UserService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import jakarta.servlet.http.HttpServletRequest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -27,6 +30,11 @@ public class UserController {
     @Autowired
     private UserService userService;
 
+    @Operation(summary = "Check if the user module is working")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "User module status retrieved"),
+            @ApiResponse(responseCode = "500", description = "Internal server error")
+    })
     @GetMapping("/Landing")
     public ResponseEntity<String> landing(){
         logger.info(marker,"Checking that landing is working fine... 200 Ok");
@@ -36,6 +44,11 @@ public class UserController {
     }
 
 
+    @Operation(summary = "Retrieve all users")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "List of users retrieved"),
+            @ApiResponse(responseCode = "404", description = "No users found")
+    })
     @GetMapping(value = "/users")
     public ResponseEntity<List<User>> getAllUsers(){
         List<User> users =  userService.getAllUsers();
@@ -49,6 +62,11 @@ public class UserController {
                 HttpStatus.NOT_FOUND);
     }
 
+    @Operation(summary = "Retrieve user by name")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "List of users by name retrieved"),
+            @ApiResponse(responseCode = "404", description = "No users found by name")
+    })
     @GetMapping (value = "/users", params = "name")
     public ResponseEntity<List<User>> getUserByName(@RequestParam("name") String userName){
         List<User> users = userService.getAllUserByName(userName);
@@ -64,6 +82,11 @@ public class UserController {
                 HttpStatus.NOT_FOUND);
     }
 
+    @Operation(summary = "Retrieve user by ID")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "User by ID retrieved"),
+            @ApiResponse(responseCode = "404", description = "User not found by ID")
+    })
     @GetMapping (value = "/users/{id}")
     public ResponseEntity<User> getUserById(@PathVariable("id") Integer id) throws Exception {
 
@@ -81,6 +104,12 @@ public class UserController {
     }
 
 
+    @Operation(summary = "Add a new user")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "201", description = "User added successfully"),
+            @ApiResponse(responseCode = "400", description = "Bad request"),
+            @ApiResponse(responseCode = "404", description = "User already exists")
+    })
 
     @PostMapping (value = "/users")
     public ResponseEntity<User> addUser(@RequestBody User user, HttpServletRequest request) throws Exception {
@@ -117,6 +146,11 @@ public class UserController {
         return new ResponseEntity<User>(HttpStatus.BAD_REQUEST);
     }
 
+    @Operation(summary = "Update user by ID")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "User updated successfully"),
+            @ApiResponse(responseCode = "404", description = "User not found")
+    })
     @PutMapping("/users/{id}")
     public ResponseEntity<User> updateUserById(@RequestBody User user, HttpServletRequest request) {
         try {
@@ -127,6 +161,11 @@ public class UserController {
         }
     }
 
+    @Operation(summary = "Update user by ID as admin")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "User updated successfully as admin"),
+            @ApiResponse(responseCode = "404", description = "User not found")
+    })
     @PutMapping("/admin/users/{id}")
     public ResponseEntity<User> updateUserByIdByAdmin(@RequestBody User user, HttpServletRequest request) {
         try {
@@ -138,6 +177,11 @@ public class UserController {
     }
 
 
+    @Operation(summary = "Delete user by ID")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "204", description = "User deleted successfully"),
+            @ApiResponse(responseCode = "404", description = "User not found")
+    })
     @DeleteMapping("/users/{id}")
     public ResponseEntity<Void> deleteUser(@PathVariable("id") Integer id,
                                            HttpServletRequest request) {
