@@ -1052,7 +1052,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n        \"login\": \"carlos\",\r\n        \"password\": \"oi\"\r\n}",
+					"raw": "{\r\n        \"login\": \"carlos1\",\r\n        \"password\": \"oi\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -1152,6 +1152,24 @@
 					],
 					"path": [
 						"emails"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "swaggerDocumentationAuth",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{urlProducts}}/v3/api-docs",
+					"host": [
+						"{{urlProducts}}"
+					],
+					"path": [
+						"v3",
+						"api-docs"
 					]
 				}
 			},
