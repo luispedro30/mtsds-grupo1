@@ -6,7 +6,21 @@
   <component name="ChangeListManager">
     <list default="true" id="e63fab2e-ccd9-4599-8c37-fc239380bb02" name="Changes" comment="fix: update authentication microservice with Postgres database and to connect with user microservice">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Authentication/src/main/java/ecommerce/Authentication.java" beforeDir="false" afterPath="$PROJECT_DIR$/Authentication/src/main/java/ecommerce/Authentication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Authentication/src/main/java/ecommerce/Infra/Security/SecurityConfigurations.java" beforeDir="false" afterPath="$PROJECT_DIR$/Authentication/src/main/java/ecommerce/Infra/Security/SecurityConfigurations.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Email/src/main/java/ecommerce/email.java" beforeDir="false" afterPath="$PROJECT_DIR$/Email/src/main/java/ecommerce/email.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Orders/src/main/java/ecommerce/Orders.java" beforeDir="false" afterPath="$PROJECT_DIR$/Orders/src/main/java/ecommerce/Orders.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Payment/src/main/java/ecommerce/PaymentClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/Payment/src/main/java/ecommerce/PaymentClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Products/src/main/java/ecommerce/Products.java" beforeDir="false" afterPath="$PROJECT_DIR$/Products/src/main/java/ecommerce/Products.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Reviews/src/main/java/ecommerce/Reviews.java" beforeDir="false" afterPath="$PROJECT_DIR$/Reviews/src/main/java/ecommerce/Reviews.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shipping/src/main/java/ecommerce/shipping.java" beforeDir="false" afterPath="$PROJECT_DIR$/Shipping/src/main/java/ecommerce/shipping.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shipping/target/classes/ecommerce/shipping.class" beforeDir="false" afterPath="$PROJECT_DIR$/Shipping/target/classes/ecommerce/shipping.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Wallet/src/main/java/ecommerce/wallet.java" beforeDir="false" afterPath="$PROJECT_DIR$/Wallet/src/main/java/ecommerce/wallet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/java/ecommerce/ApiGateway.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/java/ecommerce/ApiGateway.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api-gateway/src/main/java/ecommerce/Config/GatewayConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/java/ecommerce/Config/GatewayConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/src/main/java/ecommerce/Users.java" beforeDir="false" afterPath="$PROJECT_DIR$/users/src/main/java/ecommerce/Users.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,7 +40,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$/.." value="update-kubernetes-try-files" />
+        <entry key="$PROJECT_DIR$/.." value="update-properties-banner-files" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -71,6 +85,9 @@
       <recent name="D:\mtsds-grupo1-github\mtsds-grupo1\e-commerce\Reviews\src\main\resources" />
       <recent name="D:\mtsds-grupo1-github\mtsds-grupo1\e-commerce\Products\src\main\resources" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\mtsds-grupo1-github\mtsds-grupo1\e-commerce\PostmanCollectionEnv" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="ecommerce.Dto" />
       <recent name="ecommerce.Messages" />
@@ -103,7 +120,7 @@
       <option name="VM_PARAMETERS" value="-Dspring.profiles.active=dev" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ecommerce.*" />
+          <option name="PATTERN" value="ecommerce.Config.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -117,7 +134,7 @@
       <option name="VM_PARAMETERS" value="-Dspring.profiles.active=dev" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ecommerce.*" />
+          <option name="PATTERN" value="ecommerce.Config.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -131,7 +148,7 @@
       <option name="VM_PARAMETERS" value="-Dspring.profiles.active=dev" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ecommerce.*" />
+          <option name="PATTERN" value="ecommerce.Config.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -145,7 +162,7 @@
       <option name="VM_PARAMETERS" value="-Dspring.profiles.active=dev" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ecommerce.*" />
+          <option name="PATTERN" value="ecommerce.Config.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -159,7 +176,7 @@
       <option name="VM_PARAMETERS" value="-Dspring.profiles.active=dev" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ecommerce.*" />
+          <option name="PATTERN" value="ecommerce.Config.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -173,7 +190,7 @@
       <option name="VM_PARAMETERS" value="-Dspring.profiles.active=dev" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ecommerce.*" />
+          <option name="PATTERN" value="ecommerce.Config.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -187,7 +204,7 @@
       <option name="VM_PARAMETERS" value="-Dspring.profiles.active=dev" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ecommerce.*" />
+          <option name="PATTERN" value="ecommerce.Config.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>

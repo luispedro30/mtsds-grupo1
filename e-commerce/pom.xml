@@ -32,6 +32,7 @@
         <spring.boot.starter.actuactor.version>3.1.2</spring.boot.starter.actuactor.version>
         <spring.boot.starter.security.version>3.1.2</spring.boot.starter.security.version>
         <org.springframework.security.version>6.0.3</org.springframework.security.version>
+        <swagger.version>2.1.0</swagger.version>
     </properties>
 
     <dependencyManagement>
@@ -61,6 +62,11 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
             <version>${spring.boot.starter.actuactor.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+            <version>${swagger.version}</version>
         </dependency>
     </dependencies>
 
