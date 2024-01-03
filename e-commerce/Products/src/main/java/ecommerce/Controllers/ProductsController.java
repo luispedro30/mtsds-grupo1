@@ -3,6 +3,9 @@ package ecommerce.Controllers;
 import ecommerce.Enums.Category;
 import ecommerce.Models.Product;
 import ecommerce.Services.ProductsService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import jakarta.servlet.http.HttpServletRequest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -24,6 +27,11 @@ public class ProductsController {
     @Autowired
     private ProductsService productService;
 
+    @Operation(summary = "Check if the application is working")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Application status retrieved"),
+            @ApiResponse(responseCode = "500", description = "Internal server error")
+    })
     @GetMapping("/Landing")
     public ResponseEntity<String> landing(){
         logger.info(marker,"Checking that landing is working fine... 200 Ok");
@@ -32,6 +40,13 @@ public class ProductsController {
                 .body("Application is working fine.");
     }
 
+    // Add Product
+    @Operation(summary = "Add a new product")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "201", description = "Product added successfully"),
+            @ApiResponse(responseCode = "400", description = "Bad request"),
+            @ApiResponse(responseCode = "500", description = "Internal server error")
+    })
     @PostMapping(value = "/products")
     private ResponseEntity<Product> addProduct(@RequestBody Product product,
                                                @RequestParam ("id") Integer idUser,
@@ -56,6 +71,19 @@ public class ProductsController {
                 HttpStatus.BAD_REQUEST);
     }
 
+    /**
+     * Decrease stock for a product by ID.
+     *
+     * @param idProduct ID of the product to decrease stock
+     * @param request   HTTP request
+     * @return ResponseEntity with the updated product or appropriate error status
+     * @throws Exception if there's an issue with decreasing the stock
+     */
+    @Operation(summary = "Decrease stock for a product by ID")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Stock decreased successfully"),
+            @ApiResponse(responseCode = "500", description = "Internal server error")
+    })
     @PostMapping(value = "/products/decreaseStock/{id}")
     private ResponseEntity<Product> decreaseStockProduct(@PathVariable ("id") Integer idProduct, HttpServletRequest request) throws Exception {
         logger.info(marker,"decreaseStockProduct() request received ... pending");
@@ -68,6 +96,12 @@ public class ProductsController {
 
     }
 
+    @Operation(summary = "Delete a product by ID")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "204", description = "Product deleted successfully"),
+            @ApiResponse(responseCode = "404", description = "Product not found"),
+            @ApiResponse(responseCode = "500", description = "Internal server error")
+    })
     @DeleteMapping(value = "/products/{id}")
     private ResponseEntity<Void> deleteProduct(@PathVariable("id") Integer id,
                                                @RequestParam ("id") Integer idUser,
@@ -91,7 +125,11 @@ public class ProductsController {
         return new ResponseEntity<Void>(HttpStatus.NOT_FOUND);
     }
 
-
+    @Operation(summary = "Retrieve all products")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "List of products retrieved"),
+            @ApiResponse(responseCode = "404", description = "No products found")
+    })
     @GetMapping(value = "/products")
     public ResponseEntity<List<Product>> getAllProducts(){
         List<Product> products =  productService.getAllProduct();
@@ -107,6 +145,11 @@ public class ProductsController {
                 HttpStatus.NOT_FOUND);
     }
 
+    @Operation(summary = "Retrieve products by category")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Products retrieved successfully"),
+            @ApiResponse(responseCode = "404", description = "No products found for the given category")
+    })
     @GetMapping(value = "/products/products-by-category/{category}")
     public ResponseEntity<List<Product>> getAllProductByCategory(@PathVariable("category") String category){
         List<Product> products = productService.getAllProductByCategory(category);
@@ -122,6 +165,12 @@ public class ProductsController {
                 HttpStatus.NOT_FOUND);
     }
 
+
+    @Operation(summary = "Retrieve a product by ID")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Product retrieved successfully"),
+            @ApiResponse(responseCode = "404", description = "Product not found")
+    })
     @GetMapping(value = "/products/{id}")
     public ResponseEntity<Product> getOneProductById(@PathVariable("id") Integer id){
         Product product =  productService.getProductById(id);
@@ -137,6 +186,12 @@ public class ProductsController {
                 HttpStatus.NOT_FOUND);
     }
 
+
+    @Operation(summary = "Retrieve products by name")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Products retrieved successfully"),
+            @ApiResponse(responseCode = "404", description = "No products found with the given name")
+    })
     @GetMapping(value = "/products/products-by-name/{name}")
     public ResponseEntity<List<Product>> getAllProductsByName(@PathVariable ("name") String name){
         List<Product> products =  productService.getAllByName(name);

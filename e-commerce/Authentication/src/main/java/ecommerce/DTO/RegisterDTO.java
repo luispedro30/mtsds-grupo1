@@ -10,7 +10,6 @@ import lombok.Setter;
 public record RegisterDTO(
         String login,
         String name,
-
         String email,
 
         String password,

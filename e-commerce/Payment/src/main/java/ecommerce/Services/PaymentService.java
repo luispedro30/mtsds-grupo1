@@ -145,12 +145,12 @@ public class PaymentService {
     public void deletePayment(Integer paymentId, Integer userId, HttpServletRequest request) throws Exception {
         UserDto userDto;
         String token = extractToken(request);
-        userDto = getAdminFornecedor(userId, request, token);
+        userDto = getAdminSupplier(userId, request, token);
 
         paymentRepository.deleteById(paymentId);
     }
 
-    public UserDto getAdminFornecedor(Integer userId, HttpServletRequest request, String token) throws Exception {
+    public UserDto getAdminSupplier(Integer userId, HttpServletRequest request, String token) throws Exception {
 
         UserDto userDto;
 
@@ -170,11 +170,11 @@ public class PaymentService {
 
 
             System.out.println(response.getBody().getRole());
-            if (response.getBody().getRole().equals("ADMIN")|| response.getBody().getRole().equals("FORNECEDOR")){
+            if (response.getBody().getRole().equals("ADMIN")|| response.getBody().getRole().equals("SUPPLIER")){
                 return response.getBody();
             }
             else {
-                throw new Exception("O user tem de ser fornecedor ou Administrador");
+                throw new Exception("The user must be Supplier or Admin.");
             }
 
         }

@@ -88,12 +88,12 @@ public class ReviewService {
 
     public void deleteReview(Integer reviewId, Integer userId, HttpServletRequest request) throws Exception {
         UserDto userDto;
-        userDto = getAdminFornecedor(userId, request, extractToken(request));
+        userDto = getAdminSupplier(userId, request, extractToken(request));
 
         reviewRepository.deleteById(reviewId);
     }
 
-    public UserDto getAdminFornecedor(Integer userId, HttpServletRequest request, String token) throws Exception {
+    public UserDto getAdminSupplier(Integer userId, HttpServletRequest request, String token) throws Exception {
 
         UserDto userDto;
 
@@ -113,11 +113,11 @@ public class ReviewService {
 
 
             System.out.println(response.getBody().getRole());
-            if (response.getBody().getRole().equals("ADMIN")|| response.getBody().getRole().equals("FORNECEDOR")){
+            if (response.getBody().getRole().equals("ADMIN")|| response.getBody().getRole().equals("SUPPLIER")){
                 return response.getBody();
             }
             else {
-                throw new Exception("O user tem de ser fornecedor ou Administrador");
+                throw new Exception("The user must be Supplier or Administrator");
             }
 
         }

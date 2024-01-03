@@ -6,6 +6,9 @@ import ecommerce.DTO.AuthenticationDTO;
 import ecommerce.DTO.LoginResponseDTO;
 import ecommerce.DTO.RegisterDTO;
 import ecommerce.Infra.Security.TokenService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
@@ -31,6 +34,16 @@ public class AuthenticationController {
     @Value("${endpoints.users-microservice.baseUrl}")
     private String usersUrl;
 
+    /**
+     * Check if the application is working.
+     *
+     * @return ResponseEntity with the application status message
+     */
+    @Operation(summary = "Check if the application is working")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Application status retrieved"),
+            @ApiResponse(responseCode = "500", description = "Internal server error")
+    })
     @GetMapping("/Landing")
     public ResponseEntity<String> landing(){
         return ResponseEntity
@@ -38,6 +51,19 @@ public class AuthenticationController {
                 .body("Application is working fine.");
     }
 
+    /**
+     * Login with provided credentials.
+     *
+     * @param data Authentication data containing login credentials
+     * @return ResponseEntity with the login response
+     */
+    @Operation(summary = "Login endpoint")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Successfully logged in"),
+            @ApiResponse(responseCode = "400", description = "Bad request"),
+            @ApiResponse(responseCode = "404", description = "Not found"),
+            @ApiResponse(responseCode = "500", description = "Internal server error")
+    })
     @PostMapping("/login")
     public ResponseEntity login (@RequestBody AuthenticationDTO data){
         //verificar na base de dados a senha guardada de forma segura
@@ -56,6 +82,18 @@ public class AuthenticationController {
         }
     }
 
+    /**
+     * Register a new user.
+     *
+     * @param data Registration data for the new user
+     * @return ResponseEntity indicating the registration status
+     */
+    @Operation(summary = "Register endpoint")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Successfully registered"),
+            @ApiResponse(responseCode = "400", description = "Bad request"),
+            @ApiResponse(responseCode = "500", description = "Internal server error")
+    })
     @PostMapping("/register")
     public ResponseEntity register(@RequestBody RegisterDTO data) {
 

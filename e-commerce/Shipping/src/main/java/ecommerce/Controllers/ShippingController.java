@@ -4,6 +4,9 @@ import ecommerce.Exceptions.ItemDoesNotExistException;
 
 import ecommerce.Models.Shipping;
 import ecommerce.Services.ShippingService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import jakarta.persistence.criteria.CriteriaBuilder;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +24,12 @@ public class ShippingController {
     @Autowired
     private ShippingService shippingService;
 
+
+    @Operation(summary = "Check if the shipping module is working")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Shipping module status retrieved"),
+            @ApiResponse(responseCode = "500", description = "Internal server error")
+    })
     @GetMapping("/Landing")
     public ResponseEntity<String> landing(){
         return ResponseEntity
@@ -29,6 +38,12 @@ public class ShippingController {
 
     }
 
+
+    @Operation(summary = "Retrieve all shipping details")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "List of shipping details retrieved"),
+            @ApiResponse(responseCode = "404", description = "No shipping details found")
+    })
     @GetMapping
     ResponseEntity<List<Shipping>> getAll(){
         List<Shipping> shippings =  shippingService.getAllShipping();
@@ -41,12 +56,23 @@ public class ShippingController {
                 HttpStatus.NOT_FOUND);
     }
 
+
+    @Operation(summary = "Retrieve shipping details by ID")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Shipping details retrieved successfully"),
+            @ApiResponse(responseCode = "404", description = "Shipping details not found")
+    })
     @GetMapping("/{id}")
     ResponseEntity<Shipping> getById(@PathVariable Integer id){
         Shipping shipping = shippingService.getShippingById(id);
         return ResponseEntity.status(HttpStatus.OK).body(shipping);
     }
 
+    @Operation(summary = "Retrieve shipping details by Order ID and User ID")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Shipping details retrieved successfully"),
+            @ApiResponse(responseCode = "404", description = "Shipping details not found")
+    })
     @GetMapping("/{orderId}/{userId}")
     public ResponseEntity<Shipping> getShippingByOrderUserId(
             @PathVariable Integer orderId,
@@ -61,6 +87,12 @@ public class ShippingController {
         }
     }
 
+    @Operation(summary = "Add new shipping details")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "201", description = "Shipping details added successfully"),
+            @ApiResponse(responseCode = "400", description = "Bad request"),
+            @ApiResponse(responseCode = "404", description = "User does not exist")
+    })
     @PostMapping
     ResponseEntity<?> add(@RequestBody Shipping shipping, HttpServletRequest request){
 
@@ -79,6 +111,11 @@ public class ShippingController {
 
     }
 
+    @Operation(summary = "Update shipping details")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Shipping details updated successfully"),
+            @ApiResponse(responseCode = "404", description = "Shipping details not found")
+    })
     @PutMapping("/{id}/{fornecedorId}")
     public ResponseEntity<Shipping> updateOrder(@PathVariable Integer id,
                                                 @PathVariable Integer fornecedorId,

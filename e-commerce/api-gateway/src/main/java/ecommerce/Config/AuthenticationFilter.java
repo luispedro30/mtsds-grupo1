@@ -82,7 +82,7 @@ public class AuthenticationFilter extends AbstractGatewayFilterFactory<String> {
                     (exchange.getRequest().getMethod() == HttpMethod.PUT ||
                             exchange.getRequest().getMethod() == HttpMethod.DELETE)) {
                 if (!userIdFromEndpoint.equals(idFromToken)
-                        && (roleFromToken.equals("USER") || roleFromToken.equals("FORNECEDOR"))) {
+                        && (roleFromToken.equals("USER") || roleFromToken.equals("SUPPLIER"))) {
                     System.out.println("User must be the same");
                     return onError(exchange, "User must be the same", HttpStatus.UNAUTHORIZED);
                 }
