@@ -44,17 +44,17 @@ public class GatewayConfig {
                         .and()
                         .path("/users/**")
                         .uri("lb://users"))
-                .route("users-route", r -> r.method(HttpMethod.PUT)
+                /*.route("users-route", r -> r.method(HttpMethod.PUT)
                         .and()
-                        .path("/users")
+                        .path("/users/**")
                         .filters(f -> f.filter(filter.apply("USER,ADMIN")))
-                        .uri("lb://users/**"))
+                        .uri("lb://users"))
                 .route("users-route", r -> r.method(HttpMethod.DELETE)
                         .and()
-                        .path("/users")
+                        .path("/users/**")
                         .filters(f -> f.filter(filter.apply("USER,ADMIN")))
-                        .uri("lb://users/**"))
-                /*.route("users-route", r -> r.path("/users/**")
+                        .uri("lb://users"))*/
+                .route("users-route", r -> r.path("/users/**")
                         .and()
                         .predicate(serverWebExchange ->
                         {
@@ -63,7 +63,7 @@ public class GatewayConfig {
                         })
                         .filters(f -> f.filter(filter.apply("USER,SUPPLIER")))
                         .uri("lb://users"))
-                .route("users-route", r -> r.path("admin/users/**")
+                .route("users-route", r -> r.path("/admin/users/**")
                         .and()
                         .predicate(serverWebExchange ->
                         {
@@ -71,7 +71,7 @@ public class GatewayConfig {
                             return "PUT".equals(requestMethod) || "DELETE".equals(requestMethod);
                         })
                         .filters(f -> f.filter(filter.apply("ADMIN")))
-                        .uri("lb://users"))*/
+                        .uri("lb://users"))
                 .route("reviews-route", r -> r.method(HttpMethod.POST)
                         .and()
                         .path("/reviews")

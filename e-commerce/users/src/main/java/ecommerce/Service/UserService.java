@@ -65,7 +65,17 @@ public class UserService {
                 message
         );
 
-        return userRepository.save(user);
+        String encryptedPassword = encryptPassword(user.getPassword());
+
+        User newUser = new User();
+        newUser.setId(user.getId());
+        newUser.setName(user.getName());
+        newUser.setActive(user.getActive());
+        newUser.setEmail(user.getEmail());
+        newUser.setLogin(user.getLogin());
+        newUser.setRole(user.getRole());
+        newUser.setPassword(encryptedPassword);
+        return userRepository.save(newUser);
     }
 
     private String encryptPassword(String password) {
@@ -83,6 +93,7 @@ public class UserService {
         User newUser = new User();
         newUser.setId(userPast.getId());
         newUser.setName(user.getName());
+        newUser.setEmail(user.getEmail());
         newUser.setActive(user.getActive());
         newUser.setLogin(userPast.getLogin());
         newUser.setRole(userPast.getRole());
@@ -102,6 +113,7 @@ public class UserService {
         newUser.setId(user.getId());
         newUser.setName(user.getName());
         newUser.setActive(user.getActive());
+        newUser.setEmail(user.getEmail());
         newUser.setLogin(user.getLogin());
         newUser.setRole(user.getRole());
         newUser.setPassword(encryptedPassword);
