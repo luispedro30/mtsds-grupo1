@@ -55,6 +55,28 @@ public class ProductsService   {
         return productRepository.save(product);
     }
 
+    public Product updateProductById(Integer id,
+                                     Product updatedProduct,
+                                     Integer userId,
+                                     HttpServletRequest request
+    ) throws Exception {
+        UserDto userDto;
+        userDto = getAdminSupplier(userId, request, extractToken(request));
+
+        Product existingProduct = getProductById(id);
+
+        existingProduct.setId(existingProduct.getId());
+        existingProduct.setName(updatedProduct.getName());
+        existingProduct.setCategory(updatedProduct.getCategory());
+        existingProduct.setPrice(updatedProduct.getPrice());
+        existingProduct.setStockQuantity(updatedProduct.getStockQuantity());
+        existingProduct.setCategory(updatedProduct.getCategory());
+        existingProduct.setDescription(updatedProduct.getDescription());
+        existingProduct.setImageUrl(updatedProduct.getImageUrl());
+
+        return productRepository.save(existingProduct);
+    }
+
     public Product decreaseStockProduct(Integer productId) throws Exception {
         Product product = productRepository.findById(productId).orElseThrow(null);
         if (product.getStockQuantity() >= 0){

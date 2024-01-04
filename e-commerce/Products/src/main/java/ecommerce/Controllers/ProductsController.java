@@ -17,6 +17,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.NoSuchElementException;
 
 @RestController
 public class ProductsController {
@@ -69,6 +70,27 @@ public class ProductsController {
         logger.info(marker,"addProduct() request received ... Bad Request{}");
         return new ResponseEntity<Product>(
                 HttpStatus.BAD_REQUEST);
+    }
+
+
+    @Operation(summary = "Update an existing product")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Product updated successfully"),
+            @ApiResponse(responseCode = "400", description = "Bad request"),
+            @ApiResponse(responseCode = "404", description = "Product not found"),
+            @ApiResponse(responseCode = "500", description = "Internal server error")
+    })
+    @PutMapping("/products/{id}")
+    public ResponseEntity<Product> updateProductById(@PathVariable Integer id,
+                                                     @RequestBody Product updatedProduct,
+                                                     @RequestParam ("id") Integer idUser,
+                                                     HttpServletRequest request) {
+        try {
+            Product updated = productService.updateProductById(id, updatedProduct, idUser, request);
+            return ResponseEntity.ok(updated);
+        } catch (Exception e) {
+            return ResponseEntity.notFound().build();
+        }
     }
 
     /**
