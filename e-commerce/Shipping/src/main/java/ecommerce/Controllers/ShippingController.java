@@ -117,7 +117,7 @@ public class ShippingController {
             @ApiResponse(responseCode = "404", description = "Shipping details not found")
     })
     @PutMapping("/{id}/{fornecedorId}")
-    public ResponseEntity<Shipping> updateOrder(@PathVariable Integer id,
+    public ResponseEntity<Shipping> updateShipping(@PathVariable Integer id,
                                                 @PathVariable Integer fornecedorId,
                                                 @RequestBody Shipping updatedShipping,
                                                 HttpServletRequest request) throws Exception {
