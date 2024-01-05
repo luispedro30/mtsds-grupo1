@@ -201,7 +201,7 @@
 					}
 				},
 				"url": {
-					"raw": "{{urlDevProducts}}/products/4?idUser=2045838758",
+					"raw": "{{urlDevProducts}}/products/4?id=2045838758",
 					"host": [
 						"{{urlDevProducts}}"
 					],
@@ -211,7 +211,7 @@
 					],
 					"query": [
 						{
-							"key": "idUser",
+							"key": "id",
 							"value": "2045838758"
 						}
 					]
@@ -239,9 +239,6 @@
 		},
 		{
 			"name": "GetAllUsers",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
 			"request": {
 				"auth": {
 					"type": "noauth"
@@ -255,15 +252,6 @@
 						"disabled": true
 					}
 				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n        \"code\": \"C005\",\r\n        \"description\": \"Computer 005\",\r\n        \"category\": \"COMPUTERS\",\r\n        \"price\": 932.4\r\n    }",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
 				"url": {
 					"raw": "{{urlDevUser}}/users",
 					"host": [
@@ -294,7 +282,7 @@
 					}
 				},
 				"url": {
-					"raw": "{{urlDevUser}}/users?name=Luis",
+					"raw": "{{urlDevUser}}/users?name=Carlos",
 					"host": [
 						"{{urlDevUser}}"
 					],
@@ -304,7 +292,7 @@
 					"query": [
 						{
 							"key": "name",
-							"value": "Luis"
+							"value": "Carlos"
 						}
 					]
 				}
@@ -320,13 +308,13 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{urlDevUser}}/users/2026564864",
+					"raw": "{{urlDevUser}}/users/2045815968",
 					"host": [
 						"{{urlDevUser}}"
 					],
 					"path": [
 						"users",
-						"2026564864"
+						"2045815968"
 					]
 				}
 			},
@@ -340,7 +328,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "{{tokenAdmin}}",
+							"value": "{{tokenUser}}",
 							"type": "string"
 						}
 					]
@@ -349,7 +337,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n        \"id\": 2045815968,\r\n        \"name\": \"Carlos1\",\r\n        \"login\": \"carlos\",\r\n        \"password\": \"analuisa2\",\r\n        \"active\": 0,\r\n        \"role\": \"ADMIN\"\r\n    }",
+					"raw": "{\r\n        \"id\": 2045830824,\r\n        \"name\": \"Carlos\",\r\n        \"login\": \"carlos1\",\r\n        \"email\": \"luis.pedro_1998@hotmail.com\",\r\n        \"password\": \"carolina\",\r\n        \"active\": 1,\r\n        \"role\": \"USER\"\r\n    }",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -357,13 +345,13 @@
 					}
 				},
 				"url": {
-					"raw": "{{urlDevUser}}/users/2045815968",
+					"raw": "{{urlDevUser}}/users/2045830824",
 					"host": [
 						"{{urlDevUser}}"
 					],
 					"path": [
 						"users",
-						"2045815968"
+						"2045830824"
 					]
 				}
 			},
@@ -386,7 +374,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n        \"id\": 2045815968,\r\n        \"name\": \"Carlos1\",\r\n        \"login\": \"carlos\",\r\n        \"password\": \"analuisa2\",\r\n        \"active\": 0,\r\n        \"role\": \"ADMIN\"\r\n    }",
+					"raw": "{\r\n        \"id\": 1267751201,\r\n        \"name\": \"Carlos\",\r\n        \"login\": \"carlos8\",\r\n        \"email\": \"luis.pedro_1998@hotmail.com\",\r\n        \"password\": \"carolina\",\r\n        \"active\": 1,\r\n        \"role\": \"USER\"\r\n    }",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -394,14 +382,14 @@
 					}
 				},
 				"url": {
-					"raw": "{{urlDevUser}}/admin/users/2045815968",
+					"raw": "{{urlDevUser}}/admin/users/1267751201",
 					"host": [
 						"{{urlDevUser}}"
 					],
 					"path": [
 						"admin",
 						"users",
-						"2045815968"
+						"1267751201"
 					]
 				}
 			},
@@ -415,7 +403,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "{{tokenAdmin}}",
+							"value": "{{tokenUser}}",
 							"type": "string"
 						}
 					]
@@ -432,13 +420,13 @@
 					}
 				},
 				"url": {
-					"raw": "{{urlDevUser}}/users/2046406334",
+					"raw": "{{urlDevUser}}/users/2045830824",
 					"host": [
 						"{{urlDevUser}}"
 					],
 					"path": [
 						"users",
-						"2046406334"
+						"2045830824"
 					]
 				}
 			},
@@ -452,7 +440,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "{{tokenUser}}",
+							"value": "{{tokenAdmin}}",
 							"type": "string"
 						}
 					]
@@ -487,13 +475,13 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{urlDevOrders}}/orders/2",
+					"raw": "{{urlDevOrders}}/orders/5",
 					"host": [
 						"{{urlDevOrders}}"
 					],
 					"path": [
 						"orders",
-						"2"
+						"5"
 					]
 				}
 			},
@@ -516,7 +504,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"userId\":  1083586219,\r\n    \"products\": [{\"productId\": 1},{\"productId\": 2}]\r\n}",
+					"raw": "{\r\n    \"userId\":  1463337485,\r\n    \"products\": [{\"productId\": 1},{\"productId\": 2}]\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -607,7 +595,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"userId\":2037996537,\r\n    \"productId\":1,\r\n    \"orderId\":1,\r\n    \"rating\":10,\r\n    \"reviewText\": \"oi\"\r\n}",
+					"raw": "{\r\n    \"userId\":1463337485,\r\n    \"productId\":2,\r\n    \"orderId\":5,\r\n    \"rating\":10,\r\n    \"reviewText\": \"oi\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -758,14 +746,14 @@
 					}
 				},
 				"url": {
-					"raw": "{{urlDevWallet}}/wallet/addMoney/1?money=100000",
+					"raw": "{{urlDevWallet}}/wallet/addMoney/11?money=100000",
 					"host": [
 						"{{urlDevWallet}}"
 					],
 					"path": [
 						"wallet",
 						"addMoney",
-						"1"
+						"11"
 					],
 					"query": [
 						{
@@ -804,14 +792,14 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{urlDevWallet}}/wallet/userId/2037996537",
+					"raw": "{{urlDevWallet}}/wallet/userId/1267751201",
 					"host": [
 						"{{urlDevWallet}}"
 					],
 					"path": [
 						"wallet",
 						"userId",
-						"2037996537"
+						"1267751201"
 					]
 				}
 			},
@@ -825,7 +813,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "{{tokenUser}}",
+							"value": "{{tokenAdmin}}",
 							"type": "string"
 						}
 					]
@@ -861,7 +849,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"orderId\":3,\r\n    \"userId\": 2046406334\r\n}",
+					"raw": "{\r\n    \"orderId\":5,\r\n    \"userId\": 1463337485\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -908,6 +896,34 @@
 			"response": []
 		},
 		{
+			"name": "GetShippingById",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{tokenFornecedor}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{urlDevShipping}}/shipping/9",
+					"host": [
+						"{{urlDevShipping}}"
+					],
+					"path": [
+						"shipping",
+						"9"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "GetShippingOrderIdUserId",
 			"request": {
 				"auth": {
@@ -923,14 +939,14 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{urlDevShipping}}/shipping/3/1866565445",
+					"raw": "{{urlDevShipping}}/shipping/5/1463337485",
 					"host": [
 						"{{urlDevShipping}}"
 					],
 					"path": [
 						"shipping",
-						"3",
-						"1866565445"
+						"5",
+						"1463337485"
 					]
 				}
 			},
@@ -979,7 +995,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"shippingId\": 2,\r\n    \"paymentId\": 3,\r\n    \"orderId\": 3,\r\n    \"userId\": 2046406334,\r\n    \"status\":\"DELIVERED\"\r\n}",
+					"raw": "{\r\n    \"shippingId\": 9,\r\n    \"paymentId\": 5,\r\n    \"orderId\": 5,\r\n    \"userId\": 1463337485,\r\n    \"status\":\"DELIVERED\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -987,13 +1003,13 @@
 					}
 				},
 				"url": {
-					"raw": "{{urlDevShipping}}/shipping/2/2045838758",
+					"raw": "{{urlDevShipping}}/shipping/9/2045838758",
 					"host": [
 						"{{urlDevShipping}}"
 					],
 					"path": [
 						"shipping",
-						"2",
+						"9",
 						"2045838758"
 					]
 				}
@@ -1052,7 +1068,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n        \"login\": \"carlos1\",\r\n        \"password\": \"oi\"\r\n}",
+					"raw": "{\r\n        \"login\": \"carlos11\",\r\n        \"password\": \"oi\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -1082,7 +1098,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"name\": \"Carlos\",\r\n    \"login\": \"carlos8\",\r\n    \"email\": \"luis.pedro_1998@hotmail.com\",\r\n    \"password\": \"oi\",\r\n    \"active\": 1,\r\n    \"role\": \"ADMIN\"\r\n}",
+					"raw": "{\r\n    \"name\": \"Carlos\",\r\n    \"login\": \"carlos11\",\r\n    \"email\": \"luis.pedro_1998@hotmail.com\",\r\n    \"password\": \"oi\",\r\n    \"active\": 1,\r\n    \"role\": \"USER\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -1163,9 +1179,9 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{urlProducts}}/v3/api-docs",
+					"raw": "{{urlWallet}}/v3/api-docs",
 					"host": [
-						"{{urlProducts}}"
+						"{{urlWallet}}"
 					],
 					"path": [
 						"v3",
