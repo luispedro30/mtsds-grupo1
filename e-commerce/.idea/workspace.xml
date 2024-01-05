@@ -6,14 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="e63fab2e-ccd9-4599-8c37-fc239380bb02" name="Changes" comment="fix: update authentication microservice with Postgres database and to connect with user microservice">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Email/src/main/java/ecommerce/Repository/EmailRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Email/src/main/java/ecommerce/Repository/EmailRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Orders/src/main/java/ecommerce/Repository/OrderRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Orders/src/main/java/ecommerce/Repository/OrderRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Payment/src/main/java/ecommerce/Repository/PaymentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Payment/src/main/java/ecommerce/Repository/PaymentRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Payment/target/classes/ecommerce/Services/PaymentService.class" beforeDir="false" afterPath="$PROJECT_DIR$/Payment/target/classes/ecommerce/Services/PaymentService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reviews/src/main/java/ecommerce/Repository/ReviewRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Reviews/src/main/java/ecommerce/Repository/ReviewRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Shipping/src/main/java/ecommerce/Controllers/ShippingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Shipping/src/main/java/ecommerce/Controllers/ShippingController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Shipping/src/main/java/ecommerce/Repository/ShippingRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Shipping/src/main/java/ecommerce/Repository/ShippingRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Shipping/src/main/java/ecommerce/Services/ShippingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Shipping/src/main/java/ecommerce/Services/ShippingService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Reviews/src/main/resources/application-dev.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Reviews/src/main/resources/application-dev.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Reviews/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Reviews/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,7 +28,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$/.." value="update-microservices-wallet" />
+        <entry key="$PROJECT_DIR$/.." value="solve-issues-microservices" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -107,7 +101,7 @@
     </option>
     <option name="openRunningConfigInTab" value="true" />
   </component>
-  <component name="RunManager" selected="Application.shipping-local">
+  <component name="RunManager" selected="Application.Reviews-local">
     <configuration name="ApiGateway-local" type="Application" factoryName="Application" folderName="e-commerce">
       <option name="MAIN_CLASS_NAME" value="ecommerce.ApiGateway" />
       <module name="api-gateway" />
@@ -164,9 +158,9 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PaymentClass-local" type="Application" factoryName="Application" folderName="e-commerce" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="ecommerce.PaymentClass" />
-      <module name="Payment" />
+    <configuration name="Products-local" type="Application" factoryName="Application" folderName="e-commerce" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="ecommerce.Products" />
+      <module name="products" />
       <option name="VM_PARAMETERS" value="-Dspring.profiles.active=dev" />
       <extension name="coverage">
         <pattern>
@@ -178,9 +172,9 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Products-local" type="Application" factoryName="Application" folderName="e-commerce" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="ecommerce.Products" />
-      <module name="products" />
+    <configuration name="Reviews-local" type="Application" factoryName="Application" folderName="e-commerce">
+      <option name="MAIN_CLASS_NAME" value="ecommerce.Reviews" />
+      <module name="Reviews" />
       <option name="VM_PARAMETERS" value="-Dspring.profiles.active=dev" />
       <extension name="coverage">
         <pattern>
@@ -239,7 +233,7 @@
       <item itemvalue="Application.ApiGateway-local" />
       <item itemvalue="Application.EurekaServer-local" />
       <item itemvalue="Application.Authentication-local" />
-      <item itemvalue="Application.PaymentClass-local" />
+      <item itemvalue="Application.Reviews-local" />
       <item itemvalue="Application.Orders-local" />
       <item itemvalue="Application.Products-local" />
       <item itemvalue="Application.shipping-local" />
@@ -251,7 +245,6 @@
         <item itemvalue="Application.wallet-local" />
         <item itemvalue="Application.Products-local" />
         <item itemvalue="Application.Orders-local" />
-        <item itemvalue="Application.PaymentClass-local" />
       </list>
     </recent_temporary>
   </component>
@@ -438,6 +431,16 @@
           <url>file://$PROJECT_DIR$/Payment/src/main/java/ecommerce/Services/PaymentService.java</url>
           <line>265</line>
           <option name="timeStamp" value="139" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Reviews/src/main/java/ecommerce/Services/ReviewService.java</url>
+          <line>56</line>
+          <option name="timeStamp" value="140" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Reviews/src/main/java/ecommerce/Services/ReviewService.java</url>
+          <line>200</line>
+          <option name="timeStamp" value="141" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
