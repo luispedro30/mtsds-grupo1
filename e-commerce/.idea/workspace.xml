@@ -5,9 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e63fab2e-ccd9-4599-8c37-fc239380bb02" name="Changes" comment="fix: update authentication microservice with Postgres database and to connect with user microservice">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reviews/src/main/resources/application-dev.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Reviews/src/main/resources/application-dev.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reviews/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Reviews/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PostmanCollectionEnv/E-Commerce-dev.postman_environment.json" beforeDir="false" afterPath="$PROJECT_DIR$/PostmanCollectionEnv/E-Commerce-dev.postman_environment.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PostmanCollectionEnv/E-commerce.postman_collection.json" beforeDir="false" afterPath="$PROJECT_DIR$/PostmanCollectionEnv/E-commerce.postman_collection.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,7 +27,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$/.." value="solve-issues-microservices" />
+        <entry key="$PROJECT_DIR$/.." value="update-reviews-properties-files" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
