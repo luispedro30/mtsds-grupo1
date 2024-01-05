@@ -6,9 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="e63fab2e-ccd9-4599-8c37-fc239380bb02" name="Changes" comment="fix: update authentication microservice with Postgres database and to connect with user microservice">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Products/src/main/java/ecommerce/Controllers/ProductsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Products/src/main/java/ecommerce/Controllers/ProductsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Products/src/main/java/ecommerce/Repository/ProductsRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Products/src/main/java/ecommerce/Repository/ProductsRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Products/src/main/java/ecommerce/Services/ProductsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Products/src/main/java/ecommerce/Services/ProductsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/java/ecommerce/Config/AuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/java/ecommerce/Config/AuthenticationFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/java/ecommerce/Config/GatewayConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/java/ecommerce/Config/GatewayConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/target/classes/ecommerce/Config/GatewayConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/target/classes/ecommerce/Config/GatewayConfig.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,7 +29,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$/.." value="update-microservices-with-swagger-info" />
+        <entry key="$PROJECT_DIR$/.." value="update-microservices-api-gateway-user" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -227,8 +227,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Users-local" />
         <item itemvalue="Application.Products-local" />
+        <item itemvalue="Application.Users-local" />
         <item itemvalue="Application.Authentication-local" />
         <item itemvalue="Application.Reviews-local" />
         <item itemvalue="Application.shipping-local" />
@@ -383,6 +383,16 @@
           <url>file://$PROJECT_DIR$/users/src/main/java/ecommerce/Service/UserService.java</url>
           <line>106</line>
           <option name="timeStamp" value="129" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Products/src/main/java/ecommerce/Controllers/ProductsController.java</url>
+          <line>88</line>
+          <option name="timeStamp" value="130" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Products/src/main/java/ecommerce/Controllers/ProductsController.java</url>
+          <line>87</line>
+          <option name="timeStamp" value="131" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
