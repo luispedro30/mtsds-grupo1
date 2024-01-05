@@ -6,7 +6,16 @@
   <component name="ChangeListManager">
     <list default="true" id="e63fab2e-ccd9-4599-8c37-fc239380bb02" name="Changes" comment="fix: update authentication microservice with Postgres database and to connect with user microservice">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/java/ecommerce/Config/AuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/java/ecommerce/Config/AuthenticationFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Payment/src/main/resources/application-dev.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Payment/src/main/resources/application-dev.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Payment/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Payment/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Payment/target/classes/application-dev.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Payment/target/classes/application-dev.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Payment/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Payment/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Wallet/src/main/java/ecommerce/Controllers/WalletController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Wallet/src/main/java/ecommerce/Controllers/WalletController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Wallet/src/main/java/ecommerce/Repository/WalletRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Wallet/src/main/java/ecommerce/Repository/WalletRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Wallet/src/main/java/ecommerce/Services/WalletService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Wallet/src/main/java/ecommerce/Services/WalletService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Wallet/target/classes/ecommerce/Controllers/WalletController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Wallet/target/classes/ecommerce/Controllers/WalletController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Wallet/target/classes/ecommerce/Repository/WalletRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/Wallet/target/classes/ecommerce/Repository/WalletRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Wallet/target/classes/ecommerce/Services/WalletService.class" beforeDir="false" afterPath="$PROJECT_DIR$/Wallet/target/classes/ecommerce/Services/WalletService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api-gateway/src/main/java/ecommerce/Config/GatewayConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/java/ecommerce/Config/GatewayConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api-gateway/target/classes/ecommerce/Config/GatewayConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/target/classes/ecommerce/Config/GatewayConfig.class" afterDir="false" />
     </list>
@@ -29,7 +38,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$/.." value="update-microservices-api-gateway-user" />
+        <entry key="$PROJECT_DIR$/.." value="update-microservices-wallet" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -49,18 +58,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "jdk.selected.JAVA_MODULE": "20",
-    "last_opened_file_path": "D:/mtsds-grupo1-github/mtsds-grupo1/e-commerce/Authentication",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "Settings.Sequence.Configuration"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;20&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/mtsds-grupo1-github/mtsds-grupo1/e-commerce/Authentication&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;Settings.Sequence.Configuration&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="ecommerce.Controller" />
@@ -102,7 +111,7 @@
     </option>
     <option name="openRunningConfigInTab" value="true" />
   </component>
-  <component name="RunManager" selected="Application.Users-local">
+  <component name="RunManager" selected="Application.Authentication-local">
     <configuration name="ApiGateway-local" type="Application" factoryName="Application" folderName="e-commerce">
       <option name="MAIN_CLASS_NAME" value="ecommerce.ApiGateway" />
       <module name="api-gateway" />
@@ -145,9 +154,9 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Products-local" type="Application" factoryName="Application" folderName="e-commerce" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="ecommerce.Products" />
-      <module name="products" />
+    <configuration name="Orders-local" type="Application" factoryName="Application" folderName="e-commerce" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="ecommerce.Orders" />
+      <module name="Orders" />
       <option name="VM_PARAMETERS" value="-Dspring.profiles.active=dev" />
       <extension name="coverage">
         <pattern>
@@ -159,13 +168,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Reviews-local" type="Application" factoryName="Application" folderName="e-commerce" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="ecommerce.Reviews" />
-      <module name="Reviews" />
+    <configuration name="PaymentClass-local" type="Application" factoryName="Application" folderName="e-commerce" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="ecommerce.PaymentClass" />
+      <module name="Payment" />
       <option name="VM_PARAMETERS" value="-Dspring.profiles.active=dev" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ecommerce.Config.*" />
+          <option name="PATTERN" value="ecommerce.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -173,9 +182,9 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Users-local" type="Application" factoryName="Application" folderName="e-commerce" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="ecommerce.Users" />
-      <module name="users" />
+    <configuration name="Products-local" type="Application" factoryName="Application" folderName="e-commerce" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="ecommerce.Products" />
+      <module name="products" />
       <option name="VM_PARAMETERS" value="-Dspring.profiles.active=dev" />
       <extension name="coverage">
         <pattern>
@@ -201,13 +210,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="shipping-local" type="Application" factoryName="Application" folderName="e-commerce" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="ecommerce.shipping" />
-      <module name="Shipping" />
+    <configuration name="wallet-local" type="Application" factoryName="Application" folderName="e-commerce" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="ecommerce.wallet" />
+      <module name="Wallet" />
       <option name="VM_PARAMETERS" value="-Dspring.profiles.active=dev" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ecommerce.Config.*" />
+          <option name="PATTERN" value="ecommerce.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -219,19 +228,19 @@
       <item itemvalue="Application.email-local" />
       <item itemvalue="Application.ApiGateway-local" />
       <item itemvalue="Application.EurekaServer-local" />
-      <item itemvalue="Application.Users-local" />
-      <item itemvalue="Application.shipping-local" />
-      <item itemvalue="Application.Reviews-local" />
+      <item itemvalue="Application.PaymentClass-local" />
+      <item itemvalue="Application.Orders-local" />
       <item itemvalue="Application.Authentication-local" />
       <item itemvalue="Application.Products-local" />
+      <item itemvalue="Application.wallet-local" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Products-local" />
-        <item itemvalue="Application.Users-local" />
+        <item itemvalue="Application.PaymentClass-local" />
+        <item itemvalue="Application.Orders-local" />
+        <item itemvalue="Application.wallet-local" />
         <item itemvalue="Application.Authentication-local" />
-        <item itemvalue="Application.Reviews-local" />
-        <item itemvalue="Application.shipping-local" />
+        <item itemvalue="Application.Products-local" />
       </list>
     </recent_temporary>
   </component>
@@ -392,7 +401,32 @@
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Products/src/main/java/ecommerce/Controllers/ProductsController.java</url>
           <line>87</line>
-          <option name="timeStamp" value="131" />
+          <option name="timeStamp" value="132" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Products/src/main/java/ecommerce/Controllers/ProductsController.java</url>
+          <line>90</line>
+          <option name="timeStamp" value="133" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Wallet/src/main/java/ecommerce/Services/WalletService.java</url>
+          <line>93</line>
+          <option name="timeStamp" value="134" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Payment/src/main/java/ecommerce/Services/PaymentService.java</url>
+          <line>56</line>
+          <option name="timeStamp" value="136" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Payment/src/main/java/ecommerce/Services/PaymentService.java</url>
+          <line>57</line>
+          <option name="timeStamp" value="137" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Payment/src/main/java/ecommerce/Services/PaymentService.java</url>
+          <line>265</line>
+          <option name="timeStamp" value="139" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

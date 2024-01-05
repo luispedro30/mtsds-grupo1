@@ -108,4 +108,21 @@ public class WalletController {
                 wallet,
                 HttpStatus.OK);
     }
+
+    @Operation(summary = "Get wallet by user ID")
+    @ApiResponse(responseCode = "200", description = "Wallet found for the user",
+            content = @Content(mediaType = "application/json",
+                    schema = @Schema(implementation = Wallet.class)))
+    @ApiResponse(responseCode = "404", description = "No wallet found for the user")
+    @GetMapping (value = "/userId/{id}")
+    public ResponseEntity<Wallet> getWalletByUserId(@PathVariable("id") Integer id){
+        Wallet wallet =  walletService.getWalletByUserId(id);
+        if(wallet != null) {
+            return new ResponseEntity<Wallet>(
+                    wallet,
+                    HttpStatus.OK);
+        }
+        return new ResponseEntity<Wallet>(
+                HttpStatus.NOT_FOUND);
+    }
 }

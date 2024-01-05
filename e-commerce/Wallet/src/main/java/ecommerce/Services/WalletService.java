@@ -4,7 +4,6 @@ import ecommerce.Dto.UserDto;
 import ecommerce.Messages.Wallet2Email;
 import ecommerce.Models.Wallet;
 import ecommerce.Repository.WalletRepository;
-import ecommerce.wallet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.transaction.Transactional;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
@@ -41,7 +40,7 @@ public class WalletService {
                 .orElseThrow(null);
     }
 
-    public Wallet getWalletByUserId(Integer id) {
+    public Wallet getWalletByUserId(Integer id, HttpServletRequest request) {
         return walletRepository.findByUserId(id);
     }
 
@@ -52,7 +51,7 @@ public class WalletService {
 
         userDto = getUser(wallet.getUserId(),request, token);
 
-        if(getWalletByUserId(wallet.getUserId()) != null){
+        if(getWalletByUserId(wallet.getUserId(), request) != null){
             throw new Exception("There is already a wallet for this User");
         }
 
@@ -177,5 +176,9 @@ public class WalletService {
             return authorizationHeader.substring(7); // Extract the token without "Bearer " prefix
         }
         return null; // Handle token not found scenario
+    }
+
+    public Wallet getWalletByUserId(Integer id) {
+        return walletRepository.findByUserId(id);
     }
 }
