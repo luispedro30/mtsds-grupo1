@@ -69,9 +69,6 @@ public class    ShippingService {
         WalletDto walletDto;
         walletDto = getWallet(shipping.getUserId(), request, token);
 
-        //PaymentDto paymentDto;
-        //paymentDto = getPayment(shipping.getPaymentId());
-
         if(!doesNotExistAlready(shipping.getUserId(), shipping.getOrderId(), shipping.getPaymentId())){
             throw new Exception("This shipping already exists");
         }
@@ -80,26 +77,6 @@ public class    ShippingService {
         return shippingRepository.save(shipping);
     }
 
-    public void deletePayment(Integer paymentId,
-                              Integer userId,
-                              HttpServletRequest request) throws Exception {
-        UserDto userDto;
-        String token = extractToken(request);
-        userDto = getAdminSupplier(userId, request, token);
-
-        shippingRepository.deleteById(paymentId);
-    }
-
-    public void updatePayment(Integer paymentId,
-                              Integer userId,
-                              Shipping newShipping,
-                              HttpServletRequest request) throws Exception {
-        UserDto userDto;
-        String token = extractToken(request);
-        userDto = getAdminSupplier(userId, request, token);
-
-        shippingRepository.save(newShipping);
-    }
 
     public UserDto getAdminSupplier(Integer userId, HttpServletRequest request, String token) throws Exception {
 
@@ -282,33 +259,6 @@ public class    ShippingService {
 
     }
 
-    /*public PaymentDto getPayment(Integer paymentId) throws Exception {
-
-        PaymentDto paymentDto;
-        RestTemplate restTemplate = new RestTemplate();
-
-        try {
-            ResponseEntity<PaymentDto> response = restTemplate.getForEntity(
-                    paymentUrl + "/{paymentId}",
-                    PaymentDto.class,
-                    paymentId
-            );
-            return response.getBody();
-        }
-        catch (HttpClientErrorException | HttpServerErrorException e){
-            if(e.getStatusCode() == HttpStatus.BAD_REQUEST){
-                throw new Exception(e.getResponseBodyAsString());
-            }
-            if(e.getStatusCode() == HttpStatus.NOT_FOUND){
-                throw new Exception(e.getResponseBodyAsString());
-            }
-            else{
-                throw new Exception(e.getResponseBodyAsString());
-            }
-        }
-
-
-    }*/
 
     public boolean doesNotExistAlready(Integer userId, Integer orderId, Integer paymentId) {
         return !shippingRepository.existsByUserIdAndOrderIdAndPaymentId(userId,orderId, paymentId);
