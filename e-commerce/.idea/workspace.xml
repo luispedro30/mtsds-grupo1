@@ -7,6 +7,9 @@
     <list default="true" id="e63fab2e-ccd9-4599-8c37-fc239380bb02" name="Changes" comment="fix: update authentication microservice with Postgres database and to connect with user microservice">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Products/src/main/java/ecommerce/Controllers/ProductsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Products/src/main/java/ecommerce/Controllers/ProductsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Products/src/main/java/ecommerce/Infra/RestExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/Products/src/main/java/ecommerce/Infra/RestExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/java/ecommerce/Config/GatewayConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/java/ecommerce/Config/GatewayConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/target/classes/ecommerce/Config/GatewayConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/target/classes/ecommerce/Config/GatewayConfig.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,7 +30,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$/.." value="update-reviews-properties-files" />
+        <entry key="$PROJECT_DIR$/.." value="update-postman" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -100,7 +103,7 @@
     </option>
     <option name="openRunningConfigInTab" value="true" />
   </component>
-  <component name="RunManager" selected="Application.Reviews-local">
+  <component name="RunManager" selected="JUnit.ProductsControllerTest">
     <configuration name="ApiGateway-local" type="Application" factoryName="Application" folderName="e-commerce">
       <option name="MAIN_CLASS_NAME" value="ecommerce.ApiGateway" />
       <module name="api-gateway" />
@@ -227,6 +230,23 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ProductsControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="products" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ecommerce.Controllers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ecommerce.Controllers" />
+      <option name="MAIN_CLASS_NAME" value="ecommerce.Controllers.ProductsControllerTest" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-Dspring.profiles.active=dev" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="Application.email-local" />
       <item itemvalue="Application.ApiGateway-local" />
@@ -237,10 +257,12 @@
       <item itemvalue="Application.Products-local" />
       <item itemvalue="Application.shipping-local" />
       <item itemvalue="Application.wallet-local" />
+      <item itemvalue="JUnit.ProductsControllerTest" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Products-local" />
+        <item itemvalue="JUnit.ProductsControllerTest" />
         <item itemvalue="Application.shipping-local" />
         <item itemvalue="Application.wallet-local" />
         <item itemvalue="Application.Orders-local" />
