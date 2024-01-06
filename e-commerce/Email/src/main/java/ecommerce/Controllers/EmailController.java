@@ -25,6 +25,32 @@ public class EmailController {
     @Autowired
     EmailService emailService;
 
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    public static class EmailNotFoundException extends RuntimeException {
+        public EmailNotFoundException(String message) {
+            super(message);
+        }
+    }
+
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    public static class InvalidEmailException extends RuntimeException {
+        public InvalidEmailException(String message) {
+            super(message);
+        }
+    }
+
+    @ExceptionHandler(EmailNotFoundException.class)
+    public ResponseEntity<String> handleEmailNotFoundException(EmailNotFoundException exception) {
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(exception.getMessage());
+    }
+
+    @ExceptionHandler(InvalidEmailException.class)
+    public ResponseEntity<String> handleInvalidEmailException(InvalidEmailException exception) {
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(exception.getMessage());
+    }
+
+
+
     /**
      * Send email with provided details.
      *
@@ -63,8 +89,8 @@ public class EmailController {
     public ResponseEntity<Object> getOneEmail(@PathVariable(value="emailId") UUID emailId){
         Optional<EmailModel> emailModelOptional = emailService.findById(emailId);
         if(!emailModelOptional.isPresent()) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Email not found.");
-        }else {
+            throw new EmailNotFoundException("Email not found.");
+        } else {
             return ResponseEntity.status(HttpStatus.OK).body(emailModelOptional.get());
         }
     }
