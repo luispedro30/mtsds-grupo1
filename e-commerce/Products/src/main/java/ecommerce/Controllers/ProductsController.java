@@ -1,7 +1,6 @@
 package ecommerce.Controllers;
 
-import ecommerce.Exceptions.AlreadyExistingException;
-import ecommerce.Exceptions.ProductNotFoundException;
+import ecommerce.Exceptions.*;
 import ecommerce.Models.Product;
 import ecommerce.Services.ProductsService;
 import io.swagger.v3.oas.annotations.Operation;
@@ -49,30 +48,34 @@ public class ProductsController {
             @ApiResponse(responseCode = "500", description = "Internal server error")
     })
     @PostMapping(value = "/products")
-    private ResponseEntity<Product> addProduct(@RequestBody Product product,
-                                               @RequestParam("id") Integer idUser,
-                                               HttpServletRequest request) {
+    public ResponseEntity<Product> addProduct(@RequestBody Product product,
+                                              @RequestParam("id") Integer idUser,
+                                              HttpServletRequest request) throws AlreadyExistingException {
         logger.info(marker, "addProduct() request received ... pending");
         try {
-            if (product != null) {
-                // Check if the product ID already exists
-                if (productService.getProductById(product.getId()) != null) {
-                    logger.info(marker, "addProduct() request received ... Product with ID already exists");
-                    throw new AlreadyExistingException(String.valueOf(product.getId()), "addProduct()");
-                }
-                productService.addProduct(product, idUser, request);
-                logger.info(marker, "addProduct() request received ... 201 Created{}", product);
-                return new ResponseEntity<>(product, HttpStatus.CREATED);
-            } else {
+            if (product == null) {
                 logger.info(marker, "addProduct() request received ... Bad Request{}");
                 return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
             }
-        } catch (Exception e) {
-            logger.error(marker, e.getMessage());
-            e.printStackTrace();
+
+            // Check if the product ID already exists
+            if (product.getId() != null && productService.getProductById(product.getId()) != null) {
+                logger.info(marker, "addProduct() request received ... Product with ID already exists");
+                throw new AlreadyExistingException(String.valueOf(product.getId()), "addProduct()");
+            }
+
+            productService.addProduct(product, idUser, request);
+            logger.info(marker, "addProduct() request received ... 201 Created{}", product);
+            return new ResponseEntity<>(product, HttpStatus.CREATED);
+        } catch (AlreadyExistingException ex) {
+            throw ex;
+        } catch (Exception ex) {
+            logger.error("Exception occurred: {}", ex.getMessage());
+            ex.printStackTrace();
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
+
 
 
     @Operation(summary = "Update an existing product")
@@ -109,15 +112,26 @@ public class ProductsController {
             @ApiResponse(responseCode = "500", description = "Internal server error")
     })
     @PostMapping(value = "/products/decreaseStock/{id}")
-    private ResponseEntity<Product> decreaseStockProduct(@PathVariable ("id") Integer idProduct, HttpServletRequest request) throws Exception {
-        logger.info(marker,"decreaseStockProduct() request received ... pending");
-        Product product = productService.decreaseStockProduct(idProduct);
+    private ResponseEntity<Product> decreaseStockProduct(@PathVariable("id") Integer idProduct, HttpServletRequest request) throws ProductQuantityException {
+        try {
+            logger.info(marker, "decreaseStockProduct() request received ... pending");
+            Product product = productService.getProductById(idProduct);
 
-        logger.info(marker,"decreaseStockProduct() request received ... 200 {}",product);
-        return new ResponseEntity<Product>(
-                product,
-                HttpStatus.OK);
+            if (product.getStockQuantity() <= 0) {
+                throw new ProductQuantityException("Products quantity cannot be lower than 0", "decreaseStockProduct");
+            }
 
+            product = productService.decreaseStockProduct(idProduct);
+
+            logger.info(marker, "decreaseStockProduct() request received ... 200 {}", product);
+            return new ResponseEntity<>(product, HttpStatus.OK);
+        } catch (ProductQuantityException ex) {
+            throw ex;
+        } catch (Exception ex) {
+            logger.error("Exception occurred: {}", ex.getMessage());
+            ex.printStackTrace();
+            throw new ProductQuantityException("Error occurred while processing", "decreaseStockProduct");
+        }
     }
 
     @Operation(summary = "Delete a product by ID")
@@ -175,19 +189,24 @@ public class ProductsController {
             @ApiResponse(responseCode = "404", description = "No products found for the given category")
     })
     @GetMapping(value = "/products/products-by-category/{category}")
-    public ResponseEntity<List<Product>> getAllProductByCategory(@PathVariable("category") String category){
-        List<Product> products = productService.getAllProductByCategory(category);
-        logger.info(marker,"getAllProductByCategory() request received ... pending");
-        if(!products.isEmpty()) {
-            logger.info(marker,"getAllProductByCategory() request received ... 200 {}",products);
-            return new ResponseEntity<List<Product>>(
-                    products,
-                    HttpStatus.OK);
+    public ResponseEntity<List<Product>> getAllProductByCategory(@PathVariable("category") String category) throws CategoryNotFoundException {
+        try {
+            List<Product> products = productService.getAllProductByCategory(category);
+            logger.info(marker, "getAllProductByCategory() request received ... pending");
+            if (!products.isEmpty()) {
+                logger.info(marker, "getAllProductByCategory() request received ... 200 {}", products);
+                return new ResponseEntity<>(products, HttpStatus.OK);
+            }
+            logger.info(marker, "getAllProductByCategory() request received ... 404 Not Found{}", products);
+            throw new CategoryNotFoundException(category, "getAllProductByCategory()");
+        } catch (CategoryNotFoundException ex) {
+            throw ex;
+        } catch (Exception ex) {
+            logger.error("Exception occurred: {}", ex.getMessage());
+            throw new CategoryNotFoundException(category, "getAllProductByCategory()");
         }
-        logger.info(marker,"getAllProductByCategory() request received ... 404 Not Found{}",products);
-        return new ResponseEntity<List<Product>>(
-                HttpStatus.NOT_FOUND);
     }
+
 
 
     @Operation(summary = "Retrieve a product by ID")
@@ -222,17 +241,22 @@ public class ProductsController {
             @ApiResponse(responseCode = "404", description = "No products found with the given name")
     })
     @GetMapping(value = "/products/products-by-name/{name}")
-    public ResponseEntity<List<Product>> getAllProductsByName(@PathVariable ("name") String name){
-        List<Product> products =  productService.getAllByName(name);
-        logger.info(marker,"getAllProductsByName() request received ... pending");
-        if(!products.isEmpty()) {
-            logger.info(marker,"getAllProductsByName() request received ... 200 {}",products);
-            return new ResponseEntity<List<Product>>(
-                    products,
-                    HttpStatus.OK);
+    public ResponseEntity<List<Product>> getAllProductsByName(@PathVariable("name") String name) throws NameNotFoundException {
+        try {
+            List<Product> products = productService.getAllByName(name);
+            logger.info(marker, "getAllProductsByName() request received ... pending");
+            if (!products.isEmpty()) {
+                logger.info(marker, "getAllProductsByName() request received ... 200 {}", products);
+                return new ResponseEntity<>(products, HttpStatus.OK);
+            }
+            logger.info(marker, "getAllProductsByName() request received ... 404 Not Found{}", products);
+            throw new NameNotFoundException(name, "getAllProductsByName()");
+        } catch (NameNotFoundException ex) {
+            throw ex;
+        } catch (Exception ex) {
+            logger.error("Exception occurred: {}", ex.getMessage());
+            throw new NameNotFoundException(name, "getAllProductsByName()");
         }
-        logger.info(marker,"getAllProductsByName() request received ... 404 Not Found{}",products);
-        return new ResponseEntity<List<Product>>(
-                HttpStatus.NOT_FOUND);
     }
+
 }
