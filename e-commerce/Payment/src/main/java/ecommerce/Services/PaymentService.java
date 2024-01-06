@@ -51,6 +51,11 @@ public class PaymentService {
                 .orElseThrow(null);
     }
 
+    @Transactional
+    public List<Payment> findByUserId(Integer userId) {
+        return paymentRepository.findByUserId(userId);
+    }
+
     public Payment addPayment(Payment payment, HttpServletRequest request) throws Exception {
 
         UserDto userDto;
