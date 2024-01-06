@@ -6,11 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="e63fab2e-ccd9-4599-8c37-fc239380bb02" name="Changes" comment="fix: update authentication microservice with Postgres database and to connect with user microservice">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Orders/src/main/java/ecommerce/Controllers/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Orders/src/main/java/ecommerce/Controllers/OrderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Orders/src/main/java/ecommerce/Repository/OrderRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Orders/src/main/java/ecommerce/Repository/OrderRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Orders/src/main/java/ecommerce/Services/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Orders/src/main/java/ecommerce/Services/OrderService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Orders/target/classes/ecommerce/Repository/OrderRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/Orders/target/classes/ecommerce/Repository/OrderRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Orders/target/classes/ecommerce/Services/OrderService.class" beforeDir="false" afterPath="$PROJECT_DIR$/Orders/target/classes/ecommerce/Services/OrderService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Payment/src/main/java/ecommerce/Controllers/PaymentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Payment/src/main/java/ecommerce/Controllers/PaymentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Payment/src/main/java/ecommerce/Repository/PaymentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Payment/src/main/java/ecommerce/Repository/PaymentRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Payment/src/main/java/ecommerce/Services/PaymentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Payment/src/main/java/ecommerce/Services/PaymentService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api-gateway/src/main/java/ecommerce/Config/AuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/java/ecommerce/Config/AuthenticationFilter.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -81,8 +79,8 @@
       <recent name="D:\mtsds-grupo1-github\mtsds-grupo1\e-commerce\PostmanCollectionEnv" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="ecommerce.Exceptions" />
       <recent name="ecommerce.Infra" />
+      <recent name="ecommerce.Exceptions" />
       <recent name="ecommerce" />
       <recent name="ecommerce.Dto" />
       <recent name="ecommerce.Messages" />
@@ -311,17 +309,17 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/api-gateway/src/main/java/ecommerce/Config/AuthenticationFilter.java</url>
-          <line>114</line>
+          <line>115</line>
           <option name="timeStamp" value="100" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/api-gateway/src/main/java/ecommerce/Config/AuthenticationFilter.java</url>
-          <line>115</line>
+          <line>116</line>
           <option name="timeStamp" value="101" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/api-gateway/src/main/java/ecommerce/Config/AuthenticationFilter.java</url>
-          <line>133</line>
+          <line>134</line>
           <option name="timeStamp" value="102" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -381,17 +379,17 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Payment/src/main/java/ecommerce/Services/PaymentService.java</url>
-          <line>56</line>
+          <line>61</line>
           <option name="timeStamp" value="136" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Payment/src/main/java/ecommerce/Services/PaymentService.java</url>
-          <line>57</line>
+          <line>62</line>
           <option name="timeStamp" value="137" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Payment/src/main/java/ecommerce/Services/PaymentService.java</url>
-          <line>265</line>
+          <line>270</line>
           <option name="timeStamp" value="139" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">

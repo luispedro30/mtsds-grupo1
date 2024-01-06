@@ -83,7 +83,8 @@ public class AuthenticationFilter extends AbstractGatewayFilterFactory<String> {
                     (exchange.getRequest().getMethod() == HttpMethod.PUT ||
                             exchange.getRequest().getMethod() == HttpMethod.DELETE
                             || exchange.getRequest().getPath().toString().startsWith("/orders/user/")
-                            || exchange.getRequest().getPath().toString().startsWith("/wallet/userId/"))) {
+                            || exchange.getRequest().getPath().toString().startsWith("/wallet/userId/")
+                            || exchange.getRequest().getPath().toString().startsWith("/payment/user/"))) {
                 if (!userIdFromEndpoint.equals(idFromToken)
                         && (roleFromToken.equals("USER") /*|| roleFromToken.equals("SUPPLIER")*/)) {
                     System.out.println("User must be the same");
