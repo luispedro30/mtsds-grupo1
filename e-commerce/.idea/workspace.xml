@@ -6,18 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="e63fab2e-ccd9-4599-8c37-fc239380bb02" name="Changes" comment="fix: update authentication microservice with Postgres database and to connect with user microservice">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Authentication/src/main/java/ecommerce/Authentication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Authentication/src/main/java/ecommerce/Controllers/AuthenticationController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Authentication/src/main/java/ecommerce/DTO/AuthenticationDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Authentication/src/main/java/ecommerce/DTO/LoginResponseDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Authentication/src/main/java/ecommerce/DTO/RegisterDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Authentication/src/main/java/ecommerce/Enums/Role.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Authentication/src/main/java/ecommerce/Infra/Security/SecurityConfigurations.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Authentication/src/main/java/ecommerce/Infra/Security/SecurityFilter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Authentication/src/main/java/ecommerce/Infra/Security/TokenService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Authentication/src/main/java/ecommerce/Models/User.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Authentication/src/main/java/ecommerce/Repository/UserRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Authentication/src/main/java/ecommerce/Service/AuthenticationService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Email/src/main/java/ecommerce/Controllers/EmailController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Email/src/main/java/ecommerce/Controllers/EmailController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
