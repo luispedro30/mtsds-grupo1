@@ -1,8 +1,15 @@
 package ecommerce.Controllers;
 
+import ecommerce.Exceptions.AlreadyExistingException;
+import ecommerce.Exceptions.WalletNotFoundException;
+import ecommerce.Exceptions.WalletValueException;
 import ecommerce.Models.Wallet;
 import ecommerce.Services.WalletService;
 import jakarta.servlet.http.HttpServletRequest;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.slf4j.Marker;
+import org.slf4j.MarkerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,6 +24,10 @@ import java.util.List;
 @RestController
 @RequestMapping("/wallet")
 public class WalletController {
+
+    private static Marker marker = MarkerFactory.getMarker("wallet-service");
+
+    private static Logger logger = LoggerFactory.getLogger(WalletController.class);
 
     @Autowired
     private WalletService walletService;
@@ -57,14 +68,22 @@ public class WalletController {
     @PostMapping
     private ResponseEntity<Wallet> addWallet(
             @RequestBody Wallet wallet,
-            HttpServletRequest request) {
+            HttpServletRequest request) throws AlreadyExistingException {
 
         if (wallet != null) {
             try {
-                walletService.addWallet(wallet, request);
-                return new ResponseEntity<Wallet>(
-                        wallet,
-                        HttpStatus.CREATED);
+                Wallet existingWallet = walletService.getWalletByUserId(wallet.getUserId());
+
+                if (existingWallet != null) {
+                    throw new AlreadyExistingException(wallet.getUserId().toString(), "addWallet()");
+                } else {
+                    walletService.addWallet(wallet, request);
+                    return new ResponseEntity<Wallet>(
+                            wallet,
+                            HttpStatus.CREATED);
+                }
+            } catch (AlreadyExistingException e) {
+                throw e;
             } catch (Exception e) {
                 e.printStackTrace();
                 return new ResponseEntity<Wallet>(
@@ -97,17 +116,41 @@ public class WalletController {
             content = @Content(mediaType = "application/json",
                     schema = @Schema(implementation = Wallet.class)))
     @PostMapping(value = "/takeMoney/{id}")
-    private ResponseEntity<Wallet> takeMoney(
+    public ResponseEntity<?> takeMoney(
             @PathVariable("id") Integer idWallet,
             @RequestParam float money,
-            HttpServletRequest request) throws Exception {
+            HttpServletRequest request) {
+        try {
+            logger.info(marker, "takeMoney() request received ... pending");
 
-        Wallet wallet = walletService.takeMoneyWallet(idWallet, money, request);
+            if (money < 0) {
+                throw new WalletValueException("Money input cannot be lower than 0", "takeMoney");
+            }
 
-        return new ResponseEntity<Wallet>(
-                wallet,
-                HttpStatus.OK);
+            Wallet wallet = walletService.getWalletById(idWallet);
+            if (wallet == null) {
+                return ResponseEntity.notFound().build();
+            }
+
+            float remainingAmount = wallet.getValue() - money;
+            if (remainingAmount < 0) {
+                throw new WalletValueException("Transaction cannot be completed. Insufficient funds in the wallet.", "takeMoney");
+            }
+
+            wallet = walletService.takeMoneyWallet(idWallet, money, request);
+
+            logger.info(marker, "takeMoney() request received ... 200 {}", wallet);
+            return ResponseEntity.ok(wallet);
+        } catch (WalletValueException ex) {
+            return ResponseEntity.badRequest().body(ex.getMessage());
+        } catch (Exception ex) {
+            logger.error("Exception occurred: {}", ex.getMessage());
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error occurred while processing");
+        }
     }
+
+
+
 
     @Operation(summary = "Get wallet by user ID")
     @ApiResponse(responseCode = "200", description = "Wallet found for the user",
@@ -115,14 +158,22 @@ public class WalletController {
                     schema = @Schema(implementation = Wallet.class)))
     @ApiResponse(responseCode = "404", description = "No wallet found for the user")
     @GetMapping (value = "/userId/{id}")
-    public ResponseEntity<Wallet> getWalletByUserId(@PathVariable("id") Integer id){
-        Wallet wallet =  walletService.getWalletByUserId(id);
-        if(wallet != null) {
-            return new ResponseEntity<Wallet>(
-                    wallet,
-                    HttpStatus.OK);
+    public ResponseEntity<Wallet> getWalletByUserId(@PathVariable("id") Integer id) throws WalletNotFoundException {
+        try {
+            Wallet wallet = walletService.getWalletByUserId(id);
+            logger.info(marker, "getWalletByUserId() request received ... pending");
+            if (wallet != null) {
+                logger.info(marker, "getWalletByUserId() request received ... 200 {}", wallet);
+                return new ResponseEntity<>(wallet, HttpStatus.OK);
+            } else {
+                logger.info(marker, "getWalletByUserId() request received ... 404 Not Found{}");
+                throw new WalletNotFoundException(String.valueOf(id), "getWalletByUserId()");
+            }
+        } catch (WalletNotFoundException ex) {
+            throw ex;
+        } catch (Exception ex) {
+            logger.error("Exception occurred: {}", ex.getMessage());
+            throw new WalletNotFoundException(String.valueOf(id), "getWalletByUserId()");
         }
-        return new ResponseEntity<Wallet>(
-                HttpStatus.NOT_FOUND);
     }
 }
