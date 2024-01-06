@@ -1,5 +1,7 @@
 package ecommerce.Controllers;
 
+import ecommerce.Exceptions.AlreadyExistingException;
+import ecommerce.Exceptions.LoginException;
 import ecommerce.Models.User;
 import ecommerce.Repository.UserRepository;
 import ecommerce.DTO.AuthenticationDTO;
@@ -14,9 +16,11 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
 
 @RestController
@@ -65,17 +69,14 @@ public class AuthenticationController {
             @ApiResponse(responseCode = "500", description = "Internal server error")
     })
     @PostMapping("/login")
-    public ResponseEntity login (@RequestBody AuthenticationDTO data){
-        //verificar na base de dados a senha guardada de forma segura
-        try{
+    public ResponseEntity login(@RequestBody AuthenticationDTO data) throws LoginException {
+        try {
             var usernamePassword = new UsernamePasswordAuthenticationToken(data.login(), data.password());
-            System.out.println(data.login());
-            System.out.println(data.password());
             var authentication = authenticationManager.authenticate(usernamePassword);
-
             var token = tokenService.generateToken((User) authentication.getPrincipal());
-
             return ResponseEntity.ok(new LoginResponseDTO(token));
+        } catch (BadCredentialsException e) {
+            throw new LoginException("login()");
         } catch (Exception e) {
             e.printStackTrace();
             return ResponseEntity.notFound().build();
@@ -95,12 +96,14 @@ public class AuthenticationController {
             @ApiResponse(responseCode = "500", description = "Internal server error")
     })
     @PostMapping("/register")
-    public ResponseEntity register(@RequestBody RegisterDTO data) {
-
+    public ResponseEntity register(@RequestBody RegisterDTO data) throws AlreadyExistingException {
         RestTemplate restTemplate = new RestTemplate();
 
+        // Check if the login already exists in the repository
+        if (this.userRepository.findByLogin(data.login()) != null) {
+            throw new AlreadyExistingException("User already exists","register()");
+        }
 
-        if (this.userRepository.findByLogin(data.login()) != null) return ResponseEntity.badRequest().build();
         String encryptedPassword = new BCryptPasswordEncoder().encode(data.password());
 
         long currentTimeMillis = System.currentTimeMillis();
@@ -113,11 +116,19 @@ public class AuthenticationController {
                 encryptedPassword,
                 data.role());
 
-        ResponseEntity<User> response = restTemplate.postForEntity(usersUrl,
-                newUser,
-                User.class);
-        User savedUser = this.userRepository.save(newUser);
-        return ResponseEntity.ok().build();
-
+        try {
+            ResponseEntity<User> response = restTemplate.postForEntity(usersUrl, newUser, User.class);
+            User savedUser = this.userRepository.save(newUser);
+            return ResponseEntity.ok().build();
+        } catch (RestClientException ex) {
+            throw new ExternalServiceException("Error while registering user externally");
+        }
     }
+
+    public class ExternalServiceException extends RuntimeException {
+        public ExternalServiceException(String message) {
+            super(message);
+        }
+    }
+
 }
