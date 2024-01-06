@@ -53,6 +53,11 @@ public class OrderService {
     }
 
     @Transactional
+    public List<Order> findByUserId(Integer userId) {
+        return orderRepository.findByUserId(userId);
+    }
+
+    @Transactional
     public Order getOrderWithProducts(Integer orderId) {
         Order order = orderRepository.findById(orderId).orElse(null);
         if (order != null) {
