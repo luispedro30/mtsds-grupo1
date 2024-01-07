@@ -4,7 +4,7 @@ kind: Deployment
 metadata:
   name: auth-service
 spec:
-  replicas: 1
+  replicas: 3
   selector:
     matchLabels:
       app: auth-service
@@ -37,4 +37,4 @@ spec:
     - name: http
       port: 9898
       targetPort: 9898
-  type: ClusterIP
+  type: LoadBalancer

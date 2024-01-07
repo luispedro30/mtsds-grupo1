@@ -4,7 +4,7 @@ kind: Deployment
 metadata:
   name: orders-service
 spec:
-  replicas: 1
+  replicas: 3
   selector:
     matchLabels:
       app: orders-service
@@ -39,4 +39,4 @@ spec:
     - name: http
       port: 8092
       targetPort: 8092
-  type: ClusterIP
+  type: LoadBalancer

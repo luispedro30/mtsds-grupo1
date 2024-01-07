@@ -4,7 +4,7 @@ kind: Deployment
 metadata:
   name: payment-service
 spec:
-  replicas: 1
+  replicas: 3
   selector:
     matchLabels:
       app: payment-service
@@ -43,4 +43,4 @@ spec:
     - name: http
       port: 8095
       targetPort: 8095
-  type: ClusterIP
+  type: LoadBalancer
