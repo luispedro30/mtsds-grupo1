@@ -6,11 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="e63fab2e-ccd9-4599-8c37-fc239380bb02" name="Changes" comment="fix: update authentication microservice with Postgres database and to connect with user microservice">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Shipping/src/main/java/ecommerce/Controllers/ShippingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Shipping/src/main/java/ecommerce/Controllers/ShippingController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Shipping/src/main/java/ecommerce/Exceptions/ItemDoesNotExistException.java" beforeDir="false" afterPath="$PROJECT_DIR$/Shipping/src/main/java/ecommerce/Exceptions/ItemDoesNotExistException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/src/main/java/ecommerce/Controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/users/src/main/java/ecommerce/Controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/src/main/java/ecommerce/Repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/users/src/main/java/ecommerce/Repository/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/src/main/java/ecommerce/Service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/users/src/main/java/ecommerce/Service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Products/src/main/java/ecommerce/Enums/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/Products/src/main/java/ecommerce/Enums/Category.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Products/src/test/java/ecommerce/Controllers/ProductsControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Products/src/test/java/ecommerce/Controllers/ProductsControllerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,8 +21,8 @@
         <option value="AnnotationType" />
         <option value="Enum" />
         <option value="editable-svg" />
-        <option value="Class" />
         <option value="UML Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>

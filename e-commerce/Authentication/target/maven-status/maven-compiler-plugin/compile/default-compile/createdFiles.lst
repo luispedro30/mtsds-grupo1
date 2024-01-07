@@ -1,6 +1,10 @@
+ecommerce\Infra\RestExceptionHandler.class
+ecommerce\Exceptions\LoginException.class
 ecommerce\Models\User.class
 ecommerce\Repository\UserRepository.class
+ecommerce\Controllers\AuthenticationController$ExternalServiceException.class
 ecommerce\Controllers\AuthenticationController.class
+ecommerce\Exceptions\AlreadyExistingException.class
 ecommerce\DTO\RegisterDTO.class
 ecommerce\Enums\Role.class
 ecommerce\DTO\LoginResponseDTO.class

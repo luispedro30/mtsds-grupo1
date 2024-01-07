@@ -1,3 +1,4 @@
+ecommerce\Infra\RestExceptionHandler.class
 ecommerce\Messages\OrderConcludedListener.class
 ecommerce\Listeners\OrderConfirmation.class
 ecommerce\Listeners\ShippingConfirmation.class
@@ -17,6 +18,7 @@ ecommerce\Models\Payment.class
 ecommerce\Exceptions\ItemDoesNotExistException.class
 ecommerce\Repository\PaymentRepository.class
 ecommerce\Dto\WalletDto.class
+ecommerce\Exceptions\AlreadyExistingException.class
 ecommerce\Messages\PaymentConfirmationMessage.class
 ecommerce\Services\PaymentService.class
 ecommerce\Listeners\WalletConfirmation.class

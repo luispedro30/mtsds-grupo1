@@ -1,5 +1,6 @@
 D:\mtsds-grupo1-github\mtsds-grupo1\e-commerce\Wallet\src\main\java\ecommerce\Listeners\UserRegistrationListener.java
 D:\mtsds-grupo1-github\mtsds-grupo1\e-commerce\Wallet\src\main\java\ecommerce\Models\Wallet.java
+D:\mtsds-grupo1-github\mtsds-grupo1\e-commerce\Wallet\src\main\java\ecommerce\Exceptions\WalletNotFoundException.java
 D:\mtsds-grupo1-github\mtsds-grupo1\e-commerce\Wallet\src\main\java\ecommerce\Listeners\PaymentConfirmationListener.java
 D:\mtsds-grupo1-github\mtsds-grupo1\e-commerce\Wallet\src\main\java\ecommerce\Messages\WalletConcludedListener.java
 D:\mtsds-grupo1-github\mtsds-grupo1\e-commerce\Wallet\src\main\java\ecommerce\Messages\UserRegistrationMessage.java
@@ -8,6 +9,8 @@ D:\mtsds-grupo1-github\mtsds-grupo1\e-commerce\Wallet\src\main\java\ecommerce\Me
 D:\mtsds-grupo1-github\mtsds-grupo1\e-commerce\Wallet\src\main\java\ecommerce\Controllers\WalletController.java
 D:\mtsds-grupo1-github\mtsds-grupo1\e-commerce\Wallet\src\main\java\ecommerce\Services\WalletService.java
 D:\mtsds-grupo1-github\mtsds-grupo1\e-commerce\Wallet\src\main\java\ecommerce\Config\MQConfig.java
+D:\mtsds-grupo1-github\mtsds-grupo1\e-commerce\Wallet\src\main\java\ecommerce\Infra\RestExceptionHandler.java
+D:\mtsds-grupo1-github\mtsds-grupo1\e-commerce\Wallet\src\main\java\ecommerce\Exceptions\WalletValueException.java
 D:\mtsds-grupo1-github\mtsds-grupo1\e-commerce\Wallet\src\main\java\ecommerce\wallet.java
 D:\mtsds-grupo1-github\mtsds-grupo1\e-commerce\Wallet\src\main\java\ecommerce\Exceptions\AlreadyExistingException.java
 D:\mtsds-grupo1-github\mtsds-grupo1\e-commerce\Wallet\src\main\java\ecommerce\Repository\WalletRepository.java

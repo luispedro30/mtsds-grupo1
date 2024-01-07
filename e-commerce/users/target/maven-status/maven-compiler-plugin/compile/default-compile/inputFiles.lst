@@ -1,12 +1,15 @@
+D:\mtsds-grupo1-github\mtsds-grupo1\e-commerce\users\src\main\java\ecommerce\Controller\UserController.java
+D:\mtsds-grupo1-github\mtsds-grupo1\e-commerce\users\src\main\java\ecommerce\Exceptions\AlreadyExistingException.java
 D:\mtsds-grupo1-github\mtsds-grupo1\e-commerce\users\src\main\java\ecommerce\Dto\WalletDto.java
+D:\mtsds-grupo1-github\mtsds-grupo1\e-commerce\users\src\main\java\ecommerce\Exceptions\ItemDoesNotExistException.java
+D:\mtsds-grupo1-github\mtsds-grupo1\e-commerce\users\src\main\java\ecommerce\Exceptions\NoUsersFoundException.java
 D:\mtsds-grupo1-github\mtsds-grupo1\e-commerce\users\src\main\java\ecommerce\Controller\RegisterController.java
 D:\mtsds-grupo1-github\mtsds-grupo1\e-commerce\users\src\main\java\ecommerce\Messages\User2Email.java
+D:\mtsds-grupo1-github\mtsds-grupo1\e-commerce\users\src\main\java\ecommerce\Exceptions\CustomInternalServerException.java
 D:\mtsds-grupo1-github\mtsds-grupo1\e-commerce\users\src\main\java\ecommerce\Config\MQConfig.java
 D:\mtsds-grupo1-github\mtsds-grupo1\e-commerce\users\src\main\java\ecommerce\Enums\Role.java
-D:\mtsds-grupo1-github\mtsds-grupo1\e-commerce\users\src\main\java\ecommerce\Controller\UserController.java
 D:\mtsds-grupo1-github\mtsds-grupo1\e-commerce\users\src\main\java\ecommerce\Messages\WalletRegistrationMessage.java
 D:\mtsds-grupo1-github\mtsds-grupo1\e-commerce\users\src\main\java\ecommerce\Service\UserService.java
-D:\mtsds-grupo1-github\mtsds-grupo1\e-commerce\users\src\main\java\ecommerce\Exceptions\AlreadyExistingException.java
 D:\mtsds-grupo1-github\mtsds-grupo1\e-commerce\users\src\main\java\ecommerce\Models\User.java
 D:\mtsds-grupo1-github\mtsds-grupo1\e-commerce\users\src\main\java\ecommerce\Repository\UserRepository.java
 D:\mtsds-grupo1-github\mtsds-grupo1\e-commerce\users\src\main\java\ecommerce\Users.java

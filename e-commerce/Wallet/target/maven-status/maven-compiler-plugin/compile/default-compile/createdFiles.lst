@@ -1,3 +1,4 @@
+ecommerce\Infra\RestExceptionHandler.class
 ecommerce\Controllers\WalletController.class
 ecommerce\Services\WalletService.class
 ecommerce\Config\MQConfig.class
@@ -9,7 +10,9 @@ ecommerce\Messages\UserRegistrationMessage.class
 ecommerce\wallet.class
 ecommerce\Dto\UserDto.class
 ecommerce\Listeners\PaymentConfirmationListener.class
+ecommerce\Exceptions\WalletValueException.class
 ecommerce\Messages\PaymentConfirmationMessage.class
 ecommerce\Listeners\UserRegistrationListener.class
+ecommerce\Exceptions\WalletNotFoundException.class
 ecommerce\Models\Wallet.class
 ecommerce\Messages\Wallet2Email.class

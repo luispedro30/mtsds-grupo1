@@ -11,6 +11,8 @@ ecommerce\Model\EmailModel.class
 ecommerce\Listeners\PaymentConfirmationListener.class
 ecommerce\Messages\User2Email.class
 ecommerce\email.class
+ecommerce\Controllers\EmailController$EmailNotFoundException.class
+ecommerce\Controllers\EmailController$InvalidEmailException.class
 ecommerce\Dtos\EmailDto.class
 ecommerce\Listeners\UserRegistrationListener.class
 ecommerce\Messages\Order2Email.class
