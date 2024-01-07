@@ -25,6 +25,11 @@ public class RestExceptionHandler extends ResponseEntityExceptionHandler {
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Products quantity cannot be lower than 0");
     }
 
+    @ExceptionHandler(ProductPriceException.class)
+    public ResponseEntity<String> roductPriceException(ProductPriceException exception){
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Products price cannot be lower than 0");
+    }
+
     @ExceptionHandler(CategoryNotFoundException.class)
     public ResponseEntity<String> categoryNotFoundExceptionHandler(CategoryNotFoundException exception){
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Products with request Category not found");
