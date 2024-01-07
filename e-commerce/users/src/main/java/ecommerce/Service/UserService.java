@@ -14,6 +14,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @Transactional
@@ -30,7 +31,8 @@ public class UserService {
     }
 
     public User getUserById(Integer id) throws Exception {
-        return userRepository.findById(id).orElseThrow(() -> new Exception("User não existe"));
+        Optional<User> userOptional = userRepository.findById(id);
+        return userOptional.orElse(null); // Return null if user is not found
     }
 
     public List<User> getAllUserByName(String userName) {
@@ -86,7 +88,7 @@ public class UserService {
     public User updateUser(User user) throws Exception {
         // Check if the user exists
         User userPast = userRepository.findById(user.getId())
-                .orElseThrow(() -> new Exception("User does not exist "));
+                .orElseThrow(null);
 
         String encryptedPassword = encryptPassword(user.getPassword());
 
@@ -105,7 +107,7 @@ public class UserService {
     public User updateUserByAdmin(User user) throws Exception {
         // Check if the user exists
         User userPast = userRepository.findById(user.getId())
-                .orElseThrow(() -> new Exception("User does not exist "));
+                .orElseThrow(null);
 
         String encryptedPassword = encryptPassword(user.getPassword());
 
@@ -128,8 +130,10 @@ public class UserService {
         userRepository.delete(user);
     }
 
-    public User getUserByLogin(String login) throws Exception {
-        return userRepository.findByLogin(login)
-                .orElseThrow(() -> new Exception("User with login " + login + " does not exist"));
+    public User getUserByLogin(String login) {
+        Optional<User> userOptional = userRepository.findByLogin(login);
+        return userOptional.orElse(null);
     }
+
+
 }
