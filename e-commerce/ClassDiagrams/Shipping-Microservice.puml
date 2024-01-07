@@ -1,0 +1,74 @@
+@startuml
+package ecommerce.Controllers {
+    class ShippingController {
+        - shippingService: ShippingService
+        - restExceptionHandler: RestExceptionHandler
+        + marker: Marker
+        + logger: Logger
+        + landing(): ResponseEntity<String>
+        + getAll(): ResponseEntity<List<Shipping>>
+        + getById(id: Integer): ResponseEntity<Shipping>
+        + getShippingByOrderUserId(orderId: Integer, userId: Integer): ResponseEntity<Shipping>
+        + add(shipping: Shipping, request: HttpServletRequest): ResponseEntity<?>
+        + updateShipping(id: Integer, supplierId: Integer, updatedShipping: Shipping, request: HttpServletRequest): ResponseEntity<Shipping>
+    }
+}
+
+package ecommerce.Services {
+    class ShippingService {
+        - ordersUrl: String
+        - usersUrl: String
+        - walletUrl: String
+        - paymentUrl: String
+        - shippingRepository: ShippingRepository
+        - template: RabbitTemplate
+        + getAllShipping(): List<Shipping>
+        + getShippingById(id: Integer): Shipping
+        + getShippingByOrderIdUserId(orderId: Integer, userId: Integer): Optional<Shipping>
+        + addShipping(shipping: Shipping, request: HttpServletRequest): Shipping
+        + getAdminSupplier(userId: Integer, request: HttpServletRequest, token: String): UserDto
+        + getUser(userId: Integer, request: HttpServletRequest, token: String): UserDto
+        + getOrder(orderId: Integer, request: HttpServletRequest, token: String): OrderDto
+        + getWallet(userId: Integer, request: HttpServletRequest, token: String): WalletDto
+        + doesNotExistAlready(userId: Integer, orderId: Integer, paymentId: Integer): boolean
+        + updateShipping(id: Integer, updatedShipping: Shipping, request: HttpServletRequest): Shipping
+        + extractToken(request: HttpServletRequest): String
+    }
+}
+
+package ecommerce.Repository {
+    class ShippingRepository {
+        + existsByUserIdAndOrderIdAndPaymentId(userId: Integer, orderId: Integer, paymentId: Integer): boolean
+        + findByOrderIdAndUserId(orderId: Integer, userId: Integer): Optional<Shipping>
+        + findAll(): List<Shipping>
+        + findById(id: Integer): Optional<Shipping>
+    }
+}
+
+package ecommerce.Models {
+    enum Status
+    class Shipping {
+        - shippingId: Integer
+        - paymentId: Integer
+        - orderId: Integer
+        - userId: Integer
+        - status: Status
+        - createdAt: Date
+        - updatedAt: Date
+    }
+}
+
+ShippingController --> ShippingService
+ShippingService --> ShippingRepository
+ShippingService --> "ecommerce.Dto.OrderDto"
+ShippingService --> "ecommerce.Dto.PaymentDto"
+ShippingService --> "ecommerce.Dto.UserDto"
+ShippingService --> "ecommerce.Dto.WalletDto"
+
+ShippingRepository --> Shipping
+
+
+Shipping --> Status
+Shipping --> Date
+
+@enduml

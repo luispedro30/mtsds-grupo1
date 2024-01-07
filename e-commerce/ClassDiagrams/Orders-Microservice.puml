@@ -1,0 +1,71 @@
+@startuml
+
+package "ecommerce.Controllers" {
+    class OrderController {
+        + landing()
+        + getAll()
+        + getOrderById()
+        + add()
+        + getOrdersByUserId()
+    }
+
+    OrderController --> OrderService
+    OrderController --> ItemDoesNotExistException
+    OrderController --> AlreadyExistingException
+
+    class ItemDoesNotExistException {
+        + ItemDoesNotExistException(message: String, method: String)
+    }
+
+    class AlreadyExistingException {
+        + AlreadyExistingException(message: String, method: String)
+    }
+
+    ItemDoesNotExistException --|> RuntimeException
+    AlreadyExistingException --|> RuntimeException
+}
+
+package "ecommerce.Services" {
+    class OrderService {
+        + getAll()
+        + getOrderById()
+        + findByUserId()
+        + getOrderWithProducts()
+        + addOrder()
+        + getUser()
+        + getProduct()
+    }
+}
+
+package "ecommerce.Repository" {
+    interface OrderRepository {
+        + findOrderWithProductsByOrderId(orderId: Integer): Order
+        + findAll(): List<Order>
+        + findById(id: Integer): Optional<Order>
+        + findByUserId(userId: Integer): List<Order>
+    }
+}
+
+package "ecommerce.Models" {
+    class Order {
+        - orderId: Integer
+        - userId: Integer
+        - products: List<Products>
+        - priceTotal: double
+        - createdAt: Date
+        - updatedAt: Date
+    }
+
+    class Products {
+        - id: Integer
+        - productId: Integer
+        - price: double
+        - order: Order
+    }
+
+    OrderRepository --> Order
+
+    Order --> Products
+}
+
+@enduml

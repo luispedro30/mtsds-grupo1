@@ -1,0 +1,57 @@
+@startuml
+
+package "ecommerce.Controllers" {
+    class WalletController {
+        + landing()
+        + getAllWallets()
+        + addWallet()
+        + addMoney()
+        + takeMoney()
+        + getWalletByUserId()
+        - logger: Logger
+        - marker: Marker
+    }
+}
+
+package "ecommerce.Services" {
+    class WalletService {
+        + getAllWallets()
+        + getWalletById()
+        + getWalletByUserId()
+        + addWallet()
+        + addMoneyWallet()
+        + takeMoneyWallet()
+        + getUser()
+        - extractToken()
+    }
+}
+
+package "ecommerce.Repository" {
+    interface WalletRepository {
+        + findByUserId(Integer userId)
+        + findAll(): List<Wallet>
+        + findById(Integer id): Optional<Wallet>
+    }
+}
+
+package "ecommerce.Models" {
+    class Wallet {
+        - id: Integer
+        - userId: Integer
+        - value: float
+    }
+}
+
+package "ecommerce.Exceptions" {
+    class AlreadyExistingException
+    class WalletNotFoundException
+    class WalletValueException
+}
+
+WalletController --> WalletService
+WalletService --> WalletRepository
+WalletRepository --> Wallet
+WalletController --> AlreadyExistingException
+WalletController --> WalletNotFoundException
+WalletController --> WalletValueException
+@enduml

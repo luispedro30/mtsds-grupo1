@@ -2,6 +2,9 @@ package ecommerce.Controller;
 
 import ecommerce.Dto.WalletDto;
 import ecommerce.Exceptions.AlreadyExistingException;
+import ecommerce.Exceptions.CustomInternalServerException;
+import ecommerce.Exceptions.ItemDoesNotExistException;
+import ecommerce.Exceptions.NoUsersFoundException;
 import ecommerce.Models.User;
 import ecommerce.Service.UserService;
 import io.swagger.v3.oas.annotations.Operation;
@@ -50,16 +53,23 @@ public class UserController {
             @ApiResponse(responseCode = "404", description = "No users found")
     })
     @GetMapping(value = "/users")
-    public ResponseEntity<List<User>> getAllUsers(){
-        List<User> users =  userService.getAllUsers();
-        logger.info(marker,"getAllUsers() request received ... pending");
-        if(!users.isEmpty()) {
-            logger.info(marker,"getAllUsers() request received ... 200 Ok{}",users);
-            return ResponseEntity.status(HttpStatus.OK).body(users);
+    public ResponseEntity<List<User>> getAll() {
+        try {
+            List<User> users = userService.getAllUsers();
+            if (!users.isEmpty()) {
+                logger.info("getAll() request received ... 200 OK");
+                return new ResponseEntity<>(users, HttpStatus.OK);
+            } else {
+                logger.info("getAll() request received ... 404 Not Found");
+                throw new NoUsersFoundException("No Users found");
+            }
+        } catch (NoUsersFoundException ex) {
+            logger.warn("No Users found: {}", ex.getMessage());
+            throw ex;
+        } catch (Exception ex) {
+            logger.error("Exception occurred: {}", ex.getMessage());
+            throw new CustomInternalServerException("Internal server error occurred");
         }
-        logger.info(marker,"getAllUsers() request received ... 404 Not Found{}",users);
-        return new ResponseEntity<List<User>>(
-                HttpStatus.NOT_FOUND);
     }
 
     @Operation(summary = "Retrieve user by name")
@@ -68,18 +78,23 @@ public class UserController {
             @ApiResponse(responseCode = "404", description = "No users found by name")
     })
     @GetMapping (value = "/users", params = "name")
-    public ResponseEntity<List<User>> getUserByName(@RequestParam("name") String userName){
-        List<User> users = userService.getAllUserByName(userName);
-        logger.info(marker,"getUserByName() request received ... pending");
-        if(users != null) {
-            logger.info(marker,"getUserByName() request received ... 200 Ok{}",users);
-            return new ResponseEntity<List<User>>(
-                    users,
-                    HttpStatus.OK);
+    public ResponseEntity<List<User>> getUserByName(@RequestParam("name") String userName) {
+        try {
+            List<User> users = userService.getAllUserByName(userName);
+            logger.info(marker, "getUserByName() request received ... pending");
+            if (!users.isEmpty()) {
+                logger.info(marker, "getUserByName() request received ... 200 OK {}", users);
+                return new ResponseEntity<>(users, HttpStatus.OK);
+            }
+            logger.info(marker, "getUserByName() request received ... 404 Not Found");
+            throw new NoUsersFoundException("No users found with name: " + userName);
+        } catch (NoUsersFoundException ex) {
+            logger.warn("No users found with name: {}", userName);
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        } catch (Exception e) {
+            logger.error("Error fetching users by name {}: {}", userName, e.getMessage());
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
-        logger.info(marker,"getUserByName() request received ... 404 Not Found{}");
-        return new ResponseEntity<List<User>>(
-                HttpStatus.NOT_FOUND);
     }
 
     @Operation(summary = "Retrieve user by ID")
@@ -90,17 +105,23 @@ public class UserController {
     @GetMapping (value = "/users/{id}")
     public ResponseEntity<User> getUserById(@PathVariable("id") Integer id) throws Exception {
 
-        User user = userService.getUserById(id);
-        logger.info(marker,"getUserById() request received ... pending");
-        if(user != null) {
-            logger.info(marker,"getUserById() request received ... 200 Ok{}",user);
-            return new ResponseEntity<User>(
-                    user,
-                    HttpStatus.OK);
+        try {
+            User user = userService.getUserById(id);
+            logger.info("getUserById() request received ... pending");
+            if (user != null) {
+                logger.info("getUserById() request received ... 200 {}", user);
+                return new ResponseEntity<>(user, HttpStatus.OK);
+            } else {
+                logger.info("getUserById() request received ... 404 Not Found");
+                throw new ItemDoesNotExistException(String.valueOf(id), "getUserById()");
+            }
+        } catch (ItemDoesNotExistException ex) {
+            logger.error("Item does not exist: {}", ex.getMessage());
+            throw ex;
+        } catch (Exception ex) {
+            logger.error("Exception occurred: {}", ex.getMessage());
+            throw new ItemDoesNotExistException(String.valueOf(id), "getUserById()");
         }
-        logger.info(marker,"getUserById() request received ... 404 Not Found{}");
-        return new ResponseEntity<User>(
-                HttpStatus.NOT_FOUND);
     }
 
 
@@ -112,38 +133,44 @@ public class UserController {
     })
 
     @PostMapping (value = "/users")
-    public ResponseEntity<User> addUser(@RequestBody User user, HttpServletRequest request) throws Exception {
-        logger.info(marker,"addUser() request received ... pending");
-        if(user != null)
-            try {
-                String encryptedPassword = new BCryptPasswordEncoder().encode(user.getPassword());
+    public ResponseEntity<User> addUser(@RequestBody User user, HttpServletRequest request) {
+        try {
+            logger.info(marker, "addUser() request received ... pending");
 
-                /*User newUser = new User(
-                        user.getName(),
-                        encryptedPassword,
-                        user.getActive(),
-                        user.getRole());*/
-
-                userService.saveUser(user);
-
-                WalletDto walletDto = new WalletDto();
-                walletDto.setUserId(user.getId());
-                walletDto.setValue(0);
-
-                logger.info(marker,"addUser() request received ... 201 Created{}",user);
-                return new ResponseEntity<User>(
-                        user,
-                        HttpStatus.CREATED);
-            } catch (AlreadyExistingException e){
-                logger.error(marker,e.getMessage());
-                return new ResponseEntity<User>(HttpStatus.INTERNAL_SERVER_ERROR);
-            } catch (Exception e) {
-                e.printStackTrace();
-                logger.error(marker,e.getMessage());
-                return new ResponseEntity<User>(HttpStatus.INTERNAL_SERVER_ERROR);
+            if (user == null) {
+                logger.info(marker, "addUser() request received ... Bad Request");
+                return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
             }
-        logger.info(marker,"addUser() request received ... Bad Request{}");
-        return new ResponseEntity<User>(HttpStatus.BAD_REQUEST);
+
+            String login = user.getLogin();
+            Integer userId = user.getId();
+
+            if (userService.getUserByLogin(login) != null) {
+                throw new AlreadyExistingException(login, "getUserByLogin()");
+            }
+
+            if (userId != null && userService.getUserById(userId) != null) {
+                throw new AlreadyExistingException(userId.toString(), "getUserById");
+            }
+
+            String encryptedPassword = new BCryptPasswordEncoder().encode(user.getPassword());
+            user.setPassword(encryptedPassword);
+            userService.saveUser(user);
+
+            WalletDto walletDto = new WalletDto();
+            walletDto.setUserId(user.getId());
+            walletDto.setValue(0);
+
+            logger.info(marker, "addUser() request received ... 201 Created {}", user);
+            return new ResponseEntity<>(user, HttpStatus.CREATED);
+
+        } catch (AlreadyExistingException e) {
+            logger.error(marker, e.getMessage());
+            return new ResponseEntity<>(HttpStatus.CONFLICT);
+        } catch (Exception e) {
+            logger.error(marker, "Error occurred while adding user: {}", e.getMessage());
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
     }
 
     @Operation(summary = "Update user by ID")
@@ -156,8 +183,12 @@ public class UserController {
         try {
             User updatedUser = userService.updateUser(user);
             return new ResponseEntity<>(updatedUser, HttpStatus.OK);
-        } catch (Exception e) {
+        } catch (NoUsersFoundException e) {
+            logger.error("User not found: " + e.getMessage());
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        } catch (Exception e) {
+            logger.error("An unexpected error occurred: " + e.getMessage());
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 
@@ -171,8 +202,12 @@ public class UserController {
         try {
             User updatedUser = userService.updateUserByAdmin(user);
             return new ResponseEntity<>(updatedUser, HttpStatus.OK);
-        } catch (Exception e) {
+        } catch (NoUsersFoundException e) {
+            logger.error("User not found: " + e.getMessage());
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        } catch (Exception e) {
+            logger.error("An unexpected error occurred: " + e.getMessage());
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 
@@ -183,14 +218,20 @@ public class UserController {
             @ApiResponse(responseCode = "404", description = "User not found")
     })
     @DeleteMapping("/users/{id}")
-    public ResponseEntity<Void> deleteUser(@PathVariable("id") Integer id,
-                                           HttpServletRequest request) {
+    public ResponseEntity<?> deleteUser(@PathVariable("id") Integer id,
+                                           HttpServletRequest request) throws ItemDoesNotExistException {
         try {
             userService.deleteUser(id);
+            logger.info("User with ID {} deleted successfully.", id);
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        } catch (ItemDoesNotExistException ex) {
+            logger.warn("User with ID {} not found.", id);
+            throw new ItemDoesNotExistException(id.toString(), "deleteUser()");
         } catch (Exception e) {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            logger.error("Error deleting user with ID {}: {}", id, e.getMessage());
+            throw new CustomInternalServerException("Error deleting user");
         }
     }
+
 
 }

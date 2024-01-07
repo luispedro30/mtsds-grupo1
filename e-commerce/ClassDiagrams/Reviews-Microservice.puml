@@ -1,0 +1,59 @@
+@startuml
+
+package "ecommerce" {
+    package "Controllers" {
+        class ReviewController {
+            + getAll()
+            + getById(id: Integer)
+            + add(review: Review, request: HttpServletRequest)
+            + updateByIdForUser(id: Integer, userId: Integer, updatedReview: Review, request: HttpServletRequest)
+        }
+    }
+
+    package "Services" {
+        class ReviewService {
+            + getAllReviews()
+            + getReviewById(id: Integer)
+            + addReview(review: Review, request: HttpServletRequest)
+            + updateReviewByIdForUser(id: Integer, userId: Integer, updatedReview: Review, request: HttpServletRequest)
+        }
+    }
+
+    package "Repository" {
+        interface ReviewRepository {
+            + existsByUserIdAndProductIdAndOrderId(userId: Integer, productId: Integer, orderId: Integer): boolean
+            + findAll(): List<Review>
+            + findById(id: Integer): Optional<Review>
+        }
+    }
+
+    package "Models" {
+        class Review {
+            + getId(): Integer
+            + getUserId(): Integer
+            + getProductId(): Integer
+            + getOrderId(): Integer
+            + getRating(): int
+            + getReviewText(): String
+            + getCreatedAt(): Date
+            + getUpdatedAt(): Date
+        }
+    }
+
+    package "Exceptions" {
+        class AlreadyExistingException
+        class CustomInternalServerException
+        class ItemDoesNotExistException
+        class NoReviewsFoundException
+    }
+
+    ReviewController --> ReviewService
+    ReviewService --> ReviewRepository
+    ReviewService --> Models.Review
+    ReviewController --> Exceptions.AlreadyExistingException
+    ReviewController --> Exceptions.CustomInternalServerException
+    ReviewController --> Exceptions.ItemDoesNotExistException
+    ReviewController --> Exceptions.NoReviewsFoundException
+}
+
+@enduml
