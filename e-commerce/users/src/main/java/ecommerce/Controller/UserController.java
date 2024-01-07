@@ -137,7 +137,7 @@ public class UserController {
         try {
             logger.info(marker, "addUser() request received ... pending");
 
-            if (user == null) {
+            if (user == null || user.getLogin() == null) {
                 logger.info(marker, "addUser() request received ... Bad Request");
                 return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
             }
@@ -172,6 +172,7 @@ public class UserController {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
+
 
     @Operation(summary = "Update user by ID")
     @ApiResponses(value = {
