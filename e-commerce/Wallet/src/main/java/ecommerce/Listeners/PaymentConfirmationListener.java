@@ -1,6 +1,7 @@
 package ecommerce.Listeners;
 
 import ecommerce.Config.MQConfig;
+import ecommerce.Dto.UserDto;
 import ecommerce.Messages.PaymentConfirmationMessage;
 import ecommerce.Messages.WalletConcludedListener;
 import ecommerce.Models.Wallet;
@@ -17,6 +18,9 @@ public class PaymentConfirmationListener {
 
     @Autowired
     WalletRepository walletRepository;
+
+    @Autowired
+    WalletService walletService;
 
     @Autowired
     private RabbitTemplate template;

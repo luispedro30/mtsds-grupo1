@@ -6,8 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="e63fab2e-ccd9-4599-8c37-fc239380bb02" name="Changes" comment="fix: update authentication microservice with Postgres database and to connect with user microservice">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/src/main/java/ecommerce/Controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/users/src/main/java/ecommerce/Controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/src/main/java/ecommerce/Service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/users/src/main/java/ecommerce/Service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Wallet/src/main/java/ecommerce/Listeners/PaymentConfirmationListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/Wallet/src/main/java/ecommerce/Listeners/PaymentConfirmationListener.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -418,6 +417,16 @@
           <url>file://$PROJECT_DIR$/Reviews/src/main/java/ecommerce/Services/ReviewService.java</url>
           <line>61</line>
           <option name="timeStamp" value="143" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Wallet/src/main/java/ecommerce/Listeners/PaymentConfirmationListener.java</url>
+          <line>36</line>
+          <option name="timeStamp" value="149" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Wallet/src/main/java/ecommerce/Listeners/PaymentConfirmationListener.java</url>
+          <line>38</line>
+          <option name="timeStamp" value="150" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
