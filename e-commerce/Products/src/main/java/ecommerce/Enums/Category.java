@@ -104,5 +104,14 @@ public enum Category {
     public String getDescription() {
         return description;
     }
+
+    public static boolean isValidCategory(String category) {
+        for (Category enumValue : Category.values()) {
+            if (enumValue.name().equalsIgnoreCase(category)) {
+                return true;
+            }
+        }
+        return false;
+    }
 }
 

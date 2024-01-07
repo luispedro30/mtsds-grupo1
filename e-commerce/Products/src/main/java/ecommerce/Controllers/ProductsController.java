@@ -1,5 +1,6 @@
 package ecommerce.Controllers;
 
+import ecommerce.Enums.Category;
 import ecommerce.Exceptions.*;
 import ecommerce.Models.Product;
 import ecommerce.Services.ProductsService;
@@ -16,6 +17,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Arrays;
 import java.util.List;
 
 @RestController
@@ -48,33 +50,74 @@ public class ProductsController {
             @ApiResponse(responseCode = "500", description = "Internal server error")
     })
     @PostMapping(value = "/products")
-    public ResponseEntity<Product> addProduct(@RequestBody Product product,
+    public ResponseEntity<?> addProduct(@RequestBody Product product,
                                               @RequestParam("id") Integer idUser,
-                                              HttpServletRequest request) throws AlreadyExistingException {
+                                              HttpServletRequest request) {
         logger.info(marker, "addProduct() request received ... pending");
         try {
-            if (product == null) {
-                logger.info(marker, "addProduct() request received ... Bad Request{}");
-                return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+            if (product == null || product.getCategory() == null) {
+                logger.info(marker, "addProduct() request received ... Bad Request");
+                return new ResponseEntity<>("Invalid request: Product or Category missing", HttpStatus.BAD_REQUEST);
             }
 
-            // Check if the product ID already exists
             if (product.getId() != null && productService.getProductById(product.getId()) != null) {
                 logger.info(marker, "addProduct() request received ... Product with ID already exists");
                 throw new AlreadyExistingException(String.valueOf(product.getId()), "addProduct()");
             }
 
+            Category category = product.getCategory();
+            boolean isValidCategory = false;
+            for (Category enumCategory : Category.values()) {
+                if (enumCategory.name().equalsIgnoreCase(category.name())) {
+                    isValidCategory = true;
+                    break;
+                }
+            }
+
+            if (!isValidCategory) {
+                logger.info(marker, "addProduct() request received ... Category not found: {}", category);
+                throw new CategoryNotFoundException(category.toString(), "addProduct()");
+            }
+
+            if (product.getStockQuantity() < 0) {
+                logger.info(marker, "addProduct() request received ... Stock quantity cannot be negative");
+                throw new ProductQuantityException(String.valueOf(product.getId()), "addProduct()");
+            }
+
+            if (product.getPrice() < 0) {
+                logger.info(marker, "addProduct() request received ... Price cannot be negative");
+                throw new ProductPriceException(String.valueOf(product.getId()), "addProduct()");
+            }
+
             productService.addProduct(product, idUser, request);
-            logger.info(marker, "addProduct() request received ... 201 Created{}", product);
+            logger.info(marker, "addProduct() request received ... 201 Created: {}", product);
             return new ResponseEntity<>(product, HttpStatus.CREATED);
         } catch (AlreadyExistingException ex) {
-            throw ex;
+            logger.error("Product already exists: {}", ex.getMessage());
+            return new ResponseEntity<>("Product already exists", HttpStatus.CONFLICT);
+        } catch (CategoryNotFoundException ex) {
+            logger.error("Category not found: {}", ex.getMessage());
+            return new ResponseEntity<>("Category not found", HttpStatus.NOT_FOUND);
+        } catch (ProductQuantityException ex) {
+            logger.error("Invalid product quantity: {}", ex.getMessage());
+            return new ResponseEntity<>("Invalid product quantity", HttpStatus.BAD_REQUEST);
+        } catch (ProductPriceException ex) {
+            logger.error("Invalid product price: {}", ex.getMessage());
+            return new ResponseEntity<>("Invalid product price", HttpStatus.BAD_REQUEST);
         } catch (Exception ex) {
-            logger.error("Exception occurred: {}", ex.getMessage());
+            logger.error("Unexpected exception occurred: {}", ex.getMessage());
             ex.printStackTrace();
-            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+            return new ResponseEntity<>("Internal Server Error", HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
+
+
+
+
+
+
+
+
 
 
 
