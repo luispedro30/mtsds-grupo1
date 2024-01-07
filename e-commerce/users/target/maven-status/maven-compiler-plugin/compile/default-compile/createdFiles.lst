@@ -4,9 +4,12 @@ ecommerce\Users.class
 ecommerce\Config\MQConfig.class
 ecommerce\Messages\WalletRegistrationMessage.class
 ecommerce\Repository\UserRepository.class
+ecommerce\Exceptions\ItemDoesNotExistException.class
 ecommerce\Service\UserService.class
 ecommerce\Dto\WalletDto.class
 ecommerce\Exceptions\AlreadyExistingException.class
 ecommerce\Enums\Role.class
+ecommerce\Exceptions\NoUsersFoundException.class
 ecommerce\Controller\UserController.class
 ecommerce\Messages\User2Email.class
+ecommerce\Exceptions\CustomInternalServerException.class

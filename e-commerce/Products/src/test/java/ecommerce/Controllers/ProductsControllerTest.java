@@ -108,7 +108,7 @@ public class ProductsControllerTest {
         Product product1 = new Product(1,
                 "P001",
                 "Printer 001",
-                Category.PRINTERS,
+                Category.SHORTS_S,
                 942.4f,
                 5,
                 "");
@@ -136,7 +136,7 @@ public class ProductsControllerTest {
         Product product1 = new Product(3,
                 "P003",
                 "Printer 003",
-                Category.PRINTERS,
+                Category.SHORTS_S,
                 942.4f,
                 5,
                 "");
@@ -172,7 +172,7 @@ public class ProductsControllerTest {
         Product product1 = new Product(1,
                 "P001",
                 "Printer 001",
-                Category.PRINTERS,
+                Category.SHORTS_S,
                 942.4f,
                 5,
                 "");

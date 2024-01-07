@@ -1,3 +1,4 @@
+ecommerce\Infra\RestExceptionHandler.class
 ecommerce\Repository\ProductsRepository.class
 ecommerce\Messages\OrderConcludedListener.class
 ecommerce\Models\User.class
@@ -9,6 +10,7 @@ ecommerce\Exceptions\ItemDoesNotExistException.class
 ecommerce\Auditing\JpaAuditingConfiguration.class
 ecommerce\Repository\OrderRepository.class
 ecommerce\Controllers\OrderController.class
+ecommerce\Exceptions\AlreadyExistingException.class
 ecommerce\Orders.class
 ecommerce\Dto\UserDto.class
 ecommerce\Listeners\PaymentConfirmationListener.class

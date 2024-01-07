@@ -1,3 +1,4 @@
+ecommerce\Infra\RestExceptionHandler.class
 ecommerce\Repository\ReviewRepository.class
 ecommerce\Controllers\ReviewController.class
 ecommerce\Dto\ProductDto.class
@@ -6,7 +7,10 @@ ecommerce\Auditing\JpaAuditingConfiguration.class
 ecommerce\Dto\OrderDto.class
 ecommerce\Reviews.class
 ecommerce\Dto\ShippingDto.class
+ecommerce\Exceptions\AlreadyExistingException.class
 ecommerce\Enum\Status.class
 ecommerce\Dto\UserDto.class
+ecommerce\Exceptions\CustomInternalServerException.class
+ecommerce\Exceptions\NoReviewsFoundException.class
 ecommerce\Models\Review.class
 ecommerce\Services\ReviewService.class
