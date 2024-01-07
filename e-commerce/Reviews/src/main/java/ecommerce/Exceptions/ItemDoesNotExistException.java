@@ -11,6 +11,6 @@ public class ItemDoesNotExistException extends Exception{
 
     @Override
     public String getMessage(){
-        return String.format("Item %s already exists (exception thrown by %s", item, origin);
+        return String.format("Item %s does not exist (exception thrown by %s", item, origin);
     }
 }
