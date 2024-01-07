@@ -74,7 +74,7 @@
 			"response": []
 		},
 		{
-			"name": "GetAll",
+			"name": "GetAllProducts",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -122,7 +122,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{       \r\n    \"id\": 14,\r\n    \"name\":\"computer4\",\r\n    \"description\": \"Computer 004\",\r\n    \"category\": \"PRINTERS\",\r\n    \"price\": 932.4,\r\n    \"stockQuantity\": 1,\r\n    \"imageUrl\": \"https://digiplanet.pt/products/lenovo-thinkpad-x1-carbon-g7-i78th-gen-16gb-ram-256gb-ssd-14?variant=47026840797523&adassdadsadsdasadgclid=CjwKCAiA-P-rBhBEEiwAQEXhH9tSn4za7mSHvAWO1R2uY0kBH9_0FDB4uSIZV7ol1lPkeHYdNuyfqRoCDJ0QAvD_BwE\"\r\n}",
+					"raw": "{       \r\n    \"name\":\"Calças\",\r\n    \"description\": \"Azuis da Zara\",\r\n    \"category\": \"PANTS_28_30\",\r\n    \"price\": 30,\r\n    \"stockQuantity\": 10,\r\n    \"imageUrl\": \"\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -130,7 +130,7 @@
 					}
 				},
 				"url": {
-					"raw": "{{urlDevProducts}}/products?id=2045838758",
+					"raw": "{{urlDevProducts}}/products?id=1713820794",
 					"host": [
 						"{{urlDevProducts}}"
 					],
@@ -140,7 +140,7 @@
 					"query": [
 						{
 							"key": "id",
-							"value": "2045838758"
+							"value": "1713820794"
 						}
 					]
 				}
@@ -346,13 +346,13 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{urlDevUser}}/users/2045815968",
+					"raw": "{{urlDevUser}}/users/1695877815",
 					"host": [
 						"{{urlDevUser}}"
 					],
 					"path": [
 						"users",
-						"2045815968"
+						"1695877815"
 					]
 				}
 			},
@@ -571,7 +571,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"orderId\": 10,\r\n    \"userId\":  1602965626,\r\n    \"products\": [{\"productId\": 8},{\"productId\": 8}]\r\n}",
+					"raw": "{\r\n    \"userId\":  1713550767,\r\n    \"products\": [{\"productId\": 1},{\"productId\": 1}]\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -618,6 +618,34 @@
 			"response": []
 		},
 		{
+			"name": "GetReviewsById",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{tokenUser}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{urlDevReviews}}/reviews/102",
+					"host": [
+						"{{urlDevReviews}}"
+					],
+					"path": [
+						"reviews",
+						"102"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "AddReviews",
 			"request": {
 				"auth": {
@@ -634,7 +662,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"userId\":1463337485,\r\n    \"productId\":2,\r\n    \"orderId\":5,\r\n    \"rating\":10,\r\n    \"reviewText\": \"oi\"\r\n}",
+					"raw": "{\r\n    \"userId\":1713550767,\r\n    \"productId\":1,\r\n    \"orderId\":1,\r\n    \"rating\":10,\r\n    \"reviewText\": \"oi\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -648,6 +676,45 @@
 					],
 					"path": [
 						"reviews"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateReview",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{tokenUser}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"id\": 1,\r\n        \"userId\": 1713550767,\r\n        \"productId\": 1,\r\n        \"orderId\": 1,\r\n        \"rating\": 7,\r\n        \"reviewText\": \"oi\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{urlDevReviews}}/reviews/1/user/1713550767",
+					"host": [
+						"{{urlDevReviews}}"
+					],
+					"path": [
+						"reviews",
+						"1",
+						"user",
+						"1713550767"
 					]
 				}
 			},
@@ -741,19 +808,19 @@
 					}
 				},
 				"url": {
-					"raw": "{{urlDevWallet}}/wallet/takeMoney/766681?money=5009",
+					"raw": "{{urlDevWallet}}/wallet/takeMoney/802663?money=5000",
 					"host": [
 						"{{urlDevWallet}}"
 					],
 					"path": [
 						"wallet",
 						"takeMoney",
-						"766681"
+						"802663"
 					],
 					"query": [
 						{
 							"key": "money",
-							"value": "5009"
+							"value": "5000"
 						}
 					]
 				}
@@ -785,19 +852,19 @@
 					}
 				},
 				"url": {
-					"raw": "{{urlDevWallet}}/wallet/addMoney/766682?money=10000",
+					"raw": "{{urlDevWallet}}/wallet/addMoney/6?money=1000000",
 					"host": [
 						"{{urlDevWallet}}"
 					],
 					"path": [
 						"wallet",
 						"addMoney",
-						"766682"
+						"6"
 					],
 					"query": [
 						{
 							"key": "money",
-							"value": "10000"
+							"value": "1000000"
 						}
 					]
 				}
@@ -890,7 +957,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"paymentId\":9,\r\n    \"orderId\":9,\r\n    \"userId\": 1602965626\r\n}",
+					"raw": "{\r\n    \"orderId\":1,\r\n    \"userId\": 1713550767\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -910,7 +977,7 @@
 			"response": []
 		},
 		{
-			"name": "GetPayments Copy",
+			"name": "GetPayments",
 			"request": {
 				"auth": {
 					"type": "bearer",
@@ -1063,7 +1130,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"shippingId\": 9,\r\n    \"paymentId\": 5,\r\n    \"orderId\": 5,\r\n    \"userId\": 1463337485,\r\n    \"status\":\"DELIVERED\"\r\n}",
+					"raw": "{\r\n    \"shippingId\": 3,\r\n    \"paymentId\": 1,\r\n    \"orderId\": 1,\r\n    \"userId\": 1713820794,\r\n    \"status\":\"DELIVERED\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -1071,14 +1138,14 @@
 					}
 				},
 				"url": {
-					"raw": "{{urlDevShipping}}/shipping/9/2045838758",
+					"raw": "{{urlDevShipping}}/shipping/3/1713820794",
 					"host": [
 						"{{urlDevShipping}}"
 					],
 					"path": [
 						"shipping",
-						"9",
-						"2045838758"
+						"3",
+						"1713820794"
 					]
 				}
 			},
@@ -1136,7 +1203,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n        \"login\": \"carlos13\",\r\n        \"password\": \"oi\"\r\n}",
+					"raw": "{\r\n        \"login\": \"carlos21\",\r\n        \"password\": \"oi\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -1166,7 +1233,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"name\": \"Carlos\",\r\n    \"login\": \"carlos13\",\r\n    \"email\": \"luis.pedro_1998@hotmail.com\",\r\n    \"password\": \"oi\",\r\n    \"active\": 1,\r\n    \"role\": \"USER\"\r\n}",
+					"raw": "{\r\n    \"name\": \"Carlos\",\r\n    \"login\": \"carlos22\",\r\n    \"email\": \"luis.pedro_1998@hotmail.com\",\r\n    \"password\": \"oi\",\r\n    \"active\": 1,\r\n    \"role\": \"SUPPLIER\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
