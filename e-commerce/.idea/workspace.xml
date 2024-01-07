@@ -6,7 +6,30 @@
   <component name="ChangeListManager">
     <list default="true" id="e63fab2e-ccd9-4599-8c37-fc239380bb02" name="Changes" comment="fix: update authentication microservice with Postgres database and to connect with user microservice">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Wallet/src/main/java/ecommerce/Listeners/PaymentConfirmationListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/Wallet/src/main/java/ecommerce/Listeners/PaymentConfirmationListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Authentication/target/Authentication.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Authentication/target/Authentication.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Authentication/target/Authentication.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/Authentication/target/Authentication.jar.original" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Kubernetes/deployment-authentication.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/Kubernetes/deployment-authentication.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Kubernetes/deployment-gateway.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/Kubernetes/deployment-gateway.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Kubernetes/deployment-orders.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/Kubernetes/deployment-orders.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Kubernetes/deployment-payment.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/Kubernetes/deployment-payment.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Kubernetes/deployment-products.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/Kubernetes/deployment-products.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Payment/target/Payment.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Payment/target/Payment.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Payment/target/Payment.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/Payment/target/Payment.jar.original" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Products/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Products/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Products/target/products.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Products/target/products.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Products/target/products.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/Products/target/products.jar.original" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Reviews/src/main/java/ecommerce/Controllers/ReviewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Reviews/src/main/java/ecommerce/Controllers/ReviewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Reviews/target/Reviews.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Reviews/target/Reviews.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Reviews/target/Reviews.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/Reviews/target/Reviews.jar.original" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shipping/target/Shipping.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Shipping/target/Shipping.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shipping/target/Shipping.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/Shipping/target/Shipping.jar.original" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Wallet/target/Wallet.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Wallet/target/Wallet.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Wallet/target/Wallet.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/Wallet/target/Wallet.jar.original" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/target/api-gateway.jar" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/target/api-gateway.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/target/api-gateway.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/target/api-gateway.jar.original" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/users/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/target/users.jar" beforeDir="false" afterPath="$PROJECT_DIR$/users/target/users.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/target/users.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/users/target/users.jar.original" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,7 +126,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Application.wallet-local">
+  <component name="RunManager" selected="Application.shipping-local">
     <configuration name="Authentication-local" type="Application" factoryName="Application" folderName="e-commerce" temporary="true">
       <option name="MAIN_CLASS_NAME" value="ecommerce.Authentication" />
       <module name="Authentication" />
@@ -121,20 +144,6 @@
     <configuration name="EurekaServer-local" type="Application" factoryName="Application" folderName="e-commerce">
       <option name="MAIN_CLASS_NAME" value="ecommerce.EurekaServer" />
       <module name="eureka-server" />
-      <option name="VM_PARAMETERS" value="-Dspring.profiles.active=dev" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ecommerce.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Orders-local" type="Application" factoryName="Application" folderName="e-commerce" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="ecommerce.Orders" />
-      <module name="Orders" />
       <option name="VM_PARAMETERS" value="-Dspring.profiles.active=dev" />
       <extension name="coverage">
         <pattern>
@@ -202,6 +211,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="shipping-local" type="Application" factoryName="Application" folderName="e-commerce" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="ecommerce.shipping" />
+      <module name="Shipping" />
+      <option name="VM_PARAMETERS" value="-Dspring.profiles.active=dev" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ecommerce.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="wallet-local" type="Application" factoryName="Application" folderName="e-commerce" temporary="true">
       <option name="MAIN_CLASS_NAME" value="ecommerce.wallet" />
       <module name="Wallet" />
@@ -239,18 +262,18 @@
       <item itemvalue="Application.Users-local" />
       <item itemvalue="Application.Products-local" />
       <item itemvalue="Application.Reviews-local" />
-      <item itemvalue="Application.Orders-local" />
       <item itemvalue="Application.Authentication-local" />
+      <item itemvalue="Application.shipping-local" />
       <item itemvalue="Application.wallet-local" />
       <item itemvalue="JUnit.ProductsControllerTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.shipping-local" />
         <item itemvalue="Application.wallet-local" />
         <item itemvalue="Application.Authentication-local" />
         <item itemvalue="Application.Products-local" />
         <item itemvalue="Application.Reviews-local" />
-        <item itemvalue="Application.Orders-local" />
       </list>
     </recent_temporary>
   </component>

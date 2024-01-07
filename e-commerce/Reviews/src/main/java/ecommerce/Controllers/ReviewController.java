@@ -105,6 +105,12 @@ public class ReviewController {
                 return ResponseEntity.status(HttpStatus.CONFLICT).body("Review with ID " + reviewId + " already exists");
             }
 
+            int ratingValue = review.getRating();
+            if (ratingValue < 0 || ratingValue > 10) {
+                logger.error("Invalid rating value: {}", ratingValue);
+                return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Rating value must be between 0 and 10");
+            }
+
             Review newReview = reviewService.addReview(review, request);
             newReview.setId(review.getId());
             logger.info("New review added with ID {}", review.getId());
@@ -129,7 +135,7 @@ public class ReviewController {
             @ApiResponse(responseCode = "403", description = "Forbidden")
     })
     @PutMapping("/{id}/user/{userId}")
-    public ResponseEntity<Review> updateByIdForUser(@PathVariable Integer id,
+    public ResponseEntity<?> updateByIdForUser(@PathVariable Integer id,
                                                     @PathVariable Integer userId,
                                                     @RequestBody Review updatedReview,
                                                     HttpServletRequest request) throws ItemDoesNotExistException {
@@ -138,6 +144,12 @@ public class ReviewController {
             if (existingReview == null || !existingReview.getUserId().equals(userId)) {
                 logger.info("Review not found with ID {} or User ID {} doesn't match the review's User ID", id, userId);
                 throw new ItemDoesNotExistException(String.valueOf(id), "updateByIdForUser()");
+            }
+
+            int ratingValue = updatedReview.getRating();
+            if (ratingValue < 0 || ratingValue > 10) {
+                logger.error("Invalid rating value: {}", ratingValue);
+                return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Rating value must be between 0 and 10");
             }
 
             Review updated = reviewService.updateReviewByIdForUser(id, userId, updatedReview, request);

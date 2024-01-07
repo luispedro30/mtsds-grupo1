@@ -13,6 +13,7 @@ D:\mtsds-grupo1-github\mtsds-grupo1\e-commerce\Products\src\main\java\ecommerce\
 D:\mtsds-grupo1-github\mtsds-grupo1\e-commerce\Products\src\main\java\ecommerce\Auditing\JpaAuditingConfiguration.java
 D:\mtsds-grupo1-github\mtsds-grupo1\e-commerce\Products\src\main\java\ecommerce\Messages\OrderConcludedListener.java
 D:\mtsds-grupo1-github\mtsds-grupo1\e-commerce\Products\src\main\java\ecommerce\Products.java
+D:\mtsds-grupo1-github\mtsds-grupo1\e-commerce\Products\src\main\java\ecommerce\Exceptions\ProductPriceException.java
 D:\mtsds-grupo1-github\mtsds-grupo1\e-commerce\Products\src\main\java\ecommerce\Models\Product.java
 D:\mtsds-grupo1-github\mtsds-grupo1\e-commerce\Products\src\main\java\ecommerce\Enums\Category.java
 D:\mtsds-grupo1-github\mtsds-grupo1\e-commerce\Products\src\main\java\ecommerce\Services\ProductsService.java

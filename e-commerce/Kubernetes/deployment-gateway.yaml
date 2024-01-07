@@ -35,4 +35,5 @@ spec:
     - protocol: TCP
       port: 8090
       targetPort: 8090
-  type: LoadBalancer
+      nodePort: 30100
+  type: NodePort

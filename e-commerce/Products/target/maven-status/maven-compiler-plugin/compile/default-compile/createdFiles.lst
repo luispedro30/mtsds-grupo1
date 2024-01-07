@@ -7,6 +7,7 @@ ecommerce\Messages\ProductsConfirmationMessage.class
 ecommerce\Config\MQConfig.class
 ecommerce\Exceptions\ProductNotFoundException.class
 ecommerce\Auditing\JpaAuditingConfiguration.class
+ecommerce\Exceptions\ProductPriceException.class
 ecommerce\Exceptions\AlreadyExistingException.class
 ecommerce\Dto\UserDto.class
 ecommerce\Exceptions\CategoryNotFoundException.class

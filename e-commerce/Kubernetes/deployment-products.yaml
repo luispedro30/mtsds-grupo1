@@ -4,7 +4,7 @@ kind: Deployment
 metadata:
   name: products-service
 spec:
-  replicas: 1
+  replicas: 3
   selector:
     matchLabels:
       app: products-service
@@ -37,4 +37,4 @@ spec:
     - name: http
       port: 8091
       targetPort: 8091
-  type: ClusterIP
+  type: LoadBalancer

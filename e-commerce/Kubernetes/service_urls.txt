@@ -1,0 +1,13 @@
+http://127.0.0.1:47278
+s-service has no node porhhhhttp://127.0.0.1:47304
+
+http://127.0.0.1:47272
+http://127.0.0.1:47951
+! Because you are using a Dohttp://127.0.0.1:47952
+! Because you are using a Docker driver on windows, the terminal needs to be open to run it.
+
+ to be open to run it.
+http://127.0.0.1:50390
+! Because you are using a Dochttp://127.0.0.1:50396
+! Because you are using a Docker driver on windows, the terminal needs to be open to run it.
+ to be open to run it.
