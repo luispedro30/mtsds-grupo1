@@ -1,0 +1,63 @@
+@startuml
+
+package "ecommerce.Controllers" {
+    class AuthenticationController {
+        + landing()
+        + login()
+        + register()
+    }
+}
+
+package "ecommerce.Service" {
+    class AuthenticationService {
+        + loadUserByUsername()
+    }
+}
+
+package "ecommerce.Repository" {
+    interface UserRepository {
+        + findByLogin(String login): UserDetails
+        + findAllByName(String name): List<User>
+    }
+}
+
+package "ecommerce.Models" {
+    class User {
+        - id: Integer
+        - name: String
+        - login: String
+        - email: String
+        - password: String
+        - role: Role
+        + getAuthorities(): Collection<? extends GrantedAuthority>
+        + getUsername(): String
+        + isAccountNonExpired(): boolean
+        + isAccountNonLocked(): boolean
+        + isCredentialsNonExpired(): boolean
+        + isEnabled(): boolean
+    }
+
+    class AlreadyExistingException {
+        + AlreadyExistingException(String message, String methodName)
+    }
+
+    class LoginException {
+        + LoginException(String methodName)
+    }
+
+    class ExternalServiceException {
+        + ExternalServiceException(String message)
+    }
+}
+
+AuthenticationController --> AuthenticationService
+AuthenticationController --> UserRepository
+AuthenticationController --> User
+AuthenticationController --> AlreadyExistingException
+AuthenticationController --> LoginException
+AuthenticationController --> ExternalServiceException
+
+AuthenticationService --> UserRepository
+AuthenticationService --> User
+
+@enduml

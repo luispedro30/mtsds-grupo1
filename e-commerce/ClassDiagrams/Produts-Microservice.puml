@@ -1,0 +1,91 @@
+@startuml
+package ecommerce.Models {
+    enum Category {
+        ELECTRONICS
+        CLOTHING
+        HOME_APPLIANCES
+        // Add more categories as needed
+    }
+
+    class Product {
+        - id: Integer
+        - name: String
+        - description: String
+        - category: Category
+        - price: double
+        - stockQuantity: Integer
+        - imageUrl: String
+    }
+
+    class AlreadyExistingException {
+        << (E, #FF7700) Exception >>
+    }
+
+    class ProductNotFoundException {
+        << (E, #FF7700) Exception >>
+    }
+
+    class NameNotFoundException {
+        << (E, #FF7700) Exception >>
+    }
+
+    class CategoryNotFoundException {
+        << (E, #FF7700) Exception >>
+    }
+
+    class ProductQuantityException {
+        << (E, #FF7700) Exception >>
+    }
+}
+
+package ecommerce.Controllers {
+    class ProductsController {
+        + landing(): ResponseEntity<String>
+        + addProduct(product: Product, idUser: Integer, request: HttpServletRequest): ResponseEntity<Product>
+        + updateProductById(id: Integer, updatedProduct: Product, idUser: Integer, request: HttpServletRequest): ResponseEntity<Product>
+        + decreaseStockProduct(idProduct: Integer, request: HttpServletRequest): ResponseEntity<Product>
+        + deleteProduct(id: Integer, idUser: Integer, request: HttpServletRequest): ResponseEntity<Void>
+        + getAllProducts(): ResponseEntity<List<Product>>
+        + getAllProductByCategory(category: String): ResponseEntity<List<Product>>
+        + getOneProductById(id: Integer): ResponseEntity<Product>
+        + getAllProductsByName(name: String): ResponseEntity<List<Product>>
+    }
+}
+
+package ecommerce.Services {
+    class ProductsService {
+        + getAllProduct(): List<Product>
+        + getAllProductByCategory(category: String): List<Product>
+        + getProductById(id: Integer): Product
+        + getAllByName(name: String): List<Product>
+        + addProduct(product: Product, userId: Integer, request: HttpServletRequest): Product
+        + updateProductById(id: Integer, updatedProduct: Product, userId: Integer, request: HttpServletRequest): Product
+        + decreaseStockProduct(productId: Integer): Product
+        + deleteProduct(productId: Integer, userId: Integer, request: HttpServletRequest)
+        - getAdminSupplier(userId: Integer, request: HttpServletRequest, token: String): UserDto
+        - extractToken(request: HttpServletRequest): String
+    }
+}
+
+package ecommerce.Repository {
+    class ProductsRepository {
+        + findAllByCategory(category: Category): List<Product>
+        + findAllByName(name: String): List<Product>
+        + findAll(): List<Product>
+        + findById(id: Integer): Optional<Product>
+        + delete(product: Product)
+    }
+}
+
+ProductsController --> ProductsService
+ProductsService --> ProductsRepository
+
+ProductsController --> AlreadyExistingException
+ProductsController --> ProductNotFoundException
+ProductsController --> NameNotFoundException
+ProductsController --> CategoryNotFoundException
+ProductsController --> ProductQuantityException
+
+ProductsRepository --> Product
+
+@enduml

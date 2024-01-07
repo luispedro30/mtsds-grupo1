@@ -1,0 +1,70 @@
+@startuml
+package ecommerce.Models {
+    class Payment {
+        - paymentId: Integer
+        - orderId: Integer
+        - userId: Integer
+        - priceTotal: double
+        - createdAt: Date
+        - updatedAt: Date
+    }
+
+    class AlreadyExistingException {
+        << (E, #FF7700) Exception >>
+    }
+
+    class ItemDoesNotExistException {
+        << (E, #FF7700) Exception >>
+    }
+}
+
+package ecommerce.Controllers {
+    class PaymentController {
+        + landing(): ResponseEntity<String>
+        + getAll(): ResponseEntity<List<Payment>>
+        + getById(id: Integer): ResponseEntity<Payment>
+        + add(payment: Payment, request: HttpServletRequest): ResponseEntity<?>
+        + getPaymentsByUserId(userId: Integer): ResponseEntity<List<Payment>>
+    }
+}
+
+package ecommerce.Services {
+    class PaymentService {
+        + getAllPayments(): List<Payment>
+        + getPaymentById(id: Integer): Payment
+        + findByUserId(userId: Integer): List<Payment>
+        + addPayment(payment: Payment, request: HttpServletRequest): Payment
+        + deletePayment(paymentId: Integer, userId: Integer, request: HttpServletRequest)
+        - getAdminSupplier(userId: Integer, request: HttpServletRequest, token: String): UserDto
+        - getUser(userId: Integer, request: HttpServletRequest, token: String): UserDto
+        - extractToken(request: HttpServletRequest): String
+        - getOrder(orderId: Integer, request: HttpServletRequest, token: String): OrderDto
+        - getWallet(userId: Integer, request: HttpServletRequest, token: String): WalletDto
+        - doesNotExistAlready(userId: Integer, orderId: Integer): boolean
+    }
+}
+
+package ecommerce.Repository {
+    class PaymentRepository {
+        + existsByUserIdAndOrderId(userId: Integer, orderId: Integer): boolean
+        + findAll(): List<Payment>
+        + findById(id: Integer): Payment
+        + findByUserId(userId: Integer): List<Payment>
+    }
+}
+
+PaymentController --> PaymentService
+PaymentService --> PaymentRepository
+PaymentService --> UserDto
+PaymentService --> OrderDto
+PaymentService --> WalletDto
+
+PaymentController --> AlreadyExistingException
+PaymentController --> ItemDoesNotExistException
+
+PaymentService --> AlreadyExistingException
+PaymentService --> ItemDoesNotExistException
+
+PaymentRepository --> Payment
+
+@enduml

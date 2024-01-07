@@ -122,10 +122,14 @@ public class UserService {
     }
 
     public void deleteUser(Integer id) throws Exception {
-        // Check if the user exists
         User user = userRepository.findById(id)
                 .orElseThrow(() -> new Exception("User does not exist"));
 
         userRepository.delete(user);
+    }
+
+    public User getUserByLogin(String login) throws Exception {
+        return userRepository.findByLogin(login)
+                .orElseThrow(() -> new Exception("User with login " + login + " does not exist"));
     }
 }

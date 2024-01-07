@@ -6,10 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="e63fab2e-ccd9-4599-8c37-fc239380bb02" name="Changes" comment="fix: update authentication microservice with Postgres database and to connect with user microservice">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Payment/src/main/java/ecommerce/Controllers/PaymentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Payment/src/main/java/ecommerce/Controllers/PaymentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Payment/src/main/java/ecommerce/Repository/PaymentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Payment/src/main/java/ecommerce/Repository/PaymentRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Payment/src/main/java/ecommerce/Services/PaymentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Payment/src/main/java/ecommerce/Services/PaymentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/java/ecommerce/Config/AuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/java/ecommerce/Config/AuthenticationFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shipping/src/main/java/ecommerce/Controllers/ShippingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Shipping/src/main/java/ecommerce/Controllers/ShippingController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shipping/src/main/java/ecommerce/Exceptions/ItemDoesNotExistException.java" beforeDir="false" afterPath="$PROJECT_DIR$/Shipping/src/main/java/ecommerce/Exceptions/ItemDoesNotExistException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/src/main/java/ecommerce/Controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/users/src/main/java/ecommerce/Controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/src/main/java/ecommerce/Repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/users/src/main/java/ecommerce/Repository/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/src/main/java/ecommerce/Service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/users/src/main/java/ecommerce/Service/UserService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,13 +25,14 @@
         <option value="Enum" />
         <option value="editable-svg" />
         <option value="Class" />
+        <option value="UML Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$/.." value="update-postman" />
+        <entry key="$PROJECT_DIR$/.." value="update-postman-files" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -52,14 +54,15 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "DefaultPlantUmlFileTemplate": "UML Class",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "jdk.selected.JAVA_MODULE": "20",
-    "last_opened_file_path": "D:/mtsds-grupo1-github/mtsds-grupo1/e-commerce/Authentication/src/main/java/ecommerce",
+    "last_opened_file_path": "D:/mtsds-grupo1-github/mtsds-grupo1/e-commerce/ClassDiagrams",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "Settings.Sequence.Configuration"
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -69,18 +72,19 @@
       <recent name="ecommerce" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\mtsds-grupo1-github\mtsds-grupo1\e-commerce\ClassDiagrams" />
+      <recent name="D:\mtsds-grupo1-github\mtsds-grupo1\e-commerce\users\src\main\java\ecommerce" />
+      <recent name="D:\mtsds-grupo1-github\mtsds-grupo1\e-commerce\Shipping\src\main\java\ecommerce" />
       <recent name="D:\mtsds-grupo1-github\mtsds-grupo1\e-commerce\Authentication\src\main\java\ecommerce" />
       <recent name="D:\mtsds-grupo1-github\mtsds-grupo1\e-commerce\Wallet\src\main\resources" />
-      <recent name="D:\mtsds-grupo1-github\mtsds-grupo1\e-commerce\users\src\main\resources" />
-      <recent name="D:\mtsds-grupo1-github\mtsds-grupo1\e-commerce\Shipping\src\main\resources" />
-      <recent name="D:\mtsds-grupo1-github\mtsds-grupo1\e-commerce\Reviews\src\main\resources" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\mtsds-grupo1-github\mtsds-grupo1\e-commerce\ClassDiagrams" />
       <recent name="D:\mtsds-grupo1-github\mtsds-grupo1\e-commerce\PostmanCollectionEnv" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="ecommerce.Infra" />
       <recent name="ecommerce.Exceptions" />
+      <recent name="ecommerce.Infra" />
       <recent name="ecommerce" />
       <recent name="ecommerce.Dto" />
       <recent name="ecommerce.Messages" />
@@ -121,20 +125,6 @@
     <configuration name="Products-local" type="Application" factoryName="Application" folderName="e-commerce" temporary="true">
       <option name="MAIN_CLASS_NAME" value="ecommerce.Products" />
       <module name="products" />
-      <option name="VM_PARAMETERS" value="-Dspring.profiles.active=dev" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ecommerce.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Reviews-local" type="Application" factoryName="Application" folderName="e-commerce">
-      <option name="MAIN_CLASS_NAME" value="ecommerce.Reviews" />
-      <module name="Reviews" />
       <option name="VM_PARAMETERS" value="-Dspring.profiles.active=dev" />
       <extension name="coverage">
         <pattern>
@@ -188,7 +178,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ProductsControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ProductsControllerTest" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
       <module name="products" />
       <extension name="coverage">
         <pattern>
@@ -208,7 +198,6 @@
     <list>
       <item itemvalue="Application.email-local" />
       <item itemvalue="Application.EurekaServer-local" />
-      <item itemvalue="Application.Reviews-local" />
       <item itemvalue="Application.Products-local" />
       <item itemvalue="Application.shipping-local" />
       <item itemvalue="Application.wallet-local" />
@@ -218,7 +207,6 @@
       <list>
         <item itemvalue="Application.wallet-local" />
         <item itemvalue="Application.Products-local" />
-        <item itemvalue="JUnit.ProductsControllerTest" />
         <item itemvalue="Application.shipping-local" />
       </list>
     </recent_temporary>
@@ -294,12 +282,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Reviews/src/main/java/ecommerce/Services/ReviewService.java</url>
-          <line>59</line>
-          <option name="timeStamp" value="85" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Reviews/src/main/java/ecommerce/Services/ReviewService.java</url>
-          <line>60</line>
+          <line>62</line>
           <option name="timeStamp" value="86" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -348,16 +331,6 @@
           <option name="timeStamp" value="121" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/users/src/main/java/ecommerce/Controller/UserController.java</url>
-          <line>155</line>
-          <option name="timeStamp" value="122" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/users/src/main/java/ecommerce/Controller/UserController.java</url>
-          <line>156</line>
-          <option name="timeStamp" value="123" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/api-gateway/src/main/java/ecommerce/Config/AuthenticationFilter.java</url>
           <line>73</line>
           <option name="timeStamp" value="125" />
@@ -394,13 +367,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Reviews/src/main/java/ecommerce/Services/ReviewService.java</url>
-          <line>56</line>
-          <option name="timeStamp" value="140" />
+          <line>202</line>
+          <option name="timeStamp" value="141" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Reviews/src/main/java/ecommerce/Services/ReviewService.java</url>
-          <line>200</line>
-          <option name="timeStamp" value="141" />
+          <line>61</line>
+          <option name="timeStamp" value="143" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

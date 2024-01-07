@@ -1,0 +1,79 @@
+@startuml
+
+package ecommerce.Controller {
+    class UserController {
+        - marker: Marker
+        - logger: Logger
+        - userService: UserService
+        + landing(): ResponseEntity<String>
+        + getAll(): ResponseEntity<List<User>>
+        + getUserByName(userName: String): ResponseEntity<List<User>>
+        + getUserById(id: Integer): ResponseEntity<User>
+        + addUser(user: User, request: HttpServletRequest): ResponseEntity<User>
+        + updateUserById(user: User, request: HttpServletRequest): ResponseEntity<User>
+        + updateUserByIdByAdmin(user: User, request: HttpServletRequest): ResponseEntity<User>
+        + deleteUser(id: Integer, request: HttpServletRequest): ResponseEntity<?>
+    }
+}
+
+package ecommerce.Service {
+    class UserService {
+        - template: RabbitTemplate
+        - userRepository: UserRepository
+        + getAllUsers(): List<User>
+        + getUserById(id: Integer): User
+        + getAllUserByName(userName: String): List<User>
+        + saveUser(user: User): User
+        + updateUser(user: User): User
+        + updateUserByAdmin(user: User): User
+        + deleteUser(id: Integer): void
+        + getUserByLogin(login: String): User
+        - encryptPassword(password: String): String
+    }
+}
+
+package ecommerce.Repository {
+    interface UserRepository {
+        + findByName(name: String): User
+        + findAllByName(name: String): List<User>
+        + findAll(): List<User>
+        + findById(id: Integer): Optional<User>
+        + delete(user: User): void
+        + findByLogin(login: String): Optional<User>
+    }
+}
+
+package ecommerce.Models {
+    enum Role
+    class User {
+        - id: Integer
+        - name: String
+        - login: String
+        - email: String
+        - password: String
+        - active: int
+        - role: Role
+    }
+}
+
+UserController --> UserService: userService
+UserService --> UserRepository: userRepository
+
+class AlreadyExistingException {
+    + message: String
+}
+
+class CustomInternalServerException {
+    + message: String
+}
+
+class ItemDoesNotExistException {
+    + itemId: String
+    + methodName: String
+}
+
+UserController --> AlreadyExistingException
+UserController --> CustomInternalServerException
+UserController --> ItemDoesNotExistException
+
+@enduml

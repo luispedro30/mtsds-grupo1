@@ -4,6 +4,7 @@ import ecommerce.Dto.OrderDto;
 import ecommerce.Dto.ShippingDto;
 import ecommerce.Dto.UserDto;
 import ecommerce.Enum.Status;
+import ecommerce.Exceptions.ItemDoesNotExistException;
 import ecommerce.Models.Review;
 import ecommerce.Repository.ReviewRepository;
 import jakarta.servlet.http.HttpServletRequest;
@@ -18,6 +19,7 @@ import org.springframework.web.client.RestTemplate;
 
 import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @Transactional
@@ -292,6 +294,25 @@ public class ReviewService {
             return authorizationHeader.substring(7); // Extract the token without "Bearer " prefix
         }
         return null; // Handle token not found scenario
+    }
+
+    public Review updateReviewByIdForUser(Integer id, Integer userId, Review updatedReview, HttpServletRequest request) throws ItemDoesNotExistException {
+        Optional<Review> existingReviewOptional = reviewRepository.findById(id);
+        Review existingReview = existingReviewOptional.orElseThrow(() -> {
+            return new ItemDoesNotExistException(String.valueOf(id), "updateReviewByIdForUser()");
+        });
+
+        if (!existingReview.getUserId().equals(userId)) {
+            throw new IllegalArgumentException("User ID in the request does not match the review's user ID");
+        }
+
+        updatedReview.setId(existingReview.getId());
+        updatedReview.setUserId(existingReview.getUserId());
+        updatedReview.setProductId(existingReview.getProductId());
+        updatedReview.setOrderId(existingReview.getOrderId());
+
+        Review savedReview = reviewRepository.save(updatedReview);
+        return savedReview;
     }
 
 }

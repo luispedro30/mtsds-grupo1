@@ -1,0 +1,75 @@
+@startuml
+
+package "ecommerce.Controllers" {
+    class EmailController {
+        + sendingEmail()
+        + getAllEmails()
+        + getOneEmail()
+        -- EmailNotFoundException
+        -- InvalidEmailException
+        + handleEmailNotFoundException()
+        + handleInvalidEmailException()
+    }
+
+    EmailController --> EmailNotFoundException
+    EmailController --> InvalidEmailException
+
+    class EmailNotFoundException {
+        + EmailNotFoundException(message: String)
+    }
+
+    class InvalidEmailException {
+        + InvalidEmailException(message: String)
+    }
+
+    EmailNotFoundException --|> RuntimeException
+    InvalidEmailException --|> RuntimeException
+}
+
+package "ecommerce.Service" {
+    class EmailService {
+        + sendEmail()
+        + findAll()
+        + findById()
+    }
+}
+
+package "ecommerce.Repository" {
+    interface EmailRepository {
+        + findAll(): List<EmailModel>
+        + findById(emailId: UUID): Optional<EmailModel>
+    }
+}
+
+package "ecommerce.Model" {
+    class EmailModel {
+        - emailId: UUID
+        - ownerRef: String
+        - emailFrom: String
+        - emailTo: String
+        - subject: String
+        - text: String
+        - sendDateEmail: LocalDateTime
+        - statusEmail: StatusEmail
+    }
+
+    enum StatusEmail {
+        SENT
+        // Add other possible statuses if needed
+    }
+
+    EmailController --> EmailService
+    EmailController --> EmailNotFoundException
+    EmailController --> InvalidEmailException
+    EmailController --> EmailModel
+
+    EmailService --> EmailRepository
+    EmailService --> EmailModel
+
+    EmailRepository --> EmailModel
+
+    EmailNotFoundException --|> RuntimeException
+    InvalidEmailException --|> RuntimeException
+}
+
+@enduml
